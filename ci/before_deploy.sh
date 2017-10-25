@@ -17,9 +17,9 @@ main() {
 
     test -f Cargo.lock || cargo generate-lockfile
 
-    cross rustc --lib xmc4200 --target $TARGET --release -- -C lto
+    cross rustc --lib xcm4700 --target $TARGET --release -- -C lto
 
-    cp target/$TARGET/release/xmc4200 $stage/
+    cp target/$TARGET/release/xcm4700 $stage/
 
     cd $stage
     tar czf $src/$CRATE_NAME-$TRAVIS_TAG-$TARGET.tar.gz *
