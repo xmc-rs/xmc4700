@@ -4,18 +4,19 @@ version = "0.1.1"
 description = "XMC peripheral library for XMC4700 generated from SVD"
 readme = "README.md"
 authors = ["Lucas Brendel <lucasbrendel@gmail.com>"]
-repository = "https://github.com/lucasbrendel/xmc4700"
+repository = "https://github.com/xmc-rs/xmc4700"
 license = "MIT"
+keywords = ["cortex-m", "infineon", "arm", "xmc4x"]
 documentation = "https://docs.rs/xmc4700"
 
 [dependencies]
-cortex-m = "0.6.0"
-bare-metal = "0.2.4"
-vcell = "0.1.0"
+cortex-m = "0.6.1"
+bare-metal = "0.2.5"
+vcell = "0.1.2"
 
 [dependencies.cortex-m-rt]
 optional = true
-version = "0.6.7"
+version = "0.6.10"
 
 [features]
 rt = ["cortex-m-rt"]
