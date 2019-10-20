@@ -1,6 +1,6 @@
 [package]
 name = "xmc4700"
-version = "0.3.0"
+version = "0.3.1"
 description = "XMC peripheral library for XMC4700 generated from SVD"
 readme = "README.md"
 authors = ["Lucas Brendel <lucasbrendel@gmail.com>"]
@@ -19,5 +19,5 @@ optional = true
 version = "0.6.10"
 
 [features]
-rt = ["cortex-m-rt"]
+rt = ["cortex-m-rt/device"]
 
