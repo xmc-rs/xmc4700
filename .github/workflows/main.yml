@@ -1,10 +1,9 @@
 name: Audit
 on:
-  workflow_dispatch:
   push:
-    paths:
-      - '**/Cargo.toml'
-      - '**/Cargo.lock'
+  #  paths:
+  #    - '**/Cargo.toml'
+  #    - '**/Cargo.lock'
 jobs:
   security_audit:
     runs-on: ubuntu-latest
