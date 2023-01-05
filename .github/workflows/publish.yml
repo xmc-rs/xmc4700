@@ -23,7 +23,7 @@ jobs:
           profile: minimal
           toolchain: stable
           override: true
-      - uses: xmc-rs/cargo@a39e5854c5ec634a354e87c85672710b6dd48fdd
+      - uses: xmc-rs/cargo@v1.0.0
         with:
           command: install
           args: cargo-release
@@ -36,7 +36,7 @@ jobs:
         with:
           token: ${{ steps.generate-token.outputs.token }}
       - uses: Swatinem/rust-cache@v2
-      - uses: xmc-rs/cargo@a39e5854c5ec634a354e87c85672710b6dd48fdd
+      - uses: xmc-rs/cargo@v1.0.0
         with:
           command: release
           args: ${{ inputs.version }} --execute --verbose --no-confirm

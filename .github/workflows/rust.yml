@@ -23,12 +23,12 @@ jobs:
             target: ${{ matrix.rust-target }}
             override: true
       - name: Cargo Check
-        uses: xmc-rs/cargo@a39e5854c5ec634a354e87c85672710b6dd48fdd
+        uses: xmc-rs/cargo@v1.0.0
         with:
           command: check
           args: --target ${{ matrix.rust-target }}
       - name: Cargo Build
-        uses: xmc-rs/cargo@a39e5854c5ec634a354e87c85672710b6dd48fdd
+        uses: xmc-rs/cargo@v1.0.0
         with:
           command: build
           args: --verbose --target ${{ matrix.rust-target }}

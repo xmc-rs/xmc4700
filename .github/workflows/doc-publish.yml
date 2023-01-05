@@ -16,7 +16,7 @@ jobs:
           toolchain: 'stable'
           target: 'x86_64-unknown-linux-gnu'
       - name: Cargo Doc
-        uses: xmc-rs/cargo@a39e5854c5ec634a354e87c85672710b6dd48fdd
+        uses: xmc-rs/cargo@v1.0.0
         with:
           command: doc
           args: --verbose --no-deps --document-private-items

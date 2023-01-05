@@ -12,11 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: xmc-rs/cargo@a39e5854c5ec634a354e87c85672710b6dd48fdd
+      - uses: xmc-rs/cargo@v1.0.0
         with:
           command: install
           args: svd2rust
-      - uses: xmc-rs/cargo@a39e5854c5ec634a354e87c85672710b6dd48fdd
+      - uses: xmc-rs/cargo@v1.0.0
         with:
           command: install
           args: form
