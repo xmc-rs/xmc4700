@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3.2.0
       - name: Install Toolchain
-        uses: xmc-rs/toolchain@fda8d8e40e2b24c99c6e5f2f06bd2ca2a7398cc8
+        uses: xmc-rs/toolchain@v1.0.0
         with:
           toolchain: 'stable'
           target: 'x86_64-unknown-linux-gnu'
