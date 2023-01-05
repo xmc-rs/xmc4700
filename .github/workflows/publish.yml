@@ -18,16 +18,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions-rs/toolchain@v1
+      - uses: xmc-rs/toolchain@v1.0.0
         with:
           profile: minimal
           toolchain: stable
           override: true
-      - uses: actions-rs/cargo@v1
+      - uses: xmc-rs/cargo@v1.0.0
         with:
           command: install
           args: cargo-release
-      - uses: tibdex/github-app-token@v1
+      - uses: tibdex/github-app-token@v1.0.0
         id: generate-token
         with:
           app_id: ${{ secrets.APP_ID }}
@@ -35,8 +35,8 @@ jobs:
       - uses: oleksiyrudenko/gha-git-credentials@v2-latest
         with:
           token: ${{ steps.generate-token.outputs.token }}
-      - uses: Swatinem/rust-cache@v2
-      - uses: actions-rs/cargo@v1
+      - uses: Swatinem/rust-cache@v3.2.0
+      - uses: xmc-rs/cargo@v1.0.0
         with:
           command: release
           args: ${{ inputs.version }} --execute --verbose --no-confirm

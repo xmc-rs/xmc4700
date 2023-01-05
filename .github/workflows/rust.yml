@@ -17,18 +17,18 @@ jobs:
     steps:
       - uses: actions/checkout@v3.3.0
       - name: Install toolchain
-        uses: actions-rs/toolchain@v1.0.7
+        uses: xmc-rs/toolchain@v1.0.0
         with:
             toolchain: ${{ matrix.rust-channel }}
             target: ${{ matrix.rust-target }}
             override: true
       - name: Cargo Check
-        uses: actions-rs/cargo@v1
+        uses: xmc-rs/cargo@v1.0.0
         with:
           command: check
           args: --target ${{ matrix.rust-target }}
       - name: Cargo Build
-        uses: actions-rs/cargo@v1
+        uses: xmc-rs/cargo@v1.0.0
         with:
           command: build
           args: --verbose --target ${{ matrix.rust-target }}
