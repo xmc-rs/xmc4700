@@ -10,3 +10,4 @@ jobs:
     uses: xmc-rs/.github/.github/workflows/update.yml@master
     with:
       svd_file: XMC4700.svd
+    secrets: inherit
