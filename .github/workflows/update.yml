@@ -1,11 +1,9 @@
-
+name: Update
 
 on:
   workflow_dispatch:
   schedule:
     - cron: '7 5 1 * *'
-
-name: Update
 
 jobs:
   update:
@@ -13,3 +11,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3.3.0
       - uses: xmc-rs/.github/.github/workflows/
+        with:
+          svd_file: XMC4700.svd
