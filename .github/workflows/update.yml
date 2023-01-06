@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.3.0
-      - uses: xmc-rs/.github/.github/workflows/
+      - uses: xmc-rs/.github/.github/workflows/update.yml@master
         with:
           svd_file: XMC4700.svd
