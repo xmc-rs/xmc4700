@@ -14,7 +14,7 @@ name: Publish
 
 jobs:
   publish:
-    uses: xmc-rs/.github/.github/workflows/publish.yml
+    uses: xmc-rs/.github/.github/workflows/publish.yml@master
     with:
       version: ${{ inputs.version }}
     secrets: inherit
