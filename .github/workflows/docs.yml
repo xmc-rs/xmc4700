@@ -1,4 +1,4 @@
-name: Doc Publish
+name: Docs
 on:
   push:
     branches:
@@ -6,17 +6,5 @@ on:
 
 jobs:
   build:
-    name: Build Docs
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3.3.0
-      - name: Install Toolchain
-        uses: xmc-rs/toolchain@v1.0.0
-        with:
-          toolchain: 'stable'
-          target: 'x86_64-unknown-linux-gnu'
-      - name: Cargo Doc
-        uses: xmc-rs/cargo@v1.0.0
-        with:
-          command: doc
-          args: --verbose --no-deps --document-private-items
+    uses: xmc-rs/.github/.github/workflows/docs.yml
+    secrets: inherit
