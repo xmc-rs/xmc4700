@@ -1,0 +1,10 @@
+name: Docs
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+    uses: xmc-rs/.github/.github/workflows/docs.yml@master
+    secrets: inherit

@@ -8,27 +8,5 @@ on:
 
 jobs:
   build:
-    strategy:
-      matrix:
-        rust-channel: [ 'stable', 'nightly' ]
-        rust-target: [ 'x86_64-unknown-linux-gnu', 'thumbv7em-none-eabi' ]
-    name: ${{ matrix.rust-channel }}-${{ matrix.rust-target }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3.3.0
-      - name: Install toolchain
-        uses: xmc-rs/toolchain@v1.0.0
-        with:
-            toolchain: ${{ matrix.rust-channel }}
-            target: ${{ matrix.rust-target }}
-            override: true
-      - name: Cargo Check
-        uses: xmc-rs/cargo@v1.0.0
-        with:
-          command: check
-          args: --target ${{ matrix.rust-target }}
-      - name: Cargo Build
-        uses: xmc-rs/cargo@v1.0.0
-        with:
-          command: build
-          args: --verbose --target ${{ matrix.rust-target }}
+    uses: xmc-rs/.github/.github/workflows/rust.yml@master
+    secrets: inherit
