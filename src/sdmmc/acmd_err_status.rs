@@ -1,18 +1,5 @@
 #[doc = "Register `ACMD_ERR_STATUS` reader"]
-pub struct R(crate::R<ACMD_ERR_STATUS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ACMD_ERR_STATUS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ACMD_ERR_STATUS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ACMD_ERR_STATUS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ACMD_ERR_STATUS_SPEC>;
 #[doc = "Field `ACMD12_NOT_EXEC_ERR` reader - Auto CMD12 Not Executed"]
 pub type ACMD12_NOT_EXEC_ERR_R = crate::BitReader<ACMD12_NOT_EXEC_ERR_A>;
 #[doc = "Auto CMD12 Not Executed\n\nValue on reset: 0"]
@@ -32,18 +19,18 @@ impl From<ACMD12_NOT_EXEC_ERR_A> for bool {
 impl ACMD12_NOT_EXEC_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACMD12_NOT_EXEC_ERR_A {
+    pub const fn variant(&self) -> ACMD12_NOT_EXEC_ERR_A {
         match self.bits {
             false => ACMD12_NOT_EXEC_ERR_A::VALUE1,
             true => ACMD12_NOT_EXEC_ERR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Executed"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ACMD12_NOT_EXEC_ERR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Not Executed"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ACMD12_NOT_EXEC_ERR_A::VALUE2
@@ -68,18 +55,18 @@ impl From<ACMD_TIMEOUT_ERR_A> for bool {
 impl ACMD_TIMEOUT_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACMD_TIMEOUT_ERR_A {
+    pub const fn variant(&self) -> ACMD_TIMEOUT_ERR_A {
         match self.bits {
             false => ACMD_TIMEOUT_ERR_A::VALUE1,
             true => ACMD_TIMEOUT_ERR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ACMD_TIMEOUT_ERR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Timeout"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ACMD_TIMEOUT_ERR_A::VALUE2
@@ -104,18 +91,18 @@ impl From<ACMD_CRC_ERR_A> for bool {
 impl ACMD_CRC_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACMD_CRC_ERR_A {
+    pub const fn variant(&self) -> ACMD_CRC_ERR_A {
         match self.bits {
             false => ACMD_CRC_ERR_A::VALUE1,
             true => ACMD_CRC_ERR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ACMD_CRC_ERR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "CRC Error Generated"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ACMD_CRC_ERR_A::VALUE2
@@ -140,18 +127,18 @@ impl From<ACMD_END_BIT_ERR_A> for bool {
 impl ACMD_END_BIT_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACMD_END_BIT_ERR_A {
+    pub const fn variant(&self) -> ACMD_END_BIT_ERR_A {
         match self.bits {
             false => ACMD_END_BIT_ERR_A::VALUE1,
             true => ACMD_END_BIT_ERR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ACMD_END_BIT_ERR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "End Bit Error Generated"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ACMD_END_BIT_ERR_A::VALUE2
@@ -176,18 +163,18 @@ impl From<ACMD_IND_ERR_A> for bool {
 impl ACMD_IND_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACMD_IND_ERR_A {
+    pub const fn variant(&self) -> ACMD_IND_ERR_A {
         match self.bits {
             false => ACMD_IND_ERR_A::VALUE1,
             true => ACMD_IND_ERR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ACMD_IND_ERR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Error"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ACMD_IND_ERR_A::VALUE2
@@ -212,18 +199,18 @@ impl From<CMD_NOT_ISSUED_BY_ACMD12_ERR_A> for bool {
 impl CMD_NOT_ISSUED_BY_ACMD12_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMD_NOT_ISSUED_BY_ACMD12_ERR_A {
+    pub const fn variant(&self) -> CMD_NOT_ISSUED_BY_ACMD12_ERR_A {
         match self.bits {
             false => CMD_NOT_ISSUED_BY_ACMD12_ERR_A::VALUE1,
             true => CMD_NOT_ISSUED_BY_ACMD12_ERR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Error"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CMD_NOT_ISSUED_BY_ACMD12_ERR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Not Issued"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CMD_NOT_ISSUED_BY_ACMD12_ERR_A::VALUE2
@@ -261,15 +248,13 @@ impl R {
         CMD_NOT_ISSUED_BY_ACMD12_ERR_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
-#[doc = "Auto CMD Error Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [acmd_err_status](index.html) module"]
+#[doc = "Auto CMD Error Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`acmd_err_status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ACMD_ERR_STATUS_SPEC;
 impl crate::RegisterSpec for ACMD_ERR_STATUS_SPEC {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [acmd_err_status::R](R) reader structure"]
-impl crate::Readable for ACMD_ERR_STATUS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`acmd_err_status::R`](R) reader structure"]
+impl crate::Readable for ACMD_ERR_STATUS_SPEC {}
 #[doc = "`reset()` method sets ACMD_ERR_STATUS to value 0"]
 impl crate::Resettable for ACMD_ERR_STATUS_SPEC {
     const RESET_VALUE: Self::Ux = 0;

@@ -1,18 +1,5 @@
 #[doc = "Register `INTS` reader"]
-pub struct R(crate::R<INTS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<INTS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<INTS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<INTS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<INTS_SPEC>;
 #[doc = "Field `PMUS` reader - Period Match while Counting Up"]
 pub type PMUS_R = crate::BitReader<PMUS_A>;
 #[doc = "Period Match while Counting Up\n\nValue on reset: 0"]
@@ -32,18 +19,18 @@ impl From<PMUS_A> for bool {
 impl PMUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PMUS_A {
+    pub const fn variant(&self) -> PMUS_A {
         match self.bits {
             false => PMUS_A::VALUE1,
             true => PMUS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Period match while counting up not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PMUS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Period match while counting up detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PMUS_A::VALUE2
@@ -68,18 +55,18 @@ impl From<OMDS_A> for bool {
 impl OMDS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OMDS_A {
+    pub const fn variant(&self) -> OMDS_A {
         match self.bits {
             false => OMDS_A::VALUE1,
             true => OMDS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "One match while counting down not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == OMDS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "One match while counting down detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == OMDS_A::VALUE2
@@ -104,18 +91,18 @@ impl From<CMUS_A> for bool {
 impl CMUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMUS_A {
+    pub const fn variant(&self) -> CMUS_A {
         match self.bits {
             false => CMUS_A::VALUE1,
             true => CMUS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Compare match while counting up not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CMUS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Compare match while counting up detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CMUS_A::VALUE2
@@ -140,18 +127,18 @@ impl From<CMDS_A> for bool {
 impl CMDS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMDS_A {
+    pub const fn variant(&self) -> CMDS_A {
         match self.bits {
             false => CMDS_A::VALUE1,
             true => CMDS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Compare match while counting down not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CMDS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Compare match while counting down detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CMDS_A::VALUE2
@@ -176,18 +163,18 @@ impl From<E0AS_A> for bool {
 impl E0AS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> E0AS_A {
+    pub const fn variant(&self) -> E0AS_A {
         match self.bits {
             false => E0AS_A::VALUE1,
             true => E0AS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Event 0 not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == E0AS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Event 0 detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == E0AS_A::VALUE2
@@ -212,18 +199,18 @@ impl From<E1AS_A> for bool {
 impl E1AS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> E1AS_A {
+    pub const fn variant(&self) -> E1AS_A {
         match self.bits {
             false => E1AS_A::VALUE1,
             true => E1AS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Event 1 not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == E1AS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Event 1 detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == E1AS_A::VALUE2
@@ -248,25 +235,25 @@ impl From<E2AS_A> for bool {
 impl E2AS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> E2AS_A {
+    pub const fn variant(&self) -> E2AS_A {
         match self.bits {
             false => E2AS_A::VALUE1,
             true => E2AS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Event 2 not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == E2AS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Event 2 detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == E2AS_A::VALUE2
     }
 }
 #[doc = "Field `TRPF` reader - Trap Flag Status"]
-pub type TRPF_R = crate::BitReader<bool>;
+pub type TRPF_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Period Match while Counting Up"]
     #[inline(always)]
@@ -309,15 +296,13 @@ impl R {
         TRPF_R::new(((self.bits >> 11) & 1) != 0)
     }
 }
-#[doc = "Interrupt Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ints](index.html) module"]
+#[doc = "Interrupt Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ints::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct INTS_SPEC;
 impl crate::RegisterSpec for INTS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ints::R](R) reader structure"]
-impl crate::Readable for INTS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`ints::R`](R) reader structure"]
+impl crate::Readable for INTS_SPEC {}
 #[doc = "`reset()` method sets INTS to value 0"]
 impl crate::Resettable for INTS_SPEC {
     const RESET_VALUE: Self::Ux = 0;

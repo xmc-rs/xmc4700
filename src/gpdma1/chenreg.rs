@@ -1,41 +1,9 @@
 #[doc = "Register `CHENREG` reader"]
-pub struct R(crate::R<CHENREG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CHENREG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CHENREG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CHENREG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CHENREG_SPEC>;
 #[doc = "Register `CHENREG` writer"]
-pub struct W(crate::W<CHENREG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CHENREG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CHENREG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CHENREG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CHENREG_SPEC>;
 #[doc = "Field `CH` reader - Enables/Disables the channel"]
-pub type CH_R = crate::FieldReader<u8, CH_A>;
+pub type CH_R = crate::FieldReader<CH_A>;
 #[doc = "Enables/Disables the channel\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -51,43 +19,50 @@ impl From<CH_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CH_A {
+    type Ux = u8;
+}
 impl CH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CH_A> {
+    pub const fn variant(&self) -> Option<CH_A> {
         match self.bits {
             0 => Some(CH_A::VALUE1),
             1 => Some(CH_A::VALUE2),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable the Channel"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CH_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable the Channel"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CH_A::VALUE2
     }
 }
 #[doc = "Field `CH` writer - Enables/Disables the channel"]
-pub type CH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CHENREG_SPEC, u8, CH_A, 4, O>;
-impl<'a, const O: u8> CH_W<'a, O> {
+pub type CH_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CH_A>;
+impl<'a, REG> CH_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Disable the Channel"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CH_A::VALUE1)
     }
     #[doc = "Enable the Channel"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CH_A::VALUE2)
     }
 }
 #[doc = "Field `WE_CH` writer - Channel enable write enable"]
-pub type WE_CH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CHENREG_SPEC, u8, u8, 4, O>;
+pub type WE_CH_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:3 - Enables/Disables the channel"]
     #[inline(always)]
@@ -99,34 +74,35 @@ impl W {
     #[doc = "Bits 0:3 - Enables/Disables the channel"]
     #[inline(always)]
     #[must_use]
-    pub fn ch(&mut self) -> CH_W<0> {
-        CH_W::new(self)
+    pub fn ch(&mut self) -> CH_W<CHENREG_SPEC> {
+        CH_W::new(self, 0)
     }
     #[doc = "Bits 8:11 - Channel enable write enable"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch(&mut self) -> WE_CH_W<8> {
-        WE_CH_W::new(self)
+    pub fn we_ch(&mut self) -> WE_CH_W<CHENREG_SPEC> {
+        WE_CH_W::new(self, 8)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "GPDMA Channel Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chenreg](index.html) module"]
+#[doc = "GPDMA Channel Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`chenreg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`chenreg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CHENREG_SPEC;
 impl crate::RegisterSpec for CHENREG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [chenreg::R](R) reader structure"]
-impl crate::Readable for CHENREG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [chenreg::W](W) writer structure"]
+#[doc = "`read()` method returns [`chenreg::R`](R) reader structure"]
+impl crate::Readable for CHENREG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`chenreg::W`](W) writer structure"]
 impl crate::Writable for CHENREG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,49 +1,17 @@
 #[doc = "Register `MPU_RASR_A3` reader"]
-pub struct R(crate::R<MPU_RASR_A3_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MPU_RASR_A3_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MPU_RASR_A3_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MPU_RASR_A3_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MPU_RASR_A3_SPEC>;
 #[doc = "Register `MPU_RASR_A3` writer"]
-pub struct W(crate::W<MPU_RASR_A3_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MPU_RASR_A3_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MPU_RASR_A3_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MPU_RASR_A3_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<MPU_RASR_A3_SPEC>;
 #[doc = "Field `ENABLE` reader - Region enable bit."]
-pub type ENABLE_R = crate::BitReader<bool>;
+pub type ENABLE_R = crate::BitReader;
 #[doc = "Field `ENABLE` writer - Region enable bit."]
-pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MPU_RASR_A3_SPEC, bool, O>;
+pub type ENABLE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SIZE` reader - MPU protection region size"]
-pub type SIZE_R = crate::FieldReader<u8, u8>;
+pub type SIZE_R = crate::FieldReader;
 #[doc = "Field `SIZE` writer - MPU protection region size"]
-pub type SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MPU_RASR_A3_SPEC, u8, u8, 5, O>;
+pub type SIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `SRD` reader - Subregion disable bits"]
-pub type SRD_R = crate::FieldReader<u8, SRD_A>;
+pub type SRD_R = crate::FieldReader<SRD_A>;
 #[doc = "Subregion disable bits\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -59,61 +27,68 @@ impl From<SRD_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for SRD_A {
+    type Ux = u8;
+}
 impl SRD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SRD_A> {
+    pub const fn variant(&self) -> Option<SRD_A> {
         match self.bits {
             0 => Some(SRD_A::VALUE1),
             1 => Some(SRD_A::VALUE2),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "corresponding sub-region is enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SRD_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "corresponding sub-region is disabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SRD_A::VALUE2
     }
 }
 #[doc = "Field `SRD` writer - Subregion disable bits"]
-pub type SRD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MPU_RASR_A3_SPEC, u8, SRD_A, 8, O>;
-impl<'a, const O: u8> SRD_W<'a, O> {
+pub type SRD_W<'a, REG> = crate::FieldWriter<'a, REG, 8, SRD_A>;
+impl<'a, REG> SRD_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "corresponding sub-region is enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SRD_A::VALUE1)
     }
     #[doc = "corresponding sub-region is disabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SRD_A::VALUE2)
     }
 }
 #[doc = "Field `B` reader - Memory access attribute"]
-pub type B_R = crate::BitReader<bool>;
+pub type B_R = crate::BitReader;
 #[doc = "Field `B` writer - Memory access attribute"]
-pub type B_W<'a, const O: u8> = crate::BitWriter<'a, u32, MPU_RASR_A3_SPEC, bool, O>;
+pub type B_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `C` reader - Memory access attribute"]
-pub type C_R = crate::BitReader<bool>;
+pub type C_R = crate::BitReader;
 #[doc = "Field `C` writer - Memory access attribute"]
-pub type C_W<'a, const O: u8> = crate::BitWriter<'a, u32, MPU_RASR_A3_SPEC, bool, O>;
+pub type C_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `S` reader - Shareable bit"]
-pub type S_R = crate::BitReader<bool>;
+pub type S_R = crate::BitReader;
 #[doc = "Field `S` writer - Shareable bit"]
-pub type S_W<'a, const O: u8> = crate::BitWriter<'a, u32, MPU_RASR_A3_SPEC, bool, O>;
+pub type S_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TEX` reader - Memory access attribute"]
-pub type TEX_R = crate::FieldReader<u8, u8>;
+pub type TEX_R = crate::FieldReader;
 #[doc = "Field `TEX` writer - Memory access attribute"]
-pub type TEX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MPU_RASR_A3_SPEC, u8, u8, 3, O>;
+pub type TEX_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `AP` reader - Access permission field"]
-pub type AP_R = crate::FieldReader<u8, u8>;
+pub type AP_R = crate::FieldReader;
 #[doc = "Field `AP` writer - Access permission field"]
-pub type AP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MPU_RASR_A3_SPEC, u8, u8, 3, O>;
+pub type AP_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `XN` reader - Instruction access disable bit"]
 pub type XN_R = crate::BitReader<XN_A>;
 #[doc = "Instruction access disable bit\n\nValue on reset: 0"]
@@ -133,34 +108,37 @@ impl From<XN_A> for bool {
 impl XN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> XN_A {
+    pub const fn variant(&self) -> XN_A {
         match self.bits {
             false => XN_A::VALUE1,
             true => XN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "instruction fetches enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == XN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "instruction fetches disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == XN_A::VALUE2
     }
 }
 #[doc = "Field `XN` writer - Instruction access disable bit"]
-pub type XN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MPU_RASR_A3_SPEC, XN_A, O>;
-impl<'a, const O: u8> XN_W<'a, O> {
+pub type XN_W<'a, REG> = crate::BitWriter<'a, REG, XN_A>;
+impl<'a, REG> XN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "instruction fetches enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(XN_A::VALUE1)
     }
     #[doc = "instruction fetches disabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(XN_A::VALUE2)
     }
 }
@@ -215,76 +193,77 @@ impl W {
     #[doc = "Bit 0 - Region enable bit."]
     #[inline(always)]
     #[must_use]
-    pub fn enable(&mut self) -> ENABLE_W<0> {
-        ENABLE_W::new(self)
+    pub fn enable(&mut self) -> ENABLE_W<MPU_RASR_A3_SPEC> {
+        ENABLE_W::new(self, 0)
     }
     #[doc = "Bits 1:5 - MPU protection region size"]
     #[inline(always)]
     #[must_use]
-    pub fn size(&mut self) -> SIZE_W<1> {
-        SIZE_W::new(self)
+    pub fn size(&mut self) -> SIZE_W<MPU_RASR_A3_SPEC> {
+        SIZE_W::new(self, 1)
     }
     #[doc = "Bits 8:15 - Subregion disable bits"]
     #[inline(always)]
     #[must_use]
-    pub fn srd(&mut self) -> SRD_W<8> {
-        SRD_W::new(self)
+    pub fn srd(&mut self) -> SRD_W<MPU_RASR_A3_SPEC> {
+        SRD_W::new(self, 8)
     }
     #[doc = "Bit 16 - Memory access attribute"]
     #[inline(always)]
     #[must_use]
-    pub fn b(&mut self) -> B_W<16> {
-        B_W::new(self)
+    pub fn b(&mut self) -> B_W<MPU_RASR_A3_SPEC> {
+        B_W::new(self, 16)
     }
     #[doc = "Bit 17 - Memory access attribute"]
     #[inline(always)]
     #[must_use]
-    pub fn c(&mut self) -> C_W<17> {
-        C_W::new(self)
+    pub fn c(&mut self) -> C_W<MPU_RASR_A3_SPEC> {
+        C_W::new(self, 17)
     }
     #[doc = "Bit 18 - Shareable bit"]
     #[inline(always)]
     #[must_use]
-    pub fn s(&mut self) -> S_W<18> {
-        S_W::new(self)
+    pub fn s(&mut self) -> S_W<MPU_RASR_A3_SPEC> {
+        S_W::new(self, 18)
     }
     #[doc = "Bits 19:21 - Memory access attribute"]
     #[inline(always)]
     #[must_use]
-    pub fn tex(&mut self) -> TEX_W<19> {
-        TEX_W::new(self)
+    pub fn tex(&mut self) -> TEX_W<MPU_RASR_A3_SPEC> {
+        TEX_W::new(self, 19)
     }
     #[doc = "Bits 24:26 - Access permission field"]
     #[inline(always)]
     #[must_use]
-    pub fn ap(&mut self) -> AP_W<24> {
-        AP_W::new(self)
+    pub fn ap(&mut self) -> AP_W<MPU_RASR_A3_SPEC> {
+        AP_W::new(self, 24)
     }
     #[doc = "Bit 28 - Instruction access disable bit"]
     #[inline(always)]
     #[must_use]
-    pub fn xn(&mut self) -> XN_W<28> {
-        XN_W::new(self)
+    pub fn xn(&mut self) -> XN_W<MPU_RASR_A3_SPEC> {
+        XN_W::new(self, 28)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "MPU Region Attribute and Size Register A3\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mpu_rasr_a3](index.html) module"]
+#[doc = "MPU Region Attribute and Size Register A3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mpu_rasr_a3::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mpu_rasr_a3::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MPU_RASR_A3_SPEC;
 impl crate::RegisterSpec for MPU_RASR_A3_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mpu_rasr_a3::R](R) reader structure"]
-impl crate::Readable for MPU_RASR_A3_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mpu_rasr_a3::W](W) writer structure"]
+#[doc = "`read()` method returns [`mpu_rasr_a3::R`](R) reader structure"]
+impl crate::Readable for MPU_RASR_A3_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`mpu_rasr_a3::W`](W) writer structure"]
 impl crate::Writable for MPU_RASR_A3_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

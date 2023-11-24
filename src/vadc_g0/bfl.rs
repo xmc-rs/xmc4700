@@ -1,39 +1,7 @@
 #[doc = "Register `BFL` reader"]
-pub struct R(crate::R<BFL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<BFL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<BFL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<BFL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<BFL_SPEC>;
 #[doc = "Register `BFL` writer"]
-pub struct W(crate::W<BFL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<BFL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<BFL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<BFL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<BFL_SPEC>;
 #[doc = "Field `BFL0` reader - Boundary Flag 0"]
 pub type BFL0_R = crate::BitReader<BFL0_A>;
 #[doc = "Boundary Flag 0\n\nValue on reset: 0"]
@@ -53,18 +21,18 @@ impl From<BFL0_A> for bool {
 impl BFL0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BFL0_A {
+    pub const fn variant(&self) -> BFL0_A {
         match self.bits {
             false => BFL0_A::VALUE1,
             true => BFL0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Passive state: result has not yet crossed the activation boundary (see bitfield BFAy), or selected gate signal is inactive, or this boundary flag is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BFL0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Active state: result has crossed the activation boundary"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BFL0_A::VALUE2
@@ -89,18 +57,18 @@ impl From<BFL1_A> for bool {
 impl BFL1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BFL1_A {
+    pub const fn variant(&self) -> BFL1_A {
         match self.bits {
             false => BFL1_A::VALUE1,
             true => BFL1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Passive state: result has not yet crossed the activation boundary (see bitfield BFAy), or selected gate signal is inactive, or this boundary flag is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BFL1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Active state: result has crossed the activation boundary"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BFL1_A::VALUE2
@@ -125,18 +93,18 @@ impl From<BFL2_A> for bool {
 impl BFL2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BFL2_A {
+    pub const fn variant(&self) -> BFL2_A {
         match self.bits {
             false => BFL2_A::VALUE1,
             true => BFL2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Passive state: result has not yet crossed the activation boundary (see bitfield BFAy), or selected gate signal is inactive, or this boundary flag is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BFL2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Active state: result has crossed the activation boundary"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BFL2_A::VALUE2
@@ -161,18 +129,18 @@ impl From<BFL3_A> for bool {
 impl BFL3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BFL3_A {
+    pub const fn variant(&self) -> BFL3_A {
         match self.bits {
             false => BFL3_A::VALUE1,
             true => BFL3_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Passive state: result has not yet crossed the activation boundary (see bitfield BFAy), or selected gate signal is inactive, or this boundary flag is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BFL3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Active state: result has crossed the activation boundary"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BFL3_A::VALUE2
@@ -197,34 +165,37 @@ impl From<BFA0_A> for bool {
 impl BFA0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BFA0_A {
+    pub const fn variant(&self) -> BFA0_A {
         match self.bits {
             false => BFA0_A::VALUE1,
             true => BFA0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Set boundary flag BFLy if result is above the defined band or compare value, clear if below"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BFA0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Set boundary flag BFLy if result is below the defined band or compare value, clear if above"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BFA0_A::VALUE2
     }
 }
 #[doc = "Field `BFA0` writer - Boundary Flag 0 Activation Select"]
-pub type BFA0_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFL_SPEC, BFA0_A, O>;
-impl<'a, const O: u8> BFA0_W<'a, O> {
+pub type BFA0_W<'a, REG> = crate::BitWriter<'a, REG, BFA0_A>;
+impl<'a, REG> BFA0_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Set boundary flag BFLy if result is above the defined band or compare value, clear if below"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BFA0_A::VALUE1)
     }
     #[doc = "Set boundary flag BFLy if result is below the defined band or compare value, clear if above"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BFA0_A::VALUE2)
     }
 }
@@ -247,34 +218,37 @@ impl From<BFA1_A> for bool {
 impl BFA1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BFA1_A {
+    pub const fn variant(&self) -> BFA1_A {
         match self.bits {
             false => BFA1_A::VALUE1,
             true => BFA1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Set boundary flag BFLy if result is above the defined band or compare value, clear if below"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BFA1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Set boundary flag BFLy if result is below the defined band or compare value, clear if above"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BFA1_A::VALUE2
     }
 }
 #[doc = "Field `BFA1` writer - Boundary Flag 1 Activation Select"]
-pub type BFA1_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFL_SPEC, BFA1_A, O>;
-impl<'a, const O: u8> BFA1_W<'a, O> {
+pub type BFA1_W<'a, REG> = crate::BitWriter<'a, REG, BFA1_A>;
+impl<'a, REG> BFA1_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Set boundary flag BFLy if result is above the defined band or compare value, clear if below"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BFA1_A::VALUE1)
     }
     #[doc = "Set boundary flag BFLy if result is below the defined band or compare value, clear if above"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BFA1_A::VALUE2)
     }
 }
@@ -297,34 +271,37 @@ impl From<BFA2_A> for bool {
 impl BFA2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BFA2_A {
+    pub const fn variant(&self) -> BFA2_A {
         match self.bits {
             false => BFA2_A::VALUE1,
             true => BFA2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Set boundary flag BFLy if result is above the defined band or compare value, clear if below"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BFA2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Set boundary flag BFLy if result is below the defined band or compare value, clear if above"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BFA2_A::VALUE2
     }
 }
 #[doc = "Field `BFA2` writer - Boundary Flag 2 Activation Select"]
-pub type BFA2_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFL_SPEC, BFA2_A, O>;
-impl<'a, const O: u8> BFA2_W<'a, O> {
+pub type BFA2_W<'a, REG> = crate::BitWriter<'a, REG, BFA2_A>;
+impl<'a, REG> BFA2_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Set boundary flag BFLy if result is above the defined band or compare value, clear if below"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BFA2_A::VALUE1)
     }
     #[doc = "Set boundary flag BFLy if result is below the defined band or compare value, clear if above"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BFA2_A::VALUE2)
     }
 }
@@ -347,34 +324,37 @@ impl From<BFA3_A> for bool {
 impl BFA3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BFA3_A {
+    pub const fn variant(&self) -> BFA3_A {
         match self.bits {
             false => BFA3_A::VALUE1,
             true => BFA3_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Set boundary flag BFLy if result is above the defined band or compare value, clear if below"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BFA3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Set boundary flag BFLy if result is below the defined band or compare value, clear if above"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BFA3_A::VALUE2
     }
 }
 #[doc = "Field `BFA3` writer - Boundary Flag 3 Activation Select"]
-pub type BFA3_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFL_SPEC, BFA3_A, O>;
-impl<'a, const O: u8> BFA3_W<'a, O> {
+pub type BFA3_W<'a, REG> = crate::BitWriter<'a, REG, BFA3_A>;
+impl<'a, REG> BFA3_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Set boundary flag BFLy if result is above the defined band or compare value, clear if below"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BFA3_A::VALUE1)
     }
     #[doc = "Set boundary flag BFLy if result is below the defined band or compare value, clear if above"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BFA3_A::VALUE2)
     }
 }
@@ -397,34 +377,37 @@ impl From<BFI0_A> for bool {
 impl BFI0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BFI0_A {
+    pub const fn variant(&self) -> BFI0_A {
         match self.bits {
             false => BFI0_A::VALUE1,
             true => BFI0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Use BFLy directly"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BFI0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Invert value and use BFLy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BFI0_A::VALUE2
     }
 }
 #[doc = "Field `BFI0` writer - Boundary Flag 0 Inversion Control"]
-pub type BFI0_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFL_SPEC, BFI0_A, O>;
-impl<'a, const O: u8> BFI0_W<'a, O> {
+pub type BFI0_W<'a, REG> = crate::BitWriter<'a, REG, BFI0_A>;
+impl<'a, REG> BFI0_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Use BFLy directly"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BFI0_A::VALUE1)
     }
     #[doc = "Invert value and use BFLy"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BFI0_A::VALUE2)
     }
 }
@@ -447,34 +430,37 @@ impl From<BFI1_A> for bool {
 impl BFI1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BFI1_A {
+    pub const fn variant(&self) -> BFI1_A {
         match self.bits {
             false => BFI1_A::VALUE1,
             true => BFI1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Use BFLy directly"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BFI1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Invert value and use BFLy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BFI1_A::VALUE2
     }
 }
 #[doc = "Field `BFI1` writer - Boundary Flag 1 Inversion Control"]
-pub type BFI1_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFL_SPEC, BFI1_A, O>;
-impl<'a, const O: u8> BFI1_W<'a, O> {
+pub type BFI1_W<'a, REG> = crate::BitWriter<'a, REG, BFI1_A>;
+impl<'a, REG> BFI1_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Use BFLy directly"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BFI1_A::VALUE1)
     }
     #[doc = "Invert value and use BFLy"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BFI1_A::VALUE2)
     }
 }
@@ -497,34 +483,37 @@ impl From<BFI2_A> for bool {
 impl BFI2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BFI2_A {
+    pub const fn variant(&self) -> BFI2_A {
         match self.bits {
             false => BFI2_A::VALUE1,
             true => BFI2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Use BFLy directly"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BFI2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Invert value and use BFLy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BFI2_A::VALUE2
     }
 }
 #[doc = "Field `BFI2` writer - Boundary Flag 2 Inversion Control"]
-pub type BFI2_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFL_SPEC, BFI2_A, O>;
-impl<'a, const O: u8> BFI2_W<'a, O> {
+pub type BFI2_W<'a, REG> = crate::BitWriter<'a, REG, BFI2_A>;
+impl<'a, REG> BFI2_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Use BFLy directly"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BFI2_A::VALUE1)
     }
     #[doc = "Invert value and use BFLy"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BFI2_A::VALUE2)
     }
 }
@@ -547,34 +536,37 @@ impl From<BFI3_A> for bool {
 impl BFI3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BFI3_A {
+    pub const fn variant(&self) -> BFI3_A {
         match self.bits {
             false => BFI3_A::VALUE1,
             true => BFI3_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Use BFLy directly"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BFI3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Invert value and use BFLy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BFI3_A::VALUE2
     }
 }
 #[doc = "Field `BFI3` writer - Boundary Flag 3 Inversion Control"]
-pub type BFI3_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFL_SPEC, BFI3_A, O>;
-impl<'a, const O: u8> BFI3_W<'a, O> {
+pub type BFI3_W<'a, REG> = crate::BitWriter<'a, REG, BFI3_A>;
+impl<'a, REG> BFI3_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Use BFLy directly"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BFI3_A::VALUE1)
     }
     #[doc = "Invert value and use BFLy"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BFI3_A::VALUE2)
     }
 }
@@ -644,70 +636,71 @@ impl W {
     #[doc = "Bit 8 - Boundary Flag 0 Activation Select"]
     #[inline(always)]
     #[must_use]
-    pub fn bfa0(&mut self) -> BFA0_W<8> {
-        BFA0_W::new(self)
+    pub fn bfa0(&mut self) -> BFA0_W<BFL_SPEC> {
+        BFA0_W::new(self, 8)
     }
     #[doc = "Bit 9 - Boundary Flag 1 Activation Select"]
     #[inline(always)]
     #[must_use]
-    pub fn bfa1(&mut self) -> BFA1_W<9> {
-        BFA1_W::new(self)
+    pub fn bfa1(&mut self) -> BFA1_W<BFL_SPEC> {
+        BFA1_W::new(self, 9)
     }
     #[doc = "Bit 10 - Boundary Flag 2 Activation Select"]
     #[inline(always)]
     #[must_use]
-    pub fn bfa2(&mut self) -> BFA2_W<10> {
-        BFA2_W::new(self)
+    pub fn bfa2(&mut self) -> BFA2_W<BFL_SPEC> {
+        BFA2_W::new(self, 10)
     }
     #[doc = "Bit 11 - Boundary Flag 3 Activation Select"]
     #[inline(always)]
     #[must_use]
-    pub fn bfa3(&mut self) -> BFA3_W<11> {
-        BFA3_W::new(self)
+    pub fn bfa3(&mut self) -> BFA3_W<BFL_SPEC> {
+        BFA3_W::new(self, 11)
     }
     #[doc = "Bit 16 - Boundary Flag 0 Inversion Control"]
     #[inline(always)]
     #[must_use]
-    pub fn bfi0(&mut self) -> BFI0_W<16> {
-        BFI0_W::new(self)
+    pub fn bfi0(&mut self) -> BFI0_W<BFL_SPEC> {
+        BFI0_W::new(self, 16)
     }
     #[doc = "Bit 17 - Boundary Flag 1 Inversion Control"]
     #[inline(always)]
     #[must_use]
-    pub fn bfi1(&mut self) -> BFI1_W<17> {
-        BFI1_W::new(self)
+    pub fn bfi1(&mut self) -> BFI1_W<BFL_SPEC> {
+        BFI1_W::new(self, 17)
     }
     #[doc = "Bit 18 - Boundary Flag 2 Inversion Control"]
     #[inline(always)]
     #[must_use]
-    pub fn bfi2(&mut self) -> BFI2_W<18> {
-        BFI2_W::new(self)
+    pub fn bfi2(&mut self) -> BFI2_W<BFL_SPEC> {
+        BFI2_W::new(self, 18)
     }
     #[doc = "Bit 19 - Boundary Flag 3 Inversion Control"]
     #[inline(always)]
     #[must_use]
-    pub fn bfi3(&mut self) -> BFI3_W<19> {
-        BFI3_W::new(self)
+    pub fn bfi3(&mut self) -> BFI3_W<BFL_SPEC> {
+        BFI3_W::new(self, 19)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Boundary Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bfl](index.html) module"]
+#[doc = "Boundary Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`bfl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`bfl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct BFL_SPEC;
 impl crate::RegisterSpec for BFL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [bfl::R](R) reader structure"]
-impl crate::Readable for BFL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [bfl::W](W) writer structure"]
+#[doc = "`read()` method returns [`bfl::R`](R) reader structure"]
+impl crate::Readable for BFL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`bfl::W`](W) writer structure"]
 impl crate::Writable for BFL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,18 +1,5 @@
 #[doc = "Register `TCST` reader"]
-pub struct R(crate::R<TCST_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TCST_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TCST_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TCST_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TCST_SPEC>;
 #[doc = "Field `TRB` reader - Timer Run Bit"]
 pub type TRB_R = crate::BitReader<TRB_A>;
 #[doc = "Timer Run Bit\n\nValue on reset: 0"]
@@ -32,18 +19,18 @@ impl From<TRB_A> for bool {
 impl TRB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TRB_A {
+    pub const fn variant(&self) -> TRB_A {
         match self.bits {
             false => TRB_A::VALUE1,
             true => TRB_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Timer is stopped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TRB_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Timer is running"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TRB_A::VALUE2
@@ -68,18 +55,18 @@ impl From<CDIR_A> for bool {
 impl CDIR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CDIR_A {
+    pub const fn variant(&self) -> CDIR_A {
         match self.bits {
             false => CDIR_A::VALUE1,
             true => CDIR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Timer is counting up"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CDIR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Timer is counting down"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CDIR_A::VALUE2
@@ -97,15 +84,13 @@ impl R {
         CDIR_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
-#[doc = "Slice Timer Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tcst](index.html) module"]
+#[doc = "Slice Timer Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tcst::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TCST_SPEC;
 impl crate::RegisterSpec for TCST_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [tcst::R](R) reader structure"]
-impl crate::Readable for TCST_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`tcst::R`](R) reader structure"]
+impl crate::Readable for TCST_SPEC {}
 #[doc = "`reset()` method sets TCST to value 0"]
 impl crate::Resettable for TCST_SPEC {
     const RESET_VALUE: Self::Ux = 0;

@@ -1,39 +1,7 @@
 #[doc = "Register `EN_INT_SIGNAL_NORM` reader"]
-pub struct R(crate::R<EN_INT_SIGNAL_NORM_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EN_INT_SIGNAL_NORM_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EN_INT_SIGNAL_NORM_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EN_INT_SIGNAL_NORM_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EN_INT_SIGNAL_NORM_SPEC>;
 #[doc = "Register `EN_INT_SIGNAL_NORM` writer"]
-pub struct W(crate::W<EN_INT_SIGNAL_NORM_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EN_INT_SIGNAL_NORM_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EN_INT_SIGNAL_NORM_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EN_INT_SIGNAL_NORM_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<EN_INT_SIGNAL_NORM_SPEC>;
 #[doc = "Field `CMD_COMPLETE_EN` reader - Command Complete Signal Enable"]
 pub type CMD_COMPLETE_EN_R = crate::BitReader<CMD_COMPLETE_EN_A>;
 #[doc = "Command Complete Signal Enable\n\nValue on reset: 0"]
@@ -53,34 +21,37 @@ impl From<CMD_COMPLETE_EN_A> for bool {
 impl CMD_COMPLETE_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMD_COMPLETE_EN_A {
+    pub const fn variant(&self) -> CMD_COMPLETE_EN_A {
         match self.bits {
             false => CMD_COMPLETE_EN_A::VALUE1,
             true => CMD_COMPLETE_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CMD_COMPLETE_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CMD_COMPLETE_EN_A::VALUE2
     }
 }
 #[doc = "Field `CMD_COMPLETE_EN` writer - Command Complete Signal Enable"]
-pub type CMD_COMPLETE_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_SIGNAL_NORM_SPEC, CMD_COMPLETE_EN_A, O>;
-impl<'a, const O: u8> CMD_COMPLETE_EN_W<'a, O> {
+pub type CMD_COMPLETE_EN_W<'a, REG> = crate::BitWriter<'a, REG, CMD_COMPLETE_EN_A>;
+impl<'a, REG> CMD_COMPLETE_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CMD_COMPLETE_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CMD_COMPLETE_EN_A::VALUE2)
     }
 }
@@ -103,34 +74,37 @@ impl From<TX_COMPLETE_EN_A> for bool {
 impl TX_COMPLETE_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_COMPLETE_EN_A {
+    pub const fn variant(&self) -> TX_COMPLETE_EN_A {
         match self.bits {
             false => TX_COMPLETE_EN_A::VALUE1,
             true => TX_COMPLETE_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TX_COMPLETE_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TX_COMPLETE_EN_A::VALUE2
     }
 }
 #[doc = "Field `TX_COMPLETE_EN` writer - Transfer Complete Signal Enable"]
-pub type TX_COMPLETE_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_SIGNAL_NORM_SPEC, TX_COMPLETE_EN_A, O>;
-impl<'a, const O: u8> TX_COMPLETE_EN_W<'a, O> {
+pub type TX_COMPLETE_EN_W<'a, REG> = crate::BitWriter<'a, REG, TX_COMPLETE_EN_A>;
+impl<'a, REG> TX_COMPLETE_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TX_COMPLETE_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TX_COMPLETE_EN_A::VALUE2)
     }
 }
@@ -153,34 +127,37 @@ impl From<BLOCK_GAP_EVENT_EN_A> for bool {
 impl BLOCK_GAP_EVENT_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BLOCK_GAP_EVENT_EN_A {
+    pub const fn variant(&self) -> BLOCK_GAP_EVENT_EN_A {
         match self.bits {
             false => BLOCK_GAP_EVENT_EN_A::VALUE1,
             true => BLOCK_GAP_EVENT_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BLOCK_GAP_EVENT_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BLOCK_GAP_EVENT_EN_A::VALUE2
     }
 }
 #[doc = "Field `BLOCK_GAP_EVENT_EN` writer - Block Gap Event Signal Enable"]
-pub type BLOCK_GAP_EVENT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_SIGNAL_NORM_SPEC, BLOCK_GAP_EVENT_EN_A, O>;
-impl<'a, const O: u8> BLOCK_GAP_EVENT_EN_W<'a, O> {
+pub type BLOCK_GAP_EVENT_EN_W<'a, REG> = crate::BitWriter<'a, REG, BLOCK_GAP_EVENT_EN_A>;
+impl<'a, REG> BLOCK_GAP_EVENT_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BLOCK_GAP_EVENT_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BLOCK_GAP_EVENT_EN_A::VALUE2)
     }
 }
@@ -203,34 +180,37 @@ impl From<BUFF_WRITE_READY_EN_A> for bool {
 impl BUFF_WRITE_READY_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BUFF_WRITE_READY_EN_A {
+    pub const fn variant(&self) -> BUFF_WRITE_READY_EN_A {
         match self.bits {
             false => BUFF_WRITE_READY_EN_A::VALUE1,
             true => BUFF_WRITE_READY_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BUFF_WRITE_READY_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BUFF_WRITE_READY_EN_A::VALUE2
     }
 }
 #[doc = "Field `BUFF_WRITE_READY_EN` writer - Buffer Write Ready Signal Enable"]
-pub type BUFF_WRITE_READY_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_SIGNAL_NORM_SPEC, BUFF_WRITE_READY_EN_A, O>;
-impl<'a, const O: u8> BUFF_WRITE_READY_EN_W<'a, O> {
+pub type BUFF_WRITE_READY_EN_W<'a, REG> = crate::BitWriter<'a, REG, BUFF_WRITE_READY_EN_A>;
+impl<'a, REG> BUFF_WRITE_READY_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BUFF_WRITE_READY_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BUFF_WRITE_READY_EN_A::VALUE2)
     }
 }
@@ -253,34 +233,37 @@ impl From<BUFF_READ_READY_EN_A> for bool {
 impl BUFF_READ_READY_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BUFF_READ_READY_EN_A {
+    pub const fn variant(&self) -> BUFF_READ_READY_EN_A {
         match self.bits {
             false => BUFF_READ_READY_EN_A::VALUE1,
             true => BUFF_READ_READY_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BUFF_READ_READY_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BUFF_READ_READY_EN_A::VALUE2
     }
 }
 #[doc = "Field `BUFF_READ_READY_EN` writer - Buffer Read Ready Signal Enable"]
-pub type BUFF_READ_READY_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_SIGNAL_NORM_SPEC, BUFF_READ_READY_EN_A, O>;
-impl<'a, const O: u8> BUFF_READ_READY_EN_W<'a, O> {
+pub type BUFF_READ_READY_EN_W<'a, REG> = crate::BitWriter<'a, REG, BUFF_READ_READY_EN_A>;
+impl<'a, REG> BUFF_READ_READY_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BUFF_READ_READY_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BUFF_READ_READY_EN_A::VALUE2)
     }
 }
@@ -303,34 +286,37 @@ impl From<CARD_INS_EN_A> for bool {
 impl CARD_INS_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CARD_INS_EN_A {
+    pub const fn variant(&self) -> CARD_INS_EN_A {
         match self.bits {
             false => CARD_INS_EN_A::VALUE1,
             true => CARD_INS_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CARD_INS_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CARD_INS_EN_A::VALUE2
     }
 }
 #[doc = "Field `CARD_INS_EN` writer - Card Insertion Signal Enable"]
-pub type CARD_INS_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_SIGNAL_NORM_SPEC, CARD_INS_EN_A, O>;
-impl<'a, const O: u8> CARD_INS_EN_W<'a, O> {
+pub type CARD_INS_EN_W<'a, REG> = crate::BitWriter<'a, REG, CARD_INS_EN_A>;
+impl<'a, REG> CARD_INS_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CARD_INS_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CARD_INS_EN_A::VALUE2)
     }
 }
@@ -353,34 +339,37 @@ impl From<CARD_REMOVAL_EN_A> for bool {
 impl CARD_REMOVAL_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CARD_REMOVAL_EN_A {
+    pub const fn variant(&self) -> CARD_REMOVAL_EN_A {
         match self.bits {
             false => CARD_REMOVAL_EN_A::VALUE1,
             true => CARD_REMOVAL_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CARD_REMOVAL_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CARD_REMOVAL_EN_A::VALUE2
     }
 }
 #[doc = "Field `CARD_REMOVAL_EN` writer - Card Removal Signal Enable"]
-pub type CARD_REMOVAL_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_SIGNAL_NORM_SPEC, CARD_REMOVAL_EN_A, O>;
-impl<'a, const O: u8> CARD_REMOVAL_EN_W<'a, O> {
+pub type CARD_REMOVAL_EN_W<'a, REG> = crate::BitWriter<'a, REG, CARD_REMOVAL_EN_A>;
+impl<'a, REG> CARD_REMOVAL_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CARD_REMOVAL_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CARD_REMOVAL_EN_A::VALUE2)
     }
 }
@@ -403,39 +392,42 @@ impl From<CARD_INT_EN_A> for bool {
 impl CARD_INT_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CARD_INT_EN_A {
+    pub const fn variant(&self) -> CARD_INT_EN_A {
         match self.bits {
             false => CARD_INT_EN_A::VALUE1,
             true => CARD_INT_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CARD_INT_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CARD_INT_EN_A::VALUE2
     }
 }
 #[doc = "Field `CARD_INT_EN` writer - Card Interrupt Signal Enable"]
-pub type CARD_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_SIGNAL_NORM_SPEC, CARD_INT_EN_A, O>;
-impl<'a, const O: u8> CARD_INT_EN_W<'a, O> {
+pub type CARD_INT_EN_W<'a, REG> = crate::BitWriter<'a, REG, CARD_INT_EN_A>;
+impl<'a, REG> CARD_INT_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CARD_INT_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CARD_INT_EN_A::VALUE2)
     }
 }
 #[doc = "Field `FIXED_TO_0` reader - Fixed to 0"]
-pub type FIXED_TO_0_R = crate::BitReader<bool>;
+pub type FIXED_TO_0_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Command Complete Signal Enable"]
     #[inline(always)]
@@ -487,70 +479,71 @@ impl W {
     #[doc = "Bit 0 - Command Complete Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_complete_en(&mut self) -> CMD_COMPLETE_EN_W<0> {
-        CMD_COMPLETE_EN_W::new(self)
+    pub fn cmd_complete_en(&mut self) -> CMD_COMPLETE_EN_W<EN_INT_SIGNAL_NORM_SPEC> {
+        CMD_COMPLETE_EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Transfer Complete Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_complete_en(&mut self) -> TX_COMPLETE_EN_W<1> {
-        TX_COMPLETE_EN_W::new(self)
+    pub fn tx_complete_en(&mut self) -> TX_COMPLETE_EN_W<EN_INT_SIGNAL_NORM_SPEC> {
+        TX_COMPLETE_EN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Block Gap Event Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn block_gap_event_en(&mut self) -> BLOCK_GAP_EVENT_EN_W<2> {
-        BLOCK_GAP_EVENT_EN_W::new(self)
+    pub fn block_gap_event_en(&mut self) -> BLOCK_GAP_EVENT_EN_W<EN_INT_SIGNAL_NORM_SPEC> {
+        BLOCK_GAP_EVENT_EN_W::new(self, 2)
     }
     #[doc = "Bit 4 - Buffer Write Ready Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn buff_write_ready_en(&mut self) -> BUFF_WRITE_READY_EN_W<4> {
-        BUFF_WRITE_READY_EN_W::new(self)
+    pub fn buff_write_ready_en(&mut self) -> BUFF_WRITE_READY_EN_W<EN_INT_SIGNAL_NORM_SPEC> {
+        BUFF_WRITE_READY_EN_W::new(self, 4)
     }
     #[doc = "Bit 5 - Buffer Read Ready Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn buff_read_ready_en(&mut self) -> BUFF_READ_READY_EN_W<5> {
-        BUFF_READ_READY_EN_W::new(self)
+    pub fn buff_read_ready_en(&mut self) -> BUFF_READ_READY_EN_W<EN_INT_SIGNAL_NORM_SPEC> {
+        BUFF_READ_READY_EN_W::new(self, 5)
     }
     #[doc = "Bit 6 - Card Insertion Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn card_ins_en(&mut self) -> CARD_INS_EN_W<6> {
-        CARD_INS_EN_W::new(self)
+    pub fn card_ins_en(&mut self) -> CARD_INS_EN_W<EN_INT_SIGNAL_NORM_SPEC> {
+        CARD_INS_EN_W::new(self, 6)
     }
     #[doc = "Bit 7 - Card Removal Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn card_removal_en(&mut self) -> CARD_REMOVAL_EN_W<7> {
-        CARD_REMOVAL_EN_W::new(self)
+    pub fn card_removal_en(&mut self) -> CARD_REMOVAL_EN_W<EN_INT_SIGNAL_NORM_SPEC> {
+        CARD_REMOVAL_EN_W::new(self, 7)
     }
     #[doc = "Bit 8 - Card Interrupt Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn card_int_en(&mut self) -> CARD_INT_EN_W<8> {
-        CARD_INT_EN_W::new(self)
+    pub fn card_int_en(&mut self) -> CARD_INT_EN_W<EN_INT_SIGNAL_NORM_SPEC> {
+        CARD_INT_EN_W::new(self, 8)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Normal Interrupt Signal Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [en_int_signal_norm](index.html) module"]
+#[doc = "Normal Interrupt Signal Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`en_int_signal_norm::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`en_int_signal_norm::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EN_INT_SIGNAL_NORM_SPEC;
 impl crate::RegisterSpec for EN_INT_SIGNAL_NORM_SPEC {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [en_int_signal_norm::R](R) reader structure"]
-impl crate::Readable for EN_INT_SIGNAL_NORM_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [en_int_signal_norm::W](W) writer structure"]
+#[doc = "`read()` method returns [`en_int_signal_norm::R`](R) reader structure"]
+impl crate::Readable for EN_INT_SIGNAL_NORM_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`en_int_signal_norm::W`](W) writer structure"]
 impl crate::Writable for EN_INT_SIGNAL_NORM_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

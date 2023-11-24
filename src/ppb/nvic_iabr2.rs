@@ -1,41 +1,9 @@
 #[doc = "Register `NVIC_IABR2` reader"]
-pub struct R(crate::R<NVIC_IABR2_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<NVIC_IABR2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<NVIC_IABR2_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<NVIC_IABR2_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<NVIC_IABR2_SPEC>;
 #[doc = "Register `NVIC_IABR2` writer"]
-pub struct W(crate::W<NVIC_IABR2_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<NVIC_IABR2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<NVIC_IABR2_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<NVIC_IABR2_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<NVIC_IABR2_SPEC>;
 #[doc = "Field `ACTIVE` reader - Interrupt active flags:"]
-pub type ACTIVE_R = crate::FieldReader<u32, ACTIVE_A>;
+pub type ACTIVE_R = crate::FieldReader<ACTIVE_A>;
 #[doc = "Interrupt active flags:\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
@@ -51,38 +19,45 @@ impl From<ACTIVE_A> for u32 {
         variant as _
     }
 }
+impl crate::FieldSpec for ACTIVE_A {
+    type Ux = u32;
+}
 impl ACTIVE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ACTIVE_A> {
+    pub const fn variant(&self) -> Option<ACTIVE_A> {
         match self.bits {
             0 => Some(ACTIVE_A::VALUE1),
             1 => Some(ACTIVE_A::VALUE2),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "interrupt not active"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ACTIVE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "interrupt active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ACTIVE_A::VALUE2
     }
 }
 #[doc = "Field `ACTIVE` writer - Interrupt active flags:"]
-pub type ACTIVE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NVIC_IABR2_SPEC, u32, ACTIVE_A, 32, O>;
-impl<'a, const O: u8> ACTIVE_W<'a, O> {
+pub type ACTIVE_W<'a, REG> = crate::FieldWriter<'a, REG, 32, ACTIVE_A>;
+impl<'a, REG> ACTIVE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u32>,
+{
     #[doc = "interrupt not active"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ACTIVE_A::VALUE1)
     }
     #[doc = "interrupt active"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ACTIVE_A::VALUE2)
     }
 }
@@ -97,28 +72,29 @@ impl W {
     #[doc = "Bits 0:31 - Interrupt active flags:"]
     #[inline(always)]
     #[must_use]
-    pub fn active(&mut self) -> ACTIVE_W<0> {
-        ACTIVE_W::new(self)
+    pub fn active(&mut self) -> ACTIVE_W<NVIC_IABR2_SPEC> {
+        ACTIVE_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Interrupt Active Bit Register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [nvic_iabr2](index.html) module"]
+#[doc = "Interrupt Active Bit Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`nvic_iabr2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`nvic_iabr2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct NVIC_IABR2_SPEC;
 impl crate::RegisterSpec for NVIC_IABR2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [nvic_iabr2::R](R) reader structure"]
-impl crate::Readable for NVIC_IABR2_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [nvic_iabr2::W](W) writer structure"]
+#[doc = "`read()` method returns [`nvic_iabr2::R`](R) reader structure"]
+impl crate::Readable for NVIC_IABR2_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`nvic_iabr2::W`](W) writer structure"]
 impl crate::Writable for NVIC_IABR2_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,39 +1,7 @@
 #[doc = "Register `USBPLLCON` reader"]
-pub struct R(crate::R<USBPLLCON_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<USBPLLCON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<USBPLLCON_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<USBPLLCON_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<USBPLLCON_SPEC>;
 #[doc = "Register `USBPLLCON` writer"]
-pub struct W(crate::W<USBPLLCON_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<USBPLLCON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<USBPLLCON_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<USBPLLCON_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<USBPLLCON_SPEC>;
 #[doc = "Field `VCOBYP` reader - VCO Bypass"]
 pub type VCOBYP_R = crate::BitReader<VCOBYP_A>;
 #[doc = "VCO Bypass\n\nValue on reset: 1"]
@@ -53,34 +21,37 @@ impl From<VCOBYP_A> for bool {
 impl VCOBYP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VCOBYP_A {
+    pub const fn variant(&self) -> VCOBYP_A {
         match self.bits {
             false => VCOBYP_A::VALUE1,
             true => VCOBYP_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Normal operation, VCO is not bypassed"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VCOBYP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Prescaler Mode, VCO is bypassed"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VCOBYP_A::VALUE2
     }
 }
 #[doc = "Field `VCOBYP` writer - VCO Bypass"]
-pub type VCOBYP_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBPLLCON_SPEC, VCOBYP_A, O>;
-impl<'a, const O: u8> VCOBYP_W<'a, O> {
+pub type VCOBYP_W<'a, REG> = crate::BitWriter<'a, REG, VCOBYP_A>;
+impl<'a, REG> VCOBYP_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal operation, VCO is not bypassed"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VCOBYP_A::VALUE1)
     }
     #[doc = "Prescaler Mode, VCO is bypassed"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VCOBYP_A::VALUE2)
     }
 }
@@ -103,34 +74,37 @@ impl From<VCOPWD_A> for bool {
 impl VCOPWD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VCOPWD_A {
+    pub const fn variant(&self) -> VCOPWD_A {
         match self.bits {
             false => VCOPWD_A::VALUE1,
             true => VCOPWD_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Normal behavior"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VCOPWD_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The VCO is put into a Power Saving Mode"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VCOPWD_A::VALUE2
     }
 }
 #[doc = "Field `VCOPWD` writer - VCO Power Saving Mode"]
-pub type VCOPWD_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBPLLCON_SPEC, VCOPWD_A, O>;
-impl<'a, const O: u8> VCOPWD_W<'a, O> {
+pub type VCOPWD_W<'a, REG> = crate::BitWriter<'a, REG, VCOPWD_A>;
+impl<'a, REG> VCOPWD_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal behavior"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VCOPWD_A::VALUE1)
     }
     #[doc = "The VCO is put into a Power Saving Mode"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VCOPWD_A::VALUE2)
     }
 }
@@ -153,34 +127,37 @@ impl From<VCOTR_A> for bool {
 impl VCOTR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VCOTR_A {
+    pub const fn variant(&self) -> VCOTR_A {
         match self.bits {
             false => VCOTR_A::VALUE1,
             true => VCOTR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "VCO bandwidth is operating in the normal range. VCO output frequency is between 260 and 520 MHz for a input frequency between 8 and 16 MHz."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VCOTR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "VCO bandwidth is operating in the test range. VCO output frequency is between 260 and 520 MHz for a input frequency between 8 and 16 MHz."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VCOTR_A::VALUE2
     }
 }
 #[doc = "Field `VCOTR` writer - VCO Trim Control"]
-pub type VCOTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBPLLCON_SPEC, VCOTR_A, O>;
-impl<'a, const O: u8> VCOTR_W<'a, O> {
+pub type VCOTR_W<'a, REG> = crate::BitWriter<'a, REG, VCOTR_A>;
+impl<'a, REG> VCOTR_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "VCO bandwidth is operating in the normal range. VCO output frequency is between 260 and 520 MHz for a input frequency between 8 and 16 MHz."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VCOTR_A::VALUE1)
     }
     #[doc = "VCO bandwidth is operating in the test range. VCO output frequency is between 260 and 520 MHz for a input frequency between 8 and 16 MHz."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VCOTR_A::VALUE2)
     }
 }
@@ -203,34 +180,37 @@ impl From<FINDIS_A> for bool {
 impl FINDIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FINDIS_A {
+    pub const fn variant(&self) -> FINDIS_A {
         match self.bits {
             false => FINDIS_A::VALUE1,
             true => FINDIS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Connect oscillator to the VCO part"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FINDIS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Disconnect oscillator from the VCO part."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FINDIS_A::VALUE2
     }
 }
 #[doc = "Field `FINDIS` writer - Disconnect Oscillator from VCO"]
-pub type FINDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBPLLCON_SPEC, FINDIS_A, O>;
-impl<'a, const O: u8> FINDIS_W<'a, O> {
+pub type FINDIS_W<'a, REG> = crate::BitWriter<'a, REG, FINDIS_A>;
+impl<'a, REG> FINDIS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Connect oscillator to the VCO part"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(FINDIS_A::VALUE1)
     }
     #[doc = "Disconnect oscillator from the VCO part."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(FINDIS_A::VALUE2)
     }
 }
@@ -253,41 +233,44 @@ impl From<OSCDISCDIS_A> for bool {
 impl OSCDISCDIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OSCDISCDIS_A {
+    pub const fn variant(&self) -> OSCDISCDIS_A {
         match self.bits {
             false => OSCDISCDIS_A::VALUE1,
             true => OSCDISCDIS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "In case of a PLL loss-of-lock bit FINDIS is set"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == OSCDISCDIS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "In case of a PLL loss-of-lock bit FINDIS is cleared"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == OSCDISCDIS_A::VALUE2
     }
 }
 #[doc = "Field `OSCDISCDIS` writer - Oscillator Disconnect Disable"]
-pub type OSCDISCDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBPLLCON_SPEC, OSCDISCDIS_A, O>;
-impl<'a, const O: u8> OSCDISCDIS_W<'a, O> {
+pub type OSCDISCDIS_W<'a, REG> = crate::BitWriter<'a, REG, OSCDISCDIS_A>;
+impl<'a, REG> OSCDISCDIS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "In case of a PLL loss-of-lock bit FINDIS is set"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(OSCDISCDIS_A::VALUE1)
     }
     #[doc = "In case of a PLL loss-of-lock bit FINDIS is cleared"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(OSCDISCDIS_A::VALUE2)
     }
 }
 #[doc = "Field `NDIV` reader - N-Divider Value"]
-pub type NDIV_R = crate::FieldReader<u8, u8>;
+pub type NDIV_R = crate::FieldReader;
 #[doc = "Field `NDIV` writer - N-Divider Value"]
-pub type NDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, USBPLLCON_SPEC, u8, u8, 7, O>;
+pub type NDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `PLLPWD` reader - PLL Power Saving Mode"]
 pub type PLLPWD_R = crate::BitReader<PLLPWD_A>;
 #[doc = "PLL Power Saving Mode\n\nValue on reset: 1"]
@@ -307,43 +290,46 @@ impl From<PLLPWD_A> for bool {
 impl PLLPWD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PLLPWD_A {
+    pub const fn variant(&self) -> PLLPWD_A {
         match self.bits {
             false => PLLPWD_A::VALUE1,
             true => PLLPWD_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Normal behavior"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PLLPWD_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The complete PLL block is put into a Power Saving Mode. Only the Bypass Mode is active if previously selected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PLLPWD_A::VALUE2
     }
 }
 #[doc = "Field `PLLPWD` writer - PLL Power Saving Mode"]
-pub type PLLPWD_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBPLLCON_SPEC, PLLPWD_A, O>;
-impl<'a, const O: u8> PLLPWD_W<'a, O> {
+pub type PLLPWD_W<'a, REG> = crate::BitWriter<'a, REG, PLLPWD_A>;
+impl<'a, REG> PLLPWD_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal behavior"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PLLPWD_A::VALUE1)
     }
     #[doc = "The complete PLL block is put into a Power Saving Mode. Only the Bypass Mode is active if previously selected."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PLLPWD_A::VALUE2)
     }
 }
 #[doc = "Field `RESLD` writer - Restart VCO Lock Detection"]
-pub type RESLD_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBPLLCON_SPEC, bool, O>;
+pub type RESLD_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PDIV` reader - P-Divider Value"]
-pub type PDIV_R = crate::FieldReader<u8, u8>;
+pub type PDIV_R = crate::FieldReader;
 #[doc = "Field `PDIV` writer - P-Divider Value"]
-pub type PDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, USBPLLCON_SPEC, u8, u8, 4, O>;
+pub type PDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bit 0 - VCO Bypass"]
     #[inline(always)]
@@ -390,76 +376,77 @@ impl W {
     #[doc = "Bit 0 - VCO Bypass"]
     #[inline(always)]
     #[must_use]
-    pub fn vcobyp(&mut self) -> VCOBYP_W<0> {
-        VCOBYP_W::new(self)
+    pub fn vcobyp(&mut self) -> VCOBYP_W<USBPLLCON_SPEC> {
+        VCOBYP_W::new(self, 0)
     }
     #[doc = "Bit 1 - VCO Power Saving Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn vcopwd(&mut self) -> VCOPWD_W<1> {
-        VCOPWD_W::new(self)
+    pub fn vcopwd(&mut self) -> VCOPWD_W<USBPLLCON_SPEC> {
+        VCOPWD_W::new(self, 1)
     }
     #[doc = "Bit 2 - VCO Trim Control"]
     #[inline(always)]
     #[must_use]
-    pub fn vcotr(&mut self) -> VCOTR_W<2> {
-        VCOTR_W::new(self)
+    pub fn vcotr(&mut self) -> VCOTR_W<USBPLLCON_SPEC> {
+        VCOTR_W::new(self, 2)
     }
     #[doc = "Bit 4 - Disconnect Oscillator from VCO"]
     #[inline(always)]
     #[must_use]
-    pub fn findis(&mut self) -> FINDIS_W<4> {
-        FINDIS_W::new(self)
+    pub fn findis(&mut self) -> FINDIS_W<USBPLLCON_SPEC> {
+        FINDIS_W::new(self, 4)
     }
     #[doc = "Bit 6 - Oscillator Disconnect Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn oscdiscdis(&mut self) -> OSCDISCDIS_W<6> {
-        OSCDISCDIS_W::new(self)
+    pub fn oscdiscdis(&mut self) -> OSCDISCDIS_W<USBPLLCON_SPEC> {
+        OSCDISCDIS_W::new(self, 6)
     }
     #[doc = "Bits 8:14 - N-Divider Value"]
     #[inline(always)]
     #[must_use]
-    pub fn ndiv(&mut self) -> NDIV_W<8> {
-        NDIV_W::new(self)
+    pub fn ndiv(&mut self) -> NDIV_W<USBPLLCON_SPEC> {
+        NDIV_W::new(self, 8)
     }
     #[doc = "Bit 16 - PLL Power Saving Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn pllpwd(&mut self) -> PLLPWD_W<16> {
-        PLLPWD_W::new(self)
+    pub fn pllpwd(&mut self) -> PLLPWD_W<USBPLLCON_SPEC> {
+        PLLPWD_W::new(self, 16)
     }
     #[doc = "Bit 18 - Restart VCO Lock Detection"]
     #[inline(always)]
     #[must_use]
-    pub fn resld(&mut self) -> RESLD_W<18> {
-        RESLD_W::new(self)
+    pub fn resld(&mut self) -> RESLD_W<USBPLLCON_SPEC> {
+        RESLD_W::new(self, 18)
     }
     #[doc = "Bits 24:27 - P-Divider Value"]
     #[inline(always)]
     #[must_use]
-    pub fn pdiv(&mut self) -> PDIV_W<24> {
-        PDIV_W::new(self)
+    pub fn pdiv(&mut self) -> PDIV_W<USBPLLCON_SPEC> {
+        PDIV_W::new(self, 24)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "USB PLL Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usbpllcon](index.html) module"]
+#[doc = "USB PLL Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`usbpllcon::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`usbpllcon::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct USBPLLCON_SPEC;
 impl crate::RegisterSpec for USBPLLCON_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [usbpllcon::R](R) reader structure"]
-impl crate::Readable for USBPLLCON_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [usbpllcon::W](W) writer structure"]
+#[doc = "`read()` method returns [`usbpllcon::R`](R) reader structure"]
+impl crate::Readable for USBPLLCON_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`usbpllcon::W`](W) writer structure"]
 impl crate::Writable for USBPLLCON_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

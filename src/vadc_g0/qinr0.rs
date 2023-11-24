@@ -1,26 +1,7 @@
 #[doc = "Register `QINR0` writer"]
-pub struct W(crate::W<QINR0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<QINR0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<QINR0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<QINR0_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<QINR0_SPEC>;
 #[doc = "Field `REQCHNR` writer - Request Channel Number"]
-pub type REQCHNR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, QINR0_SPEC, u8, u8, 5, O>;
+pub type REQCHNR_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Refill\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RF_AW {
@@ -36,16 +17,19 @@ impl From<RF_AW> for bool {
     }
 }
 #[doc = "Field `RF` writer - Refill"]
-pub type RF_W<'a, const O: u8> = crate::BitWriter<'a, u32, QINR0_SPEC, RF_AW, O>;
-impl<'a, const O: u8> RF_W<'a, O> {
+pub type RF_W<'a, REG> = crate::BitWriter<'a, REG, RF_AW>;
+impl<'a, REG> RF_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No refill: this queue entry is converted once and then invalidated"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RF_AW::VALUE1)
     }
     #[doc = "Automatic refill: this queue entry is automatically reloaded into QINRx when the related conversion is started"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RF_AW::VALUE2)
     }
 }
@@ -64,16 +48,19 @@ impl From<ENSI_AW> for bool {
     }
 }
 #[doc = "Field `ENSI` writer - Enable Source Interrupt"]
-pub type ENSI_W<'a, const O: u8> = crate::BitWriter<'a, u32, QINR0_SPEC, ENSI_AW, O>;
-impl<'a, const O: u8> ENSI_W<'a, O> {
+pub type ENSI_W<'a, REG> = crate::BitWriter<'a, REG, ENSI_AW>;
+impl<'a, REG> ENSI_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No request source interrupt"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ENSI_AW::VALUE1)
     }
     #[doc = "A request source event interrupt is generated upon a request source event (related conversion is finished)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ENSI_AW::VALUE2)
     }
 }
@@ -92,16 +79,19 @@ impl From<EXTR_AW> for bool {
     }
 }
 #[doc = "Field `EXTR` writer - External Trigger"]
-pub type EXTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, QINR0_SPEC, EXTR_AW, O>;
-impl<'a, const O: u8> EXTR_W<'a, O> {
+pub type EXTR_W<'a, REG> = crate::BitWriter<'a, REG, EXTR_AW>;
+impl<'a, REG> EXTR_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "A valid queue entry immediately leads to a conversion request."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EXTR_AW::VALUE1)
     }
     #[doc = "A valid queue entry waits for a trigger event to occur before issuing a conversion request."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EXTR_AW::VALUE2)
     }
 }
@@ -109,42 +99,45 @@ impl W {
     #[doc = "Bits 0:4 - Request Channel Number"]
     #[inline(always)]
     #[must_use]
-    pub fn reqchnr(&mut self) -> REQCHNR_W<0> {
-        REQCHNR_W::new(self)
+    pub fn reqchnr(&mut self) -> REQCHNR_W<QINR0_SPEC> {
+        REQCHNR_W::new(self, 0)
     }
     #[doc = "Bit 5 - Refill"]
     #[inline(always)]
     #[must_use]
-    pub fn rf(&mut self) -> RF_W<5> {
-        RF_W::new(self)
+    pub fn rf(&mut self) -> RF_W<QINR0_SPEC> {
+        RF_W::new(self, 5)
     }
     #[doc = "Bit 6 - Enable Source Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn ensi(&mut self) -> ENSI_W<6> {
-        ENSI_W::new(self)
+    pub fn ensi(&mut self) -> ENSI_W<QINR0_SPEC> {
+        ENSI_W::new(self, 6)
     }
     #[doc = "Bit 7 - External Trigger"]
     #[inline(always)]
     #[must_use]
-    pub fn extr(&mut self) -> EXTR_W<7> {
-        EXTR_W::new(self)
+    pub fn extr(&mut self) -> EXTR_W<QINR0_SPEC> {
+        EXTR_W::new(self, 7)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Queue 0 Input Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [qinr0](index.html) module"]
+#[doc = "Queue 0 Input Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`qinr0::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct QINR0_SPEC;
 impl crate::RegisterSpec for QINR0_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [qinr0::W](W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [`qinr0::W`](W) writer structure"]
 impl crate::Writable for QINR0_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

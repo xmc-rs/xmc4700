@@ -1,20 +1,7 @@
 #[doc = "Register `PRESENT_STATE` reader"]
-pub struct R(crate::R<PRESENT_STATE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PRESENT_STATE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PRESENT_STATE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PRESENT_STATE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PRESENT_STATE_SPEC>;
 #[doc = "Field `COMMAND_INHIBIT_CMD` reader - Command Inhibit (CMD)"]
-pub type COMMAND_INHIBIT_CMD_R = crate::BitReader<bool>;
+pub type COMMAND_INHIBIT_CMD_R = crate::BitReader;
 #[doc = "Field `COMMAND_INHIBIT_DAT` reader - Command Inhibit (DAT)"]
 pub type COMMAND_INHIBIT_DAT_R = crate::BitReader<COMMAND_INHIBIT_DAT_A>;
 #[doc = "Command Inhibit (DAT)\n\nValue on reset: 0"]
@@ -34,18 +21,18 @@ impl From<COMMAND_INHIBIT_DAT_A> for bool {
 impl COMMAND_INHIBIT_DAT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> COMMAND_INHIBIT_DAT_A {
+    pub const fn variant(&self) -> COMMAND_INHIBIT_DAT_A {
         match self.bits {
             false => COMMAND_INHIBIT_DAT_A::VALUE1,
             true => COMMAND_INHIBIT_DAT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Can issue command which uses the DAT line"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == COMMAND_INHIBIT_DAT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Cannot issue command which uses the DAT line"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == COMMAND_INHIBIT_DAT_A::VALUE2
@@ -70,18 +57,18 @@ impl From<DAT_LINE_ACTIVE_A> for bool {
 impl DAT_LINE_ACTIVE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DAT_LINE_ACTIVE_A {
+    pub const fn variant(&self) -> DAT_LINE_ACTIVE_A {
         match self.bits {
             false => DAT_LINE_ACTIVE_A::VALUE1,
             true => DAT_LINE_ACTIVE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "DAT line inactive"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DAT_LINE_ACTIVE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "DAT line active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DAT_LINE_ACTIVE_A::VALUE2
@@ -106,18 +93,18 @@ impl From<WRITE_TRANSFER_ACTIVE_A> for bool {
 impl WRITE_TRANSFER_ACTIVE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WRITE_TRANSFER_ACTIVE_A {
+    pub const fn variant(&self) -> WRITE_TRANSFER_ACTIVE_A {
         match self.bits {
             false => WRITE_TRANSFER_ACTIVE_A::VALUE1,
             true => WRITE_TRANSFER_ACTIVE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No valid data"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WRITE_TRANSFER_ACTIVE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Transferring data"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WRITE_TRANSFER_ACTIVE_A::VALUE2
@@ -142,18 +129,18 @@ impl From<READ_TRANSFER_ACTIVE_A> for bool {
 impl READ_TRANSFER_ACTIVE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> READ_TRANSFER_ACTIVE_A {
+    pub const fn variant(&self) -> READ_TRANSFER_ACTIVE_A {
         match self.bits {
             false => READ_TRANSFER_ACTIVE_A::VALUE1,
             true => READ_TRANSFER_ACTIVE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No valid data"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == READ_TRANSFER_ACTIVE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Transferring data"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == READ_TRANSFER_ACTIVE_A::VALUE2
@@ -178,18 +165,18 @@ impl From<BUFFER_WRITE_ENABLE_A> for bool {
 impl BUFFER_WRITE_ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BUFFER_WRITE_ENABLE_A {
+    pub const fn variant(&self) -> BUFFER_WRITE_ENABLE_A {
         match self.bits {
             false => BUFFER_WRITE_ENABLE_A::VALUE1,
             true => BUFFER_WRITE_ENABLE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Write Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BUFFER_WRITE_ENABLE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write Enable."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BUFFER_WRITE_ENABLE_A::VALUE2
@@ -214,18 +201,18 @@ impl From<BUFFER_READ_ENABLE_A> for bool {
 impl BUFFER_READ_ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BUFFER_READ_ENABLE_A {
+    pub const fn variant(&self) -> BUFFER_READ_ENABLE_A {
         match self.bits {
             false => BUFFER_READ_ENABLE_A::VALUE1,
             true => BUFFER_READ_ENABLE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Read Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BUFFER_READ_ENABLE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read Enable."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BUFFER_READ_ENABLE_A::VALUE2
@@ -250,18 +237,18 @@ impl From<CARD_INSERTED_A> for bool {
 impl CARD_INSERTED_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CARD_INSERTED_A {
+    pub const fn variant(&self) -> CARD_INSERTED_A {
         match self.bits {
             false => CARD_INSERTED_A::VALUE1,
             true => CARD_INSERTED_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Reset or Debouncing or No Card"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CARD_INSERTED_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Card Inserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CARD_INSERTED_A::VALUE2
@@ -286,18 +273,18 @@ impl From<CARD_STATE_STABLE_A> for bool {
 impl CARD_STATE_STABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CARD_STATE_STABLE_A {
+    pub const fn variant(&self) -> CARD_STATE_STABLE_A {
         match self.bits {
             false => CARD_STATE_STABLE_A::VALUE1,
             true => CARD_STATE_STABLE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Reset of Debouncing"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CARD_STATE_STABLE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "No Card or Inserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CARD_STATE_STABLE_A::VALUE2
@@ -322,18 +309,18 @@ impl From<CARD_DETECT_PIN_LEVEL_A> for bool {
 impl CARD_DETECT_PIN_LEVEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CARD_DETECT_PIN_LEVEL_A {
+    pub const fn variant(&self) -> CARD_DETECT_PIN_LEVEL_A {
         match self.bits {
             false => CARD_DETECT_PIN_LEVEL_A::VALUE1,
             true => CARD_DETECT_PIN_LEVEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Card present (SDCD = 1)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CARD_DETECT_PIN_LEVEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Card present (SDCD = 0)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CARD_DETECT_PIN_LEVEL_A::VALUE2
@@ -358,29 +345,29 @@ impl From<WRITE_PROTECT_PIN_LEVEL_A> for bool {
 impl WRITE_PROTECT_PIN_LEVEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WRITE_PROTECT_PIN_LEVEL_A {
+    pub const fn variant(&self) -> WRITE_PROTECT_PIN_LEVEL_A {
         match self.bits {
             false => WRITE_PROTECT_PIN_LEVEL_A::VALUE1,
             true => WRITE_PROTECT_PIN_LEVEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Write protected (SDWP = 1)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WRITE_PROTECT_PIN_LEVEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write enabled (SDWP = 0)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WRITE_PROTECT_PIN_LEVEL_A::VALUE2
     }
 }
 #[doc = "Field `DAT_3_0_PIN_LEVEL` reader - Line Signal Level"]
-pub type DAT_3_0_PIN_LEVEL_R = crate::FieldReader<u8, u8>;
+pub type DAT_3_0_PIN_LEVEL_R = crate::FieldReader;
 #[doc = "Field `CMD_LINE_LEVEL` reader - CMD Line Signal Level"]
-pub type CMD_LINE_LEVEL_R = crate::BitReader<bool>;
+pub type CMD_LINE_LEVEL_R = crate::BitReader;
 #[doc = "Field `DAT_7_4_PIN_LEVEL` reader - Line Signal Level"]
-pub type DAT_7_4_PIN_LEVEL_R = crate::FieldReader<u8, u8>;
+pub type DAT_7_4_PIN_LEVEL_R = crate::FieldReader;
 impl R {
     #[doc = "Bit 0 - Command Inhibit (CMD)"]
     #[inline(always)]
@@ -453,15 +440,13 @@ impl R {
         DAT_7_4_PIN_LEVEL_R::new(((self.bits >> 25) & 0x0f) as u8)
     }
 }
-#[doc = "Present State Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [present_state](index.html) module"]
+#[doc = "Present State Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`present_state::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PRESENT_STATE_SPEC;
 impl crate::RegisterSpec for PRESENT_STATE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [present_state::R](R) reader structure"]
-impl crate::Readable for PRESENT_STATE_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`present_state::R`](R) reader structure"]
+impl crate::Readable for PRESENT_STATE_SPEC {}
 #[doc = "`reset()` method sets PRESENT_STATE to value 0"]
 impl crate::Resettable for PRESENT_STATE_SPEC {
     const RESET_VALUE: Self::Ux = 0;

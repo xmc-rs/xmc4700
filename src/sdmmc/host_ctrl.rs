@@ -1,39 +1,7 @@
 #[doc = "Register `HOST_CTRL` reader"]
-pub struct R(crate::R<HOST_CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HOST_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HOST_CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HOST_CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<HOST_CTRL_SPEC>;
 #[doc = "Register `HOST_CTRL` writer"]
-pub struct W(crate::W<HOST_CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HOST_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HOST_CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HOST_CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<HOST_CTRL_SPEC>;
 #[doc = "Field `LED_CTRL` reader - LED Control"]
 pub type LED_CTRL_R = crate::BitReader<LED_CTRL_A>;
 #[doc = "LED Control\n\nValue on reset: 0"]
@@ -53,34 +21,37 @@ impl From<LED_CTRL_A> for bool {
 impl LED_CTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LED_CTRL_A {
+    pub const fn variant(&self) -> LED_CTRL_A {
         match self.bits {
             false => LED_CTRL_A::VALUE1,
             true => LED_CTRL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "LED off"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LED_CTRL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "LED on"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LED_CTRL_A::VALUE2
     }
 }
 #[doc = "Field `LED_CTRL` writer - LED Control"]
-pub type LED_CTRL_W<'a, const O: u8> = crate::BitWriter<'a, u8, HOST_CTRL_SPEC, LED_CTRL_A, O>;
-impl<'a, const O: u8> LED_CTRL_W<'a, O> {
+pub type LED_CTRL_W<'a, REG> = crate::BitWriter<'a, REG, LED_CTRL_A>;
+impl<'a, REG> LED_CTRL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "LED off"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(LED_CTRL_A::VALUE1)
     }
     #[doc = "LED on"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(LED_CTRL_A::VALUE2)
     }
 }
@@ -103,34 +74,37 @@ impl From<DATA_TX_WIDTH_A> for bool {
 impl DATA_TX_WIDTH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DATA_TX_WIDTH_A {
+    pub const fn variant(&self) -> DATA_TX_WIDTH_A {
         match self.bits {
             false => DATA_TX_WIDTH_A::VALUE1,
             true => DATA_TX_WIDTH_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "1 bit mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DATA_TX_WIDTH_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "4-bit mode"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DATA_TX_WIDTH_A::VALUE2
     }
 }
 #[doc = "Field `DATA_TX_WIDTH` writer - Data Transfer Width (SD1 or SD4)"]
-pub type DATA_TX_WIDTH_W<'a, const O: u8> = crate::BitWriter<'a, u8, HOST_CTRL_SPEC, DATA_TX_WIDTH_A, O>;
-impl<'a, const O: u8> DATA_TX_WIDTH_W<'a, O> {
+pub type DATA_TX_WIDTH_W<'a, REG> = crate::BitWriter<'a, REG, DATA_TX_WIDTH_A>;
+impl<'a, REG> DATA_TX_WIDTH_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "1 bit mode"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DATA_TX_WIDTH_A::VALUE1)
     }
     #[doc = "4-bit mode"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DATA_TX_WIDTH_A::VALUE2)
     }
 }
@@ -153,34 +127,37 @@ impl From<HIGH_SPEED_EN_A> for bool {
 impl HIGH_SPEED_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HIGH_SPEED_EN_A {
+    pub const fn variant(&self) -> HIGH_SPEED_EN_A {
         match self.bits {
             false => HIGH_SPEED_EN_A::VALUE1,
             true => HIGH_SPEED_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Normal Speed Mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HIGH_SPEED_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "High Speed Mode"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HIGH_SPEED_EN_A::VALUE2
     }
 }
 #[doc = "Field `HIGH_SPEED_EN` writer - High Speed Enable"]
-pub type HIGH_SPEED_EN_W<'a, const O: u8> = crate::BitWriter<'a, u8, HOST_CTRL_SPEC, HIGH_SPEED_EN_A, O>;
-impl<'a, const O: u8> HIGH_SPEED_EN_W<'a, O> {
+pub type HIGH_SPEED_EN_W<'a, REG> = crate::BitWriter<'a, REG, HIGH_SPEED_EN_A>;
+impl<'a, REG> HIGH_SPEED_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal Speed Mode"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(HIGH_SPEED_EN_A::VALUE1)
     }
     #[doc = "High Speed Mode"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(HIGH_SPEED_EN_A::VALUE2)
     }
 }
@@ -203,34 +180,37 @@ impl From<SD_8BIT_MODE_A> for bool {
 impl SD_8BIT_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SD_8BIT_MODE_A {
+    pub const fn variant(&self) -> SD_8BIT_MODE_A {
         match self.bits {
             false => SD_8BIT_MODE_A::VALUE1,
             true => SD_8BIT_MODE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Bus Width is selected by Data Transfer Width"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SD_8BIT_MODE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "8-bit Bus Width"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SD_8BIT_MODE_A::VALUE2
     }
 }
 #[doc = "Field `SD_8BIT_MODE` writer - Extended Data Transfer Width"]
-pub type SD_8BIT_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u8, HOST_CTRL_SPEC, SD_8BIT_MODE_A, O>;
-impl<'a, const O: u8> SD_8BIT_MODE_W<'a, O> {
+pub type SD_8BIT_MODE_W<'a, REG> = crate::BitWriter<'a, REG, SD_8BIT_MODE_A>;
+impl<'a, REG> SD_8BIT_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Bus Width is selected by Data Transfer Width"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SD_8BIT_MODE_A::VALUE1)
     }
     #[doc = "8-bit Bus Width"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SD_8BIT_MODE_A::VALUE2)
     }
 }
@@ -253,34 +233,37 @@ impl From<CARD_DETECT_TEST_LEVEL_A> for bool {
 impl CARD_DETECT_TEST_LEVEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CARD_DETECT_TEST_LEVEL_A {
+    pub const fn variant(&self) -> CARD_DETECT_TEST_LEVEL_A {
         match self.bits {
             false => CARD_DETECT_TEST_LEVEL_A::VALUE1,
             true => CARD_DETECT_TEST_LEVEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Card"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CARD_DETECT_TEST_LEVEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Card Inserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CARD_DETECT_TEST_LEVEL_A::VALUE2
     }
 }
 #[doc = "Field `CARD_DETECT_TEST_LEVEL` writer - Card Detect Test Level"]
-pub type CARD_DETECT_TEST_LEVEL_W<'a, const O: u8> = crate::BitWriter<'a, u8, HOST_CTRL_SPEC, CARD_DETECT_TEST_LEVEL_A, O>;
-impl<'a, const O: u8> CARD_DETECT_TEST_LEVEL_W<'a, O> {
+pub type CARD_DETECT_TEST_LEVEL_W<'a, REG> = crate::BitWriter<'a, REG, CARD_DETECT_TEST_LEVEL_A>;
+impl<'a, REG> CARD_DETECT_TEST_LEVEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No Card"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CARD_DETECT_TEST_LEVEL_A::VALUE1)
     }
     #[doc = "Card Inserted"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CARD_DETECT_TEST_LEVEL_A::VALUE2)
     }
 }
@@ -303,34 +286,37 @@ impl From<CARD_DET_SIGNAL_DETECT_A> for bool {
 impl CARD_DET_SIGNAL_DETECT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CARD_DET_SIGNAL_DETECT_A {
+    pub const fn variant(&self) -> CARD_DET_SIGNAL_DETECT_A {
         match self.bits {
             false => CARD_DET_SIGNAL_DETECT_A::VALUE1,
             true => CARD_DET_SIGNAL_DETECT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "SDCD is selected (for normal use)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CARD_DET_SIGNAL_DETECT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The card detect test level is selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CARD_DET_SIGNAL_DETECT_A::VALUE2
     }
 }
 #[doc = "Field `CARD_DET_SIGNAL_DETECT` writer - Card detect signal detetction"]
-pub type CARD_DET_SIGNAL_DETECT_W<'a, const O: u8> = crate::BitWriter<'a, u8, HOST_CTRL_SPEC, CARD_DET_SIGNAL_DETECT_A, O>;
-impl<'a, const O: u8> CARD_DET_SIGNAL_DETECT_W<'a, O> {
+pub type CARD_DET_SIGNAL_DETECT_W<'a, REG> = crate::BitWriter<'a, REG, CARD_DET_SIGNAL_DETECT_A>;
+impl<'a, REG> CARD_DET_SIGNAL_DETECT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "SDCD is selected (for normal use)"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CARD_DET_SIGNAL_DETECT_A::VALUE1)
     }
     #[doc = "The card detect test level is selected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CARD_DET_SIGNAL_DETECT_A::VALUE2)
     }
 }
@@ -370,58 +356,59 @@ impl W {
     #[doc = "Bit 0 - LED Control"]
     #[inline(always)]
     #[must_use]
-    pub fn led_ctrl(&mut self) -> LED_CTRL_W<0> {
-        LED_CTRL_W::new(self)
+    pub fn led_ctrl(&mut self) -> LED_CTRL_W<HOST_CTRL_SPEC> {
+        LED_CTRL_W::new(self, 0)
     }
     #[doc = "Bit 1 - Data Transfer Width (SD1 or SD4)"]
     #[inline(always)]
     #[must_use]
-    pub fn data_tx_width(&mut self) -> DATA_TX_WIDTH_W<1> {
-        DATA_TX_WIDTH_W::new(self)
+    pub fn data_tx_width(&mut self) -> DATA_TX_WIDTH_W<HOST_CTRL_SPEC> {
+        DATA_TX_WIDTH_W::new(self, 1)
     }
     #[doc = "Bit 2 - High Speed Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn high_speed_en(&mut self) -> HIGH_SPEED_EN_W<2> {
-        HIGH_SPEED_EN_W::new(self)
+    pub fn high_speed_en(&mut self) -> HIGH_SPEED_EN_W<HOST_CTRL_SPEC> {
+        HIGH_SPEED_EN_W::new(self, 2)
     }
     #[doc = "Bit 5 - Extended Data Transfer Width"]
     #[inline(always)]
     #[must_use]
-    pub fn sd_8bit_mode(&mut self) -> SD_8BIT_MODE_W<5> {
-        SD_8BIT_MODE_W::new(self)
+    pub fn sd_8bit_mode(&mut self) -> SD_8BIT_MODE_W<HOST_CTRL_SPEC> {
+        SD_8BIT_MODE_W::new(self, 5)
     }
     #[doc = "Bit 6 - Card Detect Test Level"]
     #[inline(always)]
     #[must_use]
-    pub fn card_detect_test_level(&mut self) -> CARD_DETECT_TEST_LEVEL_W<6> {
-        CARD_DETECT_TEST_LEVEL_W::new(self)
+    pub fn card_detect_test_level(&mut self) -> CARD_DETECT_TEST_LEVEL_W<HOST_CTRL_SPEC> {
+        CARD_DETECT_TEST_LEVEL_W::new(self, 6)
     }
     #[doc = "Bit 7 - Card detect signal detetction"]
     #[inline(always)]
     #[must_use]
-    pub fn card_det_signal_detect(&mut self) -> CARD_DET_SIGNAL_DETECT_W<7> {
-        CARD_DET_SIGNAL_DETECT_W::new(self)
+    pub fn card_det_signal_detect(&mut self) -> CARD_DET_SIGNAL_DETECT_W<HOST_CTRL_SPEC> {
+        CARD_DET_SIGNAL_DETECT_W::new(self, 7)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Host Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [host_ctrl](index.html) module"]
+#[doc = "Host Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`host_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`host_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HOST_CTRL_SPEC;
 impl crate::RegisterSpec for HOST_CTRL_SPEC {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [host_ctrl::R](R) reader structure"]
-impl crate::Readable for HOST_CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [host_ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`host_ctrl::R`](R) reader structure"]
+impl crate::Readable for HOST_CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`host_ctrl::W`](W) writer structure"]
 impl crate::Writable for HOST_CTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

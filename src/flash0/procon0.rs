@@ -1,18 +1,5 @@
 #[doc = "Register `PROCON0` reader"]
-pub struct R(crate::R<PROCON0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PROCON0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PROCON0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PROCON0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PROCON0_SPEC>;
 #[doc = "Field `S0L` reader - Sector 0 Locked for Write Protection by User 0"]
 pub type S0L_R = crate::BitReader<S0L_A>;
 #[doc = "Sector 0 Locked for Write Protection by User 0\n\nValue on reset: 0"]
@@ -32,18 +19,18 @@ impl From<S0L_A> for bool {
 impl S0L_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S0L_A {
+    pub const fn variant(&self) -> S0L_A {
         match self.bits {
             false => S0L_A::VALUE1,
             true => S0L_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S0L_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S0L_A::VALUE2
@@ -68,18 +55,18 @@ impl From<S1L_A> for bool {
 impl S1L_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S1L_A {
+    pub const fn variant(&self) -> S1L_A {
         match self.bits {
             false => S1L_A::VALUE1,
             true => S1L_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S1L_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S1L_A::VALUE2
@@ -104,18 +91,18 @@ impl From<S2L_A> for bool {
 impl S2L_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S2L_A {
+    pub const fn variant(&self) -> S2L_A {
         match self.bits {
             false => S2L_A::VALUE1,
             true => S2L_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S2L_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S2L_A::VALUE2
@@ -140,18 +127,18 @@ impl From<S3L_A> for bool {
 impl S3L_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S3L_A {
+    pub const fn variant(&self) -> S3L_A {
         match self.bits {
             false => S3L_A::VALUE1,
             true => S3L_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S3L_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S3L_A::VALUE2
@@ -176,18 +163,18 @@ impl From<S4L_A> for bool {
 impl S4L_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S4L_A {
+    pub const fn variant(&self) -> S4L_A {
         match self.bits {
             false => S4L_A::VALUE1,
             true => S4L_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S4L_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S4L_A::VALUE2
@@ -212,18 +199,18 @@ impl From<S5L_A> for bool {
 impl S5L_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S5L_A {
+    pub const fn variant(&self) -> S5L_A {
         match self.bits {
             false => S5L_A::VALUE1,
             true => S5L_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S5L_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S5L_A::VALUE2
@@ -248,18 +235,18 @@ impl From<S6L_A> for bool {
 impl S6L_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S6L_A {
+    pub const fn variant(&self) -> S6L_A {
         match self.bits {
             false => S6L_A::VALUE1,
             true => S6L_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S6L_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S6L_A::VALUE2
@@ -284,18 +271,18 @@ impl From<S7L_A> for bool {
 impl S7L_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S7L_A {
+    pub const fn variant(&self) -> S7L_A {
         match self.bits {
             false => S7L_A::VALUE1,
             true => S7L_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S7L_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S7L_A::VALUE2
@@ -320,18 +307,18 @@ impl From<S8L_A> for bool {
 impl S8L_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S8L_A {
+    pub const fn variant(&self) -> S8L_A {
         match self.bits {
             false => S8L_A::VALUE1,
             true => S8L_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S8L_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S8L_A::VALUE2
@@ -356,18 +343,18 @@ impl From<S9L_A> for bool {
 impl S9L_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S9L_A {
+    pub const fn variant(&self) -> S9L_A {
         match self.bits {
             false => S9L_A::VALUE1,
             true => S9L_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S9L_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S9L_A::VALUE2
@@ -392,18 +379,18 @@ impl From<S10_S11L_A> for bool {
 impl S10_S11L_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S10_S11L_A {
+    pub const fn variant(&self) -> S10_S11L_A {
         match self.bits {
             false => S10_S11L_A::VALUE1,
             true => S10_S11L_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No write protection is configured for sectors 10+11."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S10_S11L_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write protection is configured for sectors 10+11."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S10_S11L_A::VALUE2
@@ -428,18 +415,18 @@ impl From<S12_S13L_A> for bool {
 impl S12_S13L_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S12_S13L_A {
+    pub const fn variant(&self) -> S12_S13L_A {
         match self.bits {
             false => S12_S13L_A::VALUE1,
             true => S12_S13L_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No write protection is configured for sectors 12+13."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S12_S13L_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write protection is configured for sectors 12+13."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S12_S13L_A::VALUE2
@@ -464,18 +451,18 @@ impl From<S14_S15L_A> for bool {
 impl S14_S15L_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S14_S15L_A {
+    pub const fn variant(&self) -> S14_S15L_A {
         match self.bits {
             false => S14_S15L_A::VALUE1,
             true => S14_S15L_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No write protection is configured for sectors 14+15."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S14_S15L_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write protection is configured for sectors 14+15."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S14_S15L_A::VALUE2
@@ -500,18 +487,18 @@ impl From<RPRO_A> for bool {
 impl RPRO_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RPRO_A {
+    pub const fn variant(&self) -> RPRO_A {
         match self.bits {
             false => RPRO_A::VALUE1,
             true => RPRO_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No read protection configured"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RPRO_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read protection and global write protection is configured by user 0 (master user)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RPRO_A::VALUE2
@@ -589,15 +576,13 @@ impl R {
         RPRO_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Flash Protection Configuration Register User 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [procon0](index.html) module"]
+#[doc = "Flash Protection Configuration Register User 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`procon0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PROCON0_SPEC;
 impl crate::RegisterSpec for PROCON0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [procon0::R](R) reader structure"]
-impl crate::Readable for PROCON0_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`procon0::R`](R) reader structure"]
+impl crate::Readable for PROCON0_SPEC {}
 #[doc = "`reset()` method sets PROCON0 to value 0"]
 impl crate::Resettable for PROCON0_SPEC {
     const RESET_VALUE: Self::Ux = 0;

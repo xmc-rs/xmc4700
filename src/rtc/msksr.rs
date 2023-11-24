@@ -1,67 +1,35 @@
 #[doc = "Register `MSKSR` reader"]
-pub struct R(crate::R<MSKSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MSKSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MSKSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MSKSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MSKSR_SPEC>;
 #[doc = "Register `MSKSR` writer"]
-pub struct W(crate::W<MSKSR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MSKSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MSKSR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MSKSR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<MSKSR_SPEC>;
 #[doc = "Field `MPSE` reader - Periodic Seconds Interrupt Mask"]
-pub type MPSE_R = crate::BitReader<bool>;
+pub type MPSE_R = crate::BitReader;
 #[doc = "Field `MPSE` writer - Periodic Seconds Interrupt Mask"]
-pub type MPSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MSKSR_SPEC, bool, O>;
+pub type MPSE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MPMI` reader - Periodic Minutes Interrupt Mask"]
-pub type MPMI_R = crate::BitReader<bool>;
+pub type MPMI_R = crate::BitReader;
 #[doc = "Field `MPMI` writer - Periodic Minutes Interrupt Mask"]
-pub type MPMI_W<'a, const O: u8> = crate::BitWriter<'a, u32, MSKSR_SPEC, bool, O>;
+pub type MPMI_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MPHO` reader - Periodic Hours Interrupt Mask"]
-pub type MPHO_R = crate::BitReader<bool>;
+pub type MPHO_R = crate::BitReader;
 #[doc = "Field `MPHO` writer - Periodic Hours Interrupt Mask"]
-pub type MPHO_W<'a, const O: u8> = crate::BitWriter<'a, u32, MSKSR_SPEC, bool, O>;
+pub type MPHO_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MPDA` reader - Periodic Days Interrupt Mask"]
-pub type MPDA_R = crate::BitReader<bool>;
+pub type MPDA_R = crate::BitReader;
 #[doc = "Field `MPDA` writer - Periodic Days Interrupt Mask"]
-pub type MPDA_W<'a, const O: u8> = crate::BitWriter<'a, u32, MSKSR_SPEC, bool, O>;
+pub type MPDA_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MPMO` reader - Periodic Months Interrupt Mask"]
-pub type MPMO_R = crate::BitReader<bool>;
+pub type MPMO_R = crate::BitReader;
 #[doc = "Field `MPMO` writer - Periodic Months Interrupt Mask"]
-pub type MPMO_W<'a, const O: u8> = crate::BitWriter<'a, u32, MSKSR_SPEC, bool, O>;
+pub type MPMO_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MPYE` reader - Periodic Years Interrupt Mask"]
-pub type MPYE_R = crate::BitReader<bool>;
+pub type MPYE_R = crate::BitReader;
 #[doc = "Field `MPYE` writer - Periodic Years Interrupt Mask"]
-pub type MPYE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MSKSR_SPEC, bool, O>;
+pub type MPYE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MAI` reader - Alarm Interrupt Mask"]
-pub type MAI_R = crate::BitReader<bool>;
+pub type MAI_R = crate::BitReader;
 #[doc = "Field `MAI` writer - Alarm Interrupt Mask"]
-pub type MAI_W<'a, const O: u8> = crate::BitWriter<'a, u32, MSKSR_SPEC, bool, O>;
+pub type MAI_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Periodic Seconds Interrupt Mask"]
     #[inline(always)]
@@ -103,64 +71,65 @@ impl W {
     #[doc = "Bit 0 - Periodic Seconds Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn mpse(&mut self) -> MPSE_W<0> {
-        MPSE_W::new(self)
+    pub fn mpse(&mut self) -> MPSE_W<MSKSR_SPEC> {
+        MPSE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Periodic Minutes Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn mpmi(&mut self) -> MPMI_W<1> {
-        MPMI_W::new(self)
+    pub fn mpmi(&mut self) -> MPMI_W<MSKSR_SPEC> {
+        MPMI_W::new(self, 1)
     }
     #[doc = "Bit 2 - Periodic Hours Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn mpho(&mut self) -> MPHO_W<2> {
-        MPHO_W::new(self)
+    pub fn mpho(&mut self) -> MPHO_W<MSKSR_SPEC> {
+        MPHO_W::new(self, 2)
     }
     #[doc = "Bit 3 - Periodic Days Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn mpda(&mut self) -> MPDA_W<3> {
-        MPDA_W::new(self)
+    pub fn mpda(&mut self) -> MPDA_W<MSKSR_SPEC> {
+        MPDA_W::new(self, 3)
     }
     #[doc = "Bit 5 - Periodic Months Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn mpmo(&mut self) -> MPMO_W<5> {
-        MPMO_W::new(self)
+    pub fn mpmo(&mut self) -> MPMO_W<MSKSR_SPEC> {
+        MPMO_W::new(self, 5)
     }
     #[doc = "Bit 6 - Periodic Years Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn mpye(&mut self) -> MPYE_W<6> {
-        MPYE_W::new(self)
+    pub fn mpye(&mut self) -> MPYE_W<MSKSR_SPEC> {
+        MPYE_W::new(self, 6)
     }
     #[doc = "Bit 8 - Alarm Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn mai(&mut self) -> MAI_W<8> {
-        MAI_W::new(self)
+    pub fn mai(&mut self) -> MAI_W<MSKSR_SPEC> {
+        MAI_W::new(self, 8)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "RTC Service Request Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [msksr](index.html) module"]
+#[doc = "RTC Service Request Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`msksr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`msksr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MSKSR_SPEC;
 impl crate::RegisterSpec for MSKSR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [msksr::R](R) reader structure"]
-impl crate::Readable for MSKSR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [msksr::W](W) writer structure"]
+#[doc = "`read()` method returns [`msksr::R`](R) reader structure"]
+impl crate::Readable for MSKSR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`msksr::W`](W) writer structure"]
 impl crate::Writable for MSKSR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

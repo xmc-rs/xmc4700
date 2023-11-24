@@ -1,70 +1,57 @@
 #[doc = "Register `MMC_RECEIVE_INTERRUPT` reader"]
-pub struct R(crate::R<MMC_RECEIVE_INTERRUPT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MMC_RECEIVE_INTERRUPT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MMC_RECEIVE_INTERRUPT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MMC_RECEIVE_INTERRUPT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MMC_RECEIVE_INTERRUPT_SPEC>;
 #[doc = "Field `RXGBFRMIS` reader - MMC Receive Good Bad Frame Counter Interrupt Status"]
-pub type RXGBFRMIS_R = crate::BitReader<bool>;
+pub type RXGBFRMIS_R = crate::BitReader;
 #[doc = "Field `RXGBOCTIS` reader - MMC Receive Good Bad Octet Counter Interrupt Status"]
-pub type RXGBOCTIS_R = crate::BitReader<bool>;
+pub type RXGBOCTIS_R = crate::BitReader;
 #[doc = "Field `RXGOCTIS` reader - MMC Receive Good Octet Counter Interrupt Status."]
-pub type RXGOCTIS_R = crate::BitReader<bool>;
+pub type RXGOCTIS_R = crate::BitReader;
 #[doc = "Field `RXBCGFIS` reader - MMC Receive Broadcast Good Frame Counter Interrupt Status."]
-pub type RXBCGFIS_R = crate::BitReader<bool>;
+pub type RXBCGFIS_R = crate::BitReader;
 #[doc = "Field `RXMCGFIS` reader - MMC Receive Multicast Good Frame Counter Interrupt Status"]
-pub type RXMCGFIS_R = crate::BitReader<bool>;
+pub type RXMCGFIS_R = crate::BitReader;
 #[doc = "Field `RXCRCERFIS` reader - MMC Receive CRC Error Frame Counter Interrupt Status"]
-pub type RXCRCERFIS_R = crate::BitReader<bool>;
+pub type RXCRCERFIS_R = crate::BitReader;
 #[doc = "Field `RXALGNERFIS` reader - MMC Receive Alignment Error Frame Counter Interrupt Status"]
-pub type RXALGNERFIS_R = crate::BitReader<bool>;
+pub type RXALGNERFIS_R = crate::BitReader;
 #[doc = "Field `RXRUNTFIS` reader - MMC Receive Runt Frame Counter Interrupt Status"]
-pub type RXRUNTFIS_R = crate::BitReader<bool>;
+pub type RXRUNTFIS_R = crate::BitReader;
 #[doc = "Field `RXJABERFIS` reader - MMC Receive Jabber Error Frame Counter Interrupt Status"]
-pub type RXJABERFIS_R = crate::BitReader<bool>;
+pub type RXJABERFIS_R = crate::BitReader;
 #[doc = "Field `RXUSIZEGFIS` reader - MMC Receive Undersize Good Frame Counter Interrupt Status"]
-pub type RXUSIZEGFIS_R = crate::BitReader<bool>;
+pub type RXUSIZEGFIS_R = crate::BitReader;
 #[doc = "Field `RXOSIZEGFIS` reader - MMC Receive Oversize Good Frame Counter Interrupt Status"]
-pub type RXOSIZEGFIS_R = crate::BitReader<bool>;
+pub type RXOSIZEGFIS_R = crate::BitReader;
 #[doc = "Field `RX64OCTGBFIS` reader - MMC Receive 64 Octet Good Bad Frame Counter Interrupt Status"]
-pub type RX64OCTGBFIS_R = crate::BitReader<bool>;
+pub type RX64OCTGBFIS_R = crate::BitReader;
 #[doc = "Field `RX65T127OCTGBFIS` reader - MMC Receive 65 to 127 Octet Good Bad Frame Counter Interrupt Status"]
-pub type RX65T127OCTGBFIS_R = crate::BitReader<bool>;
+pub type RX65T127OCTGBFIS_R = crate::BitReader;
 #[doc = "Field `RX128T255OCTGBFIS` reader - MMC Receive 128 to 255 Octet Good Bad Frame Counter Interrupt Status"]
-pub type RX128T255OCTGBFIS_R = crate::BitReader<bool>;
+pub type RX128T255OCTGBFIS_R = crate::BitReader;
 #[doc = "Field `RX256T511OCTGBFIS` reader - MMC Receive 256 to 511 Octet Good Bad Frame Counter Interrupt Status"]
-pub type RX256T511OCTGBFIS_R = crate::BitReader<bool>;
+pub type RX256T511OCTGBFIS_R = crate::BitReader;
 #[doc = "Field `RX512T1023OCTGBFIS` reader - MMC Receive 512 to 1023 Octet Good Bad Frame Counter Interrupt Status"]
-pub type RX512T1023OCTGBFIS_R = crate::BitReader<bool>;
+pub type RX512T1023OCTGBFIS_R = crate::BitReader;
 #[doc = "Field `RX1024TMAXOCTGBFIS` reader - MMC Receive 1024 to Maximum Octet Good Bad Frame Counter Interrupt Status"]
-pub type RX1024TMAXOCTGBFIS_R = crate::BitReader<bool>;
+pub type RX1024TMAXOCTGBFIS_R = crate::BitReader;
 #[doc = "Field `RXUCGFIS` reader - MMC Receive Unicast Good Frame Counter Interrupt Status"]
-pub type RXUCGFIS_R = crate::BitReader<bool>;
+pub type RXUCGFIS_R = crate::BitReader;
 #[doc = "Field `RXLENERFIS` reader - MMC Receive Length Error Frame Counter Interrupt Status"]
-pub type RXLENERFIS_R = crate::BitReader<bool>;
+pub type RXLENERFIS_R = crate::BitReader;
 #[doc = "Field `RXORANGEFIS` reader - MMC Receive Out Of Range Error Frame Counter Interrupt Status"]
-pub type RXORANGEFIS_R = crate::BitReader<bool>;
+pub type RXORANGEFIS_R = crate::BitReader;
 #[doc = "Field `RXPAUSFIS` reader - MMC Receive Pause Frame Counter Interrupt Status"]
-pub type RXPAUSFIS_R = crate::BitReader<bool>;
+pub type RXPAUSFIS_R = crate::BitReader;
 #[doc = "Field `RXFOVFIS` reader - MMC Receive FIFO Overflow Frame Counter Interrupt Status"]
-pub type RXFOVFIS_R = crate::BitReader<bool>;
+pub type RXFOVFIS_R = crate::BitReader;
 #[doc = "Field `RXVLANGBFIS` reader - MMC Receive VLAN Good Bad Frame Counter Interrupt Status"]
-pub type RXVLANGBFIS_R = crate::BitReader<bool>;
+pub type RXVLANGBFIS_R = crate::BitReader;
 #[doc = "Field `RXWDOGFIS` reader - MMC Receive Watchdog Error Frame Counter Interrupt Status"]
-pub type RXWDOGFIS_R = crate::BitReader<bool>;
+pub type RXWDOGFIS_R = crate::BitReader;
 #[doc = "Field `RXRCVERRFIS` reader - MMC Receive Error Frame Counter Interrupt Status"]
-pub type RXRCVERRFIS_R = crate::BitReader<bool>;
+pub type RXRCVERRFIS_R = crate::BitReader;
 #[doc = "Field `RXCTRLFIS` reader - MMC Receive Control Frame Counter Interrupt Status"]
-pub type RXCTRLFIS_R = crate::BitReader<bool>;
+pub type RXCTRLFIS_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - MMC Receive Good Bad Frame Counter Interrupt Status"]
     #[inline(always)]
@@ -197,15 +184,13 @@ impl R {
         RXCTRLFIS_R::new(((self.bits >> 25) & 1) != 0)
     }
 }
-#[doc = "MMC Receive Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mmc_receive_interrupt](index.html) module"]
+#[doc = "MMC Receive Interrupt Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mmc_receive_interrupt::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MMC_RECEIVE_INTERRUPT_SPEC;
 impl crate::RegisterSpec for MMC_RECEIVE_INTERRUPT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mmc_receive_interrupt::R](R) reader structure"]
-impl crate::Readable for MMC_RECEIVE_INTERRUPT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`mmc_receive_interrupt::R`](R) reader structure"]
+impl crate::Readable for MMC_RECEIVE_INTERRUPT_SPEC {}
 #[doc = "`reset()` method sets MMC_RECEIVE_INTERRUPT to value 0"]
 impl crate::Resettable for MMC_RECEIVE_INTERRUPT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

@@ -1,41 +1,9 @@
 #[doc = "Register `DSLEEPCR` reader"]
-pub struct R(crate::R<DSLEEPCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DSLEEPCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DSLEEPCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DSLEEPCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DSLEEPCR_SPEC>;
 #[doc = "Register `DSLEEPCR` writer"]
-pub struct W(crate::W<DSLEEPCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DSLEEPCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DSLEEPCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DSLEEPCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<DSLEEPCR_SPEC>;
 #[doc = "Field `SYSSEL` reader - System Clock Selection Value"]
-pub type SYSSEL_R = crate::FieldReader<u8, SYSSEL_A>;
+pub type SYSSEL_R = crate::FieldReader<SYSSEL_A>;
 #[doc = "System Clock Selection Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -51,38 +19,45 @@ impl From<SYSSEL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for SYSSEL_A {
+    type Ux = u8;
+}
 impl SYSSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SYSSEL_A> {
+    pub const fn variant(&self) -> Option<SYSSEL_A> {
         match self.bits {
             0 => Some(SYSSEL_A::VALUE1),
             1 => Some(SYSSEL_A::VALUE2),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "fOFI clock"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SYSSEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "fPLL clock"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SYSSEL_A::VALUE2
     }
 }
 #[doc = "Field `SYSSEL` writer - System Clock Selection Value"]
-pub type SYSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DSLEEPCR_SPEC, u8, SYSSEL_A, 2, O>;
-impl<'a, const O: u8> SYSSEL_W<'a, O> {
+pub type SYSSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, SYSSEL_A>;
+impl<'a, REG> SYSSEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "fOFI clock"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SYSSEL_A::VALUE1)
     }
     #[doc = "fPLL clock"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SYSSEL_A::VALUE2)
     }
 }
@@ -105,34 +80,37 @@ impl From<FPDN_A> for bool {
 impl FPDN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FPDN_A {
+    pub const fn variant(&self) -> FPDN_A {
         match self.bits {
             true => FPDN_A::VALUE1,
             false => FPDN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Flash power down module"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FPDN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "No effect"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FPDN_A::VALUE2
     }
 }
 #[doc = "Field `FPDN` writer - Flash Power Down"]
-pub type FPDN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSLEEPCR_SPEC, FPDN_A, O>;
-impl<'a, const O: u8> FPDN_W<'a, O> {
+pub type FPDN_W<'a, REG> = crate::BitWriter<'a, REG, FPDN_A>;
+impl<'a, REG> FPDN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Flash power down module"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(FPDN_A::VALUE1)
     }
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(FPDN_A::VALUE2)
     }
 }
@@ -155,34 +133,37 @@ impl From<PLLPDN_A> for bool {
 impl PLLPDN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PLLPDN_A {
+    pub const fn variant(&self) -> PLLPDN_A {
         match self.bits {
             true => PLLPDN_A::VALUE1,
             false => PLLPDN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Switch off main PLL"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PLLPDN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "No effect"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PLLPDN_A::VALUE2
     }
 }
 #[doc = "Field `PLLPDN` writer - PLL Power Down"]
-pub type PLLPDN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSLEEPCR_SPEC, PLLPDN_A, O>;
-impl<'a, const O: u8> PLLPDN_W<'a, O> {
+pub type PLLPDN_W<'a, REG> = crate::BitWriter<'a, REG, PLLPDN_A>;
+impl<'a, REG> PLLPDN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Switch off main PLL"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PLLPDN_A::VALUE1)
     }
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PLLPDN_A::VALUE2)
     }
 }
@@ -205,34 +186,37 @@ impl From<VCOPDN_A> for bool {
 impl VCOPDN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VCOPDN_A {
+    pub const fn variant(&self) -> VCOPDN_A {
         match self.bits {
             true => VCOPDN_A::VALUE1,
             false => VCOPDN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Switch off VCO of main PLL"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VCOPDN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "No effect"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VCOPDN_A::VALUE2
     }
 }
 #[doc = "Field `VCOPDN` writer - VCO Power Down"]
-pub type VCOPDN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSLEEPCR_SPEC, VCOPDN_A, O>;
-impl<'a, const O: u8> VCOPDN_W<'a, O> {
+pub type VCOPDN_W<'a, REG> = crate::BitWriter<'a, REG, VCOPDN_A>;
+impl<'a, REG> VCOPDN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Switch off VCO of main PLL"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VCOPDN_A::VALUE1)
     }
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VCOPDN_A::VALUE2)
     }
 }
@@ -255,34 +239,37 @@ impl From<USBCR_A> for bool {
 impl USBCR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USBCR_A {
+    pub const fn variant(&self) -> USBCR_A {
         match self.bits {
             false => USBCR_A::VALUE1,
             true => USBCR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == USBCR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == USBCR_A::VALUE2
     }
 }
 #[doc = "Field `USBCR` writer - USB Clock Control"]
-pub type USBCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSLEEPCR_SPEC, USBCR_A, O>;
-impl<'a, const O: u8> USBCR_W<'a, O> {
+pub type USBCR_W<'a, REG> = crate::BitWriter<'a, REG, USBCR_A>;
+impl<'a, REG> USBCR_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(USBCR_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(USBCR_A::VALUE2)
     }
 }
@@ -305,34 +292,37 @@ impl From<MMCCR_A> for bool {
 impl MMCCR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MMCCR_A {
+    pub const fn variant(&self) -> MMCCR_A {
         match self.bits {
             false => MMCCR_A::VALUE1,
             true => MMCCR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MMCCR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MMCCR_A::VALUE2
     }
 }
 #[doc = "Field `MMCCR` writer - MMC Clock Control"]
-pub type MMCCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSLEEPCR_SPEC, MMCCR_A, O>;
-impl<'a, const O: u8> MMCCR_W<'a, O> {
+pub type MMCCR_W<'a, REG> = crate::BitWriter<'a, REG, MMCCR_A>;
+impl<'a, REG> MMCCR_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MMCCR_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MMCCR_A::VALUE2)
     }
 }
@@ -355,34 +345,37 @@ impl From<ETH0CR_A> for bool {
 impl ETH0CR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ETH0CR_A {
+    pub const fn variant(&self) -> ETH0CR_A {
         match self.bits {
             false => ETH0CR_A::VALUE1,
             true => ETH0CR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ETH0CR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ETH0CR_A::VALUE2
     }
 }
 #[doc = "Field `ETH0CR` writer - Ethernet Clock Control"]
-pub type ETH0CR_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSLEEPCR_SPEC, ETH0CR_A, O>;
-impl<'a, const O: u8> ETH0CR_W<'a, O> {
+pub type ETH0CR_W<'a, REG> = crate::BitWriter<'a, REG, ETH0CR_A>;
+impl<'a, REG> ETH0CR_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ETH0CR_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ETH0CR_A::VALUE2)
     }
 }
@@ -405,34 +398,37 @@ impl From<EBUCR_A> for bool {
 impl EBUCR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EBUCR_A {
+    pub const fn variant(&self) -> EBUCR_A {
         match self.bits {
             false => EBUCR_A::VALUE1,
             true => EBUCR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EBUCR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EBUCR_A::VALUE2
     }
 }
 #[doc = "Field `EBUCR` writer - EBU Clock Control"]
-pub type EBUCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSLEEPCR_SPEC, EBUCR_A, O>;
-impl<'a, const O: u8> EBUCR_W<'a, O> {
+pub type EBUCR_W<'a, REG> = crate::BitWriter<'a, REG, EBUCR_A>;
+impl<'a, REG> EBUCR_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EBUCR_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EBUCR_A::VALUE2)
     }
 }
@@ -455,34 +451,37 @@ impl From<CCUCR_A> for bool {
 impl CCUCR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CCUCR_A {
+    pub const fn variant(&self) -> CCUCR_A {
         match self.bits {
             false => CCUCR_A::VALUE1,
             true => CCUCR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CCUCR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CCUCR_A::VALUE2
     }
 }
 #[doc = "Field `CCUCR` writer - CCU Clock Control"]
-pub type CCUCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSLEEPCR_SPEC, CCUCR_A, O>;
-impl<'a, const O: u8> CCUCR_W<'a, O> {
+pub type CCUCR_W<'a, REG> = crate::BitWriter<'a, REG, CCUCR_A>;
+impl<'a, REG> CCUCR_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CCUCR_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CCUCR_A::VALUE2)
     }
 }
@@ -505,34 +504,37 @@ impl From<WDTCR_A> for bool {
 impl WDTCR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WDTCR_A {
+    pub const fn variant(&self) -> WDTCR_A {
         match self.bits {
             false => WDTCR_A::VALUE1,
             true => WDTCR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WDTCR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WDTCR_A::VALUE2
     }
 }
 #[doc = "Field `WDTCR` writer - WDT Clock Control"]
-pub type WDTCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSLEEPCR_SPEC, WDTCR_A, O>;
-impl<'a, const O: u8> WDTCR_W<'a, O> {
+pub type WDTCR_W<'a, REG> = crate::BitWriter<'a, REG, WDTCR_A>;
+impl<'a, REG> WDTCR_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(WDTCR_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(WDTCR_A::VALUE2)
     }
 }
@@ -592,82 +594,83 @@ impl W {
     #[doc = "Bits 0:1 - System Clock Selection Value"]
     #[inline(always)]
     #[must_use]
-    pub fn syssel(&mut self) -> SYSSEL_W<0> {
-        SYSSEL_W::new(self)
+    pub fn syssel(&mut self) -> SYSSEL_W<DSLEEPCR_SPEC> {
+        SYSSEL_W::new(self, 0)
     }
     #[doc = "Bit 11 - Flash Power Down"]
     #[inline(always)]
     #[must_use]
-    pub fn fpdn(&mut self) -> FPDN_W<11> {
-        FPDN_W::new(self)
+    pub fn fpdn(&mut self) -> FPDN_W<DSLEEPCR_SPEC> {
+        FPDN_W::new(self, 11)
     }
     #[doc = "Bit 12 - PLL Power Down"]
     #[inline(always)]
     #[must_use]
-    pub fn pllpdn(&mut self) -> PLLPDN_W<12> {
-        PLLPDN_W::new(self)
+    pub fn pllpdn(&mut self) -> PLLPDN_W<DSLEEPCR_SPEC> {
+        PLLPDN_W::new(self, 12)
     }
     #[doc = "Bit 13 - VCO Power Down"]
     #[inline(always)]
     #[must_use]
-    pub fn vcopdn(&mut self) -> VCOPDN_W<13> {
-        VCOPDN_W::new(self)
+    pub fn vcopdn(&mut self) -> VCOPDN_W<DSLEEPCR_SPEC> {
+        VCOPDN_W::new(self, 13)
     }
     #[doc = "Bit 16 - USB Clock Control"]
     #[inline(always)]
     #[must_use]
-    pub fn usbcr(&mut self) -> USBCR_W<16> {
-        USBCR_W::new(self)
+    pub fn usbcr(&mut self) -> USBCR_W<DSLEEPCR_SPEC> {
+        USBCR_W::new(self, 16)
     }
     #[doc = "Bit 17 - MMC Clock Control"]
     #[inline(always)]
     #[must_use]
-    pub fn mmccr(&mut self) -> MMCCR_W<17> {
-        MMCCR_W::new(self)
+    pub fn mmccr(&mut self) -> MMCCR_W<DSLEEPCR_SPEC> {
+        MMCCR_W::new(self, 17)
     }
     #[doc = "Bit 18 - Ethernet Clock Control"]
     #[inline(always)]
     #[must_use]
-    pub fn eth0cr(&mut self) -> ETH0CR_W<18> {
-        ETH0CR_W::new(self)
+    pub fn eth0cr(&mut self) -> ETH0CR_W<DSLEEPCR_SPEC> {
+        ETH0CR_W::new(self, 18)
     }
     #[doc = "Bit 19 - EBU Clock Control"]
     #[inline(always)]
     #[must_use]
-    pub fn ebucr(&mut self) -> EBUCR_W<19> {
-        EBUCR_W::new(self)
+    pub fn ebucr(&mut self) -> EBUCR_W<DSLEEPCR_SPEC> {
+        EBUCR_W::new(self, 19)
     }
     #[doc = "Bit 20 - CCU Clock Control"]
     #[inline(always)]
     #[must_use]
-    pub fn ccucr(&mut self) -> CCUCR_W<20> {
-        CCUCR_W::new(self)
+    pub fn ccucr(&mut self) -> CCUCR_W<DSLEEPCR_SPEC> {
+        CCUCR_W::new(self, 20)
     }
     #[doc = "Bit 21 - WDT Clock Control"]
     #[inline(always)]
     #[must_use]
-    pub fn wdtcr(&mut self) -> WDTCR_W<21> {
-        WDTCR_W::new(self)
+    pub fn wdtcr(&mut self) -> WDTCR_W<DSLEEPCR_SPEC> {
+        WDTCR_W::new(self, 21)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Deep Sleep Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dsleepcr](index.html) module"]
+#[doc = "Deep Sleep Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dsleepcr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dsleepcr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DSLEEPCR_SPEC;
 impl crate::RegisterSpec for DSLEEPCR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dsleepcr::R](R) reader structure"]
-impl crate::Readable for DSLEEPCR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dsleepcr::W](W) writer structure"]
+#[doc = "`read()` method returns [`dsleepcr::R`](R) reader structure"]
+impl crate::Readable for DSLEEPCR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`dsleepcr::W`](W) writer structure"]
 impl crate::Writable for DSLEEPCR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

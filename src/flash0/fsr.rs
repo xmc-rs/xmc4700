@@ -1,18 +1,5 @@
 #[doc = "Register `FSR` reader"]
-pub struct R(crate::R<FSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<FSR_SPEC>;
 #[doc = "Field `PBUSY` reader - Program Flash Busy"]
 pub type PBUSY_R = crate::BitReader<PBUSY_A>;
 #[doc = "Program Flash Busy\n\nValue on reset: 0"]
@@ -32,25 +19,25 @@ impl From<PBUSY_A> for bool {
 impl PBUSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PBUSY_A {
+    pub const fn variant(&self) -> PBUSY_A {
         match self.bits {
             false => PBUSY_A::VALUE1,
             true => PBUSY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "PFLASH ready, not busy; PFLASH in read mode."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PBUSY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "PFLASH busy; PFLASH not in read mode."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PBUSY_A::VALUE2
     }
 }
 #[doc = "Field `FABUSY` reader - Flash Array Busy"]
-pub type FABUSY_R = crate::BitReader<bool>;
+pub type FABUSY_R = crate::BitReader;
 #[doc = "Field `PROG` reader - Programming State"]
 pub type PROG_R = crate::BitReader<PROG_A>;
 #[doc = "Programming State\n\nValue on reset: 0"]
@@ -70,18 +57,18 @@ impl From<PROG_A> for bool {
 impl PROG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PROG_A {
+    pub const fn variant(&self) -> PROG_A {
         match self.bits {
             false => PROG_A::VALUE1,
             true => PROG_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "There is no program operation requested or in progress or just finished."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PROG_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Programming operation (write page) requested (from FIM) or in action or finished."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PROG_A::VALUE2
@@ -106,18 +93,18 @@ impl From<ERASE_A> for bool {
 impl ERASE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ERASE_A {
+    pub const fn variant(&self) -> ERASE_A {
         match self.bits {
             false => ERASE_A::VALUE1,
             true => ERASE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "There is no erase operation requested or in progress or just finished"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ERASE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Erase operation requested (from FIM) or in action or finished."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ERASE_A::VALUE2
@@ -142,18 +129,18 @@ impl From<PFPAGE_A> for bool {
 impl PFPAGE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PFPAGE_A {
+    pub const fn variant(&self) -> PFPAGE_A {
         match self.bits {
             false => PFPAGE_A::VALUE1,
             true => PFPAGE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Program Flash not in page mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PFPAGE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Program Flash in page mode; assembly buffer of PFLASH (256 byte) is in use (being filled up)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PFPAGE_A::VALUE2
@@ -178,18 +165,18 @@ impl From<PFOPER_A> for bool {
 impl PFOPER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PFOPER_A {
+    pub const fn variant(&self) -> PFOPER_A {
         match self.bits {
             false => PFOPER_A::VALUE1,
             true => PFOPER_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No operation error reported by Program Flash"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PFOPER_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Flash array operation aborted, because of a Flash array failure, e.g. an ECC error in microcode."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PFOPER_A::VALUE2
@@ -214,18 +201,18 @@ impl From<SQER_A> for bool {
 impl SQER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SQER_A {
+    pub const fn variant(&self) -> SQER_A {
         match self.bits {
             false => SQER_A::VALUE1,
             true => SQER_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No sequence error"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SQER_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Command state machine operation unsuccessful because of improper address or command sequence."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SQER_A::VALUE2
@@ -250,18 +237,18 @@ impl From<PROER_A> for bool {
 impl PROER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PROER_A {
+    pub const fn variant(&self) -> PROER_A {
         match self.bits {
             false => PROER_A::VALUE1,
             true => PROER_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No protection error"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PROER_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Protection error."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PROER_A::VALUE2
@@ -286,18 +273,18 @@ impl From<PFSBER_A> for bool {
 impl PFSBER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PFSBER_A {
+    pub const fn variant(&self) -> PFSBER_A {
         match self.bits {
             false => PFSBER_A::VALUE1,
             true => PFSBER_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Single-Bit Error detected during read access to PFLASH"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PFSBER_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Single-Bit Error detected and corrected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PFSBER_A::VALUE2
@@ -322,18 +309,18 @@ impl From<PFDBER_A> for bool {
 impl PFDBER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PFDBER_A {
+    pub const fn variant(&self) -> PFDBER_A {
         match self.bits {
             false => PFDBER_A::VALUE1,
             true => PFDBER_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Double-Bit Error detected during read access to PFLASH"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PFDBER_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Double-Bit Error detected in PFLASH"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PFDBER_A::VALUE2
@@ -358,18 +345,18 @@ impl From<PROIN_A> for bool {
 impl PROIN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PROIN_A {
+    pub const fn variant(&self) -> PROIN_A {
         match self.bits {
             false => PROIN_A::VALUE1,
             true => PROIN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No protection is installed"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PROIN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read or/and write protection for one or more users is configured and correctly confirmed in the User Configuration Block(s)."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PROIN_A::VALUE2
@@ -394,18 +381,18 @@ impl From<RPROIN_A> for bool {
 impl RPROIN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RPROIN_A {
+    pub const fn variant(&self) -> RPROIN_A {
         match self.bits {
             false => RPROIN_A::VALUE1,
             true => RPROIN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No read protection installed"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RPROIN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read protection and global write protection is configured and correctly confirmed in the User Configuration Block 0."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RPROIN_A::VALUE2
@@ -430,18 +417,18 @@ impl From<RPRODIS_A> for bool {
 impl RPRODIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RPRODIS_A {
+    pub const fn variant(&self) -> RPRODIS_A {
         match self.bits {
             false => RPRODIS_A::VALUE1,
             true => RPRODIS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Read protection (if installed) is not disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RPRODIS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read and global write protection is temporarily disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RPRODIS_A::VALUE2
@@ -466,18 +453,18 @@ impl From<WPROIN0_A> for bool {
 impl WPROIN0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WPROIN0_A {
+    pub const fn variant(&self) -> WPROIN0_A {
         match self.bits {
             false => WPROIN0_A::VALUE1,
             true => WPROIN0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No write protection installed for user 0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WPROIN0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Sector write protection for user 0 is configured and correctly confirmed in the User Configuration Block 0."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WPROIN0_A::VALUE2
@@ -502,18 +489,18 @@ impl From<WPROIN1_A> for bool {
 impl WPROIN1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WPROIN1_A {
+    pub const fn variant(&self) -> WPROIN1_A {
         match self.bits {
             false => WPROIN1_A::VALUE1,
             true => WPROIN1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No write protection installed for user 1"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WPROIN1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Sector write protection for user 1 is configured and correctly confirmed in the User Configuration Block 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WPROIN1_A::VALUE2
@@ -538,18 +525,18 @@ impl From<WPROIN2_A> for bool {
 impl WPROIN2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WPROIN2_A {
+    pub const fn variant(&self) -> WPROIN2_A {
         match self.bits {
             false => WPROIN2_A::VALUE1,
             true => WPROIN2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No OTP write protection installed for user 2"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WPROIN2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Sector OTP write protection with ROM functionality is configured and correctly confirmed in the UCB2. The protection is locked for ever."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WPROIN2_A::VALUE2
@@ -574,18 +561,18 @@ impl From<WPRODIS0_A> for bool {
 impl WPRODIS0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WPRODIS0_A {
+    pub const fn variant(&self) -> WPRODIS0_A {
         match self.bits {
             false => WPRODIS0_A::VALUE1,
             true => WPRODIS0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "All protected sectors of user 0 are locked if write protection is installed"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WPRODIS0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "All write-protected sectors of user 0 are temporarily unlocked, if not coincidently locked by user 2 or via read protection."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WPRODIS0_A::VALUE2
@@ -610,18 +597,18 @@ impl From<WPRODIS1_A> for bool {
 impl WPRODIS1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WPRODIS1_A {
+    pub const fn variant(&self) -> WPRODIS1_A {
         match self.bits {
             false => WPRODIS1_A::VALUE1,
             true => WPRODIS1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "All protected sectors of user 1 are locked if write protection is installed"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WPRODIS1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "All write-protected sectors of user 1 are temporarily unlocked, if not coincidently locked by user 0 or user 2 or via read protection."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WPRODIS1_A::VALUE2
@@ -646,18 +633,18 @@ impl From<SLM_A> for bool {
 impl SLM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SLM_A {
+    pub const fn variant(&self) -> SLM_A {
         match self.bits {
             false => SLM_A::VALUE1,
             true => SLM_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Flash not in sleep mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SLM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Flash is in sleep or shut down mode"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SLM_A::VALUE2
@@ -682,18 +669,18 @@ impl From<VER_A> for bool {
 impl VER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VER_A {
+    pub const fn variant(&self) -> VER_A {
         match self.bits {
             false => VER_A::VALUE1,
             true => VER_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The page is correctly programmed or the sector correctly erased. All programmed or erased bits have full expected quality."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VER_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A program verify error or an erase verify error has been detected. Full quality (retention time) of all programmed (\"1\") or erased (\"0\") bits cannot be guaranteed."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VER_A::VALUE2
@@ -801,15 +788,13 @@ impl R {
         VER_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Flash Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fsr](index.html) module"]
+#[doc = "Flash Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FSR_SPEC;
 impl crate::RegisterSpec for FSR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [fsr::R](R) reader structure"]
-impl crate::Readable for FSR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`fsr::R`](R) reader structure"]
+impl crate::Readable for FSR_SPEC {}
 #[doc = "`reset()` method sets FSR to value 0"]
 impl crate::Resettable for FSR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

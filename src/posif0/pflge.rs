@@ -1,39 +1,7 @@
 #[doc = "Register `PFLGE` reader"]
-pub struct R(crate::R<PFLGE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PFLGE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PFLGE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PFLGE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PFLGE_SPEC>;
 #[doc = "Register `PFLGE` writer"]
-pub struct W(crate::W<PFLGE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PFLGE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PFLGE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PFLGE_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PFLGE_SPEC>;
 #[doc = "Field `ECHE` reader - Correct Hall Event Enable"]
 pub type ECHE_R = crate::BitReader<ECHE_A>;
 #[doc = "Correct Hall Event Enable\n\nValue on reset: 0"]
@@ -53,34 +21,37 @@ impl From<ECHE_A> for bool {
 impl ECHE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ECHE_A {
+    pub const fn variant(&self) -> ECHE_A {
         match self.bits {
             false => ECHE_A::VALUE1,
             true => ECHE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Correct Hall Event interrupt disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ECHE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Correct Hall Event interrupt enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ECHE_A::VALUE2
     }
 }
 #[doc = "Field `ECHE` writer - Correct Hall Event Enable"]
-pub type ECHE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, ECHE_A, O>;
-impl<'a, const O: u8> ECHE_W<'a, O> {
+pub type ECHE_W<'a, REG> = crate::BitWriter<'a, REG, ECHE_A>;
+impl<'a, REG> ECHE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Correct Hall Event interrupt disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ECHE_A::VALUE1)
     }
     #[doc = "Correct Hall Event interrupt enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ECHE_A::VALUE2)
     }
 }
@@ -103,34 +74,37 @@ impl From<EWHE_A> for bool {
 impl EWHE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EWHE_A {
+    pub const fn variant(&self) -> EWHE_A {
         match self.bits {
             false => EWHE_A::VALUE1,
             true => EWHE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Wrong Hall Event interrupt disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EWHE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Wrong Hall Event interrupt enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EWHE_A::VALUE2
     }
 }
 #[doc = "Field `EWHE` writer - Wrong Hall Event Enable"]
-pub type EWHE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, EWHE_A, O>;
-impl<'a, const O: u8> EWHE_W<'a, O> {
+pub type EWHE_W<'a, REG> = crate::BitWriter<'a, REG, EWHE_A>;
+impl<'a, REG> EWHE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Wrong Hall Event interrupt disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EWHE_A::VALUE1)
     }
     #[doc = "Wrong Hall Event interrupt enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EWHE_A::VALUE2)
     }
 }
@@ -153,34 +127,37 @@ impl From<EHIE_A> for bool {
 impl EHIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EHIE_A {
+    pub const fn variant(&self) -> EHIE_A {
         match self.bits {
             false => EHIE_A::VALUE1,
             true => EHIE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Update of the Hall Inputs interrupt is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EHIE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Update of the Hall Inputs interrupt is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EHIE_A::VALUE2
     }
 }
 #[doc = "Field `EHIE` writer - Hall Input Update Enable"]
-pub type EHIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, EHIE_A, O>;
-impl<'a, const O: u8> EHIE_W<'a, O> {
+pub type EHIE_W<'a, REG> = crate::BitWriter<'a, REG, EHIE_A>;
+impl<'a, REG> EHIE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Update of the Hall Inputs interrupt is disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EHIE_A::VALUE1)
     }
     #[doc = "Update of the Hall Inputs interrupt is enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EHIE_A::VALUE2)
     }
 }
@@ -203,34 +180,37 @@ impl From<EMST_A> for bool {
 impl EMST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EMST_A {
+    pub const fn variant(&self) -> EMST_A {
         match self.bits {
             false => EMST_A::VALUE1,
             true => EMST_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Shadow transfer event interrupt disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EMST_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Shadow transfer event interrupt enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EMST_A::VALUE2
     }
 }
 #[doc = "Field `EMST` writer - Multi-Channel pattern shadow transfer enable"]
-pub type EMST_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, EMST_A, O>;
-impl<'a, const O: u8> EMST_W<'a, O> {
+pub type EMST_W<'a, REG> = crate::BitWriter<'a, REG, EMST_A>;
+impl<'a, REG> EMST_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Shadow transfer event interrupt disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EMST_A::VALUE1)
     }
     #[doc = "Shadow transfer event interrupt enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EMST_A::VALUE2)
     }
 }
@@ -253,34 +233,37 @@ impl From<EINDX_A> for bool {
 impl EINDX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EINDX_A {
+    pub const fn variant(&self) -> EINDX_A {
         match self.bits {
             false => EINDX_A::VALUE1,
             true => EINDX_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Index event interrupt disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EINDX_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Index event interrupt enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EINDX_A::VALUE2
     }
 }
 #[doc = "Field `EINDX` writer - Quadrature Index Event Enable"]
-pub type EINDX_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, EINDX_A, O>;
-impl<'a, const O: u8> EINDX_W<'a, O> {
+pub type EINDX_W<'a, REG> = crate::BitWriter<'a, REG, EINDX_A>;
+impl<'a, REG> EINDX_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Index event interrupt disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EINDX_A::VALUE1)
     }
     #[doc = "Index event interrupt enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EINDX_A::VALUE2)
     }
 }
@@ -303,34 +286,37 @@ impl From<EERR_A> for bool {
 impl EERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EERR_A {
+    pub const fn variant(&self) -> EERR_A {
         match self.bits {
             false => EERR_A::VALUE1,
             true => EERR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Phase error event interrupt disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EERR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Phase error event interrupt enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EERR_A::VALUE2
     }
 }
 #[doc = "Field `EERR` writer - Quadrature Phase Error Enable"]
-pub type EERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, EERR_A, O>;
-impl<'a, const O: u8> EERR_W<'a, O> {
+pub type EERR_W<'a, REG> = crate::BitWriter<'a, REG, EERR_A>;
+impl<'a, REG> EERR_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Phase error event interrupt disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EERR_A::VALUE1)
     }
     #[doc = "Phase error event interrupt enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EERR_A::VALUE2)
     }
 }
@@ -353,34 +339,37 @@ impl From<ECNT_A> for bool {
 impl ECNT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ECNT_A {
+    pub const fn variant(&self) -> ECNT_A {
         match self.bits {
             false => ECNT_A::VALUE1,
             true => ECNT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Quadrature CLK event interrupt disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ECNT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Quadrature CLK event interrupt enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ECNT_A::VALUE2
     }
 }
 #[doc = "Field `ECNT` writer - Quadrature CLK interrupt Enable"]
-pub type ECNT_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, ECNT_A, O>;
-impl<'a, const O: u8> ECNT_W<'a, O> {
+pub type ECNT_W<'a, REG> = crate::BitWriter<'a, REG, ECNT_A>;
+impl<'a, REG> ECNT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Quadrature CLK event interrupt disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ECNT_A::VALUE1)
     }
     #[doc = "Quadrature CLK event interrupt enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ECNT_A::VALUE2)
     }
 }
@@ -403,34 +392,37 @@ impl From<EDIR_A> for bool {
 impl EDIR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EDIR_A {
+    pub const fn variant(&self) -> EDIR_A {
         match self.bits {
             false => EDIR_A::VALUE1,
             true => EDIR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Direction change event interrupt disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EDIR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Direction change event interrupt enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EDIR_A::VALUE2
     }
 }
 #[doc = "Field `EDIR` writer - Quadrature direction change interrupt Enable"]
-pub type EDIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, EDIR_A, O>;
-impl<'a, const O: u8> EDIR_W<'a, O> {
+pub type EDIR_W<'a, REG> = crate::BitWriter<'a, REG, EDIR_A>;
+impl<'a, REG> EDIR_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Direction change event interrupt disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EDIR_A::VALUE1)
     }
     #[doc = "Direction change event interrupt enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EDIR_A::VALUE2)
     }
 }
@@ -453,34 +445,37 @@ impl From<EPCLK_A> for bool {
 impl EPCLK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPCLK_A {
+    pub const fn variant(&self) -> EPCLK_A {
         match self.bits {
             false => EPCLK_A::VALUE1,
             true => EPCLK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Quadrature Period CLK event interrupt disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EPCLK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Quadrature Period CLK event interrupt enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EPCLK_A::VALUE2
     }
 }
 #[doc = "Field `EPCLK` writer - Quadrature Period CLK interrupt Enable"]
-pub type EPCLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, EPCLK_A, O>;
-impl<'a, const O: u8> EPCLK_W<'a, O> {
+pub type EPCLK_W<'a, REG> = crate::BitWriter<'a, REG, EPCLK_A>;
+impl<'a, REG> EPCLK_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Quadrature Period CLK event interrupt disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EPCLK_A::VALUE1)
     }
     #[doc = "Quadrature Period CLK event interrupt enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EPCLK_A::VALUE2)
     }
 }
@@ -503,34 +498,37 @@ impl From<CHESEL_A> for bool {
 impl CHESEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHESEL_A {
+    pub const fn variant(&self) -> CHESEL_A {
         match self.bits {
             false => CHESEL_A::VALUE1,
             true => CHESEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Correct Hall Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CHESEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Correct Hall Event interrupt forward to POSIFx.SR1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CHESEL_A::VALUE2
     }
 }
 #[doc = "Field `CHESEL` writer - Correct Hall Event Service Request Selector"]
-pub type CHESEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, CHESEL_A, O>;
-impl<'a, const O: u8> CHESEL_W<'a, O> {
+pub type CHESEL_W<'a, REG> = crate::BitWriter<'a, REG, CHESEL_A>;
+impl<'a, REG> CHESEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Correct Hall Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CHESEL_A::VALUE1)
     }
     #[doc = "Correct Hall Event interrupt forward to POSIFx.SR1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CHESEL_A::VALUE2)
     }
 }
@@ -553,34 +551,37 @@ impl From<WHESEL_A> for bool {
 impl WHESEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WHESEL_A {
+    pub const fn variant(&self) -> WHESEL_A {
         match self.bits {
             false => WHESEL_A::VALUE1,
             true => WHESEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Wrong Hall Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WHESEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Wrong Hall Event interrupt forward to POSIFx.SR1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WHESEL_A::VALUE2
     }
 }
 #[doc = "Field `WHESEL` writer - Wrong Hall Event Service Request Selector"]
-pub type WHESEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, WHESEL_A, O>;
-impl<'a, const O: u8> WHESEL_W<'a, O> {
+pub type WHESEL_W<'a, REG> = crate::BitWriter<'a, REG, WHESEL_A>;
+impl<'a, REG> WHESEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Wrong Hall Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(WHESEL_A::VALUE1)
     }
     #[doc = "Wrong Hall Event interrupt forward to POSIFx.SR1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(WHESEL_A::VALUE2)
     }
 }
@@ -603,34 +604,37 @@ impl From<HIESEL_A> for bool {
 impl HIESEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HIESEL_A {
+    pub const fn variant(&self) -> HIESEL_A {
         match self.bits {
             false => HIESEL_A::VALUE1,
             true => HIESEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Hall Inputs Update Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HIESEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Hall Inputs Update Event interrupt forward to POSIFx.SR1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HIESEL_A::VALUE2
     }
 }
 #[doc = "Field `HIESEL` writer - Hall Inputs Update Event Service Request Selector"]
-pub type HIESEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, HIESEL_A, O>;
-impl<'a, const O: u8> HIESEL_W<'a, O> {
+pub type HIESEL_W<'a, REG> = crate::BitWriter<'a, REG, HIESEL_A>;
+impl<'a, REG> HIESEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Hall Inputs Update Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(HIESEL_A::VALUE1)
     }
     #[doc = "Hall Inputs Update Event interrupt forward to POSIFx.SR1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(HIESEL_A::VALUE2)
     }
 }
@@ -653,34 +657,37 @@ impl From<MSTSEL_A> for bool {
 impl MSTSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MSTSEL_A {
+    pub const fn variant(&self) -> MSTSEL_A {
         match self.bits {
             false => MSTSEL_A::VALUE1,
             true => MSTSEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Multi-Channel pattern Update Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MSTSEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Multi-Channel pattern Update Event interrupt forward to POSIFx.SR1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MSTSEL_A::VALUE2
     }
 }
 #[doc = "Field `MSTSEL` writer - Multi-Channel pattern Update Event Service Request Selector"]
-pub type MSTSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, MSTSEL_A, O>;
-impl<'a, const O: u8> MSTSEL_W<'a, O> {
+pub type MSTSEL_W<'a, REG> = crate::BitWriter<'a, REG, MSTSEL_A>;
+impl<'a, REG> MSTSEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Multi-Channel pattern Update Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MSTSEL_A::VALUE1)
     }
     #[doc = "Multi-Channel pattern Update Event interrupt forward to POSIFx.SR1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MSTSEL_A::VALUE2)
     }
 }
@@ -703,34 +710,37 @@ impl From<INDSEL_A> for bool {
 impl INDSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INDSEL_A {
+    pub const fn variant(&self) -> INDSEL_A {
         match self.bits {
             false => INDSEL_A::VALUE1,
             true => INDSEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Quadrature Index Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == INDSEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Quadrature Index Event interrupt forward to POSIFx.SR1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == INDSEL_A::VALUE2
     }
 }
 #[doc = "Field `INDSEL` writer - Quadrature Index Event Service Request Selector"]
-pub type INDSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, INDSEL_A, O>;
-impl<'a, const O: u8> INDSEL_W<'a, O> {
+pub type INDSEL_W<'a, REG> = crate::BitWriter<'a, REG, INDSEL_A>;
+impl<'a, REG> INDSEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Quadrature Index Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(INDSEL_A::VALUE1)
     }
     #[doc = "Quadrature Index Event interrupt forward to POSIFx.SR1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(INDSEL_A::VALUE2)
     }
 }
@@ -753,34 +763,37 @@ impl From<ERRSEL_A> for bool {
 impl ERRSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ERRSEL_A {
+    pub const fn variant(&self) -> ERRSEL_A {
         match self.bits {
             false => ERRSEL_A::VALUE1,
             true => ERRSEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Quadrature Phase error Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ERRSEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Quadrature Phase error Event interrupt forward to POSIFx.SR1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ERRSEL_A::VALUE2
     }
 }
 #[doc = "Field `ERRSEL` writer - Quadrature Phase Error Event Service Request Selector"]
-pub type ERRSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, ERRSEL_A, O>;
-impl<'a, const O: u8> ERRSEL_W<'a, O> {
+pub type ERRSEL_W<'a, REG> = crate::BitWriter<'a, REG, ERRSEL_A>;
+impl<'a, REG> ERRSEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Quadrature Phase error Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ERRSEL_A::VALUE1)
     }
     #[doc = "Quadrature Phase error Event interrupt forward to POSIFx.SR1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ERRSEL_A::VALUE2)
     }
 }
@@ -803,34 +816,37 @@ impl From<CNTSEL_A> for bool {
 impl CNTSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CNTSEL_A {
+    pub const fn variant(&self) -> CNTSEL_A {
         match self.bits {
             false => CNTSEL_A::VALUE1,
             true => CNTSEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Quadrature Clock Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CNTSEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Quadrature Clock Event interrupt forward to POSIFx.SR1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CNTSEL_A::VALUE2
     }
 }
 #[doc = "Field `CNTSEL` writer - Quadrature Clock Event Service Request Selector"]
-pub type CNTSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, CNTSEL_A, O>;
-impl<'a, const O: u8> CNTSEL_W<'a, O> {
+pub type CNTSEL_W<'a, REG> = crate::BitWriter<'a, REG, CNTSEL_A>;
+impl<'a, REG> CNTSEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Quadrature Clock Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CNTSEL_A::VALUE1)
     }
     #[doc = "Quadrature Clock Event interrupt forward to POSIFx.SR1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CNTSEL_A::VALUE2)
     }
 }
@@ -853,34 +869,37 @@ impl From<DIRSEL_A> for bool {
 impl DIRSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DIRSEL_A {
+    pub const fn variant(&self) -> DIRSEL_A {
         match self.bits {
             false => DIRSEL_A::VALUE1,
             true => DIRSEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Quadrature Direction Update Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DIRSEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Quadrature Direction Update Event interrupt forward to POSIFx.SR1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DIRSEL_A::VALUE2
     }
 }
 #[doc = "Field `DIRSEL` writer - Quadrature Direction Update Event Service Request Selector"]
-pub type DIRSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, DIRSEL_A, O>;
-impl<'a, const O: u8> DIRSEL_W<'a, O> {
+pub type DIRSEL_W<'a, REG> = crate::BitWriter<'a, REG, DIRSEL_A>;
+impl<'a, REG> DIRSEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Quadrature Direction Update Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DIRSEL_A::VALUE1)
     }
     #[doc = "Quadrature Direction Update Event interrupt forward to POSIFx.SR1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DIRSEL_A::VALUE2)
     }
 }
@@ -903,34 +922,37 @@ impl From<PCLSEL_A> for bool {
 impl PCLSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PCLSEL_A {
+    pub const fn variant(&self) -> PCLSEL_A {
         match self.bits {
             false => PCLSEL_A::VALUE1,
             true => PCLSEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Quadrature Period clock Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PCLSEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Quadrature Period clock Event interrupt forward to POSIFx.SR1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PCLSEL_A::VALUE2
     }
 }
 #[doc = "Field `PCLSEL` writer - Quadrature Period clock Event Service Request Selector"]
-pub type PCLSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, PCLSEL_A, O>;
-impl<'a, const O: u8> PCLSEL_W<'a, O> {
+pub type PCLSEL_W<'a, REG> = crate::BitWriter<'a, REG, PCLSEL_A>;
+impl<'a, REG> PCLSEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Quadrature Period clock Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PCLSEL_A::VALUE1)
     }
     #[doc = "Quadrature Period clock Event interrupt forward to POSIFx.SR1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PCLSEL_A::VALUE2)
     }
 }
@@ -1030,130 +1052,131 @@ impl W {
     #[doc = "Bit 0 - Correct Hall Event Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn eche(&mut self) -> ECHE_W<0> {
-        ECHE_W::new(self)
+    pub fn eche(&mut self) -> ECHE_W<PFLGE_SPEC> {
+        ECHE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Wrong Hall Event Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ewhe(&mut self) -> EWHE_W<1> {
-        EWHE_W::new(self)
+    pub fn ewhe(&mut self) -> EWHE_W<PFLGE_SPEC> {
+        EWHE_W::new(self, 1)
     }
     #[doc = "Bit 2 - Hall Input Update Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ehie(&mut self) -> EHIE_W<2> {
-        EHIE_W::new(self)
+    pub fn ehie(&mut self) -> EHIE_W<PFLGE_SPEC> {
+        EHIE_W::new(self, 2)
     }
     #[doc = "Bit 4 - Multi-Channel pattern shadow transfer enable"]
     #[inline(always)]
     #[must_use]
-    pub fn emst(&mut self) -> EMST_W<4> {
-        EMST_W::new(self)
+    pub fn emst(&mut self) -> EMST_W<PFLGE_SPEC> {
+        EMST_W::new(self, 4)
     }
     #[doc = "Bit 8 - Quadrature Index Event Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn eindx(&mut self) -> EINDX_W<8> {
-        EINDX_W::new(self)
+    pub fn eindx(&mut self) -> EINDX_W<PFLGE_SPEC> {
+        EINDX_W::new(self, 8)
     }
     #[doc = "Bit 9 - Quadrature Phase Error Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn eerr(&mut self) -> EERR_W<9> {
-        EERR_W::new(self)
+    pub fn eerr(&mut self) -> EERR_W<PFLGE_SPEC> {
+        EERR_W::new(self, 9)
     }
     #[doc = "Bit 10 - Quadrature CLK interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ecnt(&mut self) -> ECNT_W<10> {
-        ECNT_W::new(self)
+    pub fn ecnt(&mut self) -> ECNT_W<PFLGE_SPEC> {
+        ECNT_W::new(self, 10)
     }
     #[doc = "Bit 11 - Quadrature direction change interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn edir(&mut self) -> EDIR_W<11> {
-        EDIR_W::new(self)
+    pub fn edir(&mut self) -> EDIR_W<PFLGE_SPEC> {
+        EDIR_W::new(self, 11)
     }
     #[doc = "Bit 12 - Quadrature Period CLK interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn epclk(&mut self) -> EPCLK_W<12> {
-        EPCLK_W::new(self)
+    pub fn epclk(&mut self) -> EPCLK_W<PFLGE_SPEC> {
+        EPCLK_W::new(self, 12)
     }
     #[doc = "Bit 16 - Correct Hall Event Service Request Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn chesel(&mut self) -> CHESEL_W<16> {
-        CHESEL_W::new(self)
+    pub fn chesel(&mut self) -> CHESEL_W<PFLGE_SPEC> {
+        CHESEL_W::new(self, 16)
     }
     #[doc = "Bit 17 - Wrong Hall Event Service Request Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn whesel(&mut self) -> WHESEL_W<17> {
-        WHESEL_W::new(self)
+    pub fn whesel(&mut self) -> WHESEL_W<PFLGE_SPEC> {
+        WHESEL_W::new(self, 17)
     }
     #[doc = "Bit 18 - Hall Inputs Update Event Service Request Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn hiesel(&mut self) -> HIESEL_W<18> {
-        HIESEL_W::new(self)
+    pub fn hiesel(&mut self) -> HIESEL_W<PFLGE_SPEC> {
+        HIESEL_W::new(self, 18)
     }
     #[doc = "Bit 20 - Multi-Channel pattern Update Event Service Request Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn mstsel(&mut self) -> MSTSEL_W<20> {
-        MSTSEL_W::new(self)
+    pub fn mstsel(&mut self) -> MSTSEL_W<PFLGE_SPEC> {
+        MSTSEL_W::new(self, 20)
     }
     #[doc = "Bit 24 - Quadrature Index Event Service Request Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn indsel(&mut self) -> INDSEL_W<24> {
-        INDSEL_W::new(self)
+    pub fn indsel(&mut self) -> INDSEL_W<PFLGE_SPEC> {
+        INDSEL_W::new(self, 24)
     }
     #[doc = "Bit 25 - Quadrature Phase Error Event Service Request Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn errsel(&mut self) -> ERRSEL_W<25> {
-        ERRSEL_W::new(self)
+    pub fn errsel(&mut self) -> ERRSEL_W<PFLGE_SPEC> {
+        ERRSEL_W::new(self, 25)
     }
     #[doc = "Bit 26 - Quadrature Clock Event Service Request Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn cntsel(&mut self) -> CNTSEL_W<26> {
-        CNTSEL_W::new(self)
+    pub fn cntsel(&mut self) -> CNTSEL_W<PFLGE_SPEC> {
+        CNTSEL_W::new(self, 26)
     }
     #[doc = "Bit 27 - Quadrature Direction Update Event Service Request Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn dirsel(&mut self) -> DIRSEL_W<27> {
-        DIRSEL_W::new(self)
+    pub fn dirsel(&mut self) -> DIRSEL_W<PFLGE_SPEC> {
+        DIRSEL_W::new(self, 27)
     }
     #[doc = "Bit 28 - Quadrature Period clock Event Service Request Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn pclsel(&mut self) -> PCLSEL_W<28> {
-        PCLSEL_W::new(self)
+    pub fn pclsel(&mut self) -> PCLSEL_W<PFLGE_SPEC> {
+        PCLSEL_W::new(self, 28)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "POSIF Interrupt Enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pflge](index.html) module"]
+#[doc = "POSIF Interrupt Enable\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pflge::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pflge::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PFLGE_SPEC;
 impl crate::RegisterSpec for PFLGE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pflge::R](R) reader structure"]
-impl crate::Readable for PFLGE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pflge::W](W) writer structure"]
+#[doc = "`read()` method returns [`pflge::R`](R) reader structure"]
+impl crate::Readable for PFLGE_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pflge::W`](W) writer structure"]
 impl crate::Writable for PFLGE_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

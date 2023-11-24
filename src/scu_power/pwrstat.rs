@@ -1,18 +1,5 @@
 #[doc = "Register `PWRSTAT` reader"]
-pub struct R(crate::R<PWRSTAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PWRSTAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PWRSTAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PWRSTAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PWRSTAT_SPEC>;
 #[doc = "Field `HIBEN` reader - Hibernate Domain Enable Status"]
 pub type HIBEN_R = crate::BitReader<HIBEN_A>;
 #[doc = "Hibernate Domain Enable Status\n\nValue on reset: 0"]
@@ -32,18 +19,18 @@ impl From<HIBEN_A> for bool {
 impl HIBEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HIBEN_A {
+    pub const fn variant(&self) -> HIBEN_A {
         match self.bits {
             false => HIBEN_A::VALUE1,
             true => HIBEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Inactive"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HIBEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HIBEN_A::VALUE2
@@ -68,18 +55,18 @@ impl From<USBPHYPDQ_A> for bool {
 impl USBPHYPDQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USBPHYPDQ_A {
+    pub const fn variant(&self) -> USBPHYPDQ_A {
         match self.bits {
             false => USBPHYPDQ_A::VALUE1,
             true => USBPHYPDQ_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Power-down"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == USBPHYPDQ_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == USBPHYPDQ_A::VALUE2
@@ -104,18 +91,18 @@ impl From<USBOTGEN_A> for bool {
 impl USBOTGEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USBOTGEN_A {
+    pub const fn variant(&self) -> USBOTGEN_A {
         match self.bits {
             false => USBOTGEN_A::VALUE1,
             true => USBOTGEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Power-down"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == USBOTGEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == USBOTGEN_A::VALUE2
@@ -140,18 +127,18 @@ impl From<USBPUWQ_A> for bool {
 impl USBPUWQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USBPUWQ_A {
+    pub const fn variant(&self) -> USBPUWQ_A {
         match self.bits {
             false => USBPUWQ_A::VALUE1,
             true => USBPUWQ_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Pull-up active"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == USBPUWQ_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pull-up not active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == USBPUWQ_A::VALUE2
@@ -179,15 +166,13 @@ impl R {
         USBPUWQ_R::new(((self.bits >> 18) & 1) != 0)
     }
 }
-#[doc = "PCU Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwrstat](index.html) module"]
+#[doc = "PCU Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pwrstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PWRSTAT_SPEC;
 impl crate::RegisterSpec for PWRSTAT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pwrstat::R](R) reader structure"]
-impl crate::Readable for PWRSTAT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`pwrstat::R`](R) reader structure"]
+impl crate::Readable for PWRSTAT_SPEC {}
 #[doc = "`reset()` method sets PWRSTAT to value 0"]
 impl crate::Resettable for PWRSTAT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

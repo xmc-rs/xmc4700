@@ -1,41 +1,9 @@
 #[doc = "Register `ARBPR` reader"]
-pub struct R(crate::R<ARBPR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ARBPR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ARBPR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ARBPR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ARBPR_SPEC>;
 #[doc = "Register `ARBPR` writer"]
-pub struct W(crate::W<ARBPR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ARBPR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ARBPR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ARBPR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<ARBPR_SPEC>;
 #[doc = "Field `PRIO0` reader - Priority of Request Source x"]
-pub type PRIO0_R = crate::FieldReader<u8, PRIO0_A>;
+pub type PRIO0_R = crate::FieldReader<PRIO0_A>;
 #[doc = "Priority of Request Source x\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -51,38 +19,45 @@ impl From<PRIO0_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for PRIO0_A {
+    type Ux = u8;
+}
 impl PRIO0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PRIO0_A> {
+    pub const fn variant(&self) -> Option<PRIO0_A> {
         match self.bits {
             0 => Some(PRIO0_A::VALUE1),
             3 => Some(PRIO0_A::VALUE2),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Lowest priority is selected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PRIO0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Highest priority is selected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PRIO0_A::VALUE2
     }
 }
 #[doc = "Field `PRIO0` writer - Priority of Request Source x"]
-pub type PRIO0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ARBPR_SPEC, u8, PRIO0_A, 2, O>;
-impl<'a, const O: u8> PRIO0_W<'a, O> {
+pub type PRIO0_W<'a, REG> = crate::FieldWriter<'a, REG, 2, PRIO0_A>;
+impl<'a, REG> PRIO0_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Lowest priority is selected."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PRIO0_A::VALUE1)
     }
     #[doc = "Highest priority is selected."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PRIO0_A::VALUE2)
     }
 }
@@ -105,39 +80,42 @@ impl From<CSM0_A> for bool {
 impl CSM0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CSM0_A {
+    pub const fn variant(&self) -> CSM0_A {
         match self.bits {
             false => CSM0_A::VALUE1,
             true => CSM0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Wait-for-start mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CSM0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Cancel-inject-repeat mode, i.e. this source can cancel conversion of other sources."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CSM0_A::VALUE2
     }
 }
 #[doc = "Field `CSM0` writer - Conversion Start Mode of Request Source x"]
-pub type CSM0_W<'a, const O: u8> = crate::BitWriter<'a, u32, ARBPR_SPEC, CSM0_A, O>;
-impl<'a, const O: u8> CSM0_W<'a, O> {
+pub type CSM0_W<'a, REG> = crate::BitWriter<'a, REG, CSM0_A>;
+impl<'a, REG> CSM0_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Wait-for-start mode"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CSM0_A::VALUE1)
     }
     #[doc = "Cancel-inject-repeat mode, i.e. this source can cancel conversion of other sources."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CSM0_A::VALUE2)
     }
 }
 #[doc = "Field `PRIO1` reader - Priority of Request Source x"]
-pub type PRIO1_R = crate::FieldReader<u8, PRIO1_A>;
+pub type PRIO1_R = crate::FieldReader<PRIO1_A>;
 #[doc = "Priority of Request Source x\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -153,38 +131,45 @@ impl From<PRIO1_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for PRIO1_A {
+    type Ux = u8;
+}
 impl PRIO1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PRIO1_A> {
+    pub const fn variant(&self) -> Option<PRIO1_A> {
         match self.bits {
             0 => Some(PRIO1_A::VALUE1),
             3 => Some(PRIO1_A::VALUE2),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Lowest priority is selected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PRIO1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Highest priority is selected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PRIO1_A::VALUE2
     }
 }
 #[doc = "Field `PRIO1` writer - Priority of Request Source x"]
-pub type PRIO1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ARBPR_SPEC, u8, PRIO1_A, 2, O>;
-impl<'a, const O: u8> PRIO1_W<'a, O> {
+pub type PRIO1_W<'a, REG> = crate::FieldWriter<'a, REG, 2, PRIO1_A>;
+impl<'a, REG> PRIO1_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Lowest priority is selected."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PRIO1_A::VALUE1)
     }
     #[doc = "Highest priority is selected."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PRIO1_A::VALUE2)
     }
 }
@@ -207,39 +192,42 @@ impl From<CSM1_A> for bool {
 impl CSM1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CSM1_A {
+    pub const fn variant(&self) -> CSM1_A {
         match self.bits {
             false => CSM1_A::VALUE1,
             true => CSM1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Wait-for-start mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CSM1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Cancel-inject-repeat mode, i.e. this source can cancel conversion of other sources."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CSM1_A::VALUE2
     }
 }
 #[doc = "Field `CSM1` writer - Conversion Start Mode of Request Source x"]
-pub type CSM1_W<'a, const O: u8> = crate::BitWriter<'a, u32, ARBPR_SPEC, CSM1_A, O>;
-impl<'a, const O: u8> CSM1_W<'a, O> {
+pub type CSM1_W<'a, REG> = crate::BitWriter<'a, REG, CSM1_A>;
+impl<'a, REG> CSM1_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Wait-for-start mode"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CSM1_A::VALUE1)
     }
     #[doc = "Cancel-inject-repeat mode, i.e. this source can cancel conversion of other sources."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CSM1_A::VALUE2)
     }
 }
 #[doc = "Field `PRIO2` reader - Priority of Request Source x"]
-pub type PRIO2_R = crate::FieldReader<u8, PRIO2_A>;
+pub type PRIO2_R = crate::FieldReader<PRIO2_A>;
 #[doc = "Priority of Request Source x\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -255,38 +243,45 @@ impl From<PRIO2_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for PRIO2_A {
+    type Ux = u8;
+}
 impl PRIO2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PRIO2_A> {
+    pub const fn variant(&self) -> Option<PRIO2_A> {
         match self.bits {
             0 => Some(PRIO2_A::VALUE1),
             3 => Some(PRIO2_A::VALUE2),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Lowest priority is selected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PRIO2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Highest priority is selected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PRIO2_A::VALUE2
     }
 }
 #[doc = "Field `PRIO2` writer - Priority of Request Source x"]
-pub type PRIO2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ARBPR_SPEC, u8, PRIO2_A, 2, O>;
-impl<'a, const O: u8> PRIO2_W<'a, O> {
+pub type PRIO2_W<'a, REG> = crate::FieldWriter<'a, REG, 2, PRIO2_A>;
+impl<'a, REG> PRIO2_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Lowest priority is selected."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PRIO2_A::VALUE1)
     }
     #[doc = "Highest priority is selected."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PRIO2_A::VALUE2)
     }
 }
@@ -309,34 +304,37 @@ impl From<CSM2_A> for bool {
 impl CSM2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CSM2_A {
+    pub const fn variant(&self) -> CSM2_A {
         match self.bits {
             false => CSM2_A::VALUE1,
             true => CSM2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Wait-for-start mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CSM2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Cancel-inject-repeat mode, i.e. this source can cancel conversion of other sources."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CSM2_A::VALUE2
     }
 }
 #[doc = "Field `CSM2` writer - Conversion Start Mode of Request Source x"]
-pub type CSM2_W<'a, const O: u8> = crate::BitWriter<'a, u32, ARBPR_SPEC, CSM2_A, O>;
-impl<'a, const O: u8> CSM2_W<'a, O> {
+pub type CSM2_W<'a, REG> = crate::BitWriter<'a, REG, CSM2_A>;
+impl<'a, REG> CSM2_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Wait-for-start mode"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CSM2_A::VALUE1)
     }
     #[doc = "Cancel-inject-repeat mode, i.e. this source can cancel conversion of other sources."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CSM2_A::VALUE2)
     }
 }
@@ -359,34 +357,37 @@ impl From<ASEN0_A> for bool {
 impl ASEN0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ASEN0_A {
+    pub const fn variant(&self) -> ASEN0_A {
         match self.bits {
             false => ASEN0_A::VALUE1,
             true => ASEN0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The corresponding arbitration slot is disabled and considered as empty. Pending conversion requests from the associated request source are disregarded."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ASEN0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The corresponding arbitration slot is enabled. Pending conversion requests from the associated request source are arbitrated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ASEN0_A::VALUE2
     }
 }
 #[doc = "Field `ASEN0` writer - Arbitration Slot 0 Enable"]
-pub type ASEN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, ARBPR_SPEC, ASEN0_A, O>;
-impl<'a, const O: u8> ASEN0_W<'a, O> {
+pub type ASEN0_W<'a, REG> = crate::BitWriter<'a, REG, ASEN0_A>;
+impl<'a, REG> ASEN0_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The corresponding arbitration slot is disabled and considered as empty. Pending conversion requests from the associated request source are disregarded."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ASEN0_A::VALUE1)
     }
     #[doc = "The corresponding arbitration slot is enabled. Pending conversion requests from the associated request source are arbitrated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ASEN0_A::VALUE2)
     }
 }
@@ -409,34 +410,37 @@ impl From<ASEN1_A> for bool {
 impl ASEN1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ASEN1_A {
+    pub const fn variant(&self) -> ASEN1_A {
         match self.bits {
             false => ASEN1_A::VALUE1,
             true => ASEN1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The corresponding arbitration slot is disabled and considered as empty. Pending conversion requests from the associated request source are disregarded."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ASEN1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The corresponding arbitration slot is enabled. Pending conversion requests from the associated request source are arbitrated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ASEN1_A::VALUE2
     }
 }
 #[doc = "Field `ASEN1` writer - Arbitration Slot 1 Enable"]
-pub type ASEN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, ARBPR_SPEC, ASEN1_A, O>;
-impl<'a, const O: u8> ASEN1_W<'a, O> {
+pub type ASEN1_W<'a, REG> = crate::BitWriter<'a, REG, ASEN1_A>;
+impl<'a, REG> ASEN1_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The corresponding arbitration slot is disabled and considered as empty. Pending conversion requests from the associated request source are disregarded."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ASEN1_A::VALUE1)
     }
     #[doc = "The corresponding arbitration slot is enabled. Pending conversion requests from the associated request source are arbitrated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ASEN1_A::VALUE2)
     }
 }
@@ -459,34 +463,37 @@ impl From<ASEN2_A> for bool {
 impl ASEN2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ASEN2_A {
+    pub const fn variant(&self) -> ASEN2_A {
         match self.bits {
             false => ASEN2_A::VALUE1,
             true => ASEN2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The corresponding arbitration slot is disabled and considered as empty. Pending conversion requests from the associated request source are disregarded."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ASEN2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The corresponding arbitration slot is enabled. Pending conversion requests from the associated request source are arbitrated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ASEN2_A::VALUE2
     }
 }
 #[doc = "Field `ASEN2` writer - Arbitration Slot 2 Enable"]
-pub type ASEN2_W<'a, const O: u8> = crate::BitWriter<'a, u32, ARBPR_SPEC, ASEN2_A, O>;
-impl<'a, const O: u8> ASEN2_W<'a, O> {
+pub type ASEN2_W<'a, REG> = crate::BitWriter<'a, REG, ASEN2_A>;
+impl<'a, REG> ASEN2_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The corresponding arbitration slot is disabled and considered as empty. Pending conversion requests from the associated request source are disregarded."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ASEN2_A::VALUE1)
     }
     #[doc = "The corresponding arbitration slot is enabled. Pending conversion requests from the associated request source are arbitrated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ASEN2_A::VALUE2)
     }
 }
@@ -541,76 +548,77 @@ impl W {
     #[doc = "Bits 0:1 - Priority of Request Source x"]
     #[inline(always)]
     #[must_use]
-    pub fn prio0(&mut self) -> PRIO0_W<0> {
-        PRIO0_W::new(self)
+    pub fn prio0(&mut self) -> PRIO0_W<ARBPR_SPEC> {
+        PRIO0_W::new(self, 0)
     }
     #[doc = "Bit 3 - Conversion Start Mode of Request Source x"]
     #[inline(always)]
     #[must_use]
-    pub fn csm0(&mut self) -> CSM0_W<3> {
-        CSM0_W::new(self)
+    pub fn csm0(&mut self) -> CSM0_W<ARBPR_SPEC> {
+        CSM0_W::new(self, 3)
     }
     #[doc = "Bits 4:5 - Priority of Request Source x"]
     #[inline(always)]
     #[must_use]
-    pub fn prio1(&mut self) -> PRIO1_W<4> {
-        PRIO1_W::new(self)
+    pub fn prio1(&mut self) -> PRIO1_W<ARBPR_SPEC> {
+        PRIO1_W::new(self, 4)
     }
     #[doc = "Bit 7 - Conversion Start Mode of Request Source x"]
     #[inline(always)]
     #[must_use]
-    pub fn csm1(&mut self) -> CSM1_W<7> {
-        CSM1_W::new(self)
+    pub fn csm1(&mut self) -> CSM1_W<ARBPR_SPEC> {
+        CSM1_W::new(self, 7)
     }
     #[doc = "Bits 8:9 - Priority of Request Source x"]
     #[inline(always)]
     #[must_use]
-    pub fn prio2(&mut self) -> PRIO2_W<8> {
-        PRIO2_W::new(self)
+    pub fn prio2(&mut self) -> PRIO2_W<ARBPR_SPEC> {
+        PRIO2_W::new(self, 8)
     }
     #[doc = "Bit 11 - Conversion Start Mode of Request Source x"]
     #[inline(always)]
     #[must_use]
-    pub fn csm2(&mut self) -> CSM2_W<11> {
-        CSM2_W::new(self)
+    pub fn csm2(&mut self) -> CSM2_W<ARBPR_SPEC> {
+        CSM2_W::new(self, 11)
     }
     #[doc = "Bit 24 - Arbitration Slot 0 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn asen0(&mut self) -> ASEN0_W<24> {
-        ASEN0_W::new(self)
+    pub fn asen0(&mut self) -> ASEN0_W<ARBPR_SPEC> {
+        ASEN0_W::new(self, 24)
     }
     #[doc = "Bit 25 - Arbitration Slot 1 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn asen1(&mut self) -> ASEN1_W<25> {
-        ASEN1_W::new(self)
+    pub fn asen1(&mut self) -> ASEN1_W<ARBPR_SPEC> {
+        ASEN1_W::new(self, 25)
     }
     #[doc = "Bit 26 - Arbitration Slot 2 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn asen2(&mut self) -> ASEN2_W<26> {
-        ASEN2_W::new(self)
+    pub fn asen2(&mut self) -> ASEN2_W<ARBPR_SPEC> {
+        ASEN2_W::new(self, 26)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Arbitration Priority Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arbpr](index.html) module"]
+#[doc = "Arbitration Priority Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`arbpr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`arbpr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ARBPR_SPEC;
 impl crate::RegisterSpec for ARBPR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [arbpr::R](R) reader structure"]
-impl crate::Readable for ARBPR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [arbpr::W](W) writer structure"]
+#[doc = "`read()` method returns [`arbpr::R`](R) reader structure"]
+impl crate::Readable for ARBPR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`arbpr::W`](W) writer structure"]
 impl crate::Writable for ARBPR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

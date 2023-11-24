@@ -1,18 +1,5 @@
 #[doc = "Register `PRSTAT1` reader"]
-pub struct R(crate::R<PRSTAT1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PRSTAT1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PRSTAT1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PRSTAT1_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PRSTAT1_SPEC>;
 #[doc = "Field `CCU43RS` reader - CCU43 Reset Status"]
 pub type CCU43RS_R = crate::BitReader<CCU43RS_A>;
 #[doc = "CCU43 Reset Status\n\nValue on reset: 1"]
@@ -32,18 +19,18 @@ impl From<CCU43RS_A> for bool {
 impl CCU43RS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CCU43RS_A {
+    pub const fn variant(&self) -> CCU43RS_A {
         match self.bits {
             false => CCU43RS_A::VALUE1,
             true => CCU43RS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Reset de-asserted"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CCU43RS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Reset asserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CCU43RS_A::VALUE2
@@ -68,18 +55,18 @@ impl From<LEDTSCU0RS_A> for bool {
 impl LEDTSCU0RS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LEDTSCU0RS_A {
+    pub const fn variant(&self) -> LEDTSCU0RS_A {
         match self.bits {
             false => LEDTSCU0RS_A::VALUE1,
             true => LEDTSCU0RS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Reset de-asserted"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LEDTSCU0RS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Reset asserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LEDTSCU0RS_A::VALUE2
@@ -104,18 +91,18 @@ impl From<MCAN0RS_A> for bool {
 impl MCAN0RS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MCAN0RS_A {
+    pub const fn variant(&self) -> MCAN0RS_A {
         match self.bits {
             false => MCAN0RS_A::VALUE1,
             true => MCAN0RS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Reset de-asserted"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MCAN0RS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Reset asserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MCAN0RS_A::VALUE2
@@ -140,18 +127,18 @@ impl From<DACRS_A> for bool {
 impl DACRS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DACRS_A {
+    pub const fn variant(&self) -> DACRS_A {
         match self.bits {
             false => DACRS_A::VALUE1,
             true => DACRS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Reset de-asserted"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DACRS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Reset asserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DACRS_A::VALUE2
@@ -176,18 +163,18 @@ impl From<MMCIRS_A> for bool {
 impl MMCIRS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MMCIRS_A {
+    pub const fn variant(&self) -> MMCIRS_A {
         match self.bits {
             false => MMCIRS_A::VALUE1,
             true => MMCIRS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Reset de-asserted"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MMCIRS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Reset asserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MMCIRS_A::VALUE2
@@ -212,18 +199,18 @@ impl From<USIC1RS_A> for bool {
 impl USIC1RS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USIC1RS_A {
+    pub const fn variant(&self) -> USIC1RS_A {
         match self.bits {
             false => USIC1RS_A::VALUE1,
             true => USIC1RS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Reset de-asserted"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == USIC1RS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Reset asserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == USIC1RS_A::VALUE2
@@ -248,18 +235,18 @@ impl From<USIC2RS_A> for bool {
 impl USIC2RS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USIC2RS_A {
+    pub const fn variant(&self) -> USIC2RS_A {
         match self.bits {
             false => USIC2RS_A::VALUE1,
             true => USIC2RS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Reset de-asserted"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == USIC2RS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Reset asserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == USIC2RS_A::VALUE2
@@ -284,18 +271,18 @@ impl From<PPORTSRS_A> for bool {
 impl PPORTSRS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PPORTSRS_A {
+    pub const fn variant(&self) -> PPORTSRS_A {
         match self.bits {
             false => PPORTSRS_A::VALUE1,
             true => PPORTSRS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Reset de-asserted"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PPORTSRS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Reset asserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PPORTSRS_A::VALUE2
@@ -343,15 +330,13 @@ impl R {
         PPORTSRS_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
-#[doc = "RCU Peripheral 1 Reset Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prstat1](index.html) module"]
+#[doc = "RCU Peripheral 1 Reset Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`prstat1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PRSTAT1_SPEC;
 impl crate::RegisterSpec for PRSTAT1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [prstat1::R](R) reader structure"]
-impl crate::Readable for PRSTAT1_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`prstat1::R`](R) reader structure"]
+impl crate::Readable for PRSTAT1_SPEC {}
 #[doc = "`reset()` method sets PRSTAT1 to value 0x01f9"]
 impl crate::Resettable for PRSTAT1_SPEC {
     const RESET_VALUE: Self::Ux = 0x01f9;

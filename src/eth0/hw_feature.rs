@@ -1,95 +1,63 @@
 #[doc = "Register `HW_FEATURE` reader"]
-pub struct R(crate::R<HW_FEATURE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HW_FEATURE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HW_FEATURE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HW_FEATURE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<HW_FEATURE_SPEC>;
 #[doc = "Register `HW_FEATURE` writer"]
-pub struct W(crate::W<HW_FEATURE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HW_FEATURE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HW_FEATURE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HW_FEATURE_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<HW_FEATURE_SPEC>;
 #[doc = "Field `MIISEL` reader - 10 or 100 Mbps support"]
-pub type MIISEL_R = crate::BitReader<bool>;
+pub type MIISEL_R = crate::BitReader;
 #[doc = "Field `GMIISEL` reader - 1000 Mbps support"]
-pub type GMIISEL_R = crate::BitReader<bool>;
+pub type GMIISEL_R = crate::BitReader;
 #[doc = "Field `HDSEL` reader - Half-Duplex support"]
-pub type HDSEL_R = crate::BitReader<bool>;
+pub type HDSEL_R = crate::BitReader;
 #[doc = "Field `EXTHASHEN` reader - Expanded DA Hash Filter"]
-pub type EXTHASHEN_R = crate::BitReader<bool>;
+pub type EXTHASHEN_R = crate::BitReader;
 #[doc = "Field `HASHSEL` reader - HASH Filter"]
-pub type HASHSEL_R = crate::BitReader<bool>;
+pub type HASHSEL_R = crate::BitReader;
 #[doc = "Field `ADDMACADRSEL` reader - Multiple MAC Address Registers"]
-pub type ADDMACADRSEL_R = crate::BitReader<bool>;
+pub type ADDMACADRSEL_R = crate::BitReader;
 #[doc = "Field `PCSSEL` reader - PCS registers (TBI, SGMII, or RTBI PHY interface)"]
-pub type PCSSEL_R = crate::BitReader<bool>;
+pub type PCSSEL_R = crate::BitReader;
 #[doc = "Field `L3L4FLTREN` reader - Layer 3 and Layer 4 Filter Feature"]
-pub type L3L4FLTREN_R = crate::BitReader<bool>;
+pub type L3L4FLTREN_R = crate::BitReader;
 #[doc = "Field `SMASEL` reader - SMA (MDIO) Interface"]
-pub type SMASEL_R = crate::BitReader<bool>;
+pub type SMASEL_R = crate::BitReader;
 #[doc = "Field `RWKSEL` reader - PMT Remote Wakeup"]
-pub type RWKSEL_R = crate::BitReader<bool>;
+pub type RWKSEL_R = crate::BitReader;
 #[doc = "Field `MGKSEL` reader - PMT Magic Packet"]
-pub type MGKSEL_R = crate::BitReader<bool>;
+pub type MGKSEL_R = crate::BitReader;
 #[doc = "Field `MMCSEL` reader - RMON Module"]
-pub type MMCSEL_R = crate::BitReader<bool>;
+pub type MMCSEL_R = crate::BitReader;
 #[doc = "Field `TSVER1SEL` reader - Only IEEE 1588-2002 Timestamp"]
-pub type TSVER1SEL_R = crate::BitReader<bool>;
+pub type TSVER1SEL_R = crate::BitReader;
 #[doc = "Field `TSVER2SEL` reader - IEEE 1588-2008 Advanced Timestamp"]
-pub type TSVER2SEL_R = crate::BitReader<bool>;
+pub type TSVER2SEL_R = crate::BitReader;
 #[doc = "Field `EEESEL` reader - Energy Efficient Ethernet"]
-pub type EEESEL_R = crate::BitReader<bool>;
+pub type EEESEL_R = crate::BitReader;
 #[doc = "Field `AVSEL` reader - AV Feature"]
-pub type AVSEL_R = crate::BitReader<bool>;
+pub type AVSEL_R = crate::BitReader;
 #[doc = "Field `TXCOESEL` reader - Checksum Offload in Tx"]
-pub type TXCOESEL_R = crate::BitReader<bool>;
+pub type TXCOESEL_R = crate::BitReader;
 #[doc = "Field `RXTYP1COE` reader - IP Checksum Offload (Type 1) in Rx"]
-pub type RXTYP1COE_R = crate::BitReader<bool>;
+pub type RXTYP1COE_R = crate::BitReader;
 #[doc = "Field `RXTYP2COE` reader - IP Checksum Offload (Type 2) in Rx"]
-pub type RXTYP2COE_R = crate::BitReader<bool>;
+pub type RXTYP2COE_R = crate::BitReader;
 #[doc = "Field `RXFIFOSIZE` reader - Rx FIFO > 2,048 Bytes"]
-pub type RXFIFOSIZE_R = crate::BitReader<bool>;
+pub type RXFIFOSIZE_R = crate::BitReader;
 #[doc = "Field `RXFIFOSIZE` writer - Rx FIFO > 2,048 Bytes"]
-pub type RXFIFOSIZE_W<'a, const O: u8> = crate::BitWriter<'a, u32, HW_FEATURE_SPEC, bool, O>;
+pub type RXFIFOSIZE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXCHCNT` reader - Number of additional Rx channels"]
-pub type RXCHCNT_R = crate::FieldReader<u8, u8>;
+pub type RXCHCNT_R = crate::FieldReader;
 #[doc = "Field `TXCHCNT` reader - Number of additional Tx channels"]
-pub type TXCHCNT_R = crate::FieldReader<u8, u8>;
+pub type TXCHCNT_R = crate::FieldReader;
 #[doc = "Field `ENHDESSEL` reader - Alternate (Enhanced Descriptor)"]
-pub type ENHDESSEL_R = crate::BitReader<bool>;
+pub type ENHDESSEL_R = crate::BitReader;
 #[doc = "Field `INTTSEN` reader - Timestamping with Internal System Time"]
-pub type INTTSEN_R = crate::BitReader<bool>;
+pub type INTTSEN_R = crate::BitReader;
 #[doc = "Field `FLEXIPPSEN` reader - Flexible Pulse-Per-Second Output"]
-pub type FLEXIPPSEN_R = crate::BitReader<bool>;
+pub type FLEXIPPSEN_R = crate::BitReader;
 #[doc = "Field `SAVLANINS` reader - Source Address or VLAN Insertion"]
-pub type SAVLANINS_R = crate::BitReader<bool>;
+pub type SAVLANINS_R = crate::BitReader;
 #[doc = "Field `ACTPHYIF` reader - Active or Selected PHY interface"]
-pub type ACTPHYIF_R = crate::FieldReader<u8, u8>;
+pub type ACTPHYIF_R = crate::FieldReader;
 impl R {
     #[doc = "Bit 0 - 10 or 100 Mbps support"]
     #[inline(always)]
@@ -231,28 +199,29 @@ impl W {
     #[doc = "Bit 19 - Rx FIFO > 2,048 Bytes"]
     #[inline(always)]
     #[must_use]
-    pub fn rxfifosize(&mut self) -> RXFIFOSIZE_W<19> {
-        RXFIFOSIZE_W::new(self)
+    pub fn rxfifosize(&mut self) -> RXFIFOSIZE_W<HW_FEATURE_SPEC> {
+        RXFIFOSIZE_W::new(self, 19)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "HW Feature Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hw_feature](index.html) module"]
+#[doc = "HW Feature Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hw_feature::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hw_feature::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HW_FEATURE_SPEC;
 impl crate::RegisterSpec for HW_FEATURE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [hw_feature::R](R) reader structure"]
-impl crate::Readable for HW_FEATURE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [hw_feature::W](W) writer structure"]
+#[doc = "`read()` method returns [`hw_feature::R`](R) reader structure"]
+impl crate::Readable for HW_FEATURE_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`hw_feature::W`](W) writer structure"]
 impl crate::Writable for HW_FEATURE_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

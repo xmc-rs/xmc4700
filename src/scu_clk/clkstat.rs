@@ -1,18 +1,5 @@
 #[doc = "Register `CLKSTAT` reader"]
-pub struct R(crate::R<CLKSTAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CLKSTAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CLKSTAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CLKSTAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CLKSTAT_SPEC>;
 #[doc = "Field `USBCST` reader - USB Clock Status"]
 pub type USBCST_R = crate::BitReader<USBCST_A>;
 #[doc = "USB Clock Status\n\nValue on reset: 0"]
@@ -32,18 +19,18 @@ impl From<USBCST_A> for bool {
 impl USBCST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USBCST_A {
+    pub const fn variant(&self) -> USBCST_A {
         match self.bits {
             false => USBCST_A::VALUE1,
             true => USBCST_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == USBCST_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == USBCST_A::VALUE2
@@ -68,18 +55,18 @@ impl From<MMCCST_A> for bool {
 impl MMCCST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MMCCST_A {
+    pub const fn variant(&self) -> MMCCST_A {
         match self.bits {
             false => MMCCST_A::VALUE1,
             true => MMCCST_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MMCCST_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MMCCST_A::VALUE2
@@ -104,18 +91,18 @@ impl From<ETH0CST_A> for bool {
 impl ETH0CST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ETH0CST_A {
+    pub const fn variant(&self) -> ETH0CST_A {
         match self.bits {
             false => ETH0CST_A::VALUE1,
             true => ETH0CST_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ETH0CST_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ETH0CST_A::VALUE2
@@ -140,18 +127,18 @@ impl From<EBUCST_A> for bool {
 impl EBUCST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EBUCST_A {
+    pub const fn variant(&self) -> EBUCST_A {
         match self.bits {
             false => EBUCST_A::VALUE1,
             true => EBUCST_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EBUCST_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EBUCST_A::VALUE2
@@ -176,18 +163,18 @@ impl From<CCUCST_A> for bool {
 impl CCUCST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CCUCST_A {
+    pub const fn variant(&self) -> CCUCST_A {
         match self.bits {
             false => CCUCST_A::VALUE1,
             true => CCUCST_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CCUCST_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CCUCST_A::VALUE2
@@ -212,18 +199,18 @@ impl From<WDTCST_A> for bool {
 impl WDTCST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WDTCST_A {
+    pub const fn variant(&self) -> WDTCST_A {
         match self.bits {
             false => WDTCST_A::VALUE1,
             true => WDTCST_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WDTCST_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WDTCST_A::VALUE2
@@ -261,15 +248,13 @@ impl R {
         WDTCST_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
-#[doc = "Clock Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clkstat](index.html) module"]
+#[doc = "Clock Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clkstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CLKSTAT_SPEC;
 impl crate::RegisterSpec for CLKSTAT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [clkstat::R](R) reader structure"]
-impl crate::Readable for CLKSTAT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`clkstat::R`](R) reader structure"]
+impl crate::Readable for CLKSTAT_SPEC {}
 #[doc = "`reset()` method sets CLKSTAT to value 0"]
 impl crate::Resettable for CLKSTAT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

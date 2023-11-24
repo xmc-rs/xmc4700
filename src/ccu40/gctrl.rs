@@ -1,41 +1,9 @@
 #[doc = "Register `GCTRL` reader"]
-pub struct R(crate::R<GCTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<GCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<GCTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<GCTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<GCTRL_SPEC>;
 #[doc = "Register `GCTRL` writer"]
-pub struct W(crate::W<GCTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<GCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<GCTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<GCTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<GCTRL_SPEC>;
 #[doc = "Field `PRBC` reader - Prescaler Clear Configuration"]
-pub type PRBC_R = crate::FieldReader<u8, PRBC_A>;
+pub type PRBC_R = crate::FieldReader<PRBC_A>;
 #[doc = "Prescaler Clear Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -57,10 +25,13 @@ impl From<PRBC_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for PRBC_A {
+    type Ux = u8;
+}
 impl PRBC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PRBC_A> {
+    pub const fn variant(&self) -> Option<PRBC_A> {
         match self.bits {
             0 => Some(PRBC_A::VALUE1),
             1 => Some(PRBC_A::VALUE2),
@@ -70,63 +41,67 @@ impl PRBC_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "SW only"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PRBC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC40 is cleared."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PRBC_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC41 is cleared."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == PRBC_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC42 is cleared."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == PRBC_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC43 is cleared."]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == PRBC_A::VALUE5
     }
 }
 #[doc = "Field `PRBC` writer - Prescaler Clear Configuration"]
-pub type PRBC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GCTRL_SPEC, u8, PRBC_A, 3, O>;
-impl<'a, const O: u8> PRBC_W<'a, O> {
+pub type PRBC_W<'a, REG> = crate::FieldWriter<'a, REG, 3, PRBC_A>;
+impl<'a, REG> PRBC_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "SW only"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PRBC_A::VALUE1)
     }
     #[doc = "GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC40 is cleared."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PRBC_A::VALUE2)
     }
     #[doc = "GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC41 is cleared."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(PRBC_A::VALUE3)
     }
     #[doc = "GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC42 is cleared."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(PRBC_A::VALUE4)
     }
     #[doc = "GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC43 is cleared."]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(PRBC_A::VALUE5)
     }
 }
 #[doc = "Field `PCIS` reader - Prescaler Input Clock Selection"]
-pub type PCIS_R = crate::FieldReader<u8, PCIS_A>;
+pub type PCIS_R = crate::FieldReader<PCIS_A>;
 #[doc = "Prescaler Input Clock Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -146,10 +121,13 @@ impl From<PCIS_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for PCIS_A {
+    type Ux = u8;
+}
 impl PCIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PCIS_A {
+    pub const fn variant(&self) -> PCIS_A {
         match self.bits {
             0 => PCIS_A::VALUE1,
             1 => PCIS_A::VALUE2,
@@ -158,53 +136,57 @@ impl PCIS_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Module clock"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PCIS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "CCU4x.ECLKA"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PCIS_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "CCU4x.ECLKB"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == PCIS_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "CCU4x.ECLKC"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == PCIS_A::VALUE4
     }
 }
 #[doc = "Field `PCIS` writer - Prescaler Input Clock Selection"]
-pub type PCIS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, GCTRL_SPEC, u8, PCIS_A, 2, O>;
-impl<'a, const O: u8> PCIS_W<'a, O> {
+pub type PCIS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, PCIS_A>;
+impl<'a, REG> PCIS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Module clock"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PCIS_A::VALUE1)
     }
     #[doc = "CCU4x.ECLKA"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PCIS_A::VALUE2)
     }
     #[doc = "CCU4x.ECLKB"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(PCIS_A::VALUE3)
     }
     #[doc = "CCU4x.ECLKC"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(PCIS_A::VALUE4)
     }
 }
 #[doc = "Field `SUSCFG` reader - Suspend Mode Configuration"]
-pub type SUSCFG_R = crate::FieldReader<u8, SUSCFG_A>;
+pub type SUSCFG_R = crate::FieldReader<SUSCFG_A>;
 #[doc = "Suspend Mode Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -224,10 +206,13 @@ impl From<SUSCFG_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for SUSCFG_A {
+    type Ux = u8;
+}
 impl SUSCFG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SUSCFG_A {
+    pub const fn variant(&self) -> SUSCFG_A {
         match self.bits {
             0 => SUSCFG_A::VALUE1,
             1 => SUSCFG_A::VALUE2,
@@ -236,48 +221,52 @@ impl SUSCFG_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Suspend request ignored. The module never enters in suspend"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SUSCFG_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Stops all the running slices immediately. Safe stop is not applied."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SUSCFG_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Stops the block immediately and clamps all the outputs to PASSIVE state. Safe stop is applied."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == SUSCFG_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Waits for the roll over of each slice to stop and clamp the slices outputs. Safe stop is applied."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == SUSCFG_A::VALUE4
     }
 }
 #[doc = "Field `SUSCFG` writer - Suspend Mode Configuration"]
-pub type SUSCFG_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, GCTRL_SPEC, u8, SUSCFG_A, 2, O>;
-impl<'a, const O: u8> SUSCFG_W<'a, O> {
+pub type SUSCFG_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, SUSCFG_A>;
+impl<'a, REG> SUSCFG_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Suspend request ignored. The module never enters in suspend"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SUSCFG_A::VALUE1)
     }
     #[doc = "Stops all the running slices immediately. Safe stop is not applied."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SUSCFG_A::VALUE2)
     }
     #[doc = "Stops the block immediately and clamps all the outputs to PASSIVE state. Safe stop is applied."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(SUSCFG_A::VALUE3)
     }
     #[doc = "Waits for the roll over of each slice to stop and clamp the slices outputs. Safe stop is applied."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(SUSCFG_A::VALUE4)
     }
 }
@@ -300,34 +289,37 @@ impl From<MSE0_A> for bool {
 impl MSE0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MSE0_A {
+    pub const fn variant(&self) -> MSE0_A {
         match self.bits {
             false => MSE0_A::VALUE1,
             true => MSE0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Shadow transfer can only be requested by SW"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MSE0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MSE0_A::VALUE2
     }
 }
 #[doc = "Field `MSE0` writer - Slice 0 Multi Channel shadow transfer enable"]
-pub type MSE0_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCTRL_SPEC, MSE0_A, O>;
-impl<'a, const O: u8> MSE0_W<'a, O> {
+pub type MSE0_W<'a, REG> = crate::BitWriter<'a, REG, MSE0_A>;
+impl<'a, REG> MSE0_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Shadow transfer can only be requested by SW"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MSE0_A::VALUE1)
     }
     #[doc = "Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MSE0_A::VALUE2)
     }
 }
@@ -350,34 +342,37 @@ impl From<MSE1_A> for bool {
 impl MSE1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MSE1_A {
+    pub const fn variant(&self) -> MSE1_A {
         match self.bits {
             false => MSE1_A::VALUE1,
             true => MSE1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Shadow transfer can only be requested by SW"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MSE1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MSE1_A::VALUE2
     }
 }
 #[doc = "Field `MSE1` writer - Slice 1 Multi Channel shadow transfer enable"]
-pub type MSE1_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCTRL_SPEC, MSE1_A, O>;
-impl<'a, const O: u8> MSE1_W<'a, O> {
+pub type MSE1_W<'a, REG> = crate::BitWriter<'a, REG, MSE1_A>;
+impl<'a, REG> MSE1_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Shadow transfer can only be requested by SW"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MSE1_A::VALUE1)
     }
     #[doc = "Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MSE1_A::VALUE2)
     }
 }
@@ -400,34 +395,37 @@ impl From<MSE2_A> for bool {
 impl MSE2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MSE2_A {
+    pub const fn variant(&self) -> MSE2_A {
         match self.bits {
             false => MSE2_A::VALUE1,
             true => MSE2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Shadow transfer can only be requested by SW"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MSE2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MSE2_A::VALUE2
     }
 }
 #[doc = "Field `MSE2` writer - Slice 2 Multi Channel shadow transfer enable"]
-pub type MSE2_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCTRL_SPEC, MSE2_A, O>;
-impl<'a, const O: u8> MSE2_W<'a, O> {
+pub type MSE2_W<'a, REG> = crate::BitWriter<'a, REG, MSE2_A>;
+impl<'a, REG> MSE2_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Shadow transfer can only be requested by SW"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MSE2_A::VALUE1)
     }
     #[doc = "Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MSE2_A::VALUE2)
     }
 }
@@ -450,39 +448,42 @@ impl From<MSE3_A> for bool {
 impl MSE3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MSE3_A {
+    pub const fn variant(&self) -> MSE3_A {
         match self.bits {
             false => MSE3_A::VALUE1,
             true => MSE3_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Shadow transfer can only be requested by SW"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MSE3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MSE3_A::VALUE2
     }
 }
 #[doc = "Field `MSE3` writer - Slice 3 Multi Channel shadow transfer enable"]
-pub type MSE3_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCTRL_SPEC, MSE3_A, O>;
-impl<'a, const O: u8> MSE3_W<'a, O> {
+pub type MSE3_W<'a, REG> = crate::BitWriter<'a, REG, MSE3_A>;
+impl<'a, REG> MSE3_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Shadow transfer can only be requested by SW"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MSE3_A::VALUE1)
     }
     #[doc = "Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MSE3_A::VALUE2)
     }
 }
 #[doc = "Field `MSDE` reader - Multi Channel shadow transfer request configuration"]
-pub type MSDE_R = crate::FieldReader<u8, MSDE_A>;
+pub type MSDE_R = crate::FieldReader<MSDE_A>;
 #[doc = "Multi Channel shadow transfer request configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -500,10 +501,13 @@ impl From<MSDE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for MSDE_A {
+    type Ux = u8;
+}
 impl MSDE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<MSDE_A> {
+    pub const fn variant(&self) -> Option<MSDE_A> {
         match self.bits {
             0 => Some(MSDE_A::VALUE1),
             1 => Some(MSDE_A::VALUE2),
@@ -511,38 +515,42 @@ impl MSDE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Only the shadow transfer for period and compare values is requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MSDE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Shadow transfer for the compare, period and prescaler compare values is requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MSDE_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Shadow transfer for the compare, period, prescaler and dither compare values is requested"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == MSDE_A::VALUE4
     }
 }
 #[doc = "Field `MSDE` writer - Multi Channel shadow transfer request configuration"]
-pub type MSDE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GCTRL_SPEC, u8, MSDE_A, 2, O>;
-impl<'a, const O: u8> MSDE_W<'a, O> {
+pub type MSDE_W<'a, REG> = crate::FieldWriter<'a, REG, 2, MSDE_A>;
+impl<'a, REG> MSDE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Only the shadow transfer for period and compare values is requested"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MSDE_A::VALUE1)
     }
     #[doc = "Shadow transfer for the compare, period and prescaler compare values is requested"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MSDE_A::VALUE2)
     }
     #[doc = "Shadow transfer for the compare, period, prescaler and dither compare values is requested"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(MSDE_A::VALUE4)
     }
 }
@@ -592,70 +600,71 @@ impl W {
     #[doc = "Bits 0:2 - Prescaler Clear Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn prbc(&mut self) -> PRBC_W<0> {
-        PRBC_W::new(self)
+    pub fn prbc(&mut self) -> PRBC_W<GCTRL_SPEC> {
+        PRBC_W::new(self, 0)
     }
     #[doc = "Bits 4:5 - Prescaler Input Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn pcis(&mut self) -> PCIS_W<4> {
-        PCIS_W::new(self)
+    pub fn pcis(&mut self) -> PCIS_W<GCTRL_SPEC> {
+        PCIS_W::new(self, 4)
     }
     #[doc = "Bits 8:9 - Suspend Mode Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn suscfg(&mut self) -> SUSCFG_W<8> {
-        SUSCFG_W::new(self)
+    pub fn suscfg(&mut self) -> SUSCFG_W<GCTRL_SPEC> {
+        SUSCFG_W::new(self, 8)
     }
     #[doc = "Bit 10 - Slice 0 Multi Channel shadow transfer enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mse0(&mut self) -> MSE0_W<10> {
-        MSE0_W::new(self)
+    pub fn mse0(&mut self) -> MSE0_W<GCTRL_SPEC> {
+        MSE0_W::new(self, 10)
     }
     #[doc = "Bit 11 - Slice 1 Multi Channel shadow transfer enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mse1(&mut self) -> MSE1_W<11> {
-        MSE1_W::new(self)
+    pub fn mse1(&mut self) -> MSE1_W<GCTRL_SPEC> {
+        MSE1_W::new(self, 11)
     }
     #[doc = "Bit 12 - Slice 2 Multi Channel shadow transfer enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mse2(&mut self) -> MSE2_W<12> {
-        MSE2_W::new(self)
+    pub fn mse2(&mut self) -> MSE2_W<GCTRL_SPEC> {
+        MSE2_W::new(self, 12)
     }
     #[doc = "Bit 13 - Slice 3 Multi Channel shadow transfer enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mse3(&mut self) -> MSE3_W<13> {
-        MSE3_W::new(self)
+    pub fn mse3(&mut self) -> MSE3_W<GCTRL_SPEC> {
+        MSE3_W::new(self, 13)
     }
     #[doc = "Bits 14:15 - Multi Channel shadow transfer request configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn msde(&mut self) -> MSDE_W<14> {
-        MSDE_W::new(self)
+    pub fn msde(&mut self) -> MSDE_W<GCTRL_SPEC> {
+        MSDE_W::new(self, 14)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Global Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gctrl](index.html) module"]
+#[doc = "Global Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GCTRL_SPEC;
 impl crate::RegisterSpec for GCTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [gctrl::R](R) reader structure"]
-impl crate::Readable for GCTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [gctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`gctrl::R`](R) reader structure"]
+impl crate::Readable for GCTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`gctrl::W`](W) writer structure"]
 impl crate::Writable for GCTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

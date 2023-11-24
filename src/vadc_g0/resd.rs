@@ -1,28 +1,15 @@
 #[doc = "Register `RESD[%s]` reader"]
-pub struct R(crate::R<RESD_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RESD_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RESD_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RESD_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RESD_SPEC>;
 #[doc = "Field `RESULT` reader - Result of Most Recent Conversion"]
-pub type RESULT_R = crate::FieldReader<u16, u16>;
+pub type RESULT_R = crate::FieldReader<u16>;
 #[doc = "Field `DRC` reader - Data Reduction Counter"]
-pub type DRC_R = crate::FieldReader<u8, u8>;
+pub type DRC_R = crate::FieldReader;
 #[doc = "Field `CHNR` reader - Channel Number"]
-pub type CHNR_R = crate::FieldReader<u8, u8>;
+pub type CHNR_R = crate::FieldReader;
 #[doc = "Field `EMUX` reader - External Multiplexer Setting"]
-pub type EMUX_R = crate::FieldReader<u8, u8>;
+pub type EMUX_R = crate::FieldReader;
 #[doc = "Field `CRS` reader - Converted Request Source"]
-pub type CRS_R = crate::FieldReader<u8, CRS_A>;
+pub type CRS_R = crate::FieldReader<CRS_A>;
 #[doc = "Converted Request Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -40,10 +27,13 @@ impl From<CRS_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CRS_A {
+    type Ux = u8;
+}
 impl CRS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CRS_A> {
+    pub const fn variant(&self) -> Option<CRS_A> {
         match self.bits {
             0 => Some(CRS_A::VALUE1),
             1 => Some(CRS_A::VALUE2),
@@ -51,17 +41,17 @@ impl CRS_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Request source 0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CRS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Request source 1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CRS_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Request source 2"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CRS_A::VALUE3
@@ -86,18 +76,18 @@ impl From<FCR_A> for bool {
 impl FCR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FCR_A {
+    pub const fn variant(&self) -> FCR_A {
         match self.bits {
             false => FCR_A::VALUE1,
             true => FCR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Signal level was below compare value"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FCR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Signal level was above compare value"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FCR_A::VALUE2
@@ -122,18 +112,18 @@ impl From<VF_A> for bool {
 impl VF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VF_A {
+    pub const fn variant(&self) -> VF_A {
         match self.bits {
             false => VF_A::VALUE1,
             true => VF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No new result available"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Bitfield RESULT has been updated with new result value and has not yet been read, or bit FCR has been updated"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VF_A::VALUE2
@@ -176,15 +166,13 @@ impl R {
         VF_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Result Register, Debug\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [resd](index.html) module"]
+#[doc = "Result Register, Debug\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`resd::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RESD_SPEC;
 impl crate::RegisterSpec for RESD_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [resd::R](R) reader structure"]
-impl crate::Readable for RESD_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`resd::R`](R) reader structure"]
+impl crate::Readable for RESD_SPEC {}
 #[doc = "`reset()` method sets RESD[%s]
 to value 0"]
 impl crate::Resettable for RESD_SPEC {

@@ -1,24 +1,5 @@
 #[doc = "Register `RSTCLR` writer"]
-pub struct W(crate::W<RSTCLR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RSTCLR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RSTCLR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RSTCLR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<RSTCLR_SPEC>;
 #[doc = "Clear Reset Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RSCLR_AW {
@@ -34,16 +15,19 @@ impl From<RSCLR_AW> for bool {
     }
 }
 #[doc = "Field `RSCLR` writer - Clear Reset Status"]
-pub type RSCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCLR_SPEC, RSCLR_AW, O>;
-impl<'a, const O: u8> RSCLR_W<'a, O> {
+pub type RSCLR_W<'a, REG> = crate::BitWriter<'a, REG, RSCLR_AW>;
+impl<'a, REG> RSCLR_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RSCLR_AW::VALUE1)
     }
     #[doc = "Clears field RSTSTAT.RSTSTAT"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RSCLR_AW::VALUE2)
     }
 }
@@ -62,16 +46,19 @@ impl From<HIBWK_AW> for bool {
     }
 }
 #[doc = "Field `HIBWK` writer - Clear Hibernate Wake-up Reset Status"]
-pub type HIBWK_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCLR_SPEC, HIBWK_AW, O>;
-impl<'a, const O: u8> HIBWK_W<'a, O> {
+pub type HIBWK_W<'a, REG> = crate::BitWriter<'a, REG, HIBWK_AW>;
+impl<'a, REG> HIBWK_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(HIBWK_AW::VALUE1)
     }
     #[doc = "De-assert reset status bit"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(HIBWK_AW::VALUE2)
     }
 }
@@ -90,16 +77,19 @@ impl From<HIBRS_AW> for bool {
     }
 }
 #[doc = "Field `HIBRS` writer - Clear Hibernate Reset"]
-pub type HIBRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCLR_SPEC, HIBRS_AW, O>;
-impl<'a, const O: u8> HIBRS_W<'a, O> {
+pub type HIBRS_W<'a, REG> = crate::BitWriter<'a, REG, HIBRS_AW>;
+impl<'a, REG> HIBRS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(HIBRS_AW::VALUE1)
     }
     #[doc = "De-assert reset"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(HIBRS_AW::VALUE2)
     }
 }
@@ -118,16 +108,19 @@ impl From<LCKEN_AW> for bool {
     }
 }
 #[doc = "Field `LCKEN` writer - Enable Lockup Reset"]
-pub type LCKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCLR_SPEC, LCKEN_AW, O>;
-impl<'a, const O: u8> LCKEN_W<'a, O> {
+pub type LCKEN_W<'a, REG> = crate::BitWriter<'a, REG, LCKEN_AW>;
+impl<'a, REG> LCKEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(LCKEN_AW::VALUE1)
     }
     #[doc = "Disable reset when Lockup gets asserted"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(LCKEN_AW::VALUE2)
     }
 }
@@ -135,42 +128,45 @@ impl W {
     #[doc = "Bit 0 - Clear Reset Status"]
     #[inline(always)]
     #[must_use]
-    pub fn rsclr(&mut self) -> RSCLR_W<0> {
-        RSCLR_W::new(self)
+    pub fn rsclr(&mut self) -> RSCLR_W<RSTCLR_SPEC> {
+        RSCLR_W::new(self, 0)
     }
     #[doc = "Bit 8 - Clear Hibernate Wake-up Reset Status"]
     #[inline(always)]
     #[must_use]
-    pub fn hibwk(&mut self) -> HIBWK_W<8> {
-        HIBWK_W::new(self)
+    pub fn hibwk(&mut self) -> HIBWK_W<RSTCLR_SPEC> {
+        HIBWK_W::new(self, 8)
     }
     #[doc = "Bit 9 - Clear Hibernate Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn hibrs(&mut self) -> HIBRS_W<9> {
-        HIBRS_W::new(self)
+    pub fn hibrs(&mut self) -> HIBRS_W<RSTCLR_SPEC> {
+        HIBRS_W::new(self, 9)
     }
     #[doc = "Bit 10 - Enable Lockup Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn lcken(&mut self) -> LCKEN_W<10> {
-        LCKEN_W::new(self)
+    pub fn lcken(&mut self) -> LCKEN_W<RSTCLR_SPEC> {
+        LCKEN_W::new(self, 10)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "RCU Reset Clear Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rstclr](index.html) module"]
+#[doc = "RCU Reset Clear Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rstclr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RSTCLR_SPEC;
 impl crate::RegisterSpec for RSTCLR_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [rstclr::W](W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [`rstclr::W`](W) writer structure"]
 impl crate::Writable for RSTCLR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

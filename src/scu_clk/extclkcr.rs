@@ -1,41 +1,9 @@
 #[doc = "Register `EXTCLKCR` reader"]
-pub struct R(crate::R<EXTCLKCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EXTCLKCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EXTCLKCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EXTCLKCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EXTCLKCR_SPEC>;
 #[doc = "Register `EXTCLKCR` writer"]
-pub struct W(crate::W<EXTCLKCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EXTCLKCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EXTCLKCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EXTCLKCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<EXTCLKCR_SPEC>;
 #[doc = "Field `ECKSEL` reader - External Clock Selection Value"]
-pub type ECKSEL_R = crate::FieldReader<u8, ECKSEL_A>;
+pub type ECKSEL_R = crate::FieldReader<ECKSEL_A>;
 #[doc = "External Clock Selection Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -53,10 +21,13 @@ impl From<ECKSEL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for ECKSEL_A {
+    type Ux = u8;
+}
 impl ECKSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ECKSEL_A> {
+    pub const fn variant(&self) -> Option<ECKSEL_A> {
         match self.bits {
             0 => Some(ECKSEL_A::VALUE1),
             2 => Some(ECKSEL_A::VALUE3),
@@ -64,45 +35,49 @@ impl ECKSEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "fSYS clock"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ECKSEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "fUSB clock"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == ECKSEL_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "fPLL clock divided according to ECKDIV bit field configuration"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == ECKSEL_A::VALUE4
     }
 }
 #[doc = "Field `ECKSEL` writer - External Clock Selection Value"]
-pub type ECKSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EXTCLKCR_SPEC, u8, ECKSEL_A, 2, O>;
-impl<'a, const O: u8> ECKSEL_W<'a, O> {
+pub type ECKSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, ECKSEL_A>;
+impl<'a, REG> ECKSEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "fSYS clock"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ECKSEL_A::VALUE1)
     }
     #[doc = "fUSB clock"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(ECKSEL_A::VALUE3)
     }
     #[doc = "fPLL clock divided according to ECKDIV bit field configuration"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(ECKSEL_A::VALUE4)
     }
 }
 #[doc = "Field `ECKDIV` reader - External Clock Divider Value"]
-pub type ECKDIV_R = crate::FieldReader<u16, u16>;
+pub type ECKDIV_R = crate::FieldReader<u16>;
 #[doc = "Field `ECKDIV` writer - External Clock Divider Value"]
-pub type ECKDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EXTCLKCR_SPEC, u16, u16, 9, O>;
+pub type ECKDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
 impl R {
     #[doc = "Bits 0:1 - External Clock Selection Value"]
     #[inline(always)]
@@ -119,34 +94,35 @@ impl W {
     #[doc = "Bits 0:1 - External Clock Selection Value"]
     #[inline(always)]
     #[must_use]
-    pub fn ecksel(&mut self) -> ECKSEL_W<0> {
-        ECKSEL_W::new(self)
+    pub fn ecksel(&mut self) -> ECKSEL_W<EXTCLKCR_SPEC> {
+        ECKSEL_W::new(self, 0)
     }
     #[doc = "Bits 16:24 - External Clock Divider Value"]
     #[inline(always)]
     #[must_use]
-    pub fn eckdiv(&mut self) -> ECKDIV_W<16> {
-        ECKDIV_W::new(self)
+    pub fn eckdiv(&mut self) -> ECKDIV_W<EXTCLKCR_SPEC> {
+        ECKDIV_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "External Clock Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [extclkcr](index.html) module"]
+#[doc = "External Clock Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`extclkcr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`extclkcr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EXTCLKCR_SPEC;
 impl crate::RegisterSpec for EXTCLKCR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [extclkcr::R](R) reader structure"]
-impl crate::Readable for EXTCLKCR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [extclkcr::W](W) writer structure"]
+#[doc = "`read()` method returns [`extclkcr::R`](R) reader structure"]
+impl crate::Readable for EXTCLKCR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`extclkcr::W`](W) writer structure"]
 impl crate::Writable for EXTCLKCR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

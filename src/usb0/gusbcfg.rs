@@ -1,43 +1,11 @@
 #[doc = "Register `GUSBCFG` reader"]
-pub struct R(crate::R<GUSBCFG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<GUSBCFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<GUSBCFG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<GUSBCFG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<GUSBCFG_SPEC>;
 #[doc = "Register `GUSBCFG` writer"]
-pub struct W(crate::W<GUSBCFG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<GUSBCFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<GUSBCFG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<GUSBCFG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<GUSBCFG_SPEC>;
 #[doc = "Field `TOutCal` reader - FS Timeout Calibration"]
-pub type TOUT_CAL_R = crate::FieldReader<u8, u8>;
+pub type TOUT_CAL_R = crate::FieldReader;
 #[doc = "Field `TOutCal` writer - FS Timeout Calibration"]
-pub type TOUT_CAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GUSBCFG_SPEC, u8, u8, 3, O>;
+pub type TOUT_CAL_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `PHYSel` reader - USB 1.1 Full-Speed Serial Transceiver Select"]
 pub type PHYSEL_R = crate::BitReader<PHYSEL_A>;
 #[doc = "USB 1.1 Full-Speed Serial Transceiver Select\n\nValue on reset: 1"]
@@ -55,13 +23,13 @@ impl From<PHYSEL_A> for bool {
 impl PHYSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PHYSEL_A> {
+    pub const fn variant(&self) -> Option<PHYSEL_A> {
         match self.bits {
             true => Some(PHYSEL_A::VALUE2),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "USB 1.1 full-speed serial transceiver"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PHYSEL_A::VALUE2
@@ -86,34 +54,37 @@ impl From<SRPCAP_A> for bool {
 impl SRPCAP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SRPCAP_A {
+    pub const fn variant(&self) -> SRPCAP_A {
         match self.bits {
             false => SRPCAP_A::VALUE1,
             true => SRPCAP_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "SRP capability is not enabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SRPCAP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SRP capability is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SRPCAP_A::VALUE2
     }
 }
 #[doc = "Field `SRPCap` writer - SRP-Capable"]
-pub type SRPCAP_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, SRPCAP_A, O>;
-impl<'a, const O: u8> SRPCAP_W<'a, O> {
+pub type SRPCAP_W<'a, REG> = crate::BitWriter<'a, REG, SRPCAP_A>;
+impl<'a, REG> SRPCAP_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "SRP capability is not enabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SRPCAP_A::VALUE1)
     }
     #[doc = "SRP capability is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SRPCAP_A::VALUE2)
     }
 }
@@ -136,41 +107,44 @@ impl From<HNPCAP_A> for bool {
 impl HNPCAP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HNPCAP_A {
+    pub const fn variant(&self) -> HNPCAP_A {
         match self.bits {
             false => HNPCAP_A::VALUE1,
             true => HNPCAP_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "HNP capability is not enabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HNPCAP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "HNP capability is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HNPCAP_A::VALUE2
     }
 }
 #[doc = "Field `HNPCap` writer - HNP-Capable"]
-pub type HNPCAP_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, HNPCAP_A, O>;
-impl<'a, const O: u8> HNPCAP_W<'a, O> {
+pub type HNPCAP_W<'a, REG> = crate::BitWriter<'a, REG, HNPCAP_A>;
+impl<'a, REG> HNPCAP_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "HNP capability is not enabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(HNPCAP_A::VALUE1)
     }
     #[doc = "HNP capability is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(HNPCAP_A::VALUE2)
     }
 }
 #[doc = "Field `USBTrdTim` reader - USB Turnaround Time"]
-pub type USBTRD_TIM_R = crate::FieldReader<u8, u8>;
+pub type USBTRD_TIM_R = crate::FieldReader;
 #[doc = "Field `USBTrdTim` writer - USB Turnaround Time"]
-pub type USBTRD_TIM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GUSBCFG_SPEC, u8, u8, 4, O>;
+pub type USBTRD_TIM_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `OtgI2CSel` reader - UTMIFS Interface Select"]
 pub type OTG_I2CSEL_R = crate::BitReader<OTG_I2CSEL_A>;
 #[doc = "UTMIFS Interface Select\n\nValue on reset: 0"]
@@ -188,24 +162,27 @@ impl From<OTG_I2CSEL_A> for bool {
 impl OTG_I2CSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<OTG_I2CSEL_A> {
+    pub const fn variant(&self) -> Option<OTG_I2CSEL_A> {
         match self.bits {
             false => Some(OTG_I2CSEL_A::VALUE1),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "UTMI USB 1.1 Full-Speed interface for OTG signals"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == OTG_I2CSEL_A::VALUE1
     }
 }
 #[doc = "Field `OtgI2CSel` writer - UTMIFS Interface Select"]
-pub type OTG_I2CSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, OTG_I2CSEL_A, O>;
-impl<'a, const O: u8> OTG_I2CSEL_W<'a, O> {
+pub type OTG_I2CSEL_W<'a, REG> = crate::BitWriter<'a, REG, OTG_I2CSEL_A>;
+impl<'a, REG> OTG_I2CSEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "UTMI USB 1.1 Full-Speed interface for OTG signals"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(OTG_I2CSEL_A::VALUE1)
     }
 }
@@ -228,34 +205,37 @@ impl From<TX_END_DELAY_A> for bool {
 impl TX_END_DELAY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_END_DELAY_A {
+    pub const fn variant(&self) -> TX_END_DELAY_A {
         match self.bits {
             false => TX_END_DELAY_A::VALUE1,
             true => TX_END_DELAY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Normal mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TX_END_DELAY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Introduce Tx end delay timers"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TX_END_DELAY_A::VALUE2
     }
 }
 #[doc = "Field `TxEndDelay` writer - Tx End Delay"]
-pub type TX_END_DELAY_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, TX_END_DELAY_A, O>;
-impl<'a, const O: u8> TX_END_DELAY_W<'a, O> {
+pub type TX_END_DELAY_W<'a, REG> = crate::BitWriter<'a, REG, TX_END_DELAY_A>;
+impl<'a, REG> TX_END_DELAY_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal mode"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TX_END_DELAY_A::VALUE1)
     }
     #[doc = "Introduce Tx end delay timers"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TX_END_DELAY_A::VALUE2)
     }
 }
@@ -278,34 +258,37 @@ impl From<FORCE_HST_MODE_A> for bool {
 impl FORCE_HST_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FORCE_HST_MODE_A {
+    pub const fn variant(&self) -> FORCE_HST_MODE_A {
         match self.bits {
             false => FORCE_HST_MODE_A::VALUE1,
             true => FORCE_HST_MODE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Normal Mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FORCE_HST_MODE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Force Host Mode"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FORCE_HST_MODE_A::VALUE2
     }
 }
 #[doc = "Field `ForceHstMode` writer - Force Host Mode"]
-pub type FORCE_HST_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, FORCE_HST_MODE_A, O>;
-impl<'a, const O: u8> FORCE_HST_MODE_W<'a, O> {
+pub type FORCE_HST_MODE_W<'a, REG> = crate::BitWriter<'a, REG, FORCE_HST_MODE_A>;
+impl<'a, REG> FORCE_HST_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal Mode"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(FORCE_HST_MODE_A::VALUE1)
     }
     #[doc = "Force Host Mode"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(FORCE_HST_MODE_A::VALUE2)
     }
 }
@@ -328,41 +311,44 @@ impl From<FORCE_DEV_MODE_A> for bool {
 impl FORCE_DEV_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FORCE_DEV_MODE_A {
+    pub const fn variant(&self) -> FORCE_DEV_MODE_A {
         match self.bits {
             false => FORCE_DEV_MODE_A::VALUE1,
             true => FORCE_DEV_MODE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Normal Mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FORCE_DEV_MODE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Force Device Mode"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FORCE_DEV_MODE_A::VALUE2
     }
 }
 #[doc = "Field `ForceDevMode` writer - Force Device Mode"]
-pub type FORCE_DEV_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, FORCE_DEV_MODE_A, O>;
-impl<'a, const O: u8> FORCE_DEV_MODE_W<'a, O> {
+pub type FORCE_DEV_MODE_W<'a, REG> = crate::BitWriter<'a, REG, FORCE_DEV_MODE_A>;
+impl<'a, REG> FORCE_DEV_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal Mode"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(FORCE_DEV_MODE_A::VALUE1)
     }
     #[doc = "Force Device Mode"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(FORCE_DEV_MODE_A::VALUE2)
     }
 }
 #[doc = "Field `CTP` reader - Corrupt Tx packet"]
-pub type CTP_R = crate::BitReader<bool>;
+pub type CTP_R = crate::BitReader;
 #[doc = "Field `CTP` writer - Corrupt Tx packet"]
-pub type CTP_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, bool, O>;
+pub type CTP_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:2 - FS Timeout Calibration"]
     #[inline(always)]
@@ -419,76 +405,77 @@ impl W {
     #[doc = "Bits 0:2 - FS Timeout Calibration"]
     #[inline(always)]
     #[must_use]
-    pub fn tout_cal(&mut self) -> TOUT_CAL_W<0> {
-        TOUT_CAL_W::new(self)
+    pub fn tout_cal(&mut self) -> TOUT_CAL_W<GUSBCFG_SPEC> {
+        TOUT_CAL_W::new(self, 0)
     }
     #[doc = "Bit 8 - SRP-Capable"]
     #[inline(always)]
     #[must_use]
-    pub fn srpcap(&mut self) -> SRPCAP_W<8> {
-        SRPCAP_W::new(self)
+    pub fn srpcap(&mut self) -> SRPCAP_W<GUSBCFG_SPEC> {
+        SRPCAP_W::new(self, 8)
     }
     #[doc = "Bit 9 - HNP-Capable"]
     #[inline(always)]
     #[must_use]
-    pub fn hnpcap(&mut self) -> HNPCAP_W<9> {
-        HNPCAP_W::new(self)
+    pub fn hnpcap(&mut self) -> HNPCAP_W<GUSBCFG_SPEC> {
+        HNPCAP_W::new(self, 9)
     }
     #[doc = "Bits 10:13 - USB Turnaround Time"]
     #[inline(always)]
     #[must_use]
-    pub fn usbtrd_tim(&mut self) -> USBTRD_TIM_W<10> {
-        USBTRD_TIM_W::new(self)
+    pub fn usbtrd_tim(&mut self) -> USBTRD_TIM_W<GUSBCFG_SPEC> {
+        USBTRD_TIM_W::new(self, 10)
     }
     #[doc = "Bit 16 - UTMIFS Interface Select"]
     #[inline(always)]
     #[must_use]
-    pub fn otg_i2csel(&mut self) -> OTG_I2CSEL_W<16> {
-        OTG_I2CSEL_W::new(self)
+    pub fn otg_i2csel(&mut self) -> OTG_I2CSEL_W<GUSBCFG_SPEC> {
+        OTG_I2CSEL_W::new(self, 16)
     }
     #[doc = "Bit 28 - Tx End Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_end_delay(&mut self) -> TX_END_DELAY_W<28> {
-        TX_END_DELAY_W::new(self)
+    pub fn tx_end_delay(&mut self) -> TX_END_DELAY_W<GUSBCFG_SPEC> {
+        TX_END_DELAY_W::new(self, 28)
     }
     #[doc = "Bit 29 - Force Host Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn force_hst_mode(&mut self) -> FORCE_HST_MODE_W<29> {
-        FORCE_HST_MODE_W::new(self)
+    pub fn force_hst_mode(&mut self) -> FORCE_HST_MODE_W<GUSBCFG_SPEC> {
+        FORCE_HST_MODE_W::new(self, 29)
     }
     #[doc = "Bit 30 - Force Device Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn force_dev_mode(&mut self) -> FORCE_DEV_MODE_W<30> {
-        FORCE_DEV_MODE_W::new(self)
+    pub fn force_dev_mode(&mut self) -> FORCE_DEV_MODE_W<GUSBCFG_SPEC> {
+        FORCE_DEV_MODE_W::new(self, 30)
     }
     #[doc = "Bit 31 - Corrupt Tx packet"]
     #[inline(always)]
     #[must_use]
-    pub fn ctp(&mut self) -> CTP_W<31> {
-        CTP_W::new(self)
+    pub fn ctp(&mut self) -> CTP_W<GUSBCFG_SPEC> {
+        CTP_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "USB Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gusbcfg](index.html) module"]
+#[doc = "USB Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gusbcfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gusbcfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GUSBCFG_SPEC;
 impl crate::RegisterSpec for GUSBCFG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [gusbcfg::R](R) reader structure"]
-impl crate::Readable for GUSBCFG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [gusbcfg::W](W) writer structure"]
+#[doc = "`read()` method returns [`gusbcfg::R`](R) reader structure"]
+impl crate::Readable for GUSBCFG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`gusbcfg::W`](W) writer structure"]
 impl crate::Writable for GUSBCFG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

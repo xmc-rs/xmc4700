@@ -1,24 +1,5 @@
 #[doc = "Register `PRSET2` writer"]
-pub struct W(crate::W<PRSET2_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PRSET2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PRSET2_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PRSET2_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PRSET2_SPEC>;
 #[doc = "WDT Reset Assert\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WDTRS_AW {
@@ -34,16 +15,19 @@ impl From<WDTRS_AW> for bool {
     }
 }
 #[doc = "Field `WDTRS` writer - WDT Reset Assert"]
-pub type WDTRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRSET2_SPEC, WDTRS_AW, O>;
-impl<'a, const O: u8> WDTRS_W<'a, O> {
+pub type WDTRS_W<'a, REG> = crate::BitWriter<'a, REG, WDTRS_AW>;
+impl<'a, REG> WDTRS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(WDTRS_AW::VALUE1)
     }
     #[doc = "Assert reset"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(WDTRS_AW::VALUE2)
     }
 }
@@ -62,16 +46,19 @@ impl From<ETH0RS_AW> for bool {
     }
 }
 #[doc = "Field `ETH0RS` writer - ETH0 Reset Assert"]
-pub type ETH0RS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRSET2_SPEC, ETH0RS_AW, O>;
-impl<'a, const O: u8> ETH0RS_W<'a, O> {
+pub type ETH0RS_W<'a, REG> = crate::BitWriter<'a, REG, ETH0RS_AW>;
+impl<'a, REG> ETH0RS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ETH0RS_AW::VALUE1)
     }
     #[doc = "Assert reset"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ETH0RS_AW::VALUE2)
     }
 }
@@ -90,16 +77,19 @@ impl From<DMA0RS_AW> for bool {
     }
 }
 #[doc = "Field `DMA0RS` writer - DMA0 Reset Assert"]
-pub type DMA0RS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRSET2_SPEC, DMA0RS_AW, O>;
-impl<'a, const O: u8> DMA0RS_W<'a, O> {
+pub type DMA0RS_W<'a, REG> = crate::BitWriter<'a, REG, DMA0RS_AW>;
+impl<'a, REG> DMA0RS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DMA0RS_AW::VALUE1)
     }
     #[doc = "Assert reset"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DMA0RS_AW::VALUE2)
     }
 }
@@ -118,16 +108,19 @@ impl From<DMA1RS_AW> for bool {
     }
 }
 #[doc = "Field `DMA1RS` writer - DMA1 Reset Assert"]
-pub type DMA1RS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRSET2_SPEC, DMA1RS_AW, O>;
-impl<'a, const O: u8> DMA1RS_W<'a, O> {
+pub type DMA1RS_W<'a, REG> = crate::BitWriter<'a, REG, DMA1RS_AW>;
+impl<'a, REG> DMA1RS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DMA1RS_AW::VALUE1)
     }
     #[doc = "Assert reset"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DMA1RS_AW::VALUE2)
     }
 }
@@ -146,16 +139,19 @@ impl From<FCERS_AW> for bool {
     }
 }
 #[doc = "Field `FCERS` writer - FCE Reset Assert"]
-pub type FCERS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRSET2_SPEC, FCERS_AW, O>;
-impl<'a, const O: u8> FCERS_W<'a, O> {
+pub type FCERS_W<'a, REG> = crate::BitWriter<'a, REG, FCERS_AW>;
+impl<'a, REG> FCERS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(FCERS_AW::VALUE1)
     }
     #[doc = "Assert reset"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(FCERS_AW::VALUE2)
     }
 }
@@ -174,16 +170,19 @@ impl From<USBRS_AW> for bool {
     }
 }
 #[doc = "Field `USBRS` writer - USB Reset Assert"]
-pub type USBRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRSET2_SPEC, USBRS_AW, O>;
-impl<'a, const O: u8> USBRS_W<'a, O> {
+pub type USBRS_W<'a, REG> = crate::BitWriter<'a, REG, USBRS_AW>;
+impl<'a, REG> USBRS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(USBRS_AW::VALUE1)
     }
     #[doc = "Assert reset"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(USBRS_AW::VALUE2)
     }
 }
@@ -191,54 +190,57 @@ impl W {
     #[doc = "Bit 1 - WDT Reset Assert"]
     #[inline(always)]
     #[must_use]
-    pub fn wdtrs(&mut self) -> WDTRS_W<1> {
-        WDTRS_W::new(self)
+    pub fn wdtrs(&mut self) -> WDTRS_W<PRSET2_SPEC> {
+        WDTRS_W::new(self, 1)
     }
     #[doc = "Bit 2 - ETH0 Reset Assert"]
     #[inline(always)]
     #[must_use]
-    pub fn eth0rs(&mut self) -> ETH0RS_W<2> {
-        ETH0RS_W::new(self)
+    pub fn eth0rs(&mut self) -> ETH0RS_W<PRSET2_SPEC> {
+        ETH0RS_W::new(self, 2)
     }
     #[doc = "Bit 4 - DMA0 Reset Assert"]
     #[inline(always)]
     #[must_use]
-    pub fn dma0rs(&mut self) -> DMA0RS_W<4> {
-        DMA0RS_W::new(self)
+    pub fn dma0rs(&mut self) -> DMA0RS_W<PRSET2_SPEC> {
+        DMA0RS_W::new(self, 4)
     }
     #[doc = "Bit 5 - DMA1 Reset Assert"]
     #[inline(always)]
     #[must_use]
-    pub fn dma1rs(&mut self) -> DMA1RS_W<5> {
-        DMA1RS_W::new(self)
+    pub fn dma1rs(&mut self) -> DMA1RS_W<PRSET2_SPEC> {
+        DMA1RS_W::new(self, 5)
     }
     #[doc = "Bit 6 - FCE Reset Assert"]
     #[inline(always)]
     #[must_use]
-    pub fn fcers(&mut self) -> FCERS_W<6> {
-        FCERS_W::new(self)
+    pub fn fcers(&mut self) -> FCERS_W<PRSET2_SPEC> {
+        FCERS_W::new(self, 6)
     }
     #[doc = "Bit 7 - USB Reset Assert"]
     #[inline(always)]
     #[must_use]
-    pub fn usbrs(&mut self) -> USBRS_W<7> {
-        USBRS_W::new(self)
+    pub fn usbrs(&mut self) -> USBRS_W<PRSET2_SPEC> {
+        USBRS_W::new(self, 7)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "RCU Peripheral 2 Reset Set\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prset2](index.html) module"]
+#[doc = "RCU Peripheral 2 Reset Set\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`prset2::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PRSET2_SPEC;
 impl crate::RegisterSpec for PRSET2_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [prset2::W](W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [`prset2::W`](W) writer structure"]
 impl crate::Writable for PRSET2_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

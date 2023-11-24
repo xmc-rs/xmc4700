@@ -1,39 +1,7 @@
 #[doc = "Register `TRAPDIS` reader"]
-pub struct R(crate::R<TRAPDIS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TRAPDIS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TRAPDIS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TRAPDIS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TRAPDIS_SPEC>;
 #[doc = "Register `TRAPDIS` writer"]
-pub struct W(crate::W<TRAPDIS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TRAPDIS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TRAPDIS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TRAPDIS_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TRAPDIS_SPEC>;
 #[doc = "Field `SOSCWDGT` reader - OSC_HP Oscillator Watchdog Trap Disable"]
 pub type SOSCWDGT_R = crate::BitReader<SOSCWDGT_A>;
 #[doc = "OSC_HP Oscillator Watchdog Trap Disable\n\nValue on reset: 1"]
@@ -53,34 +21,37 @@ impl From<SOSCWDGT_A> for bool {
 impl SOSCWDGT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SOSCWDGT_A {
+    pub const fn variant(&self) -> SOSCWDGT_A {
         match self.bits {
             false => SOSCWDGT_A::VALUE1,
             true => SOSCWDGT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Trap request enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SOSCWDGT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Trap request disabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SOSCWDGT_A::VALUE2
     }
 }
 #[doc = "Field `SOSCWDGT` writer - OSC_HP Oscillator Watchdog Trap Disable"]
-pub type SOSCWDGT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPDIS_SPEC, SOSCWDGT_A, O>;
-impl<'a, const O: u8> SOSCWDGT_W<'a, O> {
+pub type SOSCWDGT_W<'a, REG> = crate::BitWriter<'a, REG, SOSCWDGT_A>;
+impl<'a, REG> SOSCWDGT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Trap request enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SOSCWDGT_A::VALUE1)
     }
     #[doc = "Trap request disabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SOSCWDGT_A::VALUE2)
     }
 }
@@ -103,34 +74,37 @@ impl From<SVCOLCKT_A> for bool {
 impl SVCOLCKT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SVCOLCKT_A {
+    pub const fn variant(&self) -> SVCOLCKT_A {
         match self.bits {
             false => SVCOLCKT_A::VALUE1,
             true => SVCOLCKT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Trap request enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SVCOLCKT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Trap request disabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SVCOLCKT_A::VALUE2
     }
 }
 #[doc = "Field `SVCOLCKT` writer - System VCO Lock Trap Disable"]
-pub type SVCOLCKT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPDIS_SPEC, SVCOLCKT_A, O>;
-impl<'a, const O: u8> SVCOLCKT_W<'a, O> {
+pub type SVCOLCKT_W<'a, REG> = crate::BitWriter<'a, REG, SVCOLCKT_A>;
+impl<'a, REG> SVCOLCKT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Trap request enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SVCOLCKT_A::VALUE1)
     }
     #[doc = "Trap request disabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SVCOLCKT_A::VALUE2)
     }
 }
@@ -153,34 +127,37 @@ impl From<UVCOLCKT_A> for bool {
 impl UVCOLCKT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UVCOLCKT_A {
+    pub const fn variant(&self) -> UVCOLCKT_A {
         match self.bits {
             false => UVCOLCKT_A::VALUE1,
             true => UVCOLCKT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Trap request enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == UVCOLCKT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Trap request disabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == UVCOLCKT_A::VALUE2
     }
 }
 #[doc = "Field `UVCOLCKT` writer - USB VCO Lock Trap Disable"]
-pub type UVCOLCKT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPDIS_SPEC, UVCOLCKT_A, O>;
-impl<'a, const O: u8> UVCOLCKT_W<'a, O> {
+pub type UVCOLCKT_W<'a, REG> = crate::BitWriter<'a, REG, UVCOLCKT_A>;
+impl<'a, REG> UVCOLCKT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Trap request enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(UVCOLCKT_A::VALUE1)
     }
     #[doc = "Trap request disabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(UVCOLCKT_A::VALUE2)
     }
 }
@@ -203,34 +180,37 @@ impl From<PET_A> for bool {
 impl PET_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PET_A {
+    pub const fn variant(&self) -> PET_A {
         match self.bits {
             false => PET_A::VALUE1,
             true => PET_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Trap request enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PET_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Trap request disabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PET_A::VALUE2
     }
 }
 #[doc = "Field `PET` writer - Parity Error Trap Disable"]
-pub type PET_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPDIS_SPEC, PET_A, O>;
-impl<'a, const O: u8> PET_W<'a, O> {
+pub type PET_W<'a, REG> = crate::BitWriter<'a, REG, PET_A>;
+impl<'a, REG> PET_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Trap request enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PET_A::VALUE1)
     }
     #[doc = "Trap request disabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PET_A::VALUE2)
     }
 }
@@ -253,34 +233,37 @@ impl From<BRWNT_A> for bool {
 impl BRWNT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BRWNT_A {
+    pub const fn variant(&self) -> BRWNT_A {
         match self.bits {
             false => BRWNT_A::VALUE1,
             true => BRWNT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Trap request enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BRWNT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Trap request disabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BRWNT_A::VALUE2
     }
 }
 #[doc = "Field `BRWNT` writer - Brown Out Trap Disable"]
-pub type BRWNT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPDIS_SPEC, BRWNT_A, O>;
-impl<'a, const O: u8> BRWNT_W<'a, O> {
+pub type BRWNT_W<'a, REG> = crate::BitWriter<'a, REG, BRWNT_A>;
+impl<'a, REG> BRWNT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Trap request enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BRWNT_A::VALUE1)
     }
     #[doc = "Trap request disabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BRWNT_A::VALUE2)
     }
 }
@@ -303,34 +286,37 @@ impl From<ULPWDGT_A> for bool {
 impl ULPWDGT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ULPWDGT_A {
+    pub const fn variant(&self) -> ULPWDGT_A {
         match self.bits {
             false => ULPWDGT_A::VALUE1,
             true => ULPWDGT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Trap request enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ULPWDGT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Trap request disabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ULPWDGT_A::VALUE2
     }
 }
 #[doc = "Field `ULPWDGT` writer - OSC_ULP Oscillator Watchdog Trap Disable"]
-pub type ULPWDGT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPDIS_SPEC, ULPWDGT_A, O>;
-impl<'a, const O: u8> ULPWDGT_W<'a, O> {
+pub type ULPWDGT_W<'a, REG> = crate::BitWriter<'a, REG, ULPWDGT_A>;
+impl<'a, REG> ULPWDGT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Trap request enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ULPWDGT_A::VALUE1)
     }
     #[doc = "Trap request disabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ULPWDGT_A::VALUE2)
     }
 }
@@ -353,34 +339,37 @@ impl From<BWERR0T_A> for bool {
 impl BWERR0T_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BWERR0T_A {
+    pub const fn variant(&self) -> BWERR0T_A {
         match self.bits {
             false => BWERR0T_A::VALUE1,
             true => BWERR0T_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Trap request enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BWERR0T_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Trap request disabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BWERR0T_A::VALUE2
     }
 }
 #[doc = "Field `BWERR0T` writer - Peripheral Bridge 0 Trap Disable"]
-pub type BWERR0T_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPDIS_SPEC, BWERR0T_A, O>;
-impl<'a, const O: u8> BWERR0T_W<'a, O> {
+pub type BWERR0T_W<'a, REG> = crate::BitWriter<'a, REG, BWERR0T_A>;
+impl<'a, REG> BWERR0T_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Trap request enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BWERR0T_A::VALUE1)
     }
     #[doc = "Trap request disabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BWERR0T_A::VALUE2)
     }
 }
@@ -403,34 +392,37 @@ impl From<BWERR1T_A> for bool {
 impl BWERR1T_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BWERR1T_A {
+    pub const fn variant(&self) -> BWERR1T_A {
         match self.bits {
             false => BWERR1T_A::VALUE1,
             true => BWERR1T_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Trap request enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BWERR1T_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Trap request disabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BWERR1T_A::VALUE2
     }
 }
 #[doc = "Field `BWERR1T` writer - Peripheral Bridge 1 Trap Disable"]
-pub type BWERR1T_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPDIS_SPEC, BWERR1T_A, O>;
-impl<'a, const O: u8> BWERR1T_W<'a, O> {
+pub type BWERR1T_W<'a, REG> = crate::BitWriter<'a, REG, BWERR1T_A>;
+impl<'a, REG> BWERR1T_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Trap request enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BWERR1T_A::VALUE1)
     }
     #[doc = "Trap request disabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BWERR1T_A::VALUE2)
     }
 }
@@ -480,70 +472,71 @@ impl W {
     #[doc = "Bit 0 - OSC_HP Oscillator Watchdog Trap Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn soscwdgt(&mut self) -> SOSCWDGT_W<0> {
-        SOSCWDGT_W::new(self)
+    pub fn soscwdgt(&mut self) -> SOSCWDGT_W<TRAPDIS_SPEC> {
+        SOSCWDGT_W::new(self, 0)
     }
     #[doc = "Bit 2 - System VCO Lock Trap Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn svcolckt(&mut self) -> SVCOLCKT_W<2> {
-        SVCOLCKT_W::new(self)
+    pub fn svcolckt(&mut self) -> SVCOLCKT_W<TRAPDIS_SPEC> {
+        SVCOLCKT_W::new(self, 2)
     }
     #[doc = "Bit 3 - USB VCO Lock Trap Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn uvcolckt(&mut self) -> UVCOLCKT_W<3> {
-        UVCOLCKT_W::new(self)
+    pub fn uvcolckt(&mut self) -> UVCOLCKT_W<TRAPDIS_SPEC> {
+        UVCOLCKT_W::new(self, 3)
     }
     #[doc = "Bit 4 - Parity Error Trap Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn pet(&mut self) -> PET_W<4> {
-        PET_W::new(self)
+    pub fn pet(&mut self) -> PET_W<TRAPDIS_SPEC> {
+        PET_W::new(self, 4)
     }
     #[doc = "Bit 5 - Brown Out Trap Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn brwnt(&mut self) -> BRWNT_W<5> {
-        BRWNT_W::new(self)
+    pub fn brwnt(&mut self) -> BRWNT_W<TRAPDIS_SPEC> {
+        BRWNT_W::new(self, 5)
     }
     #[doc = "Bit 6 - OSC_ULP Oscillator Watchdog Trap Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn ulpwdgt(&mut self) -> ULPWDGT_W<6> {
-        ULPWDGT_W::new(self)
+    pub fn ulpwdgt(&mut self) -> ULPWDGT_W<TRAPDIS_SPEC> {
+        ULPWDGT_W::new(self, 6)
     }
     #[doc = "Bit 7 - Peripheral Bridge 0 Trap Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn bwerr0t(&mut self) -> BWERR0T_W<7> {
-        BWERR0T_W::new(self)
+    pub fn bwerr0t(&mut self) -> BWERR0T_W<TRAPDIS_SPEC> {
+        BWERR0T_W::new(self, 7)
     }
     #[doc = "Bit 8 - Peripheral Bridge 1 Trap Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn bwerr1t(&mut self) -> BWERR1T_W<8> {
-        BWERR1T_W::new(self)
+    pub fn bwerr1t(&mut self) -> BWERR1T_W<TRAPDIS_SPEC> {
+        BWERR1T_W::new(self, 8)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Trap Disable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [trapdis](index.html) module"]
+#[doc = "Trap Disable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`trapdis::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`trapdis::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TRAPDIS_SPEC;
 impl crate::RegisterSpec for TRAPDIS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [trapdis::R](R) reader structure"]
-impl crate::Readable for TRAPDIS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [trapdis::W](W) writer structure"]
+#[doc = "`read()` method returns [`trapdis::R`](R) reader structure"]
+impl crate::Readable for TRAPDIS_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`trapdis::W`](W) writer structure"]
 impl crate::Writable for TRAPDIS_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
