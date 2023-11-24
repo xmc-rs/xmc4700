@@ -4,8 +4,9 @@ on:
     paths:
       - '**/Cargo.toml'
       - '**/Cargo.lock'
-
 jobs:
   security_audit:
-    uses: xmc-rs/.github/.github/workflows/audit.yml@master
-    secrets: inherit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.1
+      - uses: actions-rust-lang/audit@v1

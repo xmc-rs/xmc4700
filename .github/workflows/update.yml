@@ -1,13 +1,37 @@
-name: Update
-
 on:
   workflow_dispatch:
   schedule:
-    - cron: '5 5 1 * *'
+    - cron:  '7 5 1 * *'
+
+name: Update
 
 jobs:
   update:
-    uses: xmc-rs/.github/.github/workflows/update.yml@master
-    with:
-      svd_file: XMC4700.svd
-    secrets: inherit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.1
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - run:  cargo install svd2rust
+      - run:  cargo install form
+      - uses: oleksiyrudenko/gha-git-credentials@v2.1.1
+        with:
+          token: '${{ secrets.GITHUB_TOKEN }}'
+      - run: |
+          rm -r src/
+          svd2rust -i XMC4700.svd
+          mkdir src
+          form -i lib.rs -o src/
+          cargo fmt
+          rm lib.rs
+      - uses: tibdex/github-app-token@v2
+        id: generate-token
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.APP_SECRET_KEY }}
+      - uses: peter-evans/create-pull-request@v5
+        with:
+          branch: svd-update
+          commit-message: "feat: updating from newer svd2rust"
+          title: "feat: updating from newer svd2rust"
+          labels: automerge
+          token: ${{ steps.generate-token.outputs.token }}
