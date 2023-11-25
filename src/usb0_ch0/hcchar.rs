@@ -1,47 +1,15 @@
 #[doc = "Register `HCCHAR` reader"]
-pub struct R(crate::R<HCCHAR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HCCHAR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HCCHAR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HCCHAR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<HCCHAR_SPEC>;
 #[doc = "Register `HCCHAR` writer"]
-pub struct W(crate::W<HCCHAR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HCCHAR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HCCHAR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HCCHAR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<HCCHAR_SPEC>;
 #[doc = "Field `MPS` reader - Maximum Packet Size"]
-pub type MPS_R = crate::FieldReader<u16, u16>;
+pub type MPS_R = crate::FieldReader<u16>;
 #[doc = "Field `MPS` writer - Maximum Packet Size"]
-pub type MPS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCCHAR_SPEC, u16, u16, 11, O>;
+pub type MPS_W<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
 #[doc = "Field `EPNum` reader - Endpoint Number"]
-pub type EPNUM_R = crate::FieldReader<u8, u8>;
+pub type EPNUM_R = crate::FieldReader;
 #[doc = "Field `EPNum` writer - Endpoint Number"]
-pub type EPNUM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCCHAR_SPEC, u8, u8, 4, O>;
+pub type EPNUM_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `EPDir` reader - Endpoint Direction"]
 pub type EPDIR_R = crate::BitReader<EPDIR_A>;
 #[doc = "Endpoint Direction\n\nValue on reset: 0"]
@@ -61,39 +29,42 @@ impl From<EPDIR_A> for bool {
 impl EPDIR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPDIR_A {
+    pub const fn variant(&self) -> EPDIR_A {
         match self.bits {
             false => EPDIR_A::VALUE1,
             true => EPDIR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "OUT"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EPDIR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "IN"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EPDIR_A::VALUE2
     }
 }
 #[doc = "Field `EPDir` writer - Endpoint Direction"]
-pub type EPDIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, HCCHAR_SPEC, EPDIR_A, O>;
-impl<'a, const O: u8> EPDIR_W<'a, O> {
+pub type EPDIR_W<'a, REG> = crate::BitWriter<'a, REG, EPDIR_A>;
+impl<'a, REG> EPDIR_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "OUT"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EPDIR_A::VALUE1)
     }
     #[doc = "IN"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EPDIR_A::VALUE2)
     }
 }
 #[doc = "Field `EPType` reader - Endpoint Type"]
-pub type EPTYPE_R = crate::FieldReader<u8, EPTYPE_A>;
+pub type EPTYPE_R = crate::FieldReader<EPTYPE_A>;
 #[doc = "Endpoint Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -113,10 +84,13 @@ impl From<EPTYPE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for EPTYPE_A {
+    type Ux = u8;
+}
 impl EPTYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPTYPE_A {
+    pub const fn variant(&self) -> EPTYPE_A {
         match self.bits {
             0 => EPTYPE_A::VALUE1,
             1 => EPTYPE_A::VALUE2,
@@ -125,53 +99,57 @@ impl EPTYPE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Control"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EPTYPE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Isochronous"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EPTYPE_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Bulk"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == EPTYPE_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Interrupt"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == EPTYPE_A::VALUE4
     }
 }
 #[doc = "Field `EPType` writer - Endpoint Type"]
-pub type EPTYPE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, HCCHAR_SPEC, u8, EPTYPE_A, 2, O>;
-impl<'a, const O: u8> EPTYPE_W<'a, O> {
+pub type EPTYPE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EPTYPE_A>;
+impl<'a, REG> EPTYPE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Control"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EPTYPE_A::VALUE1)
     }
     #[doc = "Isochronous"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EPTYPE_A::VALUE2)
     }
     #[doc = "Bulk"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(EPTYPE_A::VALUE3)
     }
     #[doc = "Interrupt"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(EPTYPE_A::VALUE4)
     }
 }
 #[doc = "Field `MC_EC` reader - Multi Count / Error Count"]
-pub type MC_EC_R = crate::FieldReader<u8, MC_EC_A>;
+pub type MC_EC_R = crate::FieldReader<MC_EC_A>;
 #[doc = "Multi Count / Error Count\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -189,10 +167,13 @@ impl From<MC_EC_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for MC_EC_A {
+    type Ux = u8;
+}
 impl MC_EC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<MC_EC_A> {
+    pub const fn variant(&self) -> Option<MC_EC_A> {
         match self.bits {
             1 => Some(MC_EC_A::VALUE2),
             2 => Some(MC_EC_A::VALUE3),
@@ -200,45 +181,49 @@ impl MC_EC_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "1 transaction"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MC_EC_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "2 transactions to be issued for this endpoint per frame"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == MC_EC_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "3 transactions to be issued for this endpoint per frame"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == MC_EC_A::VALUE4
     }
 }
 #[doc = "Field `MC_EC` writer - Multi Count / Error Count"]
-pub type MC_EC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCCHAR_SPEC, u8, MC_EC_A, 2, O>;
-impl<'a, const O: u8> MC_EC_W<'a, O> {
+pub type MC_EC_W<'a, REG> = crate::FieldWriter<'a, REG, 2, MC_EC_A>;
+impl<'a, REG> MC_EC_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "1 transaction"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MC_EC_A::VALUE2)
     }
     #[doc = "2 transactions to be issued for this endpoint per frame"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(MC_EC_A::VALUE3)
     }
     #[doc = "3 transactions to be issued for this endpoint per frame"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(MC_EC_A::VALUE4)
     }
 }
 #[doc = "Field `DevAddr` reader - Device Address"]
-pub type DEV_ADDR_R = crate::FieldReader<u8, u8>;
+pub type DEV_ADDR_R = crate::FieldReader;
 #[doc = "Field `DevAddr` writer - Device Address"]
-pub type DEV_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCCHAR_SPEC, u8, u8, 7, O>;
+pub type DEV_ADDR_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `OddFrm` reader - Odd Frame"]
 pub type ODD_FRM_R = crate::BitReader<ODD_FRM_A>;
 #[doc = "Odd Frame\n\nValue on reset: 0"]
@@ -258,41 +243,44 @@ impl From<ODD_FRM_A> for bool {
 impl ODD_FRM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ODD_FRM_A {
+    pub const fn variant(&self) -> ODD_FRM_A {
         match self.bits {
             false => ODD_FRM_A::VALUE1,
             true => ODD_FRM_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Even frame"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ODD_FRM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Odd frame"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ODD_FRM_A::VALUE2
     }
 }
 #[doc = "Field `OddFrm` writer - Odd Frame"]
-pub type ODD_FRM_W<'a, const O: u8> = crate::BitWriter<'a, u32, HCCHAR_SPEC, ODD_FRM_A, O>;
-impl<'a, const O: u8> ODD_FRM_W<'a, O> {
+pub type ODD_FRM_W<'a, REG> = crate::BitWriter<'a, REG, ODD_FRM_A>;
+impl<'a, REG> ODD_FRM_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Even frame"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ODD_FRM_A::VALUE1)
     }
     #[doc = "Odd frame"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ODD_FRM_A::VALUE2)
     }
 }
 #[doc = "Field `ChDis` reader - Channel Disable"]
-pub type CH_DIS_R = crate::BitReader<bool>;
+pub type CH_DIS_R = crate::BitReader;
 #[doc = "Field `ChDis` writer - Channel Disable"]
-pub type CH_DIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, HCCHAR_SPEC, bool, O>;
+pub type CH_DIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ChEna` reader - Channel Enable"]
 pub type CH_ENA_R = crate::BitReader<CH_ENA_A>;
 #[doc = "Channel Enable\n\nValue on reset: 0"]
@@ -312,34 +300,37 @@ impl From<CH_ENA_A> for bool {
 impl CH_ENA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CH_ENA_A {
+    pub const fn variant(&self) -> CH_ENA_A {
         match self.bits {
             false => CH_ENA_A::VALUE1,
             true => CH_ENA_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Scatter/Gather mode enabled: Indicates that the descriptor structure is not yet ready. Scatter/Gather mode disabled: Channel disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CH_ENA_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Scatter/Gather mode enabled: Indicates that the descriptor structure and data buffer with data is setup and this channel can access the descriptor. Scatter/Gather mode disabled: Channel enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CH_ENA_A::VALUE2
     }
 }
 #[doc = "Field `ChEna` writer - Channel Enable"]
-pub type CH_ENA_W<'a, const O: u8> = crate::BitWriter<'a, u32, HCCHAR_SPEC, CH_ENA_A, O>;
-impl<'a, const O: u8> CH_ENA_W<'a, O> {
+pub type CH_ENA_W<'a, REG> = crate::BitWriter<'a, REG, CH_ENA_A>;
+impl<'a, REG> CH_ENA_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Scatter/Gather mode enabled: Indicates that the descriptor structure is not yet ready. Scatter/Gather mode disabled: Channel disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CH_ENA_A::VALUE1)
     }
     #[doc = "Scatter/Gather mode enabled: Indicates that the descriptor structure and data buffer with data is setup and this channel can access the descriptor. Scatter/Gather mode disabled: Channel enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CH_ENA_A::VALUE2)
     }
 }
@@ -394,76 +385,77 @@ impl W {
     #[doc = "Bits 0:10 - Maximum Packet Size"]
     #[inline(always)]
     #[must_use]
-    pub fn mps(&mut self) -> MPS_W<0> {
-        MPS_W::new(self)
+    pub fn mps(&mut self) -> MPS_W<HCCHAR_SPEC> {
+        MPS_W::new(self, 0)
     }
     #[doc = "Bits 11:14 - Endpoint Number"]
     #[inline(always)]
     #[must_use]
-    pub fn epnum(&mut self) -> EPNUM_W<11> {
-        EPNUM_W::new(self)
+    pub fn epnum(&mut self) -> EPNUM_W<HCCHAR_SPEC> {
+        EPNUM_W::new(self, 11)
     }
     #[doc = "Bit 15 - Endpoint Direction"]
     #[inline(always)]
     #[must_use]
-    pub fn epdir(&mut self) -> EPDIR_W<15> {
-        EPDIR_W::new(self)
+    pub fn epdir(&mut self) -> EPDIR_W<HCCHAR_SPEC> {
+        EPDIR_W::new(self, 15)
     }
     #[doc = "Bits 18:19 - Endpoint Type"]
     #[inline(always)]
     #[must_use]
-    pub fn eptype(&mut self) -> EPTYPE_W<18> {
-        EPTYPE_W::new(self)
+    pub fn eptype(&mut self) -> EPTYPE_W<HCCHAR_SPEC> {
+        EPTYPE_W::new(self, 18)
     }
     #[doc = "Bits 20:21 - Multi Count / Error Count"]
     #[inline(always)]
     #[must_use]
-    pub fn mc_ec(&mut self) -> MC_EC_W<20> {
-        MC_EC_W::new(self)
+    pub fn mc_ec(&mut self) -> MC_EC_W<HCCHAR_SPEC> {
+        MC_EC_W::new(self, 20)
     }
     #[doc = "Bits 22:28 - Device Address"]
     #[inline(always)]
     #[must_use]
-    pub fn dev_addr(&mut self) -> DEV_ADDR_W<22> {
-        DEV_ADDR_W::new(self)
+    pub fn dev_addr(&mut self) -> DEV_ADDR_W<HCCHAR_SPEC> {
+        DEV_ADDR_W::new(self, 22)
     }
     #[doc = "Bit 29 - Odd Frame"]
     #[inline(always)]
     #[must_use]
-    pub fn odd_frm(&mut self) -> ODD_FRM_W<29> {
-        ODD_FRM_W::new(self)
+    pub fn odd_frm(&mut self) -> ODD_FRM_W<HCCHAR_SPEC> {
+        ODD_FRM_W::new(self, 29)
     }
     #[doc = "Bit 30 - Channel Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn ch_dis(&mut self) -> CH_DIS_W<30> {
-        CH_DIS_W::new(self)
+    pub fn ch_dis(&mut self) -> CH_DIS_W<HCCHAR_SPEC> {
+        CH_DIS_W::new(self, 30)
     }
     #[doc = "Bit 31 - Channel Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ch_ena(&mut self) -> CH_ENA_W<31> {
-        CH_ENA_W::new(self)
+    pub fn ch_ena(&mut self) -> CH_ENA_W<HCCHAR_SPEC> {
+        CH_ENA_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Host Channel Characteristics Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcchar](index.html) module"]
+#[doc = "Host Channel Characteristics Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hcchar::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hcchar::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HCCHAR_SPEC;
 impl crate::RegisterSpec for HCCHAR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [hcchar::R](R) reader structure"]
-impl crate::Readable for HCCHAR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [hcchar::W](W) writer structure"]
+#[doc = "`read()` method returns [`hcchar::R`](R) reader structure"]
+impl crate::Readable for HCCHAR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`hcchar::W`](W) writer structure"]
 impl crate::Writable for HCCHAR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,24 +1,5 @@
 #[doc = "Register `CGATSET2` writer"]
-pub struct W(crate::W<CGATSET2_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CGATSET2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CGATSET2_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CGATSET2_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CGATSET2_SPEC>;
 #[doc = "WDT Gating Set\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WDT_AW {
@@ -34,16 +15,19 @@ impl From<WDT_AW> for bool {
     }
 }
 #[doc = "Field `WDT` writer - WDT Gating Set"]
-pub type WDT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET2_SPEC, WDT_AW, O>;
-impl<'a, const O: u8> WDT_W<'a, O> {
+pub type WDT_W<'a, REG> = crate::BitWriter<'a, REG, WDT_AW>;
+impl<'a, REG> WDT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(WDT_AW::VALUE1)
     }
     #[doc = "Enable gating"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(WDT_AW::VALUE2)
     }
 }
@@ -62,16 +46,19 @@ impl From<ETH0_AW> for bool {
     }
 }
 #[doc = "Field `ETH0` writer - ETH0 Gating Set"]
-pub type ETH0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET2_SPEC, ETH0_AW, O>;
-impl<'a, const O: u8> ETH0_W<'a, O> {
+pub type ETH0_W<'a, REG> = crate::BitWriter<'a, REG, ETH0_AW>;
+impl<'a, REG> ETH0_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ETH0_AW::VALUE1)
     }
     #[doc = "Enable gating"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ETH0_AW::VALUE2)
     }
 }
@@ -90,16 +77,19 @@ impl From<DMA0_AW> for bool {
     }
 }
 #[doc = "Field `DMA0` writer - DMA0 Gating Set"]
-pub type DMA0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET2_SPEC, DMA0_AW, O>;
-impl<'a, const O: u8> DMA0_W<'a, O> {
+pub type DMA0_W<'a, REG> = crate::BitWriter<'a, REG, DMA0_AW>;
+impl<'a, REG> DMA0_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DMA0_AW::VALUE1)
     }
     #[doc = "Enable gating"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DMA0_AW::VALUE2)
     }
 }
@@ -118,16 +108,19 @@ impl From<DMA1_AW> for bool {
     }
 }
 #[doc = "Field `DMA1` writer - DMA1 Gating Set"]
-pub type DMA1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET2_SPEC, DMA1_AW, O>;
-impl<'a, const O: u8> DMA1_W<'a, O> {
+pub type DMA1_W<'a, REG> = crate::BitWriter<'a, REG, DMA1_AW>;
+impl<'a, REG> DMA1_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DMA1_AW::VALUE1)
     }
     #[doc = "Enable gating"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DMA1_AW::VALUE2)
     }
 }
@@ -146,16 +139,19 @@ impl From<FCE_AW> for bool {
     }
 }
 #[doc = "Field `FCE` writer - FCE Gating Set"]
-pub type FCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET2_SPEC, FCE_AW, O>;
-impl<'a, const O: u8> FCE_W<'a, O> {
+pub type FCE_W<'a, REG> = crate::BitWriter<'a, REG, FCE_AW>;
+impl<'a, REG> FCE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(FCE_AW::VALUE1)
     }
     #[doc = "Enable gating"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(FCE_AW::VALUE2)
     }
 }
@@ -174,16 +170,19 @@ impl From<USB_AW> for bool {
     }
 }
 #[doc = "Field `USB` writer - USB Gating Set"]
-pub type USB_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET2_SPEC, USB_AW, O>;
-impl<'a, const O: u8> USB_W<'a, O> {
+pub type USB_W<'a, REG> = crate::BitWriter<'a, REG, USB_AW>;
+impl<'a, REG> USB_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(USB_AW::VALUE1)
     }
     #[doc = "Enable gating"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(USB_AW::VALUE2)
     }
 }
@@ -191,54 +190,57 @@ impl W {
     #[doc = "Bit 1 - WDT Gating Set"]
     #[inline(always)]
     #[must_use]
-    pub fn wdt(&mut self) -> WDT_W<1> {
-        WDT_W::new(self)
+    pub fn wdt(&mut self) -> WDT_W<CGATSET2_SPEC> {
+        WDT_W::new(self, 1)
     }
     #[doc = "Bit 2 - ETH0 Gating Set"]
     #[inline(always)]
     #[must_use]
-    pub fn eth0(&mut self) -> ETH0_W<2> {
-        ETH0_W::new(self)
+    pub fn eth0(&mut self) -> ETH0_W<CGATSET2_SPEC> {
+        ETH0_W::new(self, 2)
     }
     #[doc = "Bit 4 - DMA0 Gating Set"]
     #[inline(always)]
     #[must_use]
-    pub fn dma0(&mut self) -> DMA0_W<4> {
-        DMA0_W::new(self)
+    pub fn dma0(&mut self) -> DMA0_W<CGATSET2_SPEC> {
+        DMA0_W::new(self, 4)
     }
     #[doc = "Bit 5 - DMA1 Gating Set"]
     #[inline(always)]
     #[must_use]
-    pub fn dma1(&mut self) -> DMA1_W<5> {
-        DMA1_W::new(self)
+    pub fn dma1(&mut self) -> DMA1_W<CGATSET2_SPEC> {
+        DMA1_W::new(self, 5)
     }
     #[doc = "Bit 6 - FCE Gating Set"]
     #[inline(always)]
     #[must_use]
-    pub fn fce(&mut self) -> FCE_W<6> {
-        FCE_W::new(self)
+    pub fn fce(&mut self) -> FCE_W<CGATSET2_SPEC> {
+        FCE_W::new(self, 6)
     }
     #[doc = "Bit 7 - USB Gating Set"]
     #[inline(always)]
     #[must_use]
-    pub fn usb(&mut self) -> USB_W<7> {
-        USB_W::new(self)
+    pub fn usb(&mut self) -> USB_W<CGATSET2_SPEC> {
+        USB_W::new(self, 7)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Peripheral 2 Clock Gating Set\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cgatset2](index.html) module"]
+#[doc = "Peripheral 2 Clock Gating Set\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cgatset2::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CGATSET2_SPEC;
 impl crate::RegisterSpec for CGATSET2_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [cgatset2::W](W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [`cgatset2::W`](W) writer structure"]
 impl crate::Writable for CGATSET2_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

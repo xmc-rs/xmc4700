@@ -1,18 +1,5 @@
 #[doc = "Register `USBPLLSTAT` reader"]
-pub struct R(crate::R<USBPLLSTAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<USBPLLSTAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<USBPLLSTAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<USBPLLSTAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<USBPLLSTAT_SPEC>;
 #[doc = "Field `VCOBYST` reader - VCO Bypass Status"]
 pub type VCOBYST_R = crate::BitReader<VCOBYST_A>;
 #[doc = "VCO Bypass Status\n\nValue on reset: 0"]
@@ -32,18 +19,18 @@ impl From<VCOBYST_A> for bool {
 impl VCOBYST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VCOBYST_A {
+    pub const fn variant(&self) -> VCOBYST_A {
         match self.bits {
             false => VCOBYST_A::VALUE1,
             true => VCOBYST_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Normal Mode is entered"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VCOBYST_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Prescaler Mode is entered"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VCOBYST_A::VALUE2
@@ -68,18 +55,18 @@ impl From<PWDSTAT_A> for bool {
 impl PWDSTAT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PWDSTAT_A {
+    pub const fn variant(&self) -> PWDSTAT_A {
         match self.bits {
             false => PWDSTAT_A::VALUE1,
             true => PWDSTAT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "PLL Power-saving Mode was not entered"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PWDSTAT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "PLL Power-saving Mode was entered"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PWDSTAT_A::VALUE2
@@ -104,18 +91,18 @@ impl From<VCOLOCK_A> for bool {
 impl VCOLOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VCOLOCK_A {
+    pub const fn variant(&self) -> VCOLOCK_A {
         match self.bits {
             false => VCOLOCK_A::VALUE1,
             true => VCOLOCK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The frequency difference of fREF and fDIV is greater than allowed. The VCO part of the PLL can not lock on a target frequency."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VCOLOCK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The frequency difference of fREF and fDIV is small enough to enable a stable VCO operation"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VCOLOCK_A::VALUE2
@@ -140,18 +127,18 @@ impl From<BY_A> for bool {
 impl BY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BY_A {
+    pub const fn variant(&self) -> BY_A {
         match self.bits {
             false => BY_A::VALUE1,
             true => BY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Bypass Mode is not entered"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Bypass Mode is entered. Input fOSC is selected as output fPLL."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BY_A::VALUE2
@@ -176,18 +163,18 @@ impl From<VCOLOCKED_A> for bool {
 impl VCOLOCKED_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VCOLOCKED_A {
+    pub const fn variant(&self) -> VCOLOCKED_A {
         match self.bits {
             false => VCOLOCKED_A::VALUE1,
             true => VCOLOCKED_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "PLL not locked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VCOLOCKED_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "PLL locked"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VCOLOCKED_A::VALUE2
@@ -220,15 +207,13 @@ impl R {
         VCOLOCKED_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
-#[doc = "USB PLL Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usbpllstat](index.html) module"]
+#[doc = "USB PLL Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`usbpllstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct USBPLLSTAT_SPEC;
 impl crate::RegisterSpec for USBPLLSTAT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [usbpllstat::R](R) reader structure"]
-impl crate::Readable for USBPLLSTAT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`usbpllstat::R`](R) reader structure"]
+impl crate::Readable for USBPLLSTAT_SPEC {}
 #[doc = "`reset()` method sets USBPLLSTAT to value 0x02"]
 impl crate::Resettable for USBPLLSTAT_SPEC {
     const RESET_VALUE: Self::Ux = 0x02;

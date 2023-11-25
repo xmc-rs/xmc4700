@@ -1,24 +1,11 @@
 #[doc = "Register `ECRD1` reader"]
-pub struct R(crate::R<ECRD1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ECRD1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ECRD1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ECRD1_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ECRD1_SPEC>;
 #[doc = "Field `CAPV` reader - Timer Capture Value"]
-pub type CAPV_R = crate::FieldReader<u16, u16>;
+pub type CAPV_R = crate::FieldReader<u16>;
 #[doc = "Field `FPCV` reader - Prescaler Capture value"]
-pub type FPCV_R = crate::FieldReader<u8, u8>;
+pub type FPCV_R = crate::FieldReader;
 #[doc = "Field `SPTR` reader - Slice pointer"]
-pub type SPTR_R = crate::FieldReader<u8, SPTR_A>;
+pub type SPTR_R = crate::FieldReader<SPTR_A>;
 #[doc = "Slice pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -38,10 +25,13 @@ impl From<SPTR_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for SPTR_A {
+    type Ux = u8;
+}
 impl SPTR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SPTR_A {
+    pub const fn variant(&self) -> SPTR_A {
         match self.bits {
             0 => SPTR_A::VALUE1,
             1 => SPTR_A::VALUE2,
@@ -50,29 +40,29 @@ impl SPTR_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "CC80"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SPTR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "CC81"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SPTR_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "CC82"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == SPTR_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "CC83"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == SPTR_A::VALUE4
     }
 }
 #[doc = "Field `VPTR` reader - Capture register pointer"]
-pub type VPTR_R = crate::FieldReader<u8, VPTR_A>;
+pub type VPTR_R = crate::FieldReader<VPTR_A>;
 #[doc = "Capture register pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -92,10 +82,13 @@ impl From<VPTR_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for VPTR_A {
+    type Ux = u8;
+}
 impl VPTR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VPTR_A {
+    pub const fn variant(&self) -> VPTR_A {
         match self.bits {
             0 => VPTR_A::VALUE1,
             1 => VPTR_A::VALUE2,
@@ -104,22 +97,22 @@ impl VPTR_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Capture register 0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VPTR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Capture register 1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VPTR_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Capture register 2"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == VPTR_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Capture register 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == VPTR_A::VALUE4
@@ -144,18 +137,18 @@ impl From<FFL_A> for bool {
 impl FFL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FFL_A {
+    pub const fn variant(&self) -> FFL_A {
         match self.bits {
             false => FFL_A::VALUE1,
             true => FFL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No new value was captured into this register"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FFL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A new value has been captured into this register"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FFL_A::VALUE2
@@ -180,18 +173,18 @@ impl From<LCV_A> for bool {
 impl LCV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LCV_A {
+    pub const fn variant(&self) -> LCV_A {
         match self.bits {
             false => LCV_A::VALUE1,
             true => LCV_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No capture was lost"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LCV_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A capture was lost"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LCV_A::VALUE2
@@ -229,15 +222,13 @@ impl R {
         LCV_R::new(((self.bits >> 25) & 1) != 0)
     }
 }
-#[doc = "Extended Read Back 1\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ecrd1](index.html) module\n\nOne or more dependent resources other than the current register are immediately affected by a read operation."]
+#[doc = "Extended Read Back 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecrd1::R`](R). WARN: One or more dependent resources other than the current register are immediately affected by a read operation. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ECRD1_SPEC;
 impl crate::RegisterSpec for ECRD1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ecrd1::R](R) reader structure"]
-impl crate::Readable for ECRD1_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`ecrd1::R`](R) reader structure"]
+impl crate::Readable for ECRD1_SPEC {}
 #[doc = "`reset()` method sets ECRD1 to value 0"]
 impl crate::Resettable for ECRD1_SPEC {
     const RESET_VALUE: Self::Ux = 0;

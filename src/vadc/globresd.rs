@@ -1,51 +1,19 @@
 #[doc = "Register `GLOBRESD` reader"]
-pub struct R(crate::R<GLOBRESD_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<GLOBRESD_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<GLOBRESD_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<GLOBRESD_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<GLOBRESD_SPEC>;
 #[doc = "Register `GLOBRESD` writer"]
-pub struct W(crate::W<GLOBRESD_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<GLOBRESD_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<GLOBRESD_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<GLOBRESD_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<GLOBRESD_SPEC>;
 #[doc = "Field `RESULT` reader - Result of most recent conversion"]
-pub type RESULT_R = crate::FieldReader<u16, u16>;
+pub type RESULT_R = crate::FieldReader<u16>;
 #[doc = "Field `RESULT` writer - Result of most recent conversion"]
-pub type RESULT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GLOBRESD_SPEC, u16, u16, 16, O>;
+pub type RESULT_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `GNR` reader - Group Number"]
-pub type GNR_R = crate::FieldReader<u8, u8>;
+pub type GNR_R = crate::FieldReader;
 #[doc = "Field `CHNR` reader - Channel Number"]
-pub type CHNR_R = crate::FieldReader<u8, u8>;
+pub type CHNR_R = crate::FieldReader;
 #[doc = "Field `EMUX` reader - External Multiplexer Setting"]
-pub type EMUX_R = crate::FieldReader<u8, u8>;
+pub type EMUX_R = crate::FieldReader;
 #[doc = "Field `CRS` reader - Converted Request Source"]
-pub type CRS_R = crate::FieldReader<u8, u8>;
+pub type CRS_R = crate::FieldReader;
 #[doc = "Field `FCR` reader - Fast Compare Result"]
 pub type FCR_R = crate::BitReader<FCR_A>;
 #[doc = "Fast Compare Result\n\nValue on reset: 0"]
@@ -65,18 +33,18 @@ impl From<FCR_A> for bool {
 impl FCR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FCR_A {
+    pub const fn variant(&self) -> FCR_A {
         match self.bits {
             false => FCR_A::VALUE1,
             true => FCR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Signal level was below compare value"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FCR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Signal level was above compare value"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FCR_A::VALUE2
@@ -101,34 +69,37 @@ impl From<VF_A> for bool {
 impl VF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VF_A {
+    pub const fn variant(&self) -> VF_A {
         match self.bits {
             false => VF_A::VALUE1,
             true => VF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read access: Bitfield RESULT contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and the data reduction counter (overrides a hardware set action)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VF_A::VALUE2
     }
 }
 #[doc = "Field `VF` writer - Valid Flag"]
-pub type VF_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBRESD_SPEC, VF_A, O>;
-impl<'a, const O: u8> VF_W<'a, O> {
+pub type VF_W<'a, REG> = crate::BitWriter<'a, REG, VF_A>;
+impl<'a, REG> VF_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VF_A::VALUE1)
     }
     #[doc = "Read access: Bitfield RESULT contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and the data reduction counter (overrides a hardware set action)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VF_A::VALUE2)
     }
 }
@@ -173,34 +144,35 @@ impl W {
     #[doc = "Bits 0:15 - Result of most recent conversion"]
     #[inline(always)]
     #[must_use]
-    pub fn result(&mut self) -> RESULT_W<0> {
-        RESULT_W::new(self)
+    pub fn result(&mut self) -> RESULT_W<GLOBRESD_SPEC> {
+        RESULT_W::new(self, 0)
     }
     #[doc = "Bit 31 - Valid Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn vf(&mut self) -> VF_W<31> {
-        VF_W::new(self)
+    pub fn vf(&mut self) -> VF_W<GLOBRESD_SPEC> {
+        VF_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Global Result Register, Debug\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [globresd](index.html) module"]
+#[doc = "Global Result Register, Debug\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`globresd::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`globresd::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GLOBRESD_SPEC;
 impl crate::RegisterSpec for GLOBRESD_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [globresd::R](R) reader structure"]
-impl crate::Readable for GLOBRESD_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [globresd::W](W) writer structure"]
+#[doc = "`read()` method returns [`globresd::R`](R) reader structure"]
+impl crate::Readable for GLOBRESD_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`globresd::W`](W) writer structure"]
 impl crate::Writable for GLOBRESD_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

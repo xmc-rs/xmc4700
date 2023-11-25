@@ -1,39 +1,7 @@
 #[doc = "Register `ASSEL` reader"]
-pub struct R(crate::R<ASSEL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ASSEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ASSEL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ASSEL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ASSEL_SPEC>;
 #[doc = "Register `ASSEL` writer"]
-pub struct W(crate::W<ASSEL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ASSEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ASSEL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ASSEL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<ASSEL_SPEC>;
 #[doc = "Field `CHSEL0` reader - Channel Selection"]
 pub type CHSEL0_R = crate::BitReader<CHSEL0_A>;
 #[doc = "Channel Selection\n\nValue on reset: 0"]
@@ -53,34 +21,37 @@ impl From<CHSEL0_A> for bool {
 impl CHSEL0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHSEL0_A {
+    pub const fn variant(&self) -> CHSEL0_A {
         match self.bits {
             false => CHSEL0_A::VALUE1,
             true => CHSEL0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CHSEL0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "This channel is part of the scan sequence"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CHSEL0_A::VALUE2
     }
 }
 #[doc = "Field `CHSEL0` writer - Channel Selection"]
-pub type CHSEL0_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASSEL_SPEC, CHSEL0_A, O>;
-impl<'a, const O: u8> CHSEL0_W<'a, O> {
+pub type CHSEL0_W<'a, REG> = crate::BitWriter<'a, REG, CHSEL0_A>;
+impl<'a, REG> CHSEL0_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Ignore this channel"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CHSEL0_A::VALUE1)
     }
     #[doc = "This channel is part of the scan sequence"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CHSEL0_A::VALUE2)
     }
 }
@@ -103,34 +74,37 @@ impl From<CHSEL1_A> for bool {
 impl CHSEL1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHSEL1_A {
+    pub const fn variant(&self) -> CHSEL1_A {
         match self.bits {
             false => CHSEL1_A::VALUE1,
             true => CHSEL1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CHSEL1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "This channel is part of the scan sequence"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CHSEL1_A::VALUE2
     }
 }
 #[doc = "Field `CHSEL1` writer - Channel Selection"]
-pub type CHSEL1_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASSEL_SPEC, CHSEL1_A, O>;
-impl<'a, const O: u8> CHSEL1_W<'a, O> {
+pub type CHSEL1_W<'a, REG> = crate::BitWriter<'a, REG, CHSEL1_A>;
+impl<'a, REG> CHSEL1_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Ignore this channel"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CHSEL1_A::VALUE1)
     }
     #[doc = "This channel is part of the scan sequence"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CHSEL1_A::VALUE2)
     }
 }
@@ -153,34 +127,37 @@ impl From<CHSEL2_A> for bool {
 impl CHSEL2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHSEL2_A {
+    pub const fn variant(&self) -> CHSEL2_A {
         match self.bits {
             false => CHSEL2_A::VALUE1,
             true => CHSEL2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CHSEL2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "This channel is part of the scan sequence"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CHSEL2_A::VALUE2
     }
 }
 #[doc = "Field `CHSEL2` writer - Channel Selection"]
-pub type CHSEL2_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASSEL_SPEC, CHSEL2_A, O>;
-impl<'a, const O: u8> CHSEL2_W<'a, O> {
+pub type CHSEL2_W<'a, REG> = crate::BitWriter<'a, REG, CHSEL2_A>;
+impl<'a, REG> CHSEL2_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Ignore this channel"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CHSEL2_A::VALUE1)
     }
     #[doc = "This channel is part of the scan sequence"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CHSEL2_A::VALUE2)
     }
 }
@@ -203,34 +180,37 @@ impl From<CHSEL3_A> for bool {
 impl CHSEL3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHSEL3_A {
+    pub const fn variant(&self) -> CHSEL3_A {
         match self.bits {
             false => CHSEL3_A::VALUE1,
             true => CHSEL3_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CHSEL3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "This channel is part of the scan sequence"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CHSEL3_A::VALUE2
     }
 }
 #[doc = "Field `CHSEL3` writer - Channel Selection"]
-pub type CHSEL3_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASSEL_SPEC, CHSEL3_A, O>;
-impl<'a, const O: u8> CHSEL3_W<'a, O> {
+pub type CHSEL3_W<'a, REG> = crate::BitWriter<'a, REG, CHSEL3_A>;
+impl<'a, REG> CHSEL3_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Ignore this channel"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CHSEL3_A::VALUE1)
     }
     #[doc = "This channel is part of the scan sequence"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CHSEL3_A::VALUE2)
     }
 }
@@ -253,34 +233,37 @@ impl From<CHSEL4_A> for bool {
 impl CHSEL4_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHSEL4_A {
+    pub const fn variant(&self) -> CHSEL4_A {
         match self.bits {
             false => CHSEL4_A::VALUE1,
             true => CHSEL4_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CHSEL4_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "This channel is part of the scan sequence"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CHSEL4_A::VALUE2
     }
 }
 #[doc = "Field `CHSEL4` writer - Channel Selection"]
-pub type CHSEL4_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASSEL_SPEC, CHSEL4_A, O>;
-impl<'a, const O: u8> CHSEL4_W<'a, O> {
+pub type CHSEL4_W<'a, REG> = crate::BitWriter<'a, REG, CHSEL4_A>;
+impl<'a, REG> CHSEL4_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Ignore this channel"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CHSEL4_A::VALUE1)
     }
     #[doc = "This channel is part of the scan sequence"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CHSEL4_A::VALUE2)
     }
 }
@@ -303,34 +286,37 @@ impl From<CHSEL5_A> for bool {
 impl CHSEL5_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHSEL5_A {
+    pub const fn variant(&self) -> CHSEL5_A {
         match self.bits {
             false => CHSEL5_A::VALUE1,
             true => CHSEL5_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CHSEL5_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "This channel is part of the scan sequence"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CHSEL5_A::VALUE2
     }
 }
 #[doc = "Field `CHSEL5` writer - Channel Selection"]
-pub type CHSEL5_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASSEL_SPEC, CHSEL5_A, O>;
-impl<'a, const O: u8> CHSEL5_W<'a, O> {
+pub type CHSEL5_W<'a, REG> = crate::BitWriter<'a, REG, CHSEL5_A>;
+impl<'a, REG> CHSEL5_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Ignore this channel"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CHSEL5_A::VALUE1)
     }
     #[doc = "This channel is part of the scan sequence"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CHSEL5_A::VALUE2)
     }
 }
@@ -353,34 +339,37 @@ impl From<CHSEL6_A> for bool {
 impl CHSEL6_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHSEL6_A {
+    pub const fn variant(&self) -> CHSEL6_A {
         match self.bits {
             false => CHSEL6_A::VALUE1,
             true => CHSEL6_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CHSEL6_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "This channel is part of the scan sequence"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CHSEL6_A::VALUE2
     }
 }
 #[doc = "Field `CHSEL6` writer - Channel Selection"]
-pub type CHSEL6_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASSEL_SPEC, CHSEL6_A, O>;
-impl<'a, const O: u8> CHSEL6_W<'a, O> {
+pub type CHSEL6_W<'a, REG> = crate::BitWriter<'a, REG, CHSEL6_A>;
+impl<'a, REG> CHSEL6_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Ignore this channel"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CHSEL6_A::VALUE1)
     }
     #[doc = "This channel is part of the scan sequence"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CHSEL6_A::VALUE2)
     }
 }
@@ -403,34 +392,37 @@ impl From<CHSEL7_A> for bool {
 impl CHSEL7_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHSEL7_A {
+    pub const fn variant(&self) -> CHSEL7_A {
         match self.bits {
             false => CHSEL7_A::VALUE1,
             true => CHSEL7_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CHSEL7_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "This channel is part of the scan sequence"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CHSEL7_A::VALUE2
     }
 }
 #[doc = "Field `CHSEL7` writer - Channel Selection"]
-pub type CHSEL7_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASSEL_SPEC, CHSEL7_A, O>;
-impl<'a, const O: u8> CHSEL7_W<'a, O> {
+pub type CHSEL7_W<'a, REG> = crate::BitWriter<'a, REG, CHSEL7_A>;
+impl<'a, REG> CHSEL7_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Ignore this channel"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CHSEL7_A::VALUE1)
     }
     #[doc = "This channel is part of the scan sequence"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CHSEL7_A::VALUE2)
     }
 }
@@ -480,70 +472,71 @@ impl W {
     #[doc = "Bit 0 - Channel Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn chsel0(&mut self) -> CHSEL0_W<0> {
-        CHSEL0_W::new(self)
+    pub fn chsel0(&mut self) -> CHSEL0_W<ASSEL_SPEC> {
+        CHSEL0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Channel Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn chsel1(&mut self) -> CHSEL1_W<1> {
-        CHSEL1_W::new(self)
+    pub fn chsel1(&mut self) -> CHSEL1_W<ASSEL_SPEC> {
+        CHSEL1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Channel Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn chsel2(&mut self) -> CHSEL2_W<2> {
-        CHSEL2_W::new(self)
+    pub fn chsel2(&mut self) -> CHSEL2_W<ASSEL_SPEC> {
+        CHSEL2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Channel Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn chsel3(&mut self) -> CHSEL3_W<3> {
-        CHSEL3_W::new(self)
+    pub fn chsel3(&mut self) -> CHSEL3_W<ASSEL_SPEC> {
+        CHSEL3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Channel Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn chsel4(&mut self) -> CHSEL4_W<4> {
-        CHSEL4_W::new(self)
+    pub fn chsel4(&mut self) -> CHSEL4_W<ASSEL_SPEC> {
+        CHSEL4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Channel Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn chsel5(&mut self) -> CHSEL5_W<5> {
-        CHSEL5_W::new(self)
+    pub fn chsel5(&mut self) -> CHSEL5_W<ASSEL_SPEC> {
+        CHSEL5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Channel Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn chsel6(&mut self) -> CHSEL6_W<6> {
-        CHSEL6_W::new(self)
+    pub fn chsel6(&mut self) -> CHSEL6_W<ASSEL_SPEC> {
+        CHSEL6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Channel Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn chsel7(&mut self) -> CHSEL7_W<7> {
-        CHSEL7_W::new(self)
+    pub fn chsel7(&mut self) -> CHSEL7_W<ASSEL_SPEC> {
+        CHSEL7_W::new(self, 7)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Autoscan Source Channel Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [assel](index.html) module"]
+#[doc = "Autoscan Source Channel Select Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`assel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`assel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ASSEL_SPEC;
 impl crate::RegisterSpec for ASSEL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [assel::R](R) reader structure"]
-impl crate::Readable for ASSEL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [assel::W](W) writer structure"]
+#[doc = "`read()` method returns [`assel::R`](R) reader structure"]
+impl crate::Readable for ASSEL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`assel::W`](W) writer structure"]
 impl crate::Writable for ASSEL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

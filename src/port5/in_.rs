@@ -1,18 +1,5 @@
 #[doc = "Register `IN` reader"]
-pub struct R(crate::R<IN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<IN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<IN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<IN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IN_SPEC>;
 #[doc = "Field `P0` reader - Port n Input Bit 0"]
 pub type P0_R = crate::BitReader<P0_A>;
 #[doc = "Port n Input Bit 0\n\nValue on reset: 0"]
@@ -32,18 +19,18 @@ impl From<P0_A> for bool {
 impl P0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P0_A {
+    pub const fn variant(&self) -> P0_A {
         match self.bits {
             false => P0_A::VALUE1,
             true => P0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P0_A::VALUE2
@@ -68,18 +55,18 @@ impl From<P1_A> for bool {
 impl P1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P1_A {
+    pub const fn variant(&self) -> P1_A {
         match self.bits {
             false => P1_A::VALUE1,
             true => P1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P1_A::VALUE2
@@ -104,18 +91,18 @@ impl From<P2_A> for bool {
 impl P2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P2_A {
+    pub const fn variant(&self) -> P2_A {
         match self.bits {
             false => P2_A::VALUE1,
             true => P2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P2_A::VALUE2
@@ -140,18 +127,18 @@ impl From<P3_A> for bool {
 impl P3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P3_A {
+    pub const fn variant(&self) -> P3_A {
         match self.bits {
             false => P3_A::VALUE1,
             true => P3_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P3_A::VALUE2
@@ -176,18 +163,18 @@ impl From<P4_A> for bool {
 impl P4_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P4_A {
+    pub const fn variant(&self) -> P4_A {
         match self.bits {
             false => P4_A::VALUE1,
             true => P4_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P4_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P4_A::VALUE2
@@ -212,18 +199,18 @@ impl From<P5_A> for bool {
 impl P5_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P5_A {
+    pub const fn variant(&self) -> P5_A {
         match self.bits {
             false => P5_A::VALUE1,
             true => P5_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P5_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P5_A::VALUE2
@@ -248,18 +235,18 @@ impl From<P6_A> for bool {
 impl P6_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P6_A {
+    pub const fn variant(&self) -> P6_A {
         match self.bits {
             false => P6_A::VALUE1,
             true => P6_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P6_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P6_A::VALUE2
@@ -284,18 +271,18 @@ impl From<P7_A> for bool {
 impl P7_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P7_A {
+    pub const fn variant(&self) -> P7_A {
         match self.bits {
             false => P7_A::VALUE1,
             true => P7_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P7_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P7_A::VALUE2
@@ -320,18 +307,18 @@ impl From<P8_A> for bool {
 impl P8_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P8_A {
+    pub const fn variant(&self) -> P8_A {
         match self.bits {
             false => P8_A::VALUE1,
             true => P8_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P8_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P8_A::VALUE2
@@ -356,18 +343,18 @@ impl From<P9_A> for bool {
 impl P9_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P9_A {
+    pub const fn variant(&self) -> P9_A {
         match self.bits {
             false => P9_A::VALUE1,
             true => P9_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P9_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P9_A::VALUE2
@@ -392,18 +379,18 @@ impl From<P10_A> for bool {
 impl P10_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P10_A {
+    pub const fn variant(&self) -> P10_A {
         match self.bits {
             false => P10_A::VALUE1,
             true => P10_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P10_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P10_A::VALUE2
@@ -428,18 +415,18 @@ impl From<P11_A> for bool {
 impl P11_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P11_A {
+    pub const fn variant(&self) -> P11_A {
         match self.bits {
             false => P11_A::VALUE1,
             true => P11_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P11_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P11_A::VALUE2
@@ -464,18 +451,18 @@ impl From<P12_A> for bool {
 impl P12_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P12_A {
+    pub const fn variant(&self) -> P12_A {
         match self.bits {
             false => P12_A::VALUE1,
             true => P12_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P12_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P12_A::VALUE2
@@ -500,18 +487,18 @@ impl From<P13_A> for bool {
 impl P13_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P13_A {
+    pub const fn variant(&self) -> P13_A {
         match self.bits {
             false => P13_A::VALUE1,
             true => P13_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P13_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P13_A::VALUE2
@@ -536,18 +523,18 @@ impl From<P14_A> for bool {
 impl P14_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P14_A {
+    pub const fn variant(&self) -> P14_A {
         match self.bits {
             false => P14_A::VALUE1,
             true => P14_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P14_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P14_A::VALUE2
@@ -572,18 +559,18 @@ impl From<P15_A> for bool {
 impl P15_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P15_A {
+    pub const fn variant(&self) -> P15_A {
         match self.bits {
             false => P15_A::VALUE1,
             true => P15_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P15_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P15_A::VALUE2
@@ -671,15 +658,13 @@ impl R {
         P15_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Port 5 Input Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [in_](index.html) module"]
+#[doc = "Port 5 Input Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`in_::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IN_SPEC;
 impl crate::RegisterSpec for IN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [in_::R](R) reader structure"]
-impl crate::Readable for IN_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`in_::R`](R) reader structure"]
+impl crate::Readable for IN_SPEC {}
 #[doc = "`reset()` method sets IN to value 0"]
 impl crate::Resettable for IN_SPEC {
     const RESET_VALUE: Self::Ux = 0;

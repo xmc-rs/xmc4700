@@ -1,41 +1,9 @@
 #[doc = "Register `BRSMR` reader"]
-pub struct R(crate::R<BRSMR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<BRSMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<BRSMR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<BRSMR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<BRSMR_SPEC>;
 #[doc = "Register `BRSMR` writer"]
-pub struct W(crate::W<BRSMR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<BRSMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<BRSMR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<BRSMR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<BRSMR_SPEC>;
 #[doc = "Field `ENGT` reader - Enable Gate"]
-pub type ENGT_R = crate::FieldReader<u8, ENGT_A>;
+pub type ENGT_R = crate::FieldReader<ENGT_A>;
 #[doc = "Enable Gate\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -55,10 +23,13 @@ impl From<ENGT_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for ENGT_A {
+    type Ux = u8;
+}
 impl ENGT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENGT_A {
+    pub const fn variant(&self) -> ENGT_A {
         match self.bits {
             0 => ENGT_A::VALUE1,
             1 => ENGT_A::VALUE2,
@@ -67,48 +38,52 @@ impl ENGT_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No conversion requests are issued"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ENGT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Conversion requests are issued if at least one pending bit is set"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ENGT_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Conversion requests are issued if at least one pending bit is set and REQGTx = 1."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == ENGT_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Conversion requests are issued if at least one pending bit is set and REQGTx = 0."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == ENGT_A::VALUE4
     }
 }
 #[doc = "Field `ENGT` writer - Enable Gate"]
-pub type ENGT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, BRSMR_SPEC, u8, ENGT_A, 2, O>;
-impl<'a, const O: u8> ENGT_W<'a, O> {
+pub type ENGT_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ENGT_A>;
+impl<'a, REG> ENGT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "No conversion requests are issued"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ENGT_A::VALUE1)
     }
     #[doc = "Conversion requests are issued if at least one pending bit is set"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ENGT_A::VALUE2)
     }
     #[doc = "Conversion requests are issued if at least one pending bit is set and REQGTx = 1."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(ENGT_A::VALUE3)
     }
     #[doc = "Conversion requests are issued if at least one pending bit is set and REQGTx = 0."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(ENGT_A::VALUE4)
     }
 }
@@ -131,34 +106,37 @@ impl From<ENTR_A> for bool {
 impl ENTR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENTR_A {
+    pub const fn variant(&self) -> ENTR_A {
         match self.bits {
             false => ENTR_A::VALUE1,
             true => ENTR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "External trigger disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ENTR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The selected edge at the selected trigger input signal REQTR generates the load event"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ENTR_A::VALUE2
     }
 }
 #[doc = "Field `ENTR` writer - Enable External Trigger"]
-pub type ENTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSMR_SPEC, ENTR_A, O>;
-impl<'a, const O: u8> ENTR_W<'a, O> {
+pub type ENTR_W<'a, REG> = crate::BitWriter<'a, REG, ENTR_A>;
+impl<'a, REG> ENTR_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "External trigger disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ENTR_A::VALUE1)
     }
     #[doc = "The selected edge at the selected trigger input signal REQTR generates the load event"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ENTR_A::VALUE2)
     }
 }
@@ -181,34 +159,37 @@ impl From<ENSI_A> for bool {
 impl ENSI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENSI_A {
+    pub const fn variant(&self) -> ENSI_A {
         match self.bits {
             false => ENSI_A::VALUE1,
             true => ENSI_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No request source interrupt"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ENSI_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A request source interrupt is generated upon a request source event (last pending conversion is finished)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ENSI_A::VALUE2
     }
 }
 #[doc = "Field `ENSI` writer - Enable Source Interrupt"]
-pub type ENSI_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSMR_SPEC, ENSI_A, O>;
-impl<'a, const O: u8> ENSI_W<'a, O> {
+pub type ENSI_W<'a, REG> = crate::BitWriter<'a, REG, ENSI_A>;
+impl<'a, REG> ENSI_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No request source interrupt"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ENSI_A::VALUE1)
     }
     #[doc = "A request source interrupt is generated upon a request source event (last pending conversion is finished)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ENSI_A::VALUE2)
     }
 }
@@ -231,34 +212,37 @@ impl From<SCAN_A> for bool {
 impl SCAN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SCAN_A {
+    pub const fn variant(&self) -> SCAN_A {
         match self.bits {
             false => SCAN_A::VALUE1,
             true => SCAN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No autoscan"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SCAN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Autoscan functionality enabled: a request source event automatically generates a load event"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SCAN_A::VALUE2
     }
 }
 #[doc = "Field `SCAN` writer - Autoscan Enable"]
-pub type SCAN_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSMR_SPEC, SCAN_A, O>;
-impl<'a, const O: u8> SCAN_W<'a, O> {
+pub type SCAN_W<'a, REG> = crate::BitWriter<'a, REG, SCAN_A>;
+impl<'a, REG> SCAN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No autoscan"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SCAN_A::VALUE1)
     }
     #[doc = "Autoscan functionality enabled: a request source event automatically generates a load event"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SCAN_A::VALUE2)
     }
 }
@@ -281,34 +265,37 @@ impl From<LDM_A> for bool {
 impl LDM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LDM_A {
+    pub const fn variant(&self) -> LDM_A {
         match self.bits {
             false => LDM_A::VALUE1,
             true => LDM_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Overwrite mode: Copy all bits from the select registers to the pending registers upon a load event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LDM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Combine mode: Set all pending bits that are set in the select registers upon a load event (logic OR)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LDM_A::VALUE2
     }
 }
 #[doc = "Field `LDM` writer - Autoscan Source Load Event Mode"]
-pub type LDM_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSMR_SPEC, LDM_A, O>;
-impl<'a, const O: u8> LDM_W<'a, O> {
+pub type LDM_W<'a, REG> = crate::BitWriter<'a, REG, LDM_A>;
+impl<'a, REG> LDM_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Overwrite mode: Copy all bits from the select registers to the pending registers upon a load event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(LDM_A::VALUE1)
     }
     #[doc = "Combine mode: Set all pending bits that are set in the select registers upon a load event (logic OR)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(LDM_A::VALUE2)
     }
 }
@@ -331,18 +318,18 @@ impl From<REQGT_A> for bool {
 impl REQGT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REQGT_A {
+    pub const fn variant(&self) -> REQGT_A {
         match self.bits {
             false => REQGT_A::VALUE1,
             true => REQGT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The gate input is low"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REQGT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The gate input is high"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REQGT_A::VALUE2
@@ -363,16 +350,19 @@ impl From<CLRPND_AW> for bool {
     }
 }
 #[doc = "Field `CLRPND` writer - Clear Pending Bits"]
-pub type CLRPND_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSMR_SPEC, CLRPND_AW, O>;
-impl<'a, const O: u8> CLRPND_W<'a, O> {
+pub type CLRPND_W<'a, REG> = crate::BitWriter<'a, REG, CLRPND_AW>;
+impl<'a, REG> CLRPND_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No action"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CLRPND_AW::VALUE1)
     }
     #[doc = "The bits in registers BRSPNDx are cleared"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CLRPND_AW::VALUE2)
     }
 }
@@ -391,16 +381,19 @@ impl From<LDEV_AW> for bool {
     }
 }
 #[doc = "Field `LDEV` writer - Generate Load Event"]
-pub type LDEV_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSMR_SPEC, LDEV_AW, O>;
-impl<'a, const O: u8> LDEV_W<'a, O> {
+pub type LDEV_W<'a, REG> = crate::BitWriter<'a, REG, LDEV_AW>;
+impl<'a, REG> LDEV_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No action"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(LDEV_AW::VALUE1)
     }
     #[doc = "A load event is generated"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(LDEV_AW::VALUE2)
     }
 }
@@ -423,34 +416,37 @@ impl From<RPTDIS_A> for bool {
 impl RPTDIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RPTDIS_A {
+    pub const fn variant(&self) -> RPTDIS_A {
         match self.bits {
             false => RPTDIS_A::VALUE1,
             true => RPTDIS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A cancelled conversion is repeated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RPTDIS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A cancelled conversion is discarded"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RPTDIS_A::VALUE2
     }
 }
 #[doc = "Field `RPTDIS` writer - Repeat Disable"]
-pub type RPTDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSMR_SPEC, RPTDIS_A, O>;
-impl<'a, const O: u8> RPTDIS_W<'a, O> {
+pub type RPTDIS_W<'a, REG> = crate::BitWriter<'a, REG, RPTDIS_A>;
+impl<'a, REG> RPTDIS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "A cancelled conversion is repeated"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RPTDIS_A::VALUE1)
     }
     #[doc = "A cancelled conversion is discarded"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RPTDIS_A::VALUE2)
     }
 }
@@ -495,70 +491,71 @@ impl W {
     #[doc = "Bits 0:1 - Enable Gate"]
     #[inline(always)]
     #[must_use]
-    pub fn engt(&mut self) -> ENGT_W<0> {
-        ENGT_W::new(self)
+    pub fn engt(&mut self) -> ENGT_W<BRSMR_SPEC> {
+        ENGT_W::new(self, 0)
     }
     #[doc = "Bit 2 - Enable External Trigger"]
     #[inline(always)]
     #[must_use]
-    pub fn entr(&mut self) -> ENTR_W<2> {
-        ENTR_W::new(self)
+    pub fn entr(&mut self) -> ENTR_W<BRSMR_SPEC> {
+        ENTR_W::new(self, 2)
     }
     #[doc = "Bit 3 - Enable Source Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn ensi(&mut self) -> ENSI_W<3> {
-        ENSI_W::new(self)
+    pub fn ensi(&mut self) -> ENSI_W<BRSMR_SPEC> {
+        ENSI_W::new(self, 3)
     }
     #[doc = "Bit 4 - Autoscan Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn scan(&mut self) -> SCAN_W<4> {
-        SCAN_W::new(self)
+    pub fn scan(&mut self) -> SCAN_W<BRSMR_SPEC> {
+        SCAN_W::new(self, 4)
     }
     #[doc = "Bit 5 - Autoscan Source Load Event Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn ldm(&mut self) -> LDM_W<5> {
-        LDM_W::new(self)
+    pub fn ldm(&mut self) -> LDM_W<BRSMR_SPEC> {
+        LDM_W::new(self, 5)
     }
     #[doc = "Bit 8 - Clear Pending Bits"]
     #[inline(always)]
     #[must_use]
-    pub fn clrpnd(&mut self) -> CLRPND_W<8> {
-        CLRPND_W::new(self)
+    pub fn clrpnd(&mut self) -> CLRPND_W<BRSMR_SPEC> {
+        CLRPND_W::new(self, 8)
     }
     #[doc = "Bit 9 - Generate Load Event"]
     #[inline(always)]
     #[must_use]
-    pub fn ldev(&mut self) -> LDEV_W<9> {
-        LDEV_W::new(self)
+    pub fn ldev(&mut self) -> LDEV_W<BRSMR_SPEC> {
+        LDEV_W::new(self, 9)
     }
     #[doc = "Bit 16 - Repeat Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn rptdis(&mut self) -> RPTDIS_W<16> {
-        RPTDIS_W::new(self)
+    pub fn rptdis(&mut self) -> RPTDIS_W<BRSMR_SPEC> {
+        RPTDIS_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Background Request Source Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [brsmr](index.html) module"]
+#[doc = "Background Request Source Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`brsmr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`brsmr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct BRSMR_SPEC;
 impl crate::RegisterSpec for BRSMR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [brsmr::R](R) reader structure"]
-impl crate::Readable for BRSMR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [brsmr::W](W) writer structure"]
+#[doc = "`read()` method returns [`brsmr::R`](R) reader structure"]
+impl crate::Readable for BRSMR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`brsmr::W`](W) writer structure"]
 impl crate::Writable for BRSMR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

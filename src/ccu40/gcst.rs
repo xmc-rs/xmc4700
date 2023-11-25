@@ -1,18 +1,5 @@
 #[doc = "Register `GCST` reader"]
-pub struct R(crate::R<GCST_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<GCST_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<GCST_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<GCST_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<GCST_SPEC>;
 #[doc = "Field `S0SS` reader - Slice 0 shadow transfer status"]
 pub type S0SS_R = crate::BitReader<S0SS_A>;
 #[doc = "Slice 0 shadow transfer status\n\nValue on reset: 0"]
@@ -32,18 +19,18 @@ impl From<S0SS_A> for bool {
 impl S0SS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S0SS_A {
+    pub const fn variant(&self) -> S0SS_A {
         match self.bits {
             false => S0SS_A::VALUE1,
             true => S0SS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S0SS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S0SS_A::VALUE2
@@ -68,18 +55,18 @@ impl From<S0DSS_A> for bool {
 impl S0DSS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S0DSS_A {
+    pub const fn variant(&self) -> S0DSS_A {
         match self.bits {
             false => S0DSS_A::VALUE1,
             true => S0DSS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Dither shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S0DSS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Dither shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S0DSS_A::VALUE2
@@ -104,18 +91,18 @@ impl From<S0PSS_A> for bool {
 impl S0PSS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S0PSS_A {
+    pub const fn variant(&self) -> S0PSS_A {
         match self.bits {
             false => S0PSS_A::VALUE1,
             true => S0PSS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Prescaler shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S0PSS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Prescaler shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S0PSS_A::VALUE2
@@ -140,18 +127,18 @@ impl From<S1SS_A> for bool {
 impl S1SS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S1SS_A {
+    pub const fn variant(&self) -> S1SS_A {
         match self.bits {
             false => S1SS_A::VALUE1,
             true => S1SS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S1SS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S1SS_A::VALUE2
@@ -176,18 +163,18 @@ impl From<S1DSS_A> for bool {
 impl S1DSS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S1DSS_A {
+    pub const fn variant(&self) -> S1DSS_A {
         match self.bits {
             false => S1DSS_A::VALUE1,
             true => S1DSS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Dither shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S1DSS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Dither shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S1DSS_A::VALUE2
@@ -212,18 +199,18 @@ impl From<S1PSS_A> for bool {
 impl S1PSS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S1PSS_A {
+    pub const fn variant(&self) -> S1PSS_A {
         match self.bits {
             false => S1PSS_A::VALUE1,
             true => S1PSS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Prescaler shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S1PSS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Prescaler shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S1PSS_A::VALUE2
@@ -248,18 +235,18 @@ impl From<S2SS_A> for bool {
 impl S2SS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S2SS_A {
+    pub const fn variant(&self) -> S2SS_A {
         match self.bits {
             false => S2SS_A::VALUE1,
             true => S2SS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S2SS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S2SS_A::VALUE2
@@ -284,18 +271,18 @@ impl From<S2DSS_A> for bool {
 impl S2DSS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S2DSS_A {
+    pub const fn variant(&self) -> S2DSS_A {
         match self.bits {
             false => S2DSS_A::VALUE1,
             true => S2DSS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Dither shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S2DSS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Dither shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S2DSS_A::VALUE2
@@ -320,18 +307,18 @@ impl From<S2PSS_A> for bool {
 impl S2PSS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S2PSS_A {
+    pub const fn variant(&self) -> S2PSS_A {
         match self.bits {
             false => S2PSS_A::VALUE1,
             true => S2PSS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Prescaler shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S2PSS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Prescaler shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S2PSS_A::VALUE2
@@ -356,18 +343,18 @@ impl From<S3SS_A> for bool {
 impl S3SS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S3SS_A {
+    pub const fn variant(&self) -> S3SS_A {
         match self.bits {
             false => S3SS_A::VALUE1,
             true => S3SS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S3SS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S3SS_A::VALUE2
@@ -392,18 +379,18 @@ impl From<S3DSS_A> for bool {
 impl S3DSS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S3DSS_A {
+    pub const fn variant(&self) -> S3DSS_A {
         match self.bits {
             false => S3DSS_A::VALUE1,
             true => S3DSS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Dither shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S3DSS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Dither shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S3DSS_A::VALUE2
@@ -428,31 +415,31 @@ impl From<S3PSS_A> for bool {
 impl S3PSS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S3PSS_A {
+    pub const fn variant(&self) -> S3PSS_A {
         match self.bits {
             false => S3PSS_A::VALUE1,
             true => S3PSS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Prescaler shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S3PSS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Prescaler shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S3PSS_A::VALUE2
     }
 }
 #[doc = "Field `CC40ST` reader - Slice 0 status bit"]
-pub type CC40ST_R = crate::BitReader<bool>;
+pub type CC40ST_R = crate::BitReader;
 #[doc = "Field `CC41ST` reader - Slice 1 status bit"]
-pub type CC41ST_R = crate::BitReader<bool>;
+pub type CC41ST_R = crate::BitReader;
 #[doc = "Field `CC42ST` reader - Slice 2 status bit"]
-pub type CC42ST_R = crate::BitReader<bool>;
+pub type CC42ST_R = crate::BitReader;
 #[doc = "Field `CC43ST` reader - Slice 3 status bit"]
-pub type CC43ST_R = crate::BitReader<bool>;
+pub type CC43ST_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Slice 0 shadow transfer status"]
     #[inline(always)]
@@ -535,15 +522,13 @@ impl R {
         CC43ST_R::new(((self.bits >> 19) & 1) != 0)
     }
 }
-#[doc = "Global Channel Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gcst](index.html) module"]
+#[doc = "Global Channel Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gcst::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GCST_SPEC;
 impl crate::RegisterSpec for GCST_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [gcst::R](R) reader structure"]
-impl crate::Readable for GCST_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`gcst::R`](R) reader structure"]
+impl crate::Readable for GCST_SPEC {}
 #[doc = "`reset()` method sets GCST to value 0"]
 impl crate::Resettable for GCST_SPEC {
     const RESET_VALUE: Self::Ux = 0;

@@ -1,39 +1,7 @@
 #[doc = "Register `OUT` reader"]
-pub struct R(crate::R<OUT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<OUT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<OUT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<OUT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<OUT_SPEC>;
 #[doc = "Register `OUT` writer"]
-pub struct W(crate::W<OUT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<OUT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<OUT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<OUT_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<OUT_SPEC>;
 #[doc = "Field `P0` reader - Port n Output Bit 0"]
 pub type P0_R = crate::BitReader<P0_A>;
 #[doc = "Port n Output Bit 0\n\nValue on reset: 0"]
@@ -53,34 +21,37 @@ impl From<P0_A> for bool {
 impl P0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P0_A {
+    pub const fn variant(&self) -> P0_A {
         match self.bits {
             false => P0_A::VALUE1,
             true => P0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P0_A::VALUE2
     }
 }
 #[doc = "Field `P0` writer - Port n Output Bit 0"]
-pub type P0_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P0_A, O>;
-impl<'a, const O: u8> P0_W<'a, O> {
+pub type P0_W<'a, REG> = crate::BitWriter<'a, REG, P0_A>;
+impl<'a, REG> P0_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(P0_A::VALUE1)
     }
     #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(P0_A::VALUE2)
     }
 }
@@ -103,34 +74,37 @@ impl From<P1_A> for bool {
 impl P1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P1_A {
+    pub const fn variant(&self) -> P1_A {
         match self.bits {
             false => P1_A::VALUE1,
             true => P1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P1_A::VALUE2
     }
 }
 #[doc = "Field `P1` writer - Port n Output Bit 1"]
-pub type P1_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P1_A, O>;
-impl<'a, const O: u8> P1_W<'a, O> {
+pub type P1_W<'a, REG> = crate::BitWriter<'a, REG, P1_A>;
+impl<'a, REG> P1_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(P1_A::VALUE1)
     }
     #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(P1_A::VALUE2)
     }
 }
@@ -153,34 +127,37 @@ impl From<P2_A> for bool {
 impl P2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P2_A {
+    pub const fn variant(&self) -> P2_A {
         match self.bits {
             false => P2_A::VALUE1,
             true => P2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P2_A::VALUE2
     }
 }
 #[doc = "Field `P2` writer - Port n Output Bit 2"]
-pub type P2_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P2_A, O>;
-impl<'a, const O: u8> P2_W<'a, O> {
+pub type P2_W<'a, REG> = crate::BitWriter<'a, REG, P2_A>;
+impl<'a, REG> P2_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(P2_A::VALUE1)
     }
     #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(P2_A::VALUE2)
     }
 }
@@ -203,34 +180,37 @@ impl From<P3_A> for bool {
 impl P3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P3_A {
+    pub const fn variant(&self) -> P3_A {
         match self.bits {
             false => P3_A::VALUE1,
             true => P3_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P3_A::VALUE2
     }
 }
 #[doc = "Field `P3` writer - Port n Output Bit 3"]
-pub type P3_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P3_A, O>;
-impl<'a, const O: u8> P3_W<'a, O> {
+pub type P3_W<'a, REG> = crate::BitWriter<'a, REG, P3_A>;
+impl<'a, REG> P3_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(P3_A::VALUE1)
     }
     #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(P3_A::VALUE2)
     }
 }
@@ -253,34 +233,37 @@ impl From<P4_A> for bool {
 impl P4_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P4_A {
+    pub const fn variant(&self) -> P4_A {
         match self.bits {
             false => P4_A::VALUE1,
             true => P4_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P4_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P4_A::VALUE2
     }
 }
 #[doc = "Field `P4` writer - Port n Output Bit 4"]
-pub type P4_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P4_A, O>;
-impl<'a, const O: u8> P4_W<'a, O> {
+pub type P4_W<'a, REG> = crate::BitWriter<'a, REG, P4_A>;
+impl<'a, REG> P4_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(P4_A::VALUE1)
     }
     #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(P4_A::VALUE2)
     }
 }
@@ -303,34 +286,37 @@ impl From<P5_A> for bool {
 impl P5_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P5_A {
+    pub const fn variant(&self) -> P5_A {
         match self.bits {
             false => P5_A::VALUE1,
             true => P5_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P5_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P5_A::VALUE2
     }
 }
 #[doc = "Field `P5` writer - Port n Output Bit 5"]
-pub type P5_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P5_A, O>;
-impl<'a, const O: u8> P5_W<'a, O> {
+pub type P5_W<'a, REG> = crate::BitWriter<'a, REG, P5_A>;
+impl<'a, REG> P5_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(P5_A::VALUE1)
     }
     #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(P5_A::VALUE2)
     }
 }
@@ -353,34 +339,37 @@ impl From<P6_A> for bool {
 impl P6_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P6_A {
+    pub const fn variant(&self) -> P6_A {
         match self.bits {
             false => P6_A::VALUE1,
             true => P6_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P6_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P6_A::VALUE2
     }
 }
 #[doc = "Field `P6` writer - Port n Output Bit 6"]
-pub type P6_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P6_A, O>;
-impl<'a, const O: u8> P6_W<'a, O> {
+pub type P6_W<'a, REG> = crate::BitWriter<'a, REG, P6_A>;
+impl<'a, REG> P6_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(P6_A::VALUE1)
     }
     #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(P6_A::VALUE2)
     }
 }
@@ -403,34 +392,37 @@ impl From<P7_A> for bool {
 impl P7_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P7_A {
+    pub const fn variant(&self) -> P7_A {
         match self.bits {
             false => P7_A::VALUE1,
             true => P7_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P7_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P7_A::VALUE2
     }
 }
 #[doc = "Field `P7` writer - Port n Output Bit 7"]
-pub type P7_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P7_A, O>;
-impl<'a, const O: u8> P7_W<'a, O> {
+pub type P7_W<'a, REG> = crate::BitWriter<'a, REG, P7_A>;
+impl<'a, REG> P7_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(P7_A::VALUE1)
     }
     #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(P7_A::VALUE2)
     }
 }
@@ -453,34 +445,37 @@ impl From<P8_A> for bool {
 impl P8_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P8_A {
+    pub const fn variant(&self) -> P8_A {
         match self.bits {
             false => P8_A::VALUE1,
             true => P8_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P8_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P8_A::VALUE2
     }
 }
 #[doc = "Field `P8` writer - Port n Output Bit 8"]
-pub type P8_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P8_A, O>;
-impl<'a, const O: u8> P8_W<'a, O> {
+pub type P8_W<'a, REG> = crate::BitWriter<'a, REG, P8_A>;
+impl<'a, REG> P8_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(P8_A::VALUE1)
     }
     #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(P8_A::VALUE2)
     }
 }
@@ -503,34 +498,37 @@ impl From<P9_A> for bool {
 impl P9_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P9_A {
+    pub const fn variant(&self) -> P9_A {
         match self.bits {
             false => P9_A::VALUE1,
             true => P9_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P9_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P9_A::VALUE2
     }
 }
 #[doc = "Field `P9` writer - Port n Output Bit 9"]
-pub type P9_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P9_A, O>;
-impl<'a, const O: u8> P9_W<'a, O> {
+pub type P9_W<'a, REG> = crate::BitWriter<'a, REG, P9_A>;
+impl<'a, REG> P9_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(P9_A::VALUE1)
     }
     #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(P9_A::VALUE2)
     }
 }
@@ -553,34 +551,37 @@ impl From<P10_A> for bool {
 impl P10_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P10_A {
+    pub const fn variant(&self) -> P10_A {
         match self.bits {
             false => P10_A::VALUE1,
             true => P10_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P10_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P10_A::VALUE2
     }
 }
 #[doc = "Field `P10` writer - Port n Output Bit 10"]
-pub type P10_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P10_A, O>;
-impl<'a, const O: u8> P10_W<'a, O> {
+pub type P10_W<'a, REG> = crate::BitWriter<'a, REG, P10_A>;
+impl<'a, REG> P10_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(P10_A::VALUE1)
     }
     #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(P10_A::VALUE2)
     }
 }
@@ -603,34 +604,37 @@ impl From<P11_A> for bool {
 impl P11_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P11_A {
+    pub const fn variant(&self) -> P11_A {
         match self.bits {
             false => P11_A::VALUE1,
             true => P11_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P11_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P11_A::VALUE2
     }
 }
 #[doc = "Field `P11` writer - Port n Output Bit 11"]
-pub type P11_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P11_A, O>;
-impl<'a, const O: u8> P11_W<'a, O> {
+pub type P11_W<'a, REG> = crate::BitWriter<'a, REG, P11_A>;
+impl<'a, REG> P11_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(P11_A::VALUE1)
     }
     #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(P11_A::VALUE2)
     }
 }
@@ -653,34 +657,37 @@ impl From<P12_A> for bool {
 impl P12_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P12_A {
+    pub const fn variant(&self) -> P12_A {
         match self.bits {
             false => P12_A::VALUE1,
             true => P12_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P12_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P12_A::VALUE2
     }
 }
 #[doc = "Field `P12` writer - Port n Output Bit 12"]
-pub type P12_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P12_A, O>;
-impl<'a, const O: u8> P12_W<'a, O> {
+pub type P12_W<'a, REG> = crate::BitWriter<'a, REG, P12_A>;
+impl<'a, REG> P12_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(P12_A::VALUE1)
     }
     #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(P12_A::VALUE2)
     }
 }
@@ -703,34 +710,37 @@ impl From<P13_A> for bool {
 impl P13_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P13_A {
+    pub const fn variant(&self) -> P13_A {
         match self.bits {
             false => P13_A::VALUE1,
             true => P13_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P13_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P13_A::VALUE2
     }
 }
 #[doc = "Field `P13` writer - Port n Output Bit 13"]
-pub type P13_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P13_A, O>;
-impl<'a, const O: u8> P13_W<'a, O> {
+pub type P13_W<'a, REG> = crate::BitWriter<'a, REG, P13_A>;
+impl<'a, REG> P13_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(P13_A::VALUE1)
     }
     #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(P13_A::VALUE2)
     }
 }
@@ -753,34 +763,37 @@ impl From<P14_A> for bool {
 impl P14_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P14_A {
+    pub const fn variant(&self) -> P14_A {
         match self.bits {
             false => P14_A::VALUE1,
             true => P14_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P14_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P14_A::VALUE2
     }
 }
 #[doc = "Field `P14` writer - Port n Output Bit 14"]
-pub type P14_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P14_A, O>;
-impl<'a, const O: u8> P14_W<'a, O> {
+pub type P14_W<'a, REG> = crate::BitWriter<'a, REG, P14_A>;
+impl<'a, REG> P14_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(P14_A::VALUE1)
     }
     #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(P14_A::VALUE2)
     }
 }
@@ -803,34 +816,37 @@ impl From<P15_A> for bool {
 impl P15_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> P15_A {
+    pub const fn variant(&self) -> P15_A {
         match self.bits {
             false => P15_A::VALUE1,
             true => P15_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P15_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P15_A::VALUE2
     }
 }
 #[doc = "Field `P15` writer - Port n Output Bit 15"]
-pub type P15_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P15_A, O>;
-impl<'a, const O: u8> P15_W<'a, O> {
+pub type P15_W<'a, REG> = crate::BitWriter<'a, REG, P15_A>;
+impl<'a, REG> P15_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(P15_A::VALUE1)
     }
     #[doc = "The output level of Pn.x is 1."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(P15_A::VALUE2)
     }
 }
@@ -920,118 +936,119 @@ impl W {
     #[doc = "Bit 0 - Port n Output Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn p0(&mut self) -> P0_W<0> {
-        P0_W::new(self)
+    pub fn p0(&mut self) -> P0_W<OUT_SPEC> {
+        P0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Port n Output Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn p1(&mut self) -> P1_W<1> {
-        P1_W::new(self)
+    pub fn p1(&mut self) -> P1_W<OUT_SPEC> {
+        P1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Port n Output Bit 2"]
     #[inline(always)]
     #[must_use]
-    pub fn p2(&mut self) -> P2_W<2> {
-        P2_W::new(self)
+    pub fn p2(&mut self) -> P2_W<OUT_SPEC> {
+        P2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Port n Output Bit 3"]
     #[inline(always)]
     #[must_use]
-    pub fn p3(&mut self) -> P3_W<3> {
-        P3_W::new(self)
+    pub fn p3(&mut self) -> P3_W<OUT_SPEC> {
+        P3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Port n Output Bit 4"]
     #[inline(always)]
     #[must_use]
-    pub fn p4(&mut self) -> P4_W<4> {
-        P4_W::new(self)
+    pub fn p4(&mut self) -> P4_W<OUT_SPEC> {
+        P4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Port n Output Bit 5"]
     #[inline(always)]
     #[must_use]
-    pub fn p5(&mut self) -> P5_W<5> {
-        P5_W::new(self)
+    pub fn p5(&mut self) -> P5_W<OUT_SPEC> {
+        P5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Port n Output Bit 6"]
     #[inline(always)]
     #[must_use]
-    pub fn p6(&mut self) -> P6_W<6> {
-        P6_W::new(self)
+    pub fn p6(&mut self) -> P6_W<OUT_SPEC> {
+        P6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Port n Output Bit 7"]
     #[inline(always)]
     #[must_use]
-    pub fn p7(&mut self) -> P7_W<7> {
-        P7_W::new(self)
+    pub fn p7(&mut self) -> P7_W<OUT_SPEC> {
+        P7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Port n Output Bit 8"]
     #[inline(always)]
     #[must_use]
-    pub fn p8(&mut self) -> P8_W<8> {
-        P8_W::new(self)
+    pub fn p8(&mut self) -> P8_W<OUT_SPEC> {
+        P8_W::new(self, 8)
     }
     #[doc = "Bit 9 - Port n Output Bit 9"]
     #[inline(always)]
     #[must_use]
-    pub fn p9(&mut self) -> P9_W<9> {
-        P9_W::new(self)
+    pub fn p9(&mut self) -> P9_W<OUT_SPEC> {
+        P9_W::new(self, 9)
     }
     #[doc = "Bit 10 - Port n Output Bit 10"]
     #[inline(always)]
     #[must_use]
-    pub fn p10(&mut self) -> P10_W<10> {
-        P10_W::new(self)
+    pub fn p10(&mut self) -> P10_W<OUT_SPEC> {
+        P10_W::new(self, 10)
     }
     #[doc = "Bit 11 - Port n Output Bit 11"]
     #[inline(always)]
     #[must_use]
-    pub fn p11(&mut self) -> P11_W<11> {
-        P11_W::new(self)
+    pub fn p11(&mut self) -> P11_W<OUT_SPEC> {
+        P11_W::new(self, 11)
     }
     #[doc = "Bit 12 - Port n Output Bit 12"]
     #[inline(always)]
     #[must_use]
-    pub fn p12(&mut self) -> P12_W<12> {
-        P12_W::new(self)
+    pub fn p12(&mut self) -> P12_W<OUT_SPEC> {
+        P12_W::new(self, 12)
     }
     #[doc = "Bit 13 - Port n Output Bit 13"]
     #[inline(always)]
     #[must_use]
-    pub fn p13(&mut self) -> P13_W<13> {
-        P13_W::new(self)
+    pub fn p13(&mut self) -> P13_W<OUT_SPEC> {
+        P13_W::new(self, 13)
     }
     #[doc = "Bit 14 - Port n Output Bit 14"]
     #[inline(always)]
     #[must_use]
-    pub fn p14(&mut self) -> P14_W<14> {
-        P14_W::new(self)
+    pub fn p14(&mut self) -> P14_W<OUT_SPEC> {
+        P14_W::new(self, 14)
     }
     #[doc = "Bit 15 - Port n Output Bit 15"]
     #[inline(always)]
     #[must_use]
-    pub fn p15(&mut self) -> P15_W<15> {
-        P15_W::new(self)
+    pub fn p15(&mut self) -> P15_W<OUT_SPEC> {
+        P15_W::new(self, 15)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Port 9 Output Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [out](index.html) module"]
+#[doc = "Port 9 Output Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`out::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`out::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OUT_SPEC;
 impl crate::RegisterSpec for OUT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [out::R](R) reader structure"]
-impl crate::Readable for OUT_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [out::W](W) writer structure"]
+#[doc = "`read()` method returns [`out::R`](R) reader structure"]
+impl crate::Readable for OUT_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`out::W`](W) writer structure"]
 impl crate::Writable for OUT_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

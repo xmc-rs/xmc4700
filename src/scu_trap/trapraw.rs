@@ -1,18 +1,5 @@
 #[doc = "Register `TRAPRAW` reader"]
-pub struct R(crate::R<TRAPRAW_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TRAPRAW_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TRAPRAW_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TRAPRAW_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TRAPRAW_SPEC>;
 #[doc = "Field `SOSCWDGT` reader - OSC_HP Oscillator Watchdog Trap Raw Status"]
 pub type SOSCWDGT_R = crate::BitReader<SOSCWDGT_A>;
 #[doc = "OSC_HP Oscillator Watchdog Trap Raw Status\n\nValue on reset: 0"]
@@ -32,18 +19,18 @@ impl From<SOSCWDGT_A> for bool {
 impl SOSCWDGT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SOSCWDGT_A {
+    pub const fn variant(&self) -> SOSCWDGT_A {
         match self.bits {
             false => SOSCWDGT_A::VALUE1,
             true => SOSCWDGT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SOSCWDGT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SOSCWDGT_A::VALUE2
@@ -68,18 +55,18 @@ impl From<SVCOLCKT_A> for bool {
 impl SVCOLCKT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SVCOLCKT_A {
+    pub const fn variant(&self) -> SVCOLCKT_A {
         match self.bits {
             false => SVCOLCKT_A::VALUE1,
             true => SVCOLCKT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SVCOLCKT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SVCOLCKT_A::VALUE2
@@ -104,18 +91,18 @@ impl From<UVCOLCKT_A> for bool {
 impl UVCOLCKT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UVCOLCKT_A {
+    pub const fn variant(&self) -> UVCOLCKT_A {
         match self.bits {
             false => UVCOLCKT_A::VALUE1,
             true => UVCOLCKT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == UVCOLCKT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == UVCOLCKT_A::VALUE2
@@ -140,18 +127,18 @@ impl From<PET_A> for bool {
 impl PET_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PET_A {
+    pub const fn variant(&self) -> PET_A {
         match self.bits {
             false => PET_A::VALUE1,
             true => PET_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PET_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PET_A::VALUE2
@@ -176,18 +163,18 @@ impl From<BRWNT_A> for bool {
 impl BRWNT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BRWNT_A {
+    pub const fn variant(&self) -> BRWNT_A {
         match self.bits {
             false => BRWNT_A::VALUE1,
             true => BRWNT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BRWNT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BRWNT_A::VALUE2
@@ -212,18 +199,18 @@ impl From<ULPWDGT_A> for bool {
 impl ULPWDGT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ULPWDGT_A {
+    pub const fn variant(&self) -> ULPWDGT_A {
         match self.bits {
             false => ULPWDGT_A::VALUE1,
             true => ULPWDGT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ULPWDGT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ULPWDGT_A::VALUE2
@@ -248,18 +235,18 @@ impl From<BWERR0T_A> for bool {
 impl BWERR0T_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BWERR0T_A {
+    pub const fn variant(&self) -> BWERR0T_A {
         match self.bits {
             false => BWERR0T_A::VALUE1,
             true => BWERR0T_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BWERR0T_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BWERR0T_A::VALUE2
@@ -284,18 +271,18 @@ impl From<BWERR1T_A> for bool {
 impl BWERR1T_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BWERR1T_A {
+    pub const fn variant(&self) -> BWERR1T_A {
         match self.bits {
             false => BWERR1T_A::VALUE1,
             true => BWERR1T_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BWERR1T_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BWERR1T_A::VALUE2
@@ -343,15 +330,13 @@ impl R {
         BWERR1T_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
-#[doc = "Trap Raw Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [trapraw](index.html) module"]
+#[doc = "Trap Raw Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`trapraw::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TRAPRAW_SPEC;
 impl crate::RegisterSpec for TRAPRAW_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [trapraw::R](R) reader structure"]
-impl crate::Readable for TRAPRAW_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`trapraw::R`](R) reader structure"]
+impl crate::Readable for TRAPRAW_SPEC {}
 #[doc = "`reset()` method sets TRAPRAW to value 0"]
 impl crate::Resettable for TRAPRAW_SPEC {
     const RESET_VALUE: Self::Ux = 0;

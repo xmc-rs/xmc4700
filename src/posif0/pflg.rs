@@ -1,18 +1,5 @@
 #[doc = "Register `PFLG` reader"]
-pub struct R(crate::R<PFLG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PFLG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PFLG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PFLG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PFLG_SPEC>;
 #[doc = "Field `CHES` reader - Correct Hall Event Status"]
 pub type CHES_R = crate::BitReader<CHES_A>;
 #[doc = "Correct Hall Event Status\n\nValue on reset: 0"]
@@ -32,18 +19,18 @@ impl From<CHES_A> for bool {
 impl CHES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHES_A {
+    pub const fn variant(&self) -> CHES_A {
         match self.bits {
             false => CHES_A::VALUE1,
             true => CHES_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Correct Hall Event not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CHES_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Correct Hall Event detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CHES_A::VALUE2
@@ -68,18 +55,18 @@ impl From<WHES_A> for bool {
 impl WHES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WHES_A {
+    pub const fn variant(&self) -> WHES_A {
         match self.bits {
             false => WHES_A::VALUE1,
             true => WHES_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Wrong Hall Event not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WHES_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Wrong Hall Event detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WHES_A::VALUE2
@@ -104,18 +91,18 @@ impl From<HIES_A> for bool {
 impl HIES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HIES_A {
+    pub const fn variant(&self) -> HIES_A {
         match self.bits {
             false => HIES_A::VALUE1,
             true => HIES_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Transition on the Hall Inputs not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HIES_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Transition on the Hall Inputs detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HIES_A::VALUE2
@@ -140,18 +127,18 @@ impl From<MSTS_A> for bool {
 impl MSTS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MSTS_A {
+    pub const fn variant(&self) -> MSTS_A {
         match self.bits {
             false => MSTS_A::VALUE1,
             true => MSTS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Shadow transfer not done"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MSTS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Shadow transfer done"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MSTS_A::VALUE2
@@ -176,18 +163,18 @@ impl From<INDXS_A> for bool {
 impl INDXS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INDXS_A {
+    pub const fn variant(&self) -> INDXS_A {
         match self.bits {
             false => INDXS_A::VALUE1,
             true => INDXS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Index event not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == INDXS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Index event detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == INDXS_A::VALUE2
@@ -212,18 +199,18 @@ impl From<ERRS_A> for bool {
 impl ERRS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ERRS_A {
+    pub const fn variant(&self) -> ERRS_A {
         match self.bits {
             false => ERRS_A::VALUE1,
             true => ERRS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Phase Error event not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ERRS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Phase Error event detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ERRS_A::VALUE2
@@ -248,18 +235,18 @@ impl From<CNTS_A> for bool {
 impl CNTS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CNTS_A {
+    pub const fn variant(&self) -> CNTS_A {
         match self.bits {
             false => CNTS_A::VALUE1,
             true => CNTS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Quadrature clock not generated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CNTS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Quadrature clock generated"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CNTS_A::VALUE2
@@ -284,18 +271,18 @@ impl From<DIRS_A> for bool {
 impl DIRS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DIRS_A {
+    pub const fn variant(&self) -> DIRS_A {
         match self.bits {
             false => DIRS_A::VALUE1,
             true => DIRS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Change on direction not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DIRS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Change on direction detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DIRS_A::VALUE2
@@ -320,18 +307,18 @@ impl From<PCLKS_A> for bool {
 impl PCLKS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PCLKS_A {
+    pub const fn variant(&self) -> PCLKS_A {
         match self.bits {
             false => PCLKS_A::VALUE1,
             true => PCLKS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Period clock not generated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PCLKS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Period clock generated"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PCLKS_A::VALUE2
@@ -384,15 +371,13 @@ impl R {
         PCLKS_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
-#[doc = "POSIF Interrupt Flags\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pflg](index.html) module"]
+#[doc = "POSIF Interrupt Flags\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pflg::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PFLG_SPEC;
 impl crate::RegisterSpec for PFLG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pflg::R](R) reader structure"]
-impl crate::Readable for PFLG_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`pflg::R`](R) reader structure"]
+impl crate::Readable for PFLG_SPEC {}
 #[doc = "`reset()` method sets PFLG to value 0"]
 impl crate::Resettable for PFLG_SPEC {
     const RESET_VALUE: Self::Ux = 0;

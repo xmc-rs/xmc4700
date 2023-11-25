@@ -1,136 +1,120 @@
 #[doc = "Register `OVRCLR` writer"]
-pub struct W(crate::W<OVRCLR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<OVRCLR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<OVRCLR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<OVRCLR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<OVRCLR_SPEC>;
 #[doc = "Field `LN0` writer - Line 0 Overrun Status Clear"]
-pub type LN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LN1` writer - Line 1 Overrun Status Clear"]
-pub type LN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LN2` writer - Line 2 Overrun Status Clear"]
-pub type LN2_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LN3` writer - Line 3 Overrun Status Clear"]
-pub type LN3_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN3_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LN4` writer - Line 4 Overrun Status Clear"]
-pub type LN4_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN4_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LN5` writer - Line 5 Overrun Status Clear"]
-pub type LN5_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN5_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LN6` writer - Line 6 Overrun Status Clear"]
-pub type LN6_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN6_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LN7` writer - Line 7 Overrun Status Clear"]
-pub type LN7_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN7_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LN8` writer - Line 8 Overrun Status Clear"]
-pub type LN8_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN8_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LN9` writer - Line 9 Overrun Status Clear"]
-pub type LN9_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN9_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LN10` writer - Line 10 Overrun Status Clear"]
-pub type LN10_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN10_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LN11` writer - Line 11 Overrun Status Clear"]
-pub type LN11_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN11_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Line 0 Overrun Status Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ln0(&mut self) -> LN0_W<0> {
-        LN0_W::new(self)
+    pub fn ln0(&mut self) -> LN0_W<OVRCLR_SPEC> {
+        LN0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Line 1 Overrun Status Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ln1(&mut self) -> LN1_W<1> {
-        LN1_W::new(self)
+    pub fn ln1(&mut self) -> LN1_W<OVRCLR_SPEC> {
+        LN1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Line 2 Overrun Status Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ln2(&mut self) -> LN2_W<2> {
-        LN2_W::new(self)
+    pub fn ln2(&mut self) -> LN2_W<OVRCLR_SPEC> {
+        LN2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Line 3 Overrun Status Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ln3(&mut self) -> LN3_W<3> {
-        LN3_W::new(self)
+    pub fn ln3(&mut self) -> LN3_W<OVRCLR_SPEC> {
+        LN3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Line 4 Overrun Status Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ln4(&mut self) -> LN4_W<4> {
-        LN4_W::new(self)
+    pub fn ln4(&mut self) -> LN4_W<OVRCLR_SPEC> {
+        LN4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Line 5 Overrun Status Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ln5(&mut self) -> LN5_W<5> {
-        LN5_W::new(self)
+    pub fn ln5(&mut self) -> LN5_W<OVRCLR_SPEC> {
+        LN5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Line 6 Overrun Status Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ln6(&mut self) -> LN6_W<6> {
-        LN6_W::new(self)
+    pub fn ln6(&mut self) -> LN6_W<OVRCLR_SPEC> {
+        LN6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Line 7 Overrun Status Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ln7(&mut self) -> LN7_W<7> {
-        LN7_W::new(self)
+    pub fn ln7(&mut self) -> LN7_W<OVRCLR_SPEC> {
+        LN7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Line 8 Overrun Status Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ln8(&mut self) -> LN8_W<8> {
-        LN8_W::new(self)
+    pub fn ln8(&mut self) -> LN8_W<OVRCLR_SPEC> {
+        LN8_W::new(self, 8)
     }
     #[doc = "Bit 9 - Line 9 Overrun Status Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ln9(&mut self) -> LN9_W<9> {
-        LN9_W::new(self)
+    pub fn ln9(&mut self) -> LN9_W<OVRCLR_SPEC> {
+        LN9_W::new(self, 9)
     }
     #[doc = "Bit 10 - Line 10 Overrun Status Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ln10(&mut self) -> LN10_W<10> {
-        LN10_W::new(self)
+    pub fn ln10(&mut self) -> LN10_W<OVRCLR_SPEC> {
+        LN10_W::new(self, 10)
     }
     #[doc = "Bit 11 - Line 11 Overrun Status Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ln11(&mut self) -> LN11_W<11> {
-        LN11_W::new(self)
+    pub fn ln11(&mut self) -> LN11_W<OVRCLR_SPEC> {
+        LN11_W::new(self, 11)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Overrun Clear\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ovrclr](index.html) module"]
+#[doc = "Overrun Clear\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ovrclr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OVRCLR_SPEC;
 impl crate::RegisterSpec for OVRCLR_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [ovrclr::W](W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [`ovrclr::W`](W) writer structure"]
 impl crate::Writable for OVRCLR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

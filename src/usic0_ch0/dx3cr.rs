@@ -1,41 +1,9 @@
 #[doc = "Register `DX3CR` reader"]
-pub struct R(crate::R<DX3CR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DX3CR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DX3CR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DX3CR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DX3CR_SPEC>;
 #[doc = "Register `DX3CR` writer"]
-pub struct W(crate::W<DX3CR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DX3CR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DX3CR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DX3CR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<DX3CR_SPEC>;
 #[doc = "Field `DSEL` reader - Data Selection for Input Signal"]
-pub type DSEL_R = crate::FieldReader<u8, DSEL_A>;
+pub type DSEL_R = crate::FieldReader<DSEL_A>;
 #[doc = "Data Selection for Input Signal\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -63,10 +31,13 @@ impl From<DSEL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for DSEL_A {
+    type Ux = u8;
+}
 impl DSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DSEL_A {
+    pub const fn variant(&self) -> DSEL_A {
         match self.bits {
             0 => DSEL_A::VALUE1,
             1 => DSEL_A::VALUE2,
@@ -79,88 +50,92 @@ impl DSEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The data input DXnA is selected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DSEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The data input DXnB is selected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DSEL_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "The data input DXnC is selected."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == DSEL_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "The data input DXnD is selected."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == DSEL_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "The data input DXnE is selected."]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == DSEL_A::VALUE5
     }
-    #[doc = "Checks if the value of the field is `VALUE6`"]
+    #[doc = "The data input DXnF is selected."]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
         *self == DSEL_A::VALUE6
     }
-    #[doc = "Checks if the value of the field is `VALUE7`"]
+    #[doc = "The data input DXnG is selected."]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
         *self == DSEL_A::VALUE7
     }
-    #[doc = "Checks if the value of the field is `VALUE8`"]
+    #[doc = "The data input is always 1."]
     #[inline(always)]
     pub fn is_value8(&self) -> bool {
         *self == DSEL_A::VALUE8
     }
 }
 #[doc = "Field `DSEL` writer - Data Selection for Input Signal"]
-pub type DSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DX3CR_SPEC, u8, DSEL_A, 3, O>;
-impl<'a, const O: u8> DSEL_W<'a, O> {
+pub type DSEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, DSEL_A>;
+impl<'a, REG> DSEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "The data input DXnA is selected."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DSEL_A::VALUE1)
     }
     #[doc = "The data input DXnB is selected."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DSEL_A::VALUE2)
     }
     #[doc = "The data input DXnC is selected."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(DSEL_A::VALUE3)
     }
     #[doc = "The data input DXnD is selected."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(DSEL_A::VALUE4)
     }
     #[doc = "The data input DXnE is selected."]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(DSEL_A::VALUE5)
     }
     #[doc = "The data input DXnF is selected."]
     #[inline(always)]
-    pub fn value6(self) -> &'a mut W {
+    pub fn value6(self) -> &'a mut crate::W<REG> {
         self.variant(DSEL_A::VALUE6)
     }
     #[doc = "The data input DXnG is selected."]
     #[inline(always)]
-    pub fn value7(self) -> &'a mut W {
+    pub fn value7(self) -> &'a mut crate::W<REG> {
         self.variant(DSEL_A::VALUE7)
     }
     #[doc = "The data input is always 1."]
     #[inline(always)]
-    pub fn value8(self) -> &'a mut W {
+    pub fn value8(self) -> &'a mut crate::W<REG> {
         self.variant(DSEL_A::VALUE8)
     }
 }
@@ -183,34 +158,37 @@ impl From<INSW_A> for bool {
 impl INSW_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INSW_A {
+    pub const fn variant(&self) -> INSW_A {
         match self.bits {
             false => INSW_A::VALUE1,
             true => INSW_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input of the data shift unit is controlled by the protocol pre-processor."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == INSW_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input of the data shift unit is connected to the selected data input line. This setting is used if the signals are directly derived from an input pin without treatment by the protocol pre-processor."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == INSW_A::VALUE2
     }
 }
 #[doc = "Field `INSW` writer - Input Switch"]
-pub type INSW_W<'a, const O: u8> = crate::BitWriter<'a, u32, DX3CR_SPEC, INSW_A, O>;
-impl<'a, const O: u8> INSW_W<'a, O> {
+pub type INSW_W<'a, REG> = crate::BitWriter<'a, REG, INSW_A>;
+impl<'a, REG> INSW_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The input of the data shift unit is controlled by the protocol pre-processor."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(INSW_A::VALUE1)
     }
     #[doc = "The input of the data shift unit is connected to the selected data input line. This setting is used if the signals are directly derived from an input pin without treatment by the protocol pre-processor."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(INSW_A::VALUE2)
     }
 }
@@ -233,34 +211,37 @@ impl From<DFEN_A> for bool {
 impl DFEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DFEN_A {
+    pub const fn variant(&self) -> DFEN_A {
         match self.bits {
             false => DFEN_A::VALUE1,
             true => DFEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input signal is not digitally filtered."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DFEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input signal is digitally filtered."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DFEN_A::VALUE2
     }
 }
 #[doc = "Field `DFEN` writer - Digital Filter Enable"]
-pub type DFEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DX3CR_SPEC, DFEN_A, O>;
-impl<'a, const O: u8> DFEN_W<'a, O> {
+pub type DFEN_W<'a, REG> = crate::BitWriter<'a, REG, DFEN_A>;
+impl<'a, REG> DFEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The input signal is not digitally filtered."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DFEN_A::VALUE1)
     }
     #[doc = "The input signal is digitally filtered."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DFEN_A::VALUE2)
     }
 }
@@ -283,34 +264,37 @@ impl From<DSEN_A> for bool {
 impl DSEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DSEN_A {
+    pub const fn variant(&self) -> DSEN_A {
         match self.bits {
             false => DSEN_A::VALUE1,
             true => DSEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The un-synchronized signal can be taken as input for the data shift unit."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DSEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The synchronized signal can be taken as input for the data shift unit."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DSEN_A::VALUE2
     }
 }
 #[doc = "Field `DSEN` writer - Data Synchronization Enable"]
-pub type DSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DX3CR_SPEC, DSEN_A, O>;
-impl<'a, const O: u8> DSEN_W<'a, O> {
+pub type DSEN_W<'a, REG> = crate::BitWriter<'a, REG, DSEN_A>;
+impl<'a, REG> DSEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The un-synchronized signal can be taken as input for the data shift unit."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DSEN_A::VALUE1)
     }
     #[doc = "The synchronized signal can be taken as input for the data shift unit."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DSEN_A::VALUE2)
     }
 }
@@ -333,34 +317,37 @@ impl From<DPOL_A> for bool {
 impl DPOL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DPOL_A {
+    pub const fn variant(&self) -> DPOL_A {
         match self.bits {
             false => DPOL_A::VALUE1,
             true => DPOL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input signal is not inverted."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DPOL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input signal is inverted."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DPOL_A::VALUE2
     }
 }
 #[doc = "Field `DPOL` writer - Data Polarity for DXn"]
-pub type DPOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, DX3CR_SPEC, DPOL_A, O>;
-impl<'a, const O: u8> DPOL_W<'a, O> {
+pub type DPOL_W<'a, REG> = crate::BitWriter<'a, REG, DPOL_A>;
+impl<'a, REG> DPOL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The input signal is not inverted."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DPOL_A::VALUE1)
     }
     #[doc = "The input signal is inverted."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DPOL_A::VALUE2)
     }
 }
@@ -383,39 +370,42 @@ impl From<SFSEL_A> for bool {
 impl SFSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SFSEL_A {
+    pub const fn variant(&self) -> SFSEL_A {
         match self.bits {
             false => SFSEL_A::VALUE1,
             true => SFSEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The sampling frequency is fPB."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SFSEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The sampling frequency is fFD."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SFSEL_A::VALUE2
     }
 }
 #[doc = "Field `SFSEL` writer - Sampling Frequency Selection"]
-pub type SFSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, DX3CR_SPEC, SFSEL_A, O>;
-impl<'a, const O: u8> SFSEL_W<'a, O> {
+pub type SFSEL_W<'a, REG> = crate::BitWriter<'a, REG, SFSEL_A>;
+impl<'a, REG> SFSEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The sampling frequency is fPB."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SFSEL_A::VALUE1)
     }
     #[doc = "The sampling frequency is fFD."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SFSEL_A::VALUE2)
     }
 }
 #[doc = "Field `CM` reader - Combination Mode"]
-pub type CM_R = crate::FieldReader<u8, CM_A>;
+pub type CM_R = crate::FieldReader<CM_A>;
 #[doc = "Combination Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -435,10 +425,13 @@ impl From<CM_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CM_A {
+    type Ux = u8;
+}
 impl CM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CM_A {
+    pub const fn variant(&self) -> CM_A {
         match self.bits {
             0 => CM_A::VALUE1,
             1 => CM_A::VALUE2,
@@ -447,48 +440,52 @@ impl CM_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The trigger activation is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A rising edge activates DXnT."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CM_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "A falling edge activates DXnT."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CM_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Both edges activate DXnT."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CM_A::VALUE4
     }
 }
 #[doc = "Field `CM` writer - Combination Mode"]
-pub type CM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DX3CR_SPEC, u8, CM_A, 2, O>;
-impl<'a, const O: u8> CM_W<'a, O> {
+pub type CM_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CM_A>;
+impl<'a, REG> CM_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "The trigger activation is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CM_A::VALUE1)
     }
     #[doc = "A rising edge activates DXnT."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CM_A::VALUE2)
     }
     #[doc = "A falling edge activates DXnT."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CM_A::VALUE3)
     }
     #[doc = "Both edges activate DXnT."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CM_A::VALUE4)
     }
 }
@@ -511,18 +508,18 @@ impl From<DXS_A> for bool {
 impl DXS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DXS_A {
+    pub const fn variant(&self) -> DXS_A {
         match self.bits {
             false => DXS_A::VALUE1,
             true => DXS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The current value of DXnS is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DXS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The current value of DXnS is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DXS_A::VALUE2
@@ -574,64 +571,65 @@ impl W {
     #[doc = "Bits 0:2 - Data Selection for Input Signal"]
     #[inline(always)]
     #[must_use]
-    pub fn dsel(&mut self) -> DSEL_W<0> {
-        DSEL_W::new(self)
+    pub fn dsel(&mut self) -> DSEL_W<DX3CR_SPEC> {
+        DSEL_W::new(self, 0)
     }
     #[doc = "Bit 4 - Input Switch"]
     #[inline(always)]
     #[must_use]
-    pub fn insw(&mut self) -> INSW_W<4> {
-        INSW_W::new(self)
+    pub fn insw(&mut self) -> INSW_W<DX3CR_SPEC> {
+        INSW_W::new(self, 4)
     }
     #[doc = "Bit 5 - Digital Filter Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dfen(&mut self) -> DFEN_W<5> {
-        DFEN_W::new(self)
+    pub fn dfen(&mut self) -> DFEN_W<DX3CR_SPEC> {
+        DFEN_W::new(self, 5)
     }
     #[doc = "Bit 6 - Data Synchronization Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dsen(&mut self) -> DSEN_W<6> {
-        DSEN_W::new(self)
+    pub fn dsen(&mut self) -> DSEN_W<DX3CR_SPEC> {
+        DSEN_W::new(self, 6)
     }
     #[doc = "Bit 8 - Data Polarity for DXn"]
     #[inline(always)]
     #[must_use]
-    pub fn dpol(&mut self) -> DPOL_W<8> {
-        DPOL_W::new(self)
+    pub fn dpol(&mut self) -> DPOL_W<DX3CR_SPEC> {
+        DPOL_W::new(self, 8)
     }
     #[doc = "Bit 9 - Sampling Frequency Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn sfsel(&mut self) -> SFSEL_W<9> {
-        SFSEL_W::new(self)
+    pub fn sfsel(&mut self) -> SFSEL_W<DX3CR_SPEC> {
+        SFSEL_W::new(self, 9)
     }
     #[doc = "Bits 10:11 - Combination Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn cm(&mut self) -> CM_W<10> {
-        CM_W::new(self)
+    pub fn cm(&mut self) -> CM_W<DX3CR_SPEC> {
+        CM_W::new(self, 10)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Input Control Register 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dx3cr](index.html) module"]
+#[doc = "Input Control Register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dx3cr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dx3cr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DX3CR_SPEC;
 impl crate::RegisterSpec for DX3CR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dx3cr::R](R) reader structure"]
-impl crate::Readable for DX3CR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dx3cr::W](W) writer structure"]
+#[doc = "`read()` method returns [`dx3cr::R`](R) reader structure"]
+impl crate::Readable for DX3CR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`dx3cr::W`](W) writer structure"]
 impl crate::Writable for DX3CR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

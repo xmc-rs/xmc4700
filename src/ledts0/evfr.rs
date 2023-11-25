@@ -1,45 +1,13 @@
 #[doc = "Register `EVFR` reader"]
-pub struct R(crate::R<EVFR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EVFR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EVFR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EVFR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EVFR_SPEC>;
 #[doc = "Register `EVFR` writer"]
-pub struct W(crate::W<EVFR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EVFR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EVFR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EVFR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<EVFR_SPEC>;
 #[doc = "Field `TSF` reader - Time Slice Interrupt Flag"]
-pub type TSF_R = crate::BitReader<bool>;
+pub type TSF_R = crate::BitReader;
 #[doc = "Field `TFF` reader - (Extended) Time Frame Interrupt Flag"]
-pub type TFF_R = crate::BitReader<bool>;
+pub type TFF_R = crate::BitReader;
 #[doc = "Field `TPF` reader - Autoscan Time Period Interrupt Flag"]
-pub type TPF_R = crate::BitReader<bool>;
+pub type TPF_R = crate::BitReader;
 #[doc = "Field `TSCTROVF` reader - TS-Counter Overflow Indication"]
 pub type TSCTROVF_R = crate::BitReader<TSCTROVF_A>;
 #[doc = "TS-Counter Overflow Indication\n\nValue on reset: 0"]
@@ -59,18 +27,18 @@ impl From<TSCTROVF_A> for bool {
 impl TSCTROVF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TSCTROVF_A {
+    pub const fn variant(&self) -> TSCTROVF_A {
         match self.bits {
             false => TSCTROVF_A::VALUE1,
             true => TSCTROVF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No overflow has occurred."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TSCTROVF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The TS-counter has overflowed at least once."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TSCTROVF_A::VALUE2
@@ -91,16 +59,19 @@ impl From<CTSF_AW> for bool {
     }
 }
 #[doc = "Field `CTSF` writer - Clear Time Slice Interrupt Flag"]
-pub type CTSF_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFR_SPEC, CTSF_AW, O>;
-impl<'a, const O: u8> CTSF_W<'a, O> {
+pub type CTSF_W<'a, REG> = crate::BitWriter<'a, REG, CTSF_AW>;
+impl<'a, REG> CTSF_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No action."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CTSF_AW::VALUE1)
     }
     #[doc = "Bit TSF is cleared."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CTSF_AW::VALUE2)
     }
 }
@@ -119,16 +90,19 @@ impl From<CTFF_AW> for bool {
     }
 }
 #[doc = "Field `CTFF` writer - Clear (Extended) Time Frame Interrupt Flag"]
-pub type CTFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFR_SPEC, CTFF_AW, O>;
-impl<'a, const O: u8> CTFF_W<'a, O> {
+pub type CTFF_W<'a, REG> = crate::BitWriter<'a, REG, CTFF_AW>;
+impl<'a, REG> CTFF_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No action."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CTFF_AW::VALUE1)
     }
     #[doc = "Bit TFF is cleared."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CTFF_AW::VALUE2)
     }
 }
@@ -147,16 +121,19 @@ impl From<CTPF_AW> for bool {
     }
 }
 #[doc = "Field `CTPF` writer - Clear Autoscan Time Period Interrupt Flag"]
-pub type CTPF_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFR_SPEC, CTPF_AW, O>;
-impl<'a, const O: u8> CTPF_W<'a, O> {
+pub type CTPF_W<'a, REG> = crate::BitWriter<'a, REG, CTPF_AW>;
+impl<'a, REG> CTPF_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No action."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CTPF_AW::VALUE1)
     }
     #[doc = "Bit TPF is cleared."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CTPF_AW::VALUE2)
     }
 }
@@ -186,40 +163,41 @@ impl W {
     #[doc = "Bit 16 - Clear Time Slice Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn ctsf(&mut self) -> CTSF_W<16> {
-        CTSF_W::new(self)
+    pub fn ctsf(&mut self) -> CTSF_W<EVFR_SPEC> {
+        CTSF_W::new(self, 16)
     }
     #[doc = "Bit 17 - Clear (Extended) Time Frame Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn ctff(&mut self) -> CTFF_W<17> {
-        CTFF_W::new(self)
+    pub fn ctff(&mut self) -> CTFF_W<EVFR_SPEC> {
+        CTFF_W::new(self, 17)
     }
     #[doc = "Bit 18 - Clear Autoscan Time Period Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn ctpf(&mut self) -> CTPF_W<18> {
-        CTPF_W::new(self)
+    pub fn ctpf(&mut self) -> CTPF_W<EVFR_SPEC> {
+        CTPF_W::new(self, 18)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Event Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [evfr](index.html) module"]
+#[doc = "Event Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`evfr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`evfr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EVFR_SPEC;
 impl crate::RegisterSpec for EVFR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [evfr::R](R) reader structure"]
-impl crate::Readable for EVFR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [evfr::W](W) writer structure"]
+#[doc = "`read()` method returns [`evfr::R`](R) reader structure"]
+impl crate::Readable for EVFR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`evfr::W`](W) writer structure"]
 impl crate::Writable for EVFR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

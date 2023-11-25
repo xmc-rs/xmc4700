@@ -1,41 +1,9 @@
 #[doc = "Register `DICFG` reader"]
-pub struct R(crate::R<DICFG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DICFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DICFG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DICFG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DICFG_SPEC>;
 #[doc = "Register `DICFG` writer"]
-pub struct W(crate::W<DICFG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DICFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DICFG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DICFG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<DICFG_SPEC>;
 #[doc = "Field `DSRC` reader - Input Data Source Select"]
-pub type DSRC_R = crate::FieldReader<u8, DSRC_A>;
+pub type DSRC_R = crate::FieldReader<DSRC_A>;
 #[doc = "Input Data Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -57,10 +25,13 @@ impl From<DSRC_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for DSRC_A {
+    type Ux = u8;
+}
 impl DSRC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DSRC_A> {
+    pub const fn variant(&self) -> Option<DSRC_A> {
         match self.bits {
             0 => Some(DSRC_A::VALUE1),
             2 => Some(DSRC_A::VALUE2),
@@ -70,58 +41,62 @@ impl DSRC_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disconnected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DSRC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "External, from input A, direct"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DSRC_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "External, from input A, inverted"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == DSRC_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "External, from input B, direct"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == DSRC_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "External, from input B, inverted"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == DSRC_A::VALUE5
     }
 }
 #[doc = "Field `DSRC` writer - Input Data Source Select"]
-pub type DSRC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DICFG_SPEC, u8, DSRC_A, 4, O>;
-impl<'a, const O: u8> DSRC_W<'a, O> {
+pub type DSRC_W<'a, REG> = crate::FieldWriter<'a, REG, 4, DSRC_A>;
+impl<'a, REG> DSRC_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Disconnected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DSRC_A::VALUE1)
     }
     #[doc = "External, from input A, direct"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DSRC_A::VALUE2)
     }
     #[doc = "External, from input A, inverted"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(DSRC_A::VALUE3)
     }
     #[doc = "External, from input B, direct"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(DSRC_A::VALUE4)
     }
     #[doc = "External, from input B, inverted"]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(DSRC_A::VALUE5)
     }
 }
@@ -140,21 +115,24 @@ impl From<DSWC_AW> for bool {
     }
 }
 #[doc = "Field `DSWC` writer - Write Control for Data Selection"]
-pub type DSWC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DICFG_SPEC, DSWC_AW, O>;
-impl<'a, const O: u8> DSWC_W<'a, O> {
+pub type DSWC_W<'a, REG> = crate::BitWriter<'a, REG, DSWC_AW>;
+impl<'a, REG> DSWC_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No write access to data parameters"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DSWC_AW::VALUE1)
     }
     #[doc = "Bitfield DSRC can be written"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DSWC_AW::VALUE2)
     }
 }
 #[doc = "Field `ITRMODE` reader - Integrator Trigger Mode"]
-pub type ITRMODE_R = crate::FieldReader<u8, ITRMODE_A>;
+pub type ITRMODE_R = crate::FieldReader<ITRMODE_A>;
 #[doc = "Integrator Trigger Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -174,10 +152,13 @@ impl From<ITRMODE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for ITRMODE_A {
+    type Ux = u8;
+}
 impl ITRMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ITRMODE_A {
+    pub const fn variant(&self) -> ITRMODE_A {
         match self.bits {
             0 => ITRMODE_A::VALUE1,
             1 => ITRMODE_A::VALUE2,
@@ -186,53 +167,57 @@ impl ITRMODE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No integration trigger, integrator bypassed, INTEN = 0 all the time"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ITRMODE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Trigger event upon a falling edge"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ITRMODE_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Trigger event upon a rising edge"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == ITRMODE_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "No trigger, integrator active all the time, INTEN = 1 all the time"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == ITRMODE_A::VALUE4
     }
 }
 #[doc = "Field `ITRMODE` writer - Integrator Trigger Mode"]
-pub type ITRMODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DICFG_SPEC, u8, ITRMODE_A, 2, O>;
-impl<'a, const O: u8> ITRMODE_W<'a, O> {
+pub type ITRMODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ITRMODE_A>;
+impl<'a, REG> ITRMODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "No integration trigger, integrator bypassed, INTEN = 0 all the time"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ITRMODE_A::VALUE1)
     }
     #[doc = "Trigger event upon a falling edge"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ITRMODE_A::VALUE2)
     }
     #[doc = "Trigger event upon a rising edge"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(ITRMODE_A::VALUE3)
     }
     #[doc = "No trigger, integrator active all the time, INTEN = 1 all the time"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(ITRMODE_A::VALUE4)
     }
 }
 #[doc = "Field `TSTRMODE` reader - Timestamp Trigger Mode"]
-pub type TSTRMODE_R = crate::FieldReader<u8, TSTRMODE_A>;
+pub type TSTRMODE_R = crate::FieldReader<TSTRMODE_A>;
 #[doc = "Timestamp Trigger Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -252,10 +237,13 @@ impl From<TSTRMODE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for TSTRMODE_A {
+    type Ux = u8;
+}
 impl TSTRMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TSTRMODE_A {
+    pub const fn variant(&self) -> TSTRMODE_A {
         match self.bits {
             0 => TSTRMODE_A::VALUE1,
             1 => TSTRMODE_A::VALUE2,
@@ -264,55 +252,59 @@ impl TSTRMODE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No timestamp trigger"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TSTRMODE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Trigger event upon a falling edge"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TSTRMODE_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Trigger event upon a rising edge"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == TSTRMODE_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Trigger event upon each edge"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == TSTRMODE_A::VALUE4
     }
 }
 #[doc = "Field `TSTRMODE` writer - Timestamp Trigger Mode"]
-pub type TSTRMODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DICFG_SPEC, u8, TSTRMODE_A, 2, O>;
-impl<'a, const O: u8> TSTRMODE_W<'a, O> {
+pub type TSTRMODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, TSTRMODE_A>;
+impl<'a, REG> TSTRMODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "No timestamp trigger"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TSTRMODE_A::VALUE1)
     }
     #[doc = "Trigger event upon a falling edge"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TSTRMODE_A::VALUE2)
     }
     #[doc = "Trigger event upon a rising edge"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(TSTRMODE_A::VALUE3)
     }
     #[doc = "Trigger event upon each edge"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(TSTRMODE_A::VALUE4)
     }
 }
 #[doc = "Field `TRSEL` reader - Trigger Select"]
-pub type TRSEL_R = crate::FieldReader<u8, u8>;
+pub type TRSEL_R = crate::FieldReader;
 #[doc = "Field `TRSEL` writer - Trigger Select"]
-pub type TRSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DICFG_SPEC, u8, u8, 3, O>;
+pub type TRSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Write Control for Trigger Parameters\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TRWC_AW {
@@ -328,21 +320,24 @@ impl From<TRWC_AW> for bool {
     }
 }
 #[doc = "Field `TRWC` writer - Write Control for Trigger Parameters"]
-pub type TRWC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DICFG_SPEC, TRWC_AW, O>;
-impl<'a, const O: u8> TRWC_W<'a, O> {
+pub type TRWC_W<'a, REG> = crate::BitWriter<'a, REG, TRWC_AW>;
+impl<'a, REG> TRWC_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No write access to trigger parameters"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TRWC_AW::VALUE1)
     }
     #[doc = "Bitfields TRSEL, TSTRMODE, ITRMODE can be written"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TRWC_AW::VALUE2)
     }
 }
 #[doc = "Field `CSRC` reader - Sample Clock Source Select"]
-pub type CSRC_R = crate::FieldReader<u8, CSRC_A>;
+pub type CSRC_R = crate::FieldReader<CSRC_A>;
 #[doc = "Sample Clock Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -364,10 +359,13 @@ impl From<CSRC_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CSRC_A {
+    type Ux = u8;
+}
 impl CSRC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CSRC_A> {
+    pub const fn variant(&self) -> Option<CSRC_A> {
         match self.bits {
             1 => Some(CSRC_A::VALUE2),
             2 => Some(CSRC_A::VALUE3),
@@ -377,63 +375,67 @@ impl CSRC_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "External, from input A"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CSRC_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "External, from input B"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CSRC_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "External, from input C"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CSRC_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "External, from input D"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == CSRC_A::VALUE5
     }
-    #[doc = "Checks if the value of the field is `VALUE6`"]
+    #[doc = "Internal clock"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
         *self == CSRC_A::VALUE6
     }
 }
 #[doc = "Field `CSRC` writer - Sample Clock Source Select"]
-pub type CSRC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DICFG_SPEC, u8, CSRC_A, 4, O>;
-impl<'a, const O: u8> CSRC_W<'a, O> {
+pub type CSRC_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CSRC_A>;
+impl<'a, REG> CSRC_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "External, from input A"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CSRC_A::VALUE2)
     }
     #[doc = "External, from input B"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CSRC_A::VALUE3)
     }
     #[doc = "External, from input C"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CSRC_A::VALUE4)
     }
     #[doc = "External, from input D"]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(CSRC_A::VALUE5)
     }
     #[doc = "Internal clock"]
     #[inline(always)]
-    pub fn value6(self) -> &'a mut W {
+    pub fn value6(self) -> &'a mut crate::W<REG> {
         self.variant(CSRC_A::VALUE6)
     }
 }
 #[doc = "Field `STROBE` reader - Data Strobe Generatoion Mode"]
-pub type STROBE_R = crate::FieldReader<u8, STROBE_A>;
+pub type STROBE_R = crate::FieldReader<STROBE_A>;
 #[doc = "Data Strobe Generatoion Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -457,10 +459,13 @@ impl From<STROBE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for STROBE_A {
+    type Ux = u8;
+}
 impl STROBE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<STROBE_A> {
+    pub const fn variant(&self) -> Option<STROBE_A> {
         match self.bits {
             0 => Some(STROBE_A::VALUE1),
             1 => Some(STROBE_A::VALUE2),
@@ -471,68 +476,72 @@ impl STROBE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No data strobe"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == STROBE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Direct clock, a sample trigger is generated at each rising clock edge"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == STROBE_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Direct clock, a sample trigger is generated at each falling clock edge"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == STROBE_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Double data, a sample trigger is generated at each rising and falling clock edge"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == STROBE_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE6`"]
+    #[doc = "Double clock, a sample trigger is generated at every 2nd rising clock edge"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
         *self == STROBE_A::VALUE6
     }
-    #[doc = "Checks if the value of the field is `VALUE7`"]
+    #[doc = "Double clock, a sample trigger is generated at every 2nd falling clock edge"]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
         *self == STROBE_A::VALUE7
     }
 }
 #[doc = "Field `STROBE` writer - Data Strobe Generatoion Mode"]
-pub type STROBE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DICFG_SPEC, u8, STROBE_A, 4, O>;
-impl<'a, const O: u8> STROBE_W<'a, O> {
+pub type STROBE_W<'a, REG> = crate::FieldWriter<'a, REG, 4, STROBE_A>;
+impl<'a, REG> STROBE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "No data strobe"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(STROBE_A::VALUE1)
     }
     #[doc = "Direct clock, a sample trigger is generated at each rising clock edge"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(STROBE_A::VALUE2)
     }
     #[doc = "Direct clock, a sample trigger is generated at each falling clock edge"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(STROBE_A::VALUE3)
     }
     #[doc = "Double data, a sample trigger is generated at each rising and falling clock edge"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(STROBE_A::VALUE4)
     }
     #[doc = "Double clock, a sample trigger is generated at every 2nd rising clock edge"]
     #[inline(always)]
-    pub fn value6(self) -> &'a mut W {
+    pub fn value6(self) -> &'a mut crate::W<REG> {
         self.variant(STROBE_A::VALUE6)
     }
     #[doc = "Double clock, a sample trigger is generated at every 2nd falling clock edge"]
     #[inline(always)]
-    pub fn value7(self) -> &'a mut W {
+    pub fn value7(self) -> &'a mut crate::W<REG> {
         self.variant(STROBE_A::VALUE7)
     }
 }
@@ -551,16 +560,19 @@ impl From<SCWC_AW> for bool {
     }
 }
 #[doc = "Field `SCWC` writer - Write Control for Strobe/Clock Selection"]
-pub type SCWC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DICFG_SPEC, SCWC_AW, O>;
-impl<'a, const O: u8> SCWC_W<'a, O> {
+pub type SCWC_W<'a, REG> = crate::BitWriter<'a, REG, SCWC_AW>;
+impl<'a, REG> SCWC_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No write access to strobe/clock parameters"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SCWC_AW::VALUE1)
     }
     #[doc = "Bitfields STROBE, CSRC can be written"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SCWC_AW::VALUE2)
     }
 }
@@ -600,76 +612,77 @@ impl W {
     #[doc = "Bits 0:3 - Input Data Source Select"]
     #[inline(always)]
     #[must_use]
-    pub fn dsrc(&mut self) -> DSRC_W<0> {
-        DSRC_W::new(self)
+    pub fn dsrc(&mut self) -> DSRC_W<DICFG_SPEC> {
+        DSRC_W::new(self, 0)
     }
     #[doc = "Bit 7 - Write Control for Data Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn dswc(&mut self) -> DSWC_W<7> {
-        DSWC_W::new(self)
+    pub fn dswc(&mut self) -> DSWC_W<DICFG_SPEC> {
+        DSWC_W::new(self, 7)
     }
     #[doc = "Bits 8:9 - Integrator Trigger Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn itrmode(&mut self) -> ITRMODE_W<8> {
-        ITRMODE_W::new(self)
+    pub fn itrmode(&mut self) -> ITRMODE_W<DICFG_SPEC> {
+        ITRMODE_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Timestamp Trigger Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn tstrmode(&mut self) -> TSTRMODE_W<10> {
-        TSTRMODE_W::new(self)
+    pub fn tstrmode(&mut self) -> TSTRMODE_W<DICFG_SPEC> {
+        TSTRMODE_W::new(self, 10)
     }
     #[doc = "Bits 12:14 - Trigger Select"]
     #[inline(always)]
     #[must_use]
-    pub fn trsel(&mut self) -> TRSEL_W<12> {
-        TRSEL_W::new(self)
+    pub fn trsel(&mut self) -> TRSEL_W<DICFG_SPEC> {
+        TRSEL_W::new(self, 12)
     }
     #[doc = "Bit 15 - Write Control for Trigger Parameters"]
     #[inline(always)]
     #[must_use]
-    pub fn trwc(&mut self) -> TRWC_W<15> {
-        TRWC_W::new(self)
+    pub fn trwc(&mut self) -> TRWC_W<DICFG_SPEC> {
+        TRWC_W::new(self, 15)
     }
     #[doc = "Bits 16:19 - Sample Clock Source Select"]
     #[inline(always)]
     #[must_use]
-    pub fn csrc(&mut self) -> CSRC_W<16> {
-        CSRC_W::new(self)
+    pub fn csrc(&mut self) -> CSRC_W<DICFG_SPEC> {
+        CSRC_W::new(self, 16)
     }
     #[doc = "Bits 20:23 - Data Strobe Generatoion Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn strobe(&mut self) -> STROBE_W<20> {
-        STROBE_W::new(self)
+    pub fn strobe(&mut self) -> STROBE_W<DICFG_SPEC> {
+        STROBE_W::new(self, 20)
     }
     #[doc = "Bit 31 - Write Control for Strobe/Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn scwc(&mut self) -> SCWC_W<31> {
-        SCWC_W::new(self)
+    pub fn scwc(&mut self) -> SCWC_W<DICFG_SPEC> {
+        SCWC_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Demodulator Input Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dicfg](index.html) module"]
+#[doc = "Demodulator Input Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dicfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dicfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DICFG_SPEC;
 impl crate::RegisterSpec for DICFG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dicfg::R](R) reader structure"]
-impl crate::Readable for DICFG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dicfg::W](W) writer structure"]
+#[doc = "`read()` method returns [`dicfg::R`](R) reader structure"]
+impl crate::Readable for DICFG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`dicfg::W`](W) writer structure"]
 impl crate::Writable for DICFG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

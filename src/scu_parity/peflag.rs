@@ -1,39 +1,7 @@
 #[doc = "Register `PEFLAG` reader"]
-pub struct R(crate::R<PEFLAG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PEFLAG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PEFLAG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PEFLAG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PEFLAG_SPEC>;
 #[doc = "Register `PEFLAG` writer"]
-pub struct W(crate::W<PEFLAG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PEFLAG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PEFLAG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PEFLAG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PEFLAG_SPEC>;
 #[doc = "Field `PEFPS` reader - Parity Error Flag for PSRAM"]
 pub type PEFPS_R = crate::BitReader<PEFPS_A>;
 #[doc = "Parity Error Flag for PSRAM\n\nValue on reset: 0"]
@@ -53,34 +21,37 @@ impl From<PEFPS_A> for bool {
 impl PEFPS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEFPS_A {
+    pub const fn variant(&self) -> PEFPS_A {
         match self.bits {
             false => PEFPS_A::VALUE1,
             true => PEFPS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No parity error detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PEFPS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Parity error detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PEFPS_A::VALUE2
     }
 }
 #[doc = "Field `PEFPS` writer - Parity Error Flag for PSRAM"]
-pub type PEFPS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PEFPS_A, O>;
-impl<'a, const O: u8> PEFPS_W<'a, O> {
+pub type PEFPS_W<'a, REG> = crate::BitWriter<'a, REG, PEFPS_A>;
+impl<'a, REG> PEFPS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No parity error detected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PEFPS_A::VALUE1)
     }
     #[doc = "Parity error detected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PEFPS_A::VALUE2)
     }
 }
@@ -103,34 +74,37 @@ impl From<PEFDS1_A> for bool {
 impl PEFDS1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEFDS1_A {
+    pub const fn variant(&self) -> PEFDS1_A {
         match self.bits {
             false => PEFDS1_A::VALUE1,
             true => PEFDS1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No parity error detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PEFDS1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Parity error detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PEFDS1_A::VALUE2
     }
 }
 #[doc = "Field `PEFDS1` writer - Parity Error Flag for DSRAM1"]
-pub type PEFDS1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PEFDS1_A, O>;
-impl<'a, const O: u8> PEFDS1_W<'a, O> {
+pub type PEFDS1_W<'a, REG> = crate::BitWriter<'a, REG, PEFDS1_A>;
+impl<'a, REG> PEFDS1_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No parity error detected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PEFDS1_A::VALUE1)
     }
     #[doc = "Parity error detected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PEFDS1_A::VALUE2)
     }
 }
@@ -153,34 +127,37 @@ impl From<PEFDS2_A> for bool {
 impl PEFDS2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEFDS2_A {
+    pub const fn variant(&self) -> PEFDS2_A {
         match self.bits {
             false => PEFDS2_A::VALUE1,
             true => PEFDS2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No parity error detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PEFDS2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Parity error detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PEFDS2_A::VALUE2
     }
 }
 #[doc = "Field `PEFDS2` writer - Parity Error Flag for DSRAM2"]
-pub type PEFDS2_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PEFDS2_A, O>;
-impl<'a, const O: u8> PEFDS2_W<'a, O> {
+pub type PEFDS2_W<'a, REG> = crate::BitWriter<'a, REG, PEFDS2_A>;
+impl<'a, REG> PEFDS2_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No parity error detected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PEFDS2_A::VALUE1)
     }
     #[doc = "Parity error detected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PEFDS2_A::VALUE2)
     }
 }
@@ -203,34 +180,37 @@ impl From<PEFU0_A> for bool {
 impl PEFU0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEFU0_A {
+    pub const fn variant(&self) -> PEFU0_A {
         match self.bits {
             false => PEFU0_A::VALUE1,
             true => PEFU0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No parity error detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PEFU0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Parity error detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PEFU0_A::VALUE2
     }
 }
 #[doc = "Field `PEFU0` writer - Parity Error Flag for USIC0 Memory"]
-pub type PEFU0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PEFU0_A, O>;
-impl<'a, const O: u8> PEFU0_W<'a, O> {
+pub type PEFU0_W<'a, REG> = crate::BitWriter<'a, REG, PEFU0_A>;
+impl<'a, REG> PEFU0_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No parity error detected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PEFU0_A::VALUE1)
     }
     #[doc = "Parity error detected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PEFU0_A::VALUE2)
     }
 }
@@ -253,34 +233,37 @@ impl From<PEFU1_A> for bool {
 impl PEFU1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEFU1_A {
+    pub const fn variant(&self) -> PEFU1_A {
         match self.bits {
             false => PEFU1_A::VALUE1,
             true => PEFU1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No parity error detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PEFU1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Parity error detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PEFU1_A::VALUE2
     }
 }
 #[doc = "Field `PEFU1` writer - Parity Error Flag for USIC1 Memory"]
-pub type PEFU1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PEFU1_A, O>;
-impl<'a, const O: u8> PEFU1_W<'a, O> {
+pub type PEFU1_W<'a, REG> = crate::BitWriter<'a, REG, PEFU1_A>;
+impl<'a, REG> PEFU1_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No parity error detected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PEFU1_A::VALUE1)
     }
     #[doc = "Parity error detected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PEFU1_A::VALUE2)
     }
 }
@@ -303,34 +286,37 @@ impl From<PEFU2_A> for bool {
 impl PEFU2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEFU2_A {
+    pub const fn variant(&self) -> PEFU2_A {
         match self.bits {
             false => PEFU2_A::VALUE1,
             true => PEFU2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No parity error detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PEFU2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Parity error detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PEFU2_A::VALUE2
     }
 }
 #[doc = "Field `PEFU2` writer - Parity Error Flag for USIC2 Memory"]
-pub type PEFU2_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PEFU2_A, O>;
-impl<'a, const O: u8> PEFU2_W<'a, O> {
+pub type PEFU2_W<'a, REG> = crate::BitWriter<'a, REG, PEFU2_A>;
+impl<'a, REG> PEFU2_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No parity error detected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PEFU2_A::VALUE1)
     }
     #[doc = "Parity error detected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PEFU2_A::VALUE2)
     }
 }
@@ -353,34 +339,37 @@ impl From<PEFMC_A> for bool {
 impl PEFMC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEFMC_A {
+    pub const fn variant(&self) -> PEFMC_A {
         match self.bits {
             false => PEFMC_A::VALUE1,
             true => PEFMC_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No parity error detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PEFMC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Parity error detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PEFMC_A::VALUE2
     }
 }
 #[doc = "Field `PEFMC` writer - Parity Error Flag for MultiCAN Memory"]
-pub type PEFMC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PEFMC_A, O>;
-impl<'a, const O: u8> PEFMC_W<'a, O> {
+pub type PEFMC_W<'a, REG> = crate::BitWriter<'a, REG, PEFMC_A>;
+impl<'a, REG> PEFMC_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No parity error detected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PEFMC_A::VALUE1)
     }
     #[doc = "Parity error detected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PEFMC_A::VALUE2)
     }
 }
@@ -403,34 +392,37 @@ impl From<PEFPPRF_A> for bool {
 impl PEFPPRF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEFPPRF_A {
+    pub const fn variant(&self) -> PEFPPRF_A {
         match self.bits {
             false => PEFPPRF_A::VALUE1,
             true => PEFPPRF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No parity error detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PEFPPRF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Parity error detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PEFPPRF_A::VALUE2
     }
 }
 #[doc = "Field `PEFPPRF` writer - Parity Error Flag for PMU Prefetch Memory"]
-pub type PEFPPRF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PEFPPRF_A, O>;
-impl<'a, const O: u8> PEFPPRF_W<'a, O> {
+pub type PEFPPRF_W<'a, REG> = crate::BitWriter<'a, REG, PEFPPRF_A>;
+impl<'a, REG> PEFPPRF_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No parity error detected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PEFPPRF_A::VALUE1)
     }
     #[doc = "Parity error detected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PEFPPRF_A::VALUE2)
     }
 }
@@ -453,34 +445,37 @@ impl From<PEUSB_A> for bool {
 impl PEUSB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEUSB_A {
+    pub const fn variant(&self) -> PEUSB_A {
         match self.bits {
             false => PEUSB_A::VALUE1,
             true => PEUSB_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No parity error detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PEUSB_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Parity error detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PEUSB_A::VALUE2
     }
 }
 #[doc = "Field `PEUSB` writer - Parity Error Flag for USB Memory"]
-pub type PEUSB_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PEUSB_A, O>;
-impl<'a, const O: u8> PEUSB_W<'a, O> {
+pub type PEUSB_W<'a, REG> = crate::BitWriter<'a, REG, PEUSB_A>;
+impl<'a, REG> PEUSB_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No parity error detected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PEUSB_A::VALUE1)
     }
     #[doc = "Parity error detected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PEUSB_A::VALUE2)
     }
 }
@@ -503,34 +498,37 @@ impl From<PEETH0TX_A> for bool {
 impl PEETH0TX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEETH0TX_A {
+    pub const fn variant(&self) -> PEETH0TX_A {
         match self.bits {
             false => PEETH0TX_A::VALUE1,
             true => PEETH0TX_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No parity error detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PEETH0TX_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Parity error detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PEETH0TX_A::VALUE2
     }
 }
 #[doc = "Field `PEETH0TX` writer - Parity Error Flag for ETH TX Memory"]
-pub type PEETH0TX_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PEETH0TX_A, O>;
-impl<'a, const O: u8> PEETH0TX_W<'a, O> {
+pub type PEETH0TX_W<'a, REG> = crate::BitWriter<'a, REG, PEETH0TX_A>;
+impl<'a, REG> PEETH0TX_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No parity error detected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PEETH0TX_A::VALUE1)
     }
     #[doc = "Parity error detected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PEETH0TX_A::VALUE2)
     }
 }
@@ -553,34 +551,37 @@ impl From<PEETH0RX_A> for bool {
 impl PEETH0RX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEETH0RX_A {
+    pub const fn variant(&self) -> PEETH0RX_A {
         match self.bits {
             false => PEETH0RX_A::VALUE1,
             true => PEETH0RX_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No parity error detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PEETH0RX_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Parity error detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PEETH0RX_A::VALUE2
     }
 }
 #[doc = "Field `PEETH0RX` writer - Parity Error Flag for ETH RX Memory"]
-pub type PEETH0RX_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PEETH0RX_A, O>;
-impl<'a, const O: u8> PEETH0RX_W<'a, O> {
+pub type PEETH0RX_W<'a, REG> = crate::BitWriter<'a, REG, PEETH0RX_A>;
+impl<'a, REG> PEETH0RX_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No parity error detected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PEETH0RX_A::VALUE1)
     }
     #[doc = "Parity error detected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PEETH0RX_A::VALUE2)
     }
 }
@@ -603,34 +604,37 @@ impl From<PESD0_A> for bool {
 impl PESD0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PESD0_A {
+    pub const fn variant(&self) -> PESD0_A {
         match self.bits {
             false => PESD0_A::VALUE1,
             true => PESD0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No parity error detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PESD0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Parity error detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PESD0_A::VALUE2
     }
 }
 #[doc = "Field `PESD0` writer - Parity Error Flag for SDMMC Memory 0"]
-pub type PESD0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PESD0_A, O>;
-impl<'a, const O: u8> PESD0_W<'a, O> {
+pub type PESD0_W<'a, REG> = crate::BitWriter<'a, REG, PESD0_A>;
+impl<'a, REG> PESD0_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No parity error detected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PESD0_A::VALUE1)
     }
     #[doc = "Parity error detected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PESD0_A::VALUE2)
     }
 }
@@ -653,34 +657,37 @@ impl From<PESD1_A> for bool {
 impl PESD1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PESD1_A {
+    pub const fn variant(&self) -> PESD1_A {
         match self.bits {
             false => PESD1_A::VALUE1,
             true => PESD1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No parity error detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PESD1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Parity error detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PESD1_A::VALUE2
     }
 }
 #[doc = "Field `PESD1` writer - Parity Error Flag for SDMMC Memory 1"]
-pub type PESD1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PESD1_A, O>;
-impl<'a, const O: u8> PESD1_W<'a, O> {
+pub type PESD1_W<'a, REG> = crate::BitWriter<'a, REG, PESD1_A>;
+impl<'a, REG> PESD1_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No parity error detected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PESD1_A::VALUE1)
     }
     #[doc = "Parity error detected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PESD1_A::VALUE2)
     }
 }
@@ -755,100 +762,101 @@ impl W {
     #[doc = "Bit 0 - Parity Error Flag for PSRAM"]
     #[inline(always)]
     #[must_use]
-    pub fn pefps(&mut self) -> PEFPS_W<0> {
-        PEFPS_W::new(self)
+    pub fn pefps(&mut self) -> PEFPS_W<PEFLAG_SPEC> {
+        PEFPS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Parity Error Flag for DSRAM1"]
     #[inline(always)]
     #[must_use]
-    pub fn pefds1(&mut self) -> PEFDS1_W<1> {
-        PEFDS1_W::new(self)
+    pub fn pefds1(&mut self) -> PEFDS1_W<PEFLAG_SPEC> {
+        PEFDS1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Parity Error Flag for DSRAM2"]
     #[inline(always)]
     #[must_use]
-    pub fn pefds2(&mut self) -> PEFDS2_W<2> {
-        PEFDS2_W::new(self)
+    pub fn pefds2(&mut self) -> PEFDS2_W<PEFLAG_SPEC> {
+        PEFDS2_W::new(self, 2)
     }
     #[doc = "Bit 8 - Parity Error Flag for USIC0 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn pefu0(&mut self) -> PEFU0_W<8> {
-        PEFU0_W::new(self)
+    pub fn pefu0(&mut self) -> PEFU0_W<PEFLAG_SPEC> {
+        PEFU0_W::new(self, 8)
     }
     #[doc = "Bit 9 - Parity Error Flag for USIC1 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn pefu1(&mut self) -> PEFU1_W<9> {
-        PEFU1_W::new(self)
+    pub fn pefu1(&mut self) -> PEFU1_W<PEFLAG_SPEC> {
+        PEFU1_W::new(self, 9)
     }
     #[doc = "Bit 10 - Parity Error Flag for USIC2 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn pefu2(&mut self) -> PEFU2_W<10> {
-        PEFU2_W::new(self)
+    pub fn pefu2(&mut self) -> PEFU2_W<PEFLAG_SPEC> {
+        PEFU2_W::new(self, 10)
     }
     #[doc = "Bit 12 - Parity Error Flag for MultiCAN Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn pefmc(&mut self) -> PEFMC_W<12> {
-        PEFMC_W::new(self)
+    pub fn pefmc(&mut self) -> PEFMC_W<PEFLAG_SPEC> {
+        PEFMC_W::new(self, 12)
     }
     #[doc = "Bit 13 - Parity Error Flag for PMU Prefetch Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn pefpprf(&mut self) -> PEFPPRF_W<13> {
-        PEFPPRF_W::new(self)
+    pub fn pefpprf(&mut self) -> PEFPPRF_W<PEFLAG_SPEC> {
+        PEFPPRF_W::new(self, 13)
     }
     #[doc = "Bit 16 - Parity Error Flag for USB Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peusb(&mut self) -> PEUSB_W<16> {
-        PEUSB_W::new(self)
+    pub fn peusb(&mut self) -> PEUSB_W<PEFLAG_SPEC> {
+        PEUSB_W::new(self, 16)
     }
     #[doc = "Bit 17 - Parity Error Flag for ETH TX Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peeth0tx(&mut self) -> PEETH0TX_W<17> {
-        PEETH0TX_W::new(self)
+    pub fn peeth0tx(&mut self) -> PEETH0TX_W<PEFLAG_SPEC> {
+        PEETH0TX_W::new(self, 17)
     }
     #[doc = "Bit 18 - Parity Error Flag for ETH RX Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peeth0rx(&mut self) -> PEETH0RX_W<18> {
-        PEETH0RX_W::new(self)
+    pub fn peeth0rx(&mut self) -> PEETH0RX_W<PEFLAG_SPEC> {
+        PEETH0RX_W::new(self, 18)
     }
     #[doc = "Bit 19 - Parity Error Flag for SDMMC Memory 0"]
     #[inline(always)]
     #[must_use]
-    pub fn pesd0(&mut self) -> PESD0_W<19> {
-        PESD0_W::new(self)
+    pub fn pesd0(&mut self) -> PESD0_W<PEFLAG_SPEC> {
+        PESD0_W::new(self, 19)
     }
     #[doc = "Bit 20 - Parity Error Flag for SDMMC Memory 1"]
     #[inline(always)]
     #[must_use]
-    pub fn pesd1(&mut self) -> PESD1_W<20> {
-        PESD1_W::new(self)
+    pub fn pesd1(&mut self) -> PESD1_W<PEFLAG_SPEC> {
+        PESD1_W::new(self, 20)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Parity Error Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [peflag](index.html) module"]
+#[doc = "Parity Error Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`peflag::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`peflag::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PEFLAG_SPEC;
 impl crate::RegisterSpec for PEFLAG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [peflag::R](R) reader structure"]
-impl crate::Readable for PEFLAG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [peflag::W](W) writer structure"]
+#[doc = "`read()` method returns [`peflag::R`](R) reader structure"]
+impl crate::Readable for PEFLAG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`peflag::W`](W) writer structure"]
 impl crate::Writable for PEFLAG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

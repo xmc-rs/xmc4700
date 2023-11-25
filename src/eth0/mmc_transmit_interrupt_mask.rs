@@ -1,143 +1,111 @@
 #[doc = "Register `MMC_TRANSMIT_INTERRUPT_MASK` reader"]
-pub struct R(crate::R<MMC_TRANSMIT_INTERRUPT_MASK_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MMC_TRANSMIT_INTERRUPT_MASK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MMC_TRANSMIT_INTERRUPT_MASK_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MMC_TRANSMIT_INTERRUPT_MASK_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MMC_TRANSMIT_INTERRUPT_MASK_SPEC>;
 #[doc = "Register `MMC_TRANSMIT_INTERRUPT_MASK` writer"]
-pub struct W(crate::W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC>;
 #[doc = "Field `TXGBOCTIM` reader - MMC Transmit Good Bad Octet Counter Interrupt Mask"]
-pub type TXGBOCTIM_R = crate::BitReader<bool>;
+pub type TXGBOCTIM_R = crate::BitReader;
 #[doc = "Field `TXGBOCTIM` writer - MMC Transmit Good Bad Octet Counter Interrupt Mask"]
-pub type TXGBOCTIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TXGBOCTIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXGBFRMIM` reader - MMC Transmit Good Bad Frame Counter Interrupt Mask"]
-pub type TXGBFRMIM_R = crate::BitReader<bool>;
+pub type TXGBFRMIM_R = crate::BitReader;
 #[doc = "Field `TXGBFRMIM` writer - MMC Transmit Good Bad Frame Counter Interrupt Mask"]
-pub type TXGBFRMIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TXGBFRMIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXBCGFIM` reader - MMC Transmit Broadcast Good Frame Counter Interrupt Mask"]
-pub type TXBCGFIM_R = crate::BitReader<bool>;
+pub type TXBCGFIM_R = crate::BitReader;
 #[doc = "Field `TXBCGFIM` writer - MMC Transmit Broadcast Good Frame Counter Interrupt Mask"]
-pub type TXBCGFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TXBCGFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXMCGFIM` reader - MMC Transmit Multicast Good Frame Counter Interrupt Mask"]
-pub type TXMCGFIM_R = crate::BitReader<bool>;
+pub type TXMCGFIM_R = crate::BitReader;
 #[doc = "Field `TXMCGFIM` writer - MMC Transmit Multicast Good Frame Counter Interrupt Mask"]
-pub type TXMCGFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TXMCGFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TX64OCTGBFIM` reader - MMC Transmit 64 Octet Good Bad Frame Counter Interrupt Mask"]
-pub type TX64OCTGBFIM_R = crate::BitReader<bool>;
+pub type TX64OCTGBFIM_R = crate::BitReader;
 #[doc = "Field `TX64OCTGBFIM` writer - MMC Transmit 64 Octet Good Bad Frame Counter Interrupt Mask"]
-pub type TX64OCTGBFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TX64OCTGBFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TX65T127OCTGBFIM` reader - MMC Transmit 65 to 127 Octet Good Bad Frame Counter Interrupt Mask"]
-pub type TX65T127OCTGBFIM_R = crate::BitReader<bool>;
+pub type TX65T127OCTGBFIM_R = crate::BitReader;
 #[doc = "Field `TX65T127OCTGBFIM` writer - MMC Transmit 65 to 127 Octet Good Bad Frame Counter Interrupt Mask"]
-pub type TX65T127OCTGBFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TX65T127OCTGBFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TX128T255OCTGBFIM` reader - MMC Transmit 128 to 255 Octet Good Bad Frame Counter Interrupt Mask"]
-pub type TX128T255OCTGBFIM_R = crate::BitReader<bool>;
+pub type TX128T255OCTGBFIM_R = crate::BitReader;
 #[doc = "Field `TX128T255OCTGBFIM` writer - MMC Transmit 128 to 255 Octet Good Bad Frame Counter Interrupt Mask"]
-pub type TX128T255OCTGBFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TX128T255OCTGBFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TX256T511OCTGBFIM` reader - MMC Transmit 256 to 511 Octet Good Bad Frame Counter Interrupt Mask"]
-pub type TX256T511OCTGBFIM_R = crate::BitReader<bool>;
+pub type TX256T511OCTGBFIM_R = crate::BitReader;
 #[doc = "Field `TX256T511OCTGBFIM` writer - MMC Transmit 256 to 511 Octet Good Bad Frame Counter Interrupt Mask"]
-pub type TX256T511OCTGBFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TX256T511OCTGBFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TX512T1023OCTGBFIM` reader - MMC Transmit 512 to 1023 Octet Good Bad Frame Counter Interrupt Mask"]
-pub type TX512T1023OCTGBFIM_R = crate::BitReader<bool>;
+pub type TX512T1023OCTGBFIM_R = crate::BitReader;
 #[doc = "Field `TX512T1023OCTGBFIM` writer - MMC Transmit 512 to 1023 Octet Good Bad Frame Counter Interrupt Mask"]
-pub type TX512T1023OCTGBFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TX512T1023OCTGBFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TX1024TMAXOCTGBFIM` reader - MMC Transmit 1024 to Maximum Octet Good Bad Frame Counter Interrupt Mask"]
-pub type TX1024TMAXOCTGBFIM_R = crate::BitReader<bool>;
+pub type TX1024TMAXOCTGBFIM_R = crate::BitReader;
 #[doc = "Field `TX1024TMAXOCTGBFIM` writer - MMC Transmit 1024 to Maximum Octet Good Bad Frame Counter Interrupt Mask"]
-pub type TX1024TMAXOCTGBFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TX1024TMAXOCTGBFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXUCGBFIM` reader - MMC Transmit Unicast Good Bad Frame Counter Interrupt Mask"]
-pub type TXUCGBFIM_R = crate::BitReader<bool>;
+pub type TXUCGBFIM_R = crate::BitReader;
 #[doc = "Field `TXUCGBFIM` writer - MMC Transmit Unicast Good Bad Frame Counter Interrupt Mask"]
-pub type TXUCGBFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TXUCGBFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXMCGBFIM` reader - MMC Transmit Multicast Good Bad Frame Counter Interrupt Mask"]
-pub type TXMCGBFIM_R = crate::BitReader<bool>;
+pub type TXMCGBFIM_R = crate::BitReader;
 #[doc = "Field `TXMCGBFIM` writer - MMC Transmit Multicast Good Bad Frame Counter Interrupt Mask"]
-pub type TXMCGBFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TXMCGBFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXBCGBFIM` reader - MMC Transmit Broadcast Good Bad Frame Counter Interrupt Mask"]
-pub type TXBCGBFIM_R = crate::BitReader<bool>;
+pub type TXBCGBFIM_R = crate::BitReader;
 #[doc = "Field `TXBCGBFIM` writer - MMC Transmit Broadcast Good Bad Frame Counter Interrupt Mask"]
-pub type TXBCGBFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TXBCGBFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXUFLOWERFIM` reader - MMC Transmit Underflow Error Frame Counter Interrupt Mask"]
-pub type TXUFLOWERFIM_R = crate::BitReader<bool>;
+pub type TXUFLOWERFIM_R = crate::BitReader;
 #[doc = "Field `TXUFLOWERFIM` writer - MMC Transmit Underflow Error Frame Counter Interrupt Mask"]
-pub type TXUFLOWERFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TXUFLOWERFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXSCOLGFIM` reader - MMC Transmit Single Collision Good Frame Counter Interrupt Mask"]
-pub type TXSCOLGFIM_R = crate::BitReader<bool>;
+pub type TXSCOLGFIM_R = crate::BitReader;
 #[doc = "Field `TXSCOLGFIM` writer - MMC Transmit Single Collision Good Frame Counter Interrupt Mask"]
-pub type TXSCOLGFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TXSCOLGFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXMCOLGFIM` reader - MMC Transmit Multiple Collision Good Frame Counter Interrupt Mask"]
-pub type TXMCOLGFIM_R = crate::BitReader<bool>;
+pub type TXMCOLGFIM_R = crate::BitReader;
 #[doc = "Field `TXMCOLGFIM` writer - MMC Transmit Multiple Collision Good Frame Counter Interrupt Mask"]
-pub type TXMCOLGFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TXMCOLGFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXDEFFIM` reader - MMC Transmit Deferred Frame Counter Interrupt Mask"]
-pub type TXDEFFIM_R = crate::BitReader<bool>;
+pub type TXDEFFIM_R = crate::BitReader;
 #[doc = "Field `TXDEFFIM` writer - MMC Transmit Deferred Frame Counter Interrupt Mask"]
-pub type TXDEFFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TXDEFFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXLATCOLFIM` reader - MMC Transmit Late Collision Frame Counter Interrupt Mask"]
-pub type TXLATCOLFIM_R = crate::BitReader<bool>;
+pub type TXLATCOLFIM_R = crate::BitReader;
 #[doc = "Field `TXLATCOLFIM` writer - MMC Transmit Late Collision Frame Counter Interrupt Mask"]
-pub type TXLATCOLFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TXLATCOLFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXEXCOLFIM` reader - MMC Transmit Excessive Collision Frame Counter Interrupt Mask"]
-pub type TXEXCOLFIM_R = crate::BitReader<bool>;
+pub type TXEXCOLFIM_R = crate::BitReader;
 #[doc = "Field `TXEXCOLFIM` writer - MMC Transmit Excessive Collision Frame Counter Interrupt Mask"]
-pub type TXEXCOLFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TXEXCOLFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXCARERFIM` reader - MMC Transmit Carrier Error Frame Counter Interrupt Mask"]
-pub type TXCARERFIM_R = crate::BitReader<bool>;
+pub type TXCARERFIM_R = crate::BitReader;
 #[doc = "Field `TXCARERFIM` writer - MMC Transmit Carrier Error Frame Counter Interrupt Mask"]
-pub type TXCARERFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TXCARERFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXGOCTIM` reader - MMC Transmit Good Octet Counter Interrupt Mask"]
-pub type TXGOCTIM_R = crate::BitReader<bool>;
+pub type TXGOCTIM_R = crate::BitReader;
 #[doc = "Field `TXGOCTIM` writer - MMC Transmit Good Octet Counter Interrupt Mask"]
-pub type TXGOCTIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TXGOCTIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXGFRMIM` reader - MMC Transmit Good Frame Counter Interrupt Mask"]
-pub type TXGFRMIM_R = crate::BitReader<bool>;
+pub type TXGFRMIM_R = crate::BitReader;
 #[doc = "Field `TXGFRMIM` writer - MMC Transmit Good Frame Counter Interrupt Mask"]
-pub type TXGFRMIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TXGFRMIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXEXDEFFIM` reader - MMC Transmit Excessive Deferral Frame Counter Interrupt Mask"]
-pub type TXEXDEFFIM_R = crate::BitReader<bool>;
+pub type TXEXDEFFIM_R = crate::BitReader;
 #[doc = "Field `TXEXDEFFIM` writer - MMC Transmit Excessive Deferral Frame Counter Interrupt Mask"]
-pub type TXEXDEFFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TXEXDEFFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXPAUSFIM` reader - MMC Transmit Pause Frame Counter Interrupt Mask"]
-pub type TXPAUSFIM_R = crate::BitReader<bool>;
+pub type TXPAUSFIM_R = crate::BitReader;
 #[doc = "Field `TXPAUSFIM` writer - MMC Transmit Pause Frame Counter Interrupt Mask"]
-pub type TXPAUSFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TXPAUSFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXVLANGFIM` reader - MMC Transmit VLAN Good Frame Counter Interrupt Mask"]
-pub type TXVLANGFIM_R = crate::BitReader<bool>;
+pub type TXVLANGFIM_R = crate::BitReader;
 #[doc = "Field `TXVLANGFIM` writer - MMC Transmit VLAN Good Frame Counter Interrupt Mask"]
-pub type TXVLANGFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TXVLANGFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXOSIZEGFIM` reader - MMC Transmit Oversize Good Frame Counter Interrupt Mask"]
-pub type TXOSIZEGFIM_R = crate::BitReader<bool>;
+pub type TXOSIZEGFIM_R = crate::BitReader;
 #[doc = "Field `TXOSIZEGFIM` writer - MMC Transmit Oversize Good Frame Counter Interrupt Mask"]
-pub type TXOSIZEGFIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_TRANSMIT_INTERRUPT_MASK_SPEC, bool, O>;
+pub type TXOSIZEGFIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - MMC Transmit Good Bad Octet Counter Interrupt Mask"]
     #[inline(always)]
@@ -274,178 +242,179 @@ impl W {
     #[doc = "Bit 0 - MMC Transmit Good Bad Octet Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn txgboctim(&mut self) -> TXGBOCTIM_W<0> {
-        TXGBOCTIM_W::new(self)
+    pub fn txgboctim(&mut self) -> TXGBOCTIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TXGBOCTIM_W::new(self, 0)
     }
     #[doc = "Bit 1 - MMC Transmit Good Bad Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn txgbfrmim(&mut self) -> TXGBFRMIM_W<1> {
-        TXGBFRMIM_W::new(self)
+    pub fn txgbfrmim(&mut self) -> TXGBFRMIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TXGBFRMIM_W::new(self, 1)
     }
     #[doc = "Bit 2 - MMC Transmit Broadcast Good Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn txbcgfim(&mut self) -> TXBCGFIM_W<2> {
-        TXBCGFIM_W::new(self)
+    pub fn txbcgfim(&mut self) -> TXBCGFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TXBCGFIM_W::new(self, 2)
     }
     #[doc = "Bit 3 - MMC Transmit Multicast Good Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn txmcgfim(&mut self) -> TXMCGFIM_W<3> {
-        TXMCGFIM_W::new(self)
+    pub fn txmcgfim(&mut self) -> TXMCGFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TXMCGFIM_W::new(self, 3)
     }
     #[doc = "Bit 4 - MMC Transmit 64 Octet Good Bad Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn tx64octgbfim(&mut self) -> TX64OCTGBFIM_W<4> {
-        TX64OCTGBFIM_W::new(self)
+    pub fn tx64octgbfim(&mut self) -> TX64OCTGBFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TX64OCTGBFIM_W::new(self, 4)
     }
     #[doc = "Bit 5 - MMC Transmit 65 to 127 Octet Good Bad Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn tx65t127octgbfim(&mut self) -> TX65T127OCTGBFIM_W<5> {
-        TX65T127OCTGBFIM_W::new(self)
+    pub fn tx65t127octgbfim(&mut self) -> TX65T127OCTGBFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TX65T127OCTGBFIM_W::new(self, 5)
     }
     #[doc = "Bit 6 - MMC Transmit 128 to 255 Octet Good Bad Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn tx128t255octgbfim(&mut self) -> TX128T255OCTGBFIM_W<6> {
-        TX128T255OCTGBFIM_W::new(self)
+    pub fn tx128t255octgbfim(&mut self) -> TX128T255OCTGBFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TX128T255OCTGBFIM_W::new(self, 6)
     }
     #[doc = "Bit 7 - MMC Transmit 256 to 511 Octet Good Bad Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn tx256t511octgbfim(&mut self) -> TX256T511OCTGBFIM_W<7> {
-        TX256T511OCTGBFIM_W::new(self)
+    pub fn tx256t511octgbfim(&mut self) -> TX256T511OCTGBFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TX256T511OCTGBFIM_W::new(self, 7)
     }
     #[doc = "Bit 8 - MMC Transmit 512 to 1023 Octet Good Bad Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn tx512t1023octgbfim(&mut self) -> TX512T1023OCTGBFIM_W<8> {
-        TX512T1023OCTGBFIM_W::new(self)
+    pub fn tx512t1023octgbfim(&mut self) -> TX512T1023OCTGBFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TX512T1023OCTGBFIM_W::new(self, 8)
     }
     #[doc = "Bit 9 - MMC Transmit 1024 to Maximum Octet Good Bad Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn tx1024tmaxoctgbfim(&mut self) -> TX1024TMAXOCTGBFIM_W<9> {
-        TX1024TMAXOCTGBFIM_W::new(self)
+    pub fn tx1024tmaxoctgbfim(&mut self) -> TX1024TMAXOCTGBFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TX1024TMAXOCTGBFIM_W::new(self, 9)
     }
     #[doc = "Bit 10 - MMC Transmit Unicast Good Bad Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn txucgbfim(&mut self) -> TXUCGBFIM_W<10> {
-        TXUCGBFIM_W::new(self)
+    pub fn txucgbfim(&mut self) -> TXUCGBFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TXUCGBFIM_W::new(self, 10)
     }
     #[doc = "Bit 11 - MMC Transmit Multicast Good Bad Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn txmcgbfim(&mut self) -> TXMCGBFIM_W<11> {
-        TXMCGBFIM_W::new(self)
+    pub fn txmcgbfim(&mut self) -> TXMCGBFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TXMCGBFIM_W::new(self, 11)
     }
     #[doc = "Bit 12 - MMC Transmit Broadcast Good Bad Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn txbcgbfim(&mut self) -> TXBCGBFIM_W<12> {
-        TXBCGBFIM_W::new(self)
+    pub fn txbcgbfim(&mut self) -> TXBCGBFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TXBCGBFIM_W::new(self, 12)
     }
     #[doc = "Bit 13 - MMC Transmit Underflow Error Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn txuflowerfim(&mut self) -> TXUFLOWERFIM_W<13> {
-        TXUFLOWERFIM_W::new(self)
+    pub fn txuflowerfim(&mut self) -> TXUFLOWERFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TXUFLOWERFIM_W::new(self, 13)
     }
     #[doc = "Bit 14 - MMC Transmit Single Collision Good Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn txscolgfim(&mut self) -> TXSCOLGFIM_W<14> {
-        TXSCOLGFIM_W::new(self)
+    pub fn txscolgfim(&mut self) -> TXSCOLGFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TXSCOLGFIM_W::new(self, 14)
     }
     #[doc = "Bit 15 - MMC Transmit Multiple Collision Good Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn txmcolgfim(&mut self) -> TXMCOLGFIM_W<15> {
-        TXMCOLGFIM_W::new(self)
+    pub fn txmcolgfim(&mut self) -> TXMCOLGFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TXMCOLGFIM_W::new(self, 15)
     }
     #[doc = "Bit 16 - MMC Transmit Deferred Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn txdeffim(&mut self) -> TXDEFFIM_W<16> {
-        TXDEFFIM_W::new(self)
+    pub fn txdeffim(&mut self) -> TXDEFFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TXDEFFIM_W::new(self, 16)
     }
     #[doc = "Bit 17 - MMC Transmit Late Collision Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn txlatcolfim(&mut self) -> TXLATCOLFIM_W<17> {
-        TXLATCOLFIM_W::new(self)
+    pub fn txlatcolfim(&mut self) -> TXLATCOLFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TXLATCOLFIM_W::new(self, 17)
     }
     #[doc = "Bit 18 - MMC Transmit Excessive Collision Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn txexcolfim(&mut self) -> TXEXCOLFIM_W<18> {
-        TXEXCOLFIM_W::new(self)
+    pub fn txexcolfim(&mut self) -> TXEXCOLFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TXEXCOLFIM_W::new(self, 18)
     }
     #[doc = "Bit 19 - MMC Transmit Carrier Error Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn txcarerfim(&mut self) -> TXCARERFIM_W<19> {
-        TXCARERFIM_W::new(self)
+    pub fn txcarerfim(&mut self) -> TXCARERFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TXCARERFIM_W::new(self, 19)
     }
     #[doc = "Bit 20 - MMC Transmit Good Octet Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn txgoctim(&mut self) -> TXGOCTIM_W<20> {
-        TXGOCTIM_W::new(self)
+    pub fn txgoctim(&mut self) -> TXGOCTIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TXGOCTIM_W::new(self, 20)
     }
     #[doc = "Bit 21 - MMC Transmit Good Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn txgfrmim(&mut self) -> TXGFRMIM_W<21> {
-        TXGFRMIM_W::new(self)
+    pub fn txgfrmim(&mut self) -> TXGFRMIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TXGFRMIM_W::new(self, 21)
     }
     #[doc = "Bit 22 - MMC Transmit Excessive Deferral Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn txexdeffim(&mut self) -> TXEXDEFFIM_W<22> {
-        TXEXDEFFIM_W::new(self)
+    pub fn txexdeffim(&mut self) -> TXEXDEFFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TXEXDEFFIM_W::new(self, 22)
     }
     #[doc = "Bit 23 - MMC Transmit Pause Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn txpausfim(&mut self) -> TXPAUSFIM_W<23> {
-        TXPAUSFIM_W::new(self)
+    pub fn txpausfim(&mut self) -> TXPAUSFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TXPAUSFIM_W::new(self, 23)
     }
     #[doc = "Bit 24 - MMC Transmit VLAN Good Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn txvlangfim(&mut self) -> TXVLANGFIM_W<24> {
-        TXVLANGFIM_W::new(self)
+    pub fn txvlangfim(&mut self) -> TXVLANGFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TXVLANGFIM_W::new(self, 24)
     }
     #[doc = "Bit 25 - MMC Transmit Oversize Good Frame Counter Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn txosizegfim(&mut self) -> TXOSIZEGFIM_W<25> {
-        TXOSIZEGFIM_W::new(self)
+    pub fn txosizegfim(&mut self) -> TXOSIZEGFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+        TXOSIZEGFIM_W::new(self, 25)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "MMC Transmit Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mmc_transmit_interrupt_mask](index.html) module"]
+#[doc = "MMC Transmit Interrupt Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mmc_transmit_interrupt_mask::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mmc_transmit_interrupt_mask::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MMC_TRANSMIT_INTERRUPT_MASK_SPEC;
 impl crate::RegisterSpec for MMC_TRANSMIT_INTERRUPT_MASK_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mmc_transmit_interrupt_mask::R](R) reader structure"]
-impl crate::Readable for MMC_TRANSMIT_INTERRUPT_MASK_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mmc_transmit_interrupt_mask::W](W) writer structure"]
+#[doc = "`read()` method returns [`mmc_transmit_interrupt_mask::R`](R) reader structure"]
+impl crate::Readable for MMC_TRANSMIT_INTERRUPT_MASK_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`mmc_transmit_interrupt_mask::W`](W) writer structure"]
 impl crate::Writable for MMC_TRANSMIT_INTERRUPT_MASK_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,24 +1,5 @@
 #[doc = "Register `SRSET` writer"]
-pub struct W(crate::W<SRSET_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SRSET_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SRSET_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SRSET_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SRSET_SPEC>;
 #[doc = "WDT pre-warning Interrupt Set\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PRWARN_AW {
@@ -34,16 +15,19 @@ impl From<PRWARN_AW> for bool {
     }
 }
 #[doc = "Field `PRWARN` writer - WDT pre-warning Interrupt Set"]
-pub type PRWARN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRSET_SPEC, PRWARN_AW, O>;
-impl<'a, const O: u8> PRWARN_W<'a, O> {
+pub type PRWARN_W<'a, REG> = crate::BitWriter<'a, REG, PRWARN_AW>;
+impl<'a, REG> PRWARN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PRWARN_AW::VALUE1)
     }
     #[doc = "set the status bit"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PRWARN_AW::VALUE2)
     }
 }
@@ -62,16 +46,19 @@ impl From<PI_AW> for bool {
     }
 }
 #[doc = "Field `PI` writer - RTC Periodic Interrupt Set"]
-pub type PI_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRSET_SPEC, PI_AW, O>;
-impl<'a, const O: u8> PI_W<'a, O> {
+pub type PI_W<'a, REG> = crate::BitWriter<'a, REG, PI_AW>;
+impl<'a, REG> PI_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PI_AW::VALUE1)
     }
     #[doc = "set the status bit"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PI_AW::VALUE2)
     }
 }
@@ -90,16 +77,19 @@ impl From<AI_AW> for bool {
     }
 }
 #[doc = "Field `AI` writer - RTC Alarm Interrupt Set"]
-pub type AI_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRSET_SPEC, AI_AW, O>;
-impl<'a, const O: u8> AI_W<'a, O> {
+pub type AI_W<'a, REG> = crate::BitWriter<'a, REG, AI_AW>;
+impl<'a, REG> AI_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(AI_AW::VALUE1)
     }
     #[doc = "set the status bit"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(AI_AW::VALUE2)
     }
 }
@@ -118,16 +108,19 @@ impl From<DLROVR_AW> for bool {
     }
 }
 #[doc = "Field `DLROVR` writer - DLR Request Overrun Interrupt Set"]
-pub type DLROVR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRSET_SPEC, DLROVR_AW, O>;
-impl<'a, const O: u8> DLROVR_W<'a, O> {
+pub type DLROVR_W<'a, REG> = crate::BitWriter<'a, REG, DLROVR_AW>;
+impl<'a, REG> DLROVR_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DLROVR_AW::VALUE1)
     }
     #[doc = "set the status bit"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DLROVR_AW::VALUE2)
     }
 }
@@ -146,16 +139,19 @@ impl From<HDCRCLR_AW> for bool {
     }
 }
 #[doc = "Field `HDCRCLR` writer - HDCRCLR Mirror Register Update Set"]
-pub type HDCRCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRSET_SPEC, HDCRCLR_AW, O>;
-impl<'a, const O: u8> HDCRCLR_W<'a, O> {
+pub type HDCRCLR_W<'a, REG> = crate::BitWriter<'a, REG, HDCRCLR_AW>;
+impl<'a, REG> HDCRCLR_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(HDCRCLR_AW::VALUE1)
     }
     #[doc = "set the status bit"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(HDCRCLR_AW::VALUE2)
     }
 }
@@ -174,16 +170,19 @@ impl From<HDCRSET_AW> for bool {
     }
 }
 #[doc = "Field `HDCRSET` writer - HDCRSET Mirror Register Update Set"]
-pub type HDCRSET_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRSET_SPEC, HDCRSET_AW, O>;
-impl<'a, const O: u8> HDCRSET_W<'a, O> {
+pub type HDCRSET_W<'a, REG> = crate::BitWriter<'a, REG, HDCRSET_AW>;
+impl<'a, REG> HDCRSET_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(HDCRSET_AW::VALUE1)
     }
     #[doc = "set the status bit"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(HDCRSET_AW::VALUE2)
     }
 }
@@ -202,16 +201,19 @@ impl From<HDCR_AW> for bool {
     }
 }
 #[doc = "Field `HDCR` writer - HDCR Mirror Register Update Set"]
-pub type HDCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRSET_SPEC, HDCR_AW, O>;
-impl<'a, const O: u8> HDCR_W<'a, O> {
+pub type HDCR_W<'a, REG> = crate::BitWriter<'a, REG, HDCR_AW>;
+impl<'a, REG> HDCR_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(HDCR_AW::VALUE1)
     }
     #[doc = "set the status bit"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(HDCR_AW::VALUE2)
     }
 }
@@ -230,16 +232,19 @@ impl From<OSCSICTRL_AW> for bool {
     }
 }
 #[doc = "Field `OSCSICTRL` writer - OSCSICTRL Mirror Register Update Set"]
-pub type OSCSICTRL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRSET_SPEC, OSCSICTRL_AW, O>;
-impl<'a, const O: u8> OSCSICTRL_W<'a, O> {
+pub type OSCSICTRL_W<'a, REG> = crate::BitWriter<'a, REG, OSCSICTRL_AW>;
+impl<'a, REG> OSCSICTRL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(OSCSICTRL_AW::VALUE1)
     }
     #[doc = "set the status bit"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(OSCSICTRL_AW::VALUE2)
     }
 }
@@ -258,16 +263,19 @@ impl From<OSCULCTRL_AW> for bool {
     }
 }
 #[doc = "Field `OSCULCTRL` writer - OSCULCTRL Mirror Register Update Set"]
-pub type OSCULCTRL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRSET_SPEC, OSCULCTRL_AW, O>;
-impl<'a, const O: u8> OSCULCTRL_W<'a, O> {
+pub type OSCULCTRL_W<'a, REG> = crate::BitWriter<'a, REG, OSCULCTRL_AW>;
+impl<'a, REG> OSCULCTRL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(OSCULCTRL_AW::VALUE1)
     }
     #[doc = "set the status bit"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(OSCULCTRL_AW::VALUE2)
     }
 }
@@ -286,16 +294,19 @@ impl From<RTC_CTR_AW> for bool {
     }
 }
 #[doc = "Field `RTC_CTR` writer - RTC CTR Mirror Register Update Set"]
-pub type RTC_CTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRSET_SPEC, RTC_CTR_AW, O>;
-impl<'a, const O: u8> RTC_CTR_W<'a, O> {
+pub type RTC_CTR_W<'a, REG> = crate::BitWriter<'a, REG, RTC_CTR_AW>;
+impl<'a, REG> RTC_CTR_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RTC_CTR_AW::VALUE1)
     }
     #[doc = "set the status bit"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RTC_CTR_AW::VALUE2)
     }
 }
@@ -314,16 +325,19 @@ impl From<RTC_ATIM0_AW> for bool {
     }
 }
 #[doc = "Field `RTC_ATIM0` writer - RTC ATIM0 Mirror Register Update Set"]
-pub type RTC_ATIM0_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRSET_SPEC, RTC_ATIM0_AW, O>;
-impl<'a, const O: u8> RTC_ATIM0_W<'a, O> {
+pub type RTC_ATIM0_W<'a, REG> = crate::BitWriter<'a, REG, RTC_ATIM0_AW>;
+impl<'a, REG> RTC_ATIM0_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RTC_ATIM0_AW::VALUE1)
     }
     #[doc = "set the status bit"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RTC_ATIM0_AW::VALUE2)
     }
 }
@@ -342,16 +356,19 @@ impl From<RTC_ATIM1_AW> for bool {
     }
 }
 #[doc = "Field `RTC_ATIM1` writer - RTC ATIM1 Mirror Register Update Set"]
-pub type RTC_ATIM1_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRSET_SPEC, RTC_ATIM1_AW, O>;
-impl<'a, const O: u8> RTC_ATIM1_W<'a, O> {
+pub type RTC_ATIM1_W<'a, REG> = crate::BitWriter<'a, REG, RTC_ATIM1_AW>;
+impl<'a, REG> RTC_ATIM1_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RTC_ATIM1_AW::VALUE1)
     }
     #[doc = "set the status bit"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RTC_ATIM1_AW::VALUE2)
     }
 }
@@ -370,16 +387,19 @@ impl From<RTC_TIM0_AW> for bool {
     }
 }
 #[doc = "Field `RTC_TIM0` writer - RTC TIM0 Mirror Register Update Set"]
-pub type RTC_TIM0_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRSET_SPEC, RTC_TIM0_AW, O>;
-impl<'a, const O: u8> RTC_TIM0_W<'a, O> {
+pub type RTC_TIM0_W<'a, REG> = crate::BitWriter<'a, REG, RTC_TIM0_AW>;
+impl<'a, REG> RTC_TIM0_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RTC_TIM0_AW::VALUE1)
     }
     #[doc = "set the status bit"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RTC_TIM0_AW::VALUE2)
     }
 }
@@ -398,16 +418,19 @@ impl From<RTC_TIM1_AW> for bool {
     }
 }
 #[doc = "Field `RTC_TIM1` writer - RTC TIM1 Mirror Register Update Set"]
-pub type RTC_TIM1_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRSET_SPEC, RTC_TIM1_AW, O>;
-impl<'a, const O: u8> RTC_TIM1_W<'a, O> {
+pub type RTC_TIM1_W<'a, REG> = crate::BitWriter<'a, REG, RTC_TIM1_AW>;
+impl<'a, REG> RTC_TIM1_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RTC_TIM1_AW::VALUE1)
     }
     #[doc = "set the status bit"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RTC_TIM1_AW::VALUE2)
     }
 }
@@ -426,16 +449,19 @@ impl From<RMX_AW> for bool {
     }
 }
 #[doc = "Field `RMX` writer - Retention Memory Mirror Register Update Set"]
-pub type RMX_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRSET_SPEC, RMX_AW, O>;
-impl<'a, const O: u8> RMX_W<'a, O> {
+pub type RMX_W<'a, REG> = crate::BitWriter<'a, REG, RMX_AW>;
+impl<'a, REG> RMX_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RMX_AW::VALUE1)
     }
     #[doc = "set the status bit"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RMX_AW::VALUE2)
     }
 }
@@ -443,108 +469,111 @@ impl W {
     #[doc = "Bit 0 - WDT pre-warning Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn prwarn(&mut self) -> PRWARN_W<0> {
-        PRWARN_W::new(self)
+    pub fn prwarn(&mut self) -> PRWARN_W<SRSET_SPEC> {
+        PRWARN_W::new(self, 0)
     }
     #[doc = "Bit 1 - RTC Periodic Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn pi(&mut self) -> PI_W<1> {
-        PI_W::new(self)
+    pub fn pi(&mut self) -> PI_W<SRSET_SPEC> {
+        PI_W::new(self, 1)
     }
     #[doc = "Bit 2 - RTC Alarm Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn ai(&mut self) -> AI_W<2> {
-        AI_W::new(self)
+    pub fn ai(&mut self) -> AI_W<SRSET_SPEC> {
+        AI_W::new(self, 2)
     }
     #[doc = "Bit 3 - DLR Request Overrun Interrupt Set"]
     #[inline(always)]
     #[must_use]
-    pub fn dlrovr(&mut self) -> DLROVR_W<3> {
-        DLROVR_W::new(self)
+    pub fn dlrovr(&mut self) -> DLROVR_W<SRSET_SPEC> {
+        DLROVR_W::new(self, 3)
     }
     #[doc = "Bit 17 - HDCRCLR Mirror Register Update Set"]
     #[inline(always)]
     #[must_use]
-    pub fn hdcrclr(&mut self) -> HDCRCLR_W<17> {
-        HDCRCLR_W::new(self)
+    pub fn hdcrclr(&mut self) -> HDCRCLR_W<SRSET_SPEC> {
+        HDCRCLR_W::new(self, 17)
     }
     #[doc = "Bit 18 - HDCRSET Mirror Register Update Set"]
     #[inline(always)]
     #[must_use]
-    pub fn hdcrset(&mut self) -> HDCRSET_W<18> {
-        HDCRSET_W::new(self)
+    pub fn hdcrset(&mut self) -> HDCRSET_W<SRSET_SPEC> {
+        HDCRSET_W::new(self, 18)
     }
     #[doc = "Bit 19 - HDCR Mirror Register Update Set"]
     #[inline(always)]
     #[must_use]
-    pub fn hdcr(&mut self) -> HDCR_W<19> {
-        HDCR_W::new(self)
+    pub fn hdcr(&mut self) -> HDCR_W<SRSET_SPEC> {
+        HDCR_W::new(self, 19)
     }
     #[doc = "Bit 21 - OSCSICTRL Mirror Register Update Set"]
     #[inline(always)]
     #[must_use]
-    pub fn oscsictrl(&mut self) -> OSCSICTRL_W<21> {
-        OSCSICTRL_W::new(self)
+    pub fn oscsictrl(&mut self) -> OSCSICTRL_W<SRSET_SPEC> {
+        OSCSICTRL_W::new(self, 21)
     }
     #[doc = "Bit 23 - OSCULCTRL Mirror Register Update Set"]
     #[inline(always)]
     #[must_use]
-    pub fn osculctrl(&mut self) -> OSCULCTRL_W<23> {
-        OSCULCTRL_W::new(self)
+    pub fn osculctrl(&mut self) -> OSCULCTRL_W<SRSET_SPEC> {
+        OSCULCTRL_W::new(self, 23)
     }
     #[doc = "Bit 24 - RTC CTR Mirror Register Update Set"]
     #[inline(always)]
     #[must_use]
-    pub fn rtc_ctr(&mut self) -> RTC_CTR_W<24> {
-        RTC_CTR_W::new(self)
+    pub fn rtc_ctr(&mut self) -> RTC_CTR_W<SRSET_SPEC> {
+        RTC_CTR_W::new(self, 24)
     }
     #[doc = "Bit 25 - RTC ATIM0 Mirror Register Update Set"]
     #[inline(always)]
     #[must_use]
-    pub fn rtc_atim0(&mut self) -> RTC_ATIM0_W<25> {
-        RTC_ATIM0_W::new(self)
+    pub fn rtc_atim0(&mut self) -> RTC_ATIM0_W<SRSET_SPEC> {
+        RTC_ATIM0_W::new(self, 25)
     }
     #[doc = "Bit 26 - RTC ATIM1 Mirror Register Update Set"]
     #[inline(always)]
     #[must_use]
-    pub fn rtc_atim1(&mut self) -> RTC_ATIM1_W<26> {
-        RTC_ATIM1_W::new(self)
+    pub fn rtc_atim1(&mut self) -> RTC_ATIM1_W<SRSET_SPEC> {
+        RTC_ATIM1_W::new(self, 26)
     }
     #[doc = "Bit 27 - RTC TIM0 Mirror Register Update Set"]
     #[inline(always)]
     #[must_use]
-    pub fn rtc_tim0(&mut self) -> RTC_TIM0_W<27> {
-        RTC_TIM0_W::new(self)
+    pub fn rtc_tim0(&mut self) -> RTC_TIM0_W<SRSET_SPEC> {
+        RTC_TIM0_W::new(self, 27)
     }
     #[doc = "Bit 28 - RTC TIM1 Mirror Register Update Set"]
     #[inline(always)]
     #[must_use]
-    pub fn rtc_tim1(&mut self) -> RTC_TIM1_W<28> {
-        RTC_TIM1_W::new(self)
+    pub fn rtc_tim1(&mut self) -> RTC_TIM1_W<SRSET_SPEC> {
+        RTC_TIM1_W::new(self, 28)
     }
     #[doc = "Bit 29 - Retention Memory Mirror Register Update Set"]
     #[inline(always)]
     #[must_use]
-    pub fn rmx(&mut self) -> RMX_W<29> {
-        RMX_W::new(self)
+    pub fn rmx(&mut self) -> RMX_W<SRSET_SPEC> {
+        RMX_W::new(self, 29)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "SCU Service Request Set\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srset](index.html) module"]
+#[doc = "SCU Service Request Set\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`srset::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SRSET_SPEC;
 impl crate::RegisterSpec for SRSET_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [srset::W](W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [`srset::W`](W) writer structure"]
 impl crate::Writable for SRSET_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

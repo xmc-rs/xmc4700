@@ -1,18 +1,5 @@
 #[doc = "Register `PDISC` reader"]
-pub struct R(crate::R<PDISC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PDISC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PDISC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PDISC_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PDISC_SPEC>;
 #[doc = "Field `PDIS0` reader - Pad Disable for Port n Pin 0"]
 pub type PDIS0_R = crate::BitReader<PDIS0_A>;
 #[doc = "Pad Disable for Port n Pin 0\n\nValue on reset: 0"]
@@ -32,18 +19,18 @@ impl From<PDIS0_A> for bool {
 impl PDIS0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PDIS0_A {
+    pub const fn variant(&self) -> PDIS0_A {
         match self.bits {
             false => PDIS0_A::VALUE1,
             true => PDIS0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PDIS0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PDIS0_A::VALUE2
@@ -68,18 +55,18 @@ impl From<PDIS1_A> for bool {
 impl PDIS1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PDIS1_A {
+    pub const fn variant(&self) -> PDIS1_A {
         match self.bits {
             false => PDIS1_A::VALUE1,
             true => PDIS1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PDIS1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PDIS1_A::VALUE2
@@ -104,18 +91,18 @@ impl From<PDIS2_A> for bool {
 impl PDIS2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PDIS2_A {
+    pub const fn variant(&self) -> PDIS2_A {
         match self.bits {
             false => PDIS2_A::VALUE1,
             true => PDIS2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PDIS2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PDIS2_A::VALUE2
@@ -140,18 +127,18 @@ impl From<PDIS3_A> for bool {
 impl PDIS3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PDIS3_A {
+    pub const fn variant(&self) -> PDIS3_A {
         match self.bits {
             false => PDIS3_A::VALUE1,
             true => PDIS3_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PDIS3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PDIS3_A::VALUE2
@@ -176,18 +163,18 @@ impl From<PDIS4_A> for bool {
 impl PDIS4_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PDIS4_A {
+    pub const fn variant(&self) -> PDIS4_A {
         match self.bits {
             false => PDIS4_A::VALUE1,
             true => PDIS4_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PDIS4_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PDIS4_A::VALUE2
@@ -212,18 +199,18 @@ impl From<PDIS5_A> for bool {
 impl PDIS5_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PDIS5_A {
+    pub const fn variant(&self) -> PDIS5_A {
         match self.bits {
             false => PDIS5_A::VALUE1,
             true => PDIS5_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PDIS5_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PDIS5_A::VALUE2
@@ -248,18 +235,18 @@ impl From<PDIS6_A> for bool {
 impl PDIS6_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PDIS6_A {
+    pub const fn variant(&self) -> PDIS6_A {
         match self.bits {
             false => PDIS6_A::VALUE1,
             true => PDIS6_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PDIS6_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PDIS6_A::VALUE2
@@ -284,18 +271,18 @@ impl From<PDIS7_A> for bool {
 impl PDIS7_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PDIS7_A {
+    pub const fn variant(&self) -> PDIS7_A {
         match self.bits {
             false => PDIS7_A::VALUE1,
             true => PDIS7_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PDIS7_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PDIS7_A::VALUE2
@@ -320,18 +307,18 @@ impl From<PDIS8_A> for bool {
 impl PDIS8_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PDIS8_A {
+    pub const fn variant(&self) -> PDIS8_A {
         match self.bits {
             false => PDIS8_A::VALUE1,
             true => PDIS8_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PDIS8_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PDIS8_A::VALUE2
@@ -356,18 +343,18 @@ impl From<PDIS9_A> for bool {
 impl PDIS9_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PDIS9_A {
+    pub const fn variant(&self) -> PDIS9_A {
         match self.bits {
             false => PDIS9_A::VALUE1,
             true => PDIS9_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PDIS9_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PDIS9_A::VALUE2
@@ -392,18 +379,18 @@ impl From<PDIS10_A> for bool {
 impl PDIS10_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PDIS10_A {
+    pub const fn variant(&self) -> PDIS10_A {
         match self.bits {
             false => PDIS10_A::VALUE1,
             true => PDIS10_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PDIS10_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PDIS10_A::VALUE2
@@ -428,18 +415,18 @@ impl From<PDIS11_A> for bool {
 impl PDIS11_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PDIS11_A {
+    pub const fn variant(&self) -> PDIS11_A {
         match self.bits {
             false => PDIS11_A::VALUE1,
             true => PDIS11_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PDIS11_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PDIS11_A::VALUE2
@@ -464,18 +451,18 @@ impl From<PDIS12_A> for bool {
 impl PDIS12_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PDIS12_A {
+    pub const fn variant(&self) -> PDIS12_A {
         match self.bits {
             false => PDIS12_A::VALUE1,
             true => PDIS12_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PDIS12_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PDIS12_A::VALUE2
@@ -500,18 +487,18 @@ impl From<PDIS13_A> for bool {
 impl PDIS13_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PDIS13_A {
+    pub const fn variant(&self) -> PDIS13_A {
         match self.bits {
             false => PDIS13_A::VALUE1,
             true => PDIS13_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PDIS13_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PDIS13_A::VALUE2
@@ -536,18 +523,18 @@ impl From<PDIS14_A> for bool {
 impl PDIS14_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PDIS14_A {
+    pub const fn variant(&self) -> PDIS14_A {
         match self.bits {
             false => PDIS14_A::VALUE1,
             true => PDIS14_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PDIS14_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PDIS14_A::VALUE2
@@ -572,18 +559,18 @@ impl From<PDIS15_A> for bool {
 impl PDIS15_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PDIS15_A {
+    pub const fn variant(&self) -> PDIS15_A {
         match self.bits {
             false => PDIS15_A::VALUE1,
             true => PDIS15_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PDIS15_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PDIS15_A::VALUE2
@@ -671,15 +658,13 @@ impl R {
         PDIS15_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Port 7 Pin Function Decision Control Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdisc](index.html) module"]
+#[doc = "Port 7 Pin Function Decision Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pdisc::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PDISC_SPEC;
 impl crate::RegisterSpec for PDISC_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pdisc::R](R) reader structure"]
-impl crate::Readable for PDISC_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`pdisc::R`](R) reader structure"]
+impl crate::Readable for PDISC_SPEC {}
 #[doc = "`reset()` method sets PDISC to value 0"]
 impl crate::Resettable for PDISC_SPEC {
     const RESET_VALUE: Self::Ux = 0;

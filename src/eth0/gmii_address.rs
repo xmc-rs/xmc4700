@@ -1,59 +1,27 @@
 #[doc = "Register `GMII_ADDRESS` reader"]
-pub struct R(crate::R<GMII_ADDRESS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<GMII_ADDRESS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<GMII_ADDRESS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<GMII_ADDRESS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<GMII_ADDRESS_SPEC>;
 #[doc = "Register `GMII_ADDRESS` writer"]
-pub struct W(crate::W<GMII_ADDRESS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<GMII_ADDRESS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<GMII_ADDRESS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<GMII_ADDRESS_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<GMII_ADDRESS_SPEC>;
 #[doc = "Field `MB` reader - MII Busy"]
-pub type MB_R = crate::BitReader<bool>;
+pub type MB_R = crate::BitReader;
 #[doc = "Field `MB` writer - MII Busy"]
-pub type MB_W<'a, const O: u8> = crate::BitWriter<'a, u32, GMII_ADDRESS_SPEC, bool, O>;
+pub type MB_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MW` reader - MII Write"]
-pub type MW_R = crate::BitReader<bool>;
+pub type MW_R = crate::BitReader;
 #[doc = "Field `MW` writer - MII Write"]
-pub type MW_W<'a, const O: u8> = crate::BitWriter<'a, u32, GMII_ADDRESS_SPEC, bool, O>;
+pub type MW_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CR` reader - CSR Clock Range"]
-pub type CR_R = crate::FieldReader<u8, u8>;
+pub type CR_R = crate::FieldReader;
 #[doc = "Field `CR` writer - CSR Clock Range"]
-pub type CR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GMII_ADDRESS_SPEC, u8, u8, 4, O>;
+pub type CR_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `MR` reader - MII Register"]
-pub type MR_R = crate::FieldReader<u8, u8>;
+pub type MR_R = crate::FieldReader;
 #[doc = "Field `MR` writer - MII Register"]
-pub type MR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GMII_ADDRESS_SPEC, u8, u8, 5, O>;
+pub type MR_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `PA` reader - Physical Layer Address"]
-pub type PA_R = crate::FieldReader<u8, u8>;
+pub type PA_R = crate::FieldReader;
 #[doc = "Field `PA` writer - Physical Layer Address"]
-pub type PA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GMII_ADDRESS_SPEC, u8, u8, 5, O>;
+pub type PA_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     #[doc = "Bit 0 - MII Busy"]
     #[inline(always)]
@@ -85,52 +53,53 @@ impl W {
     #[doc = "Bit 0 - MII Busy"]
     #[inline(always)]
     #[must_use]
-    pub fn mb(&mut self) -> MB_W<0> {
-        MB_W::new(self)
+    pub fn mb(&mut self) -> MB_W<GMII_ADDRESS_SPEC> {
+        MB_W::new(self, 0)
     }
     #[doc = "Bit 1 - MII Write"]
     #[inline(always)]
     #[must_use]
-    pub fn mw(&mut self) -> MW_W<1> {
-        MW_W::new(self)
+    pub fn mw(&mut self) -> MW_W<GMII_ADDRESS_SPEC> {
+        MW_W::new(self, 1)
     }
     #[doc = "Bits 2:5 - CSR Clock Range"]
     #[inline(always)]
     #[must_use]
-    pub fn cr(&mut self) -> CR_W<2> {
-        CR_W::new(self)
+    pub fn cr(&mut self) -> CR_W<GMII_ADDRESS_SPEC> {
+        CR_W::new(self, 2)
     }
     #[doc = "Bits 6:10 - MII Register"]
     #[inline(always)]
     #[must_use]
-    pub fn mr(&mut self) -> MR_W<6> {
-        MR_W::new(self)
+    pub fn mr(&mut self) -> MR_W<GMII_ADDRESS_SPEC> {
+        MR_W::new(self, 6)
     }
     #[doc = "Bits 11:15 - Physical Layer Address"]
     #[inline(always)]
     #[must_use]
-    pub fn pa(&mut self) -> PA_W<11> {
-        PA_W::new(self)
+    pub fn pa(&mut self) -> PA_W<GMII_ADDRESS_SPEC> {
+        PA_W::new(self, 11)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "MII Address Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gmii_address](index.html) module"]
+#[doc = "MII Address Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gmii_address::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gmii_address::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GMII_ADDRESS_SPEC;
 impl crate::RegisterSpec for GMII_ADDRESS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [gmii_address::R](R) reader structure"]
-impl crate::Readable for GMII_ADDRESS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [gmii_address::W](W) writer structure"]
+#[doc = "`read()` method returns [`gmii_address::R`](R) reader structure"]
+impl crate::Readable for GMII_ADDRESS_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`gmii_address::W`](W) writer structure"]
 impl crate::Writable for GMII_ADDRESS_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

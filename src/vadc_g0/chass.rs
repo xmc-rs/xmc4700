@@ -1,39 +1,7 @@
 #[doc = "Register `CHASS` reader"]
-pub struct R(crate::R<CHASS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CHASS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CHASS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CHASS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CHASS_SPEC>;
 #[doc = "Register `CHASS` writer"]
-pub struct W(crate::W<CHASS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CHASS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CHASS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CHASS_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CHASS_SPEC>;
 #[doc = "Field `ASSCH0` reader - Assignment for Channel 0"]
 pub type ASSCH0_R = crate::BitReader<ASSCH0_A>;
 #[doc = "Assignment for Channel 0\n\nValue on reset: 0"]
@@ -53,34 +21,37 @@ impl From<ASSCH0_A> for bool {
 impl ASSCH0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ASSCH0_A {
+    pub const fn variant(&self) -> ASSCH0_A {
         match self.bits {
             false => ASSCH0_A::VALUE1,
             true => ASSCH0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ASSCH0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Channel y is a priority channel within group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ASSCH0_A::VALUE2
     }
 }
 #[doc = "Field `ASSCH0` writer - Assignment for Channel 0"]
-pub type ASSCH0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHASS_SPEC, ASSCH0_A, O>;
-impl<'a, const O: u8> ASSCH0_W<'a, O> {
+pub type ASSCH0_W<'a, REG> = crate::BitWriter<'a, REG, ASSCH0_A>;
+impl<'a, REG> ASSCH0_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ASSCH0_A::VALUE1)
     }
     #[doc = "Channel y is a priority channel within group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ASSCH0_A::VALUE2)
     }
 }
@@ -103,34 +74,37 @@ impl From<ASSCH1_A> for bool {
 impl ASSCH1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ASSCH1_A {
+    pub const fn variant(&self) -> ASSCH1_A {
         match self.bits {
             false => ASSCH1_A::VALUE1,
             true => ASSCH1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ASSCH1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Channel y is a priority channel within group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ASSCH1_A::VALUE2
     }
 }
 #[doc = "Field `ASSCH1` writer - Assignment for Channel 1"]
-pub type ASSCH1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHASS_SPEC, ASSCH1_A, O>;
-impl<'a, const O: u8> ASSCH1_W<'a, O> {
+pub type ASSCH1_W<'a, REG> = crate::BitWriter<'a, REG, ASSCH1_A>;
+impl<'a, REG> ASSCH1_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ASSCH1_A::VALUE1)
     }
     #[doc = "Channel y is a priority channel within group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ASSCH1_A::VALUE2)
     }
 }
@@ -153,34 +127,37 @@ impl From<ASSCH2_A> for bool {
 impl ASSCH2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ASSCH2_A {
+    pub const fn variant(&self) -> ASSCH2_A {
         match self.bits {
             false => ASSCH2_A::VALUE1,
             true => ASSCH2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ASSCH2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Channel y is a priority channel within group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ASSCH2_A::VALUE2
     }
 }
 #[doc = "Field `ASSCH2` writer - Assignment for Channel 2"]
-pub type ASSCH2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHASS_SPEC, ASSCH2_A, O>;
-impl<'a, const O: u8> ASSCH2_W<'a, O> {
+pub type ASSCH2_W<'a, REG> = crate::BitWriter<'a, REG, ASSCH2_A>;
+impl<'a, REG> ASSCH2_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ASSCH2_A::VALUE1)
     }
     #[doc = "Channel y is a priority channel within group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ASSCH2_A::VALUE2)
     }
 }
@@ -203,34 +180,37 @@ impl From<ASSCH3_A> for bool {
 impl ASSCH3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ASSCH3_A {
+    pub const fn variant(&self) -> ASSCH3_A {
         match self.bits {
             false => ASSCH3_A::VALUE1,
             true => ASSCH3_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ASSCH3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Channel y is a priority channel within group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ASSCH3_A::VALUE2
     }
 }
 #[doc = "Field `ASSCH3` writer - Assignment for Channel 3"]
-pub type ASSCH3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHASS_SPEC, ASSCH3_A, O>;
-impl<'a, const O: u8> ASSCH3_W<'a, O> {
+pub type ASSCH3_W<'a, REG> = crate::BitWriter<'a, REG, ASSCH3_A>;
+impl<'a, REG> ASSCH3_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ASSCH3_A::VALUE1)
     }
     #[doc = "Channel y is a priority channel within group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ASSCH3_A::VALUE2)
     }
 }
@@ -253,34 +233,37 @@ impl From<ASSCH4_A> for bool {
 impl ASSCH4_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ASSCH4_A {
+    pub const fn variant(&self) -> ASSCH4_A {
         match self.bits {
             false => ASSCH4_A::VALUE1,
             true => ASSCH4_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ASSCH4_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Channel y is a priority channel within group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ASSCH4_A::VALUE2
     }
 }
 #[doc = "Field `ASSCH4` writer - Assignment for Channel 4"]
-pub type ASSCH4_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHASS_SPEC, ASSCH4_A, O>;
-impl<'a, const O: u8> ASSCH4_W<'a, O> {
+pub type ASSCH4_W<'a, REG> = crate::BitWriter<'a, REG, ASSCH4_A>;
+impl<'a, REG> ASSCH4_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ASSCH4_A::VALUE1)
     }
     #[doc = "Channel y is a priority channel within group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ASSCH4_A::VALUE2)
     }
 }
@@ -303,34 +286,37 @@ impl From<ASSCH5_A> for bool {
 impl ASSCH5_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ASSCH5_A {
+    pub const fn variant(&self) -> ASSCH5_A {
         match self.bits {
             false => ASSCH5_A::VALUE1,
             true => ASSCH5_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ASSCH5_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Channel y is a priority channel within group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ASSCH5_A::VALUE2
     }
 }
 #[doc = "Field `ASSCH5` writer - Assignment for Channel 5"]
-pub type ASSCH5_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHASS_SPEC, ASSCH5_A, O>;
-impl<'a, const O: u8> ASSCH5_W<'a, O> {
+pub type ASSCH5_W<'a, REG> = crate::BitWriter<'a, REG, ASSCH5_A>;
+impl<'a, REG> ASSCH5_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ASSCH5_A::VALUE1)
     }
     #[doc = "Channel y is a priority channel within group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ASSCH5_A::VALUE2)
     }
 }
@@ -353,34 +339,37 @@ impl From<ASSCH6_A> for bool {
 impl ASSCH6_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ASSCH6_A {
+    pub const fn variant(&self) -> ASSCH6_A {
         match self.bits {
             false => ASSCH6_A::VALUE1,
             true => ASSCH6_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ASSCH6_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Channel y is a priority channel within group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ASSCH6_A::VALUE2
     }
 }
 #[doc = "Field `ASSCH6` writer - Assignment for Channel 6"]
-pub type ASSCH6_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHASS_SPEC, ASSCH6_A, O>;
-impl<'a, const O: u8> ASSCH6_W<'a, O> {
+pub type ASSCH6_W<'a, REG> = crate::BitWriter<'a, REG, ASSCH6_A>;
+impl<'a, REG> ASSCH6_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ASSCH6_A::VALUE1)
     }
     #[doc = "Channel y is a priority channel within group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ASSCH6_A::VALUE2)
     }
 }
@@ -403,34 +392,37 @@ impl From<ASSCH7_A> for bool {
 impl ASSCH7_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ASSCH7_A {
+    pub const fn variant(&self) -> ASSCH7_A {
         match self.bits {
             false => ASSCH7_A::VALUE1,
             true => ASSCH7_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ASSCH7_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Channel y is a priority channel within group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ASSCH7_A::VALUE2
     }
 }
 #[doc = "Field `ASSCH7` writer - Assignment for Channel 7"]
-pub type ASSCH7_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHASS_SPEC, ASSCH7_A, O>;
-impl<'a, const O: u8> ASSCH7_W<'a, O> {
+pub type ASSCH7_W<'a, REG> = crate::BitWriter<'a, REG, ASSCH7_A>;
+impl<'a, REG> ASSCH7_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ASSCH7_A::VALUE1)
     }
     #[doc = "Channel y is a priority channel within group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ASSCH7_A::VALUE2)
     }
 }
@@ -480,70 +472,71 @@ impl W {
     #[doc = "Bit 0 - Assignment for Channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn assch0(&mut self) -> ASSCH0_W<0> {
-        ASSCH0_W::new(self)
+    pub fn assch0(&mut self) -> ASSCH0_W<CHASS_SPEC> {
+        ASSCH0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Assignment for Channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn assch1(&mut self) -> ASSCH1_W<1> {
-        ASSCH1_W::new(self)
+    pub fn assch1(&mut self) -> ASSCH1_W<CHASS_SPEC> {
+        ASSCH1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Assignment for Channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn assch2(&mut self) -> ASSCH2_W<2> {
-        ASSCH2_W::new(self)
+    pub fn assch2(&mut self) -> ASSCH2_W<CHASS_SPEC> {
+        ASSCH2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Assignment for Channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn assch3(&mut self) -> ASSCH3_W<3> {
-        ASSCH3_W::new(self)
+    pub fn assch3(&mut self) -> ASSCH3_W<CHASS_SPEC> {
+        ASSCH3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Assignment for Channel 4"]
     #[inline(always)]
     #[must_use]
-    pub fn assch4(&mut self) -> ASSCH4_W<4> {
-        ASSCH4_W::new(self)
+    pub fn assch4(&mut self) -> ASSCH4_W<CHASS_SPEC> {
+        ASSCH4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Assignment for Channel 5"]
     #[inline(always)]
     #[must_use]
-    pub fn assch5(&mut self) -> ASSCH5_W<5> {
-        ASSCH5_W::new(self)
+    pub fn assch5(&mut self) -> ASSCH5_W<CHASS_SPEC> {
+        ASSCH5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Assignment for Channel 6"]
     #[inline(always)]
     #[must_use]
-    pub fn assch6(&mut self) -> ASSCH6_W<6> {
-        ASSCH6_W::new(self)
+    pub fn assch6(&mut self) -> ASSCH6_W<CHASS_SPEC> {
+        ASSCH6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Assignment for Channel 7"]
     #[inline(always)]
     #[must_use]
-    pub fn assch7(&mut self) -> ASSCH7_W<7> {
-        ASSCH7_W::new(self)
+    pub fn assch7(&mut self) -> ASSCH7_W<CHASS_SPEC> {
+        ASSCH7_W::new(self, 7)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Channel Assignment Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chass](index.html) module"]
+#[doc = "Channel Assignment Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`chass::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`chass::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CHASS_SPEC;
 impl crate::RegisterSpec for CHASS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [chass::R](R) reader structure"]
-impl crate::Readable for CHASS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [chass::W](W) writer structure"]
+#[doc = "`read()` method returns [`chass::R`](R) reader structure"]
+impl crate::Readable for CHASS_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`chass::W`](W) writer structure"]
 impl crate::Writable for CHASS_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

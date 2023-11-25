@@ -1,42 +1,29 @@
 #[doc = "Register `OVRSTAT` reader"]
-pub struct R(crate::R<OVRSTAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<OVRSTAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<OVRSTAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<OVRSTAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<OVRSTAT_SPEC>;
 #[doc = "Field `LN0` reader - Line 0 Overrun Status"]
-pub type LN0_R = crate::BitReader<bool>;
+pub type LN0_R = crate::BitReader;
 #[doc = "Field `LN1` reader - Line 1 Overrun Status"]
-pub type LN1_R = crate::BitReader<bool>;
+pub type LN1_R = crate::BitReader;
 #[doc = "Field `LN2` reader - Line 2 Overrun Status"]
-pub type LN2_R = crate::BitReader<bool>;
+pub type LN2_R = crate::BitReader;
 #[doc = "Field `LN3` reader - Line 3 Overrun Status"]
-pub type LN3_R = crate::BitReader<bool>;
+pub type LN3_R = crate::BitReader;
 #[doc = "Field `LN4` reader - Line 4 Overrun Status"]
-pub type LN4_R = crate::BitReader<bool>;
+pub type LN4_R = crate::BitReader;
 #[doc = "Field `LN5` reader - Line 5 Overrun Status"]
-pub type LN5_R = crate::BitReader<bool>;
+pub type LN5_R = crate::BitReader;
 #[doc = "Field `LN6` reader - Line 6 Overrun Status"]
-pub type LN6_R = crate::BitReader<bool>;
+pub type LN6_R = crate::BitReader;
 #[doc = "Field `LN7` reader - Line 7 Overrun Status"]
-pub type LN7_R = crate::BitReader<bool>;
+pub type LN7_R = crate::BitReader;
 #[doc = "Field `LN8` reader - Line 8 Overrun Status"]
-pub type LN8_R = crate::BitReader<bool>;
+pub type LN8_R = crate::BitReader;
 #[doc = "Field `LN9` reader - Line 9 Overrun Status"]
-pub type LN9_R = crate::BitReader<bool>;
+pub type LN9_R = crate::BitReader;
 #[doc = "Field `LN10` reader - Line 10 Overrun Status"]
-pub type LN10_R = crate::BitReader<bool>;
+pub type LN10_R = crate::BitReader;
 #[doc = "Field `LN11` reader - Line 11 Overrun Status"]
-pub type LN11_R = crate::BitReader<bool>;
+pub type LN11_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Line 0 Overrun Status"]
     #[inline(always)]
@@ -99,15 +86,13 @@ impl R {
         LN11_R::new(((self.bits >> 11) & 1) != 0)
     }
 }
-#[doc = "Overrun Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ovrstat](index.html) module"]
+#[doc = "Overrun Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ovrstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OVRSTAT_SPEC;
 impl crate::RegisterSpec for OVRSTAT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ovrstat::R](R) reader structure"]
-impl crate::Readable for OVRSTAT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`ovrstat::R`](R) reader structure"]
+impl crate::Readable for OVRSTAT_SPEC {}
 #[doc = "`reset()` method sets OVRSTAT to value 0"]
 impl crate::Resettable for OVRSTAT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

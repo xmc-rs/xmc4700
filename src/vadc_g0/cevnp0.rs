@@ -1,41 +1,9 @@
 #[doc = "Register `CEVNP0` reader"]
-pub struct R(crate::R<CEVNP0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CEVNP0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CEVNP0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CEVNP0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CEVNP0_SPEC>;
 #[doc = "Register `CEVNP0` writer"]
-pub struct W(crate::W<CEVNP0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CEVNP0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CEVNP0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CEVNP0_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CEVNP0_SPEC>;
 #[doc = "Field `CEV0NP` reader - Service Request Node Pointer Channel Event i"]
-pub type CEV0NP_R = crate::FieldReader<u8, CEV0NP_A>;
+pub type CEV0NP_R = crate::FieldReader<CEV0NP_A>;
 #[doc = "Service Request Node Pointer Channel Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -55,10 +23,13 @@ impl From<CEV0NP_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CEV0NP_A {
+    type Ux = u8;
+}
 impl CEV0NP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CEV0NP_A> {
+    pub const fn variant(&self) -> Option<CEV0NP_A> {
         match self.bits {
             0 => Some(CEV0NP_A::VALUE1),
             3 => Some(CEV0NP_A::VALUE2),
@@ -67,53 +38,57 @@ impl CEV0NP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CEV0NP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CEV0NP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Select shared service request line 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CEV0NP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Select shared service request line 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CEV0NP_A::VALUE4
     }
 }
 #[doc = "Field `CEV0NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV0NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CEVNP0_SPEC, u8, CEV0NP_A, 4, O>;
-impl<'a, const O: u8> CEV0NP_W<'a, O> {
+pub type CEV0NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CEV0NP_A>;
+impl<'a, REG> CEV0NP_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CEV0NP_A::VALUE1)
     }
     #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CEV0NP_A::VALUE2)
     }
     #[doc = "Select shared service request line 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CEV0NP_A::VALUE3)
     }
     #[doc = "Select shared service request line 3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CEV0NP_A::VALUE4)
     }
 }
 #[doc = "Field `CEV1NP` reader - Service Request Node Pointer Channel Event i"]
-pub type CEV1NP_R = crate::FieldReader<u8, CEV1NP_A>;
+pub type CEV1NP_R = crate::FieldReader<CEV1NP_A>;
 #[doc = "Service Request Node Pointer Channel Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -133,10 +108,13 @@ impl From<CEV1NP_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CEV1NP_A {
+    type Ux = u8;
+}
 impl CEV1NP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CEV1NP_A> {
+    pub const fn variant(&self) -> Option<CEV1NP_A> {
         match self.bits {
             0 => Some(CEV1NP_A::VALUE1),
             3 => Some(CEV1NP_A::VALUE2),
@@ -145,53 +123,57 @@ impl CEV1NP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CEV1NP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CEV1NP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Select shared service request line 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CEV1NP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Select shared service request line 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CEV1NP_A::VALUE4
     }
 }
 #[doc = "Field `CEV1NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV1NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CEVNP0_SPEC, u8, CEV1NP_A, 4, O>;
-impl<'a, const O: u8> CEV1NP_W<'a, O> {
+pub type CEV1NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CEV1NP_A>;
+impl<'a, REG> CEV1NP_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CEV1NP_A::VALUE1)
     }
     #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CEV1NP_A::VALUE2)
     }
     #[doc = "Select shared service request line 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CEV1NP_A::VALUE3)
     }
     #[doc = "Select shared service request line 3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CEV1NP_A::VALUE4)
     }
 }
 #[doc = "Field `CEV2NP` reader - Service Request Node Pointer Channel Event i"]
-pub type CEV2NP_R = crate::FieldReader<u8, CEV2NP_A>;
+pub type CEV2NP_R = crate::FieldReader<CEV2NP_A>;
 #[doc = "Service Request Node Pointer Channel Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -211,10 +193,13 @@ impl From<CEV2NP_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CEV2NP_A {
+    type Ux = u8;
+}
 impl CEV2NP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CEV2NP_A> {
+    pub const fn variant(&self) -> Option<CEV2NP_A> {
         match self.bits {
             0 => Some(CEV2NP_A::VALUE1),
             3 => Some(CEV2NP_A::VALUE2),
@@ -223,53 +208,57 @@ impl CEV2NP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CEV2NP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CEV2NP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Select shared service request line 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CEV2NP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Select shared service request line 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CEV2NP_A::VALUE4
     }
 }
 #[doc = "Field `CEV2NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV2NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CEVNP0_SPEC, u8, CEV2NP_A, 4, O>;
-impl<'a, const O: u8> CEV2NP_W<'a, O> {
+pub type CEV2NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CEV2NP_A>;
+impl<'a, REG> CEV2NP_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CEV2NP_A::VALUE1)
     }
     #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CEV2NP_A::VALUE2)
     }
     #[doc = "Select shared service request line 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CEV2NP_A::VALUE3)
     }
     #[doc = "Select shared service request line 3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CEV2NP_A::VALUE4)
     }
 }
 #[doc = "Field `CEV3NP` reader - Service Request Node Pointer Channel Event i"]
-pub type CEV3NP_R = crate::FieldReader<u8, CEV3NP_A>;
+pub type CEV3NP_R = crate::FieldReader<CEV3NP_A>;
 #[doc = "Service Request Node Pointer Channel Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -289,10 +278,13 @@ impl From<CEV3NP_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CEV3NP_A {
+    type Ux = u8;
+}
 impl CEV3NP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CEV3NP_A> {
+    pub const fn variant(&self) -> Option<CEV3NP_A> {
         match self.bits {
             0 => Some(CEV3NP_A::VALUE1),
             3 => Some(CEV3NP_A::VALUE2),
@@ -301,53 +293,57 @@ impl CEV3NP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CEV3NP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CEV3NP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Select shared service request line 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CEV3NP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Select shared service request line 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CEV3NP_A::VALUE4
     }
 }
 #[doc = "Field `CEV3NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV3NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CEVNP0_SPEC, u8, CEV3NP_A, 4, O>;
-impl<'a, const O: u8> CEV3NP_W<'a, O> {
+pub type CEV3NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CEV3NP_A>;
+impl<'a, REG> CEV3NP_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CEV3NP_A::VALUE1)
     }
     #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CEV3NP_A::VALUE2)
     }
     #[doc = "Select shared service request line 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CEV3NP_A::VALUE3)
     }
     #[doc = "Select shared service request line 3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CEV3NP_A::VALUE4)
     }
 }
 #[doc = "Field `CEV4NP` reader - Service Request Node Pointer Channel Event i"]
-pub type CEV4NP_R = crate::FieldReader<u8, CEV4NP_A>;
+pub type CEV4NP_R = crate::FieldReader<CEV4NP_A>;
 #[doc = "Service Request Node Pointer Channel Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -367,10 +363,13 @@ impl From<CEV4NP_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CEV4NP_A {
+    type Ux = u8;
+}
 impl CEV4NP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CEV4NP_A> {
+    pub const fn variant(&self) -> Option<CEV4NP_A> {
         match self.bits {
             0 => Some(CEV4NP_A::VALUE1),
             3 => Some(CEV4NP_A::VALUE2),
@@ -379,53 +378,57 @@ impl CEV4NP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CEV4NP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CEV4NP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Select shared service request line 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CEV4NP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Select shared service request line 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CEV4NP_A::VALUE4
     }
 }
 #[doc = "Field `CEV4NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV4NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CEVNP0_SPEC, u8, CEV4NP_A, 4, O>;
-impl<'a, const O: u8> CEV4NP_W<'a, O> {
+pub type CEV4NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CEV4NP_A>;
+impl<'a, REG> CEV4NP_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CEV4NP_A::VALUE1)
     }
     #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CEV4NP_A::VALUE2)
     }
     #[doc = "Select shared service request line 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CEV4NP_A::VALUE3)
     }
     #[doc = "Select shared service request line 3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CEV4NP_A::VALUE4)
     }
 }
 #[doc = "Field `CEV5NP` reader - Service Request Node Pointer Channel Event i"]
-pub type CEV5NP_R = crate::FieldReader<u8, CEV5NP_A>;
+pub type CEV5NP_R = crate::FieldReader<CEV5NP_A>;
 #[doc = "Service Request Node Pointer Channel Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -445,10 +448,13 @@ impl From<CEV5NP_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CEV5NP_A {
+    type Ux = u8;
+}
 impl CEV5NP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CEV5NP_A> {
+    pub const fn variant(&self) -> Option<CEV5NP_A> {
         match self.bits {
             0 => Some(CEV5NP_A::VALUE1),
             3 => Some(CEV5NP_A::VALUE2),
@@ -457,53 +463,57 @@ impl CEV5NP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CEV5NP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CEV5NP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Select shared service request line 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CEV5NP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Select shared service request line 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CEV5NP_A::VALUE4
     }
 }
 #[doc = "Field `CEV5NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV5NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CEVNP0_SPEC, u8, CEV5NP_A, 4, O>;
-impl<'a, const O: u8> CEV5NP_W<'a, O> {
+pub type CEV5NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CEV5NP_A>;
+impl<'a, REG> CEV5NP_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CEV5NP_A::VALUE1)
     }
     #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CEV5NP_A::VALUE2)
     }
     #[doc = "Select shared service request line 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CEV5NP_A::VALUE3)
     }
     #[doc = "Select shared service request line 3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CEV5NP_A::VALUE4)
     }
 }
 #[doc = "Field `CEV6NP` reader - Service Request Node Pointer Channel Event i"]
-pub type CEV6NP_R = crate::FieldReader<u8, CEV6NP_A>;
+pub type CEV6NP_R = crate::FieldReader<CEV6NP_A>;
 #[doc = "Service Request Node Pointer Channel Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -523,10 +533,13 @@ impl From<CEV6NP_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CEV6NP_A {
+    type Ux = u8;
+}
 impl CEV6NP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CEV6NP_A> {
+    pub const fn variant(&self) -> Option<CEV6NP_A> {
         match self.bits {
             0 => Some(CEV6NP_A::VALUE1),
             3 => Some(CEV6NP_A::VALUE2),
@@ -535,53 +548,57 @@ impl CEV6NP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CEV6NP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CEV6NP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Select shared service request line 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CEV6NP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Select shared service request line 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CEV6NP_A::VALUE4
     }
 }
 #[doc = "Field `CEV6NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV6NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CEVNP0_SPEC, u8, CEV6NP_A, 4, O>;
-impl<'a, const O: u8> CEV6NP_W<'a, O> {
+pub type CEV6NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CEV6NP_A>;
+impl<'a, REG> CEV6NP_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CEV6NP_A::VALUE1)
     }
     #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CEV6NP_A::VALUE2)
     }
     #[doc = "Select shared service request line 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CEV6NP_A::VALUE3)
     }
     #[doc = "Select shared service request line 3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CEV6NP_A::VALUE4)
     }
 }
 #[doc = "Field `CEV7NP` reader - Service Request Node Pointer Channel Event i"]
-pub type CEV7NP_R = crate::FieldReader<u8, CEV7NP_A>;
+pub type CEV7NP_R = crate::FieldReader<CEV7NP_A>;
 #[doc = "Service Request Node Pointer Channel Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -601,10 +618,13 @@ impl From<CEV7NP_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CEV7NP_A {
+    type Ux = u8;
+}
 impl CEV7NP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CEV7NP_A> {
+    pub const fn variant(&self) -> Option<CEV7NP_A> {
         match self.bits {
             0 => Some(CEV7NP_A::VALUE1),
             3 => Some(CEV7NP_A::VALUE2),
@@ -613,48 +633,52 @@ impl CEV7NP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CEV7NP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CEV7NP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Select shared service request line 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CEV7NP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Select shared service request line 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CEV7NP_A::VALUE4
     }
 }
 #[doc = "Field `CEV7NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV7NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CEVNP0_SPEC, u8, CEV7NP_A, 4, O>;
-impl<'a, const O: u8> CEV7NP_W<'a, O> {
+pub type CEV7NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CEV7NP_A>;
+impl<'a, REG> CEV7NP_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CEV7NP_A::VALUE1)
     }
     #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CEV7NP_A::VALUE2)
     }
     #[doc = "Select shared service request line 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CEV7NP_A::VALUE3)
     }
     #[doc = "Select shared service request line 3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CEV7NP_A::VALUE4)
     }
 }
@@ -704,70 +728,71 @@ impl W {
     #[doc = "Bits 0:3 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn cev0np(&mut self) -> CEV0NP_W<0> {
-        CEV0NP_W::new(self)
+    pub fn cev0np(&mut self) -> CEV0NP_W<CEVNP0_SPEC> {
+        CEV0NP_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn cev1np(&mut self) -> CEV1NP_W<4> {
-        CEV1NP_W::new(self)
+    pub fn cev1np(&mut self) -> CEV1NP_W<CEVNP0_SPEC> {
+        CEV1NP_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn cev2np(&mut self) -> CEV2NP_W<8> {
-        CEV2NP_W::new(self)
+    pub fn cev2np(&mut self) -> CEV2NP_W<CEVNP0_SPEC> {
+        CEV2NP_W::new(self, 8)
     }
     #[doc = "Bits 12:15 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn cev3np(&mut self) -> CEV3NP_W<12> {
-        CEV3NP_W::new(self)
+    pub fn cev3np(&mut self) -> CEV3NP_W<CEVNP0_SPEC> {
+        CEV3NP_W::new(self, 12)
     }
     #[doc = "Bits 16:19 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn cev4np(&mut self) -> CEV4NP_W<16> {
-        CEV4NP_W::new(self)
+    pub fn cev4np(&mut self) -> CEV4NP_W<CEVNP0_SPEC> {
+        CEV4NP_W::new(self, 16)
     }
     #[doc = "Bits 20:23 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn cev5np(&mut self) -> CEV5NP_W<20> {
-        CEV5NP_W::new(self)
+    pub fn cev5np(&mut self) -> CEV5NP_W<CEVNP0_SPEC> {
+        CEV5NP_W::new(self, 20)
     }
     #[doc = "Bits 24:27 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn cev6np(&mut self) -> CEV6NP_W<24> {
-        CEV6NP_W::new(self)
+    pub fn cev6np(&mut self) -> CEV6NP_W<CEVNP0_SPEC> {
+        CEV6NP_W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn cev7np(&mut self) -> CEV7NP_W<28> {
-        CEV7NP_W::new(self)
+    pub fn cev7np(&mut self) -> CEV7NP_W<CEVNP0_SPEC> {
+        CEV7NP_W::new(self, 28)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Channel Event Node Pointer Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cevnp0](index.html) module"]
+#[doc = "Channel Event Node Pointer Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cevnp0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cevnp0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CEVNP0_SPEC;
 impl crate::RegisterSpec for CEVNP0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cevnp0::R](R) reader structure"]
-impl crate::Readable for CEVNP0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cevnp0::W](W) writer structure"]
+#[doc = "`read()` method returns [`cevnp0::R`](R) reader structure"]
+impl crate::Readable for CEVNP0_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`cevnp0::W`](W) writer structure"]
 impl crate::Writable for CEVNP0_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,39 +1,7 @@
 #[doc = "Register `TCSR` reader"]
-pub struct R(crate::R<TCSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TCSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TCSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TCSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TCSR_SPEC>;
 #[doc = "Register `TCSR` writer"]
-pub struct W(crate::W<TCSR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TCSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TCSR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TCSR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TCSR_SPEC>;
 #[doc = "Field `WLEMD` reader - WLE Mode"]
 pub type WLEMD_R = crate::BitReader<WLEMD_A>;
 #[doc = "WLE Mode\n\nValue on reset: 0"]
@@ -53,34 +21,37 @@ impl From<WLEMD_A> for bool {
 impl WLEMD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WLEMD_A {
+    pub const fn variant(&self) -> WLEMD_A {
         match self.bits {
             false => WLEMD_A::VALUE1,
             true => WLEMD_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The automatic update of SCTR.WLE and TCSR.EOF is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WLEMD_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The automatic update of SCTR.WLE and TCSR.EOF is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WLEMD_A::VALUE2
     }
 }
 #[doc = "Field `WLEMD` writer - WLE Mode"]
-pub type WLEMD_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCSR_SPEC, WLEMD_A, O>;
-impl<'a, const O: u8> WLEMD_W<'a, O> {
+pub type WLEMD_W<'a, REG> = crate::BitWriter<'a, REG, WLEMD_A>;
+impl<'a, REG> WLEMD_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The automatic update of SCTR.WLE and TCSR.EOF is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(WLEMD_A::VALUE1)
     }
     #[doc = "The automatic update of SCTR.WLE and TCSR.EOF is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(WLEMD_A::VALUE2)
     }
 }
@@ -105,36 +76,41 @@ impl From<SELMD_A> for bool {
 impl SELMD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SELMD_A {
+    pub const fn variant(&self) -> SELMD_A {
         match self.bits {
             false => SELMD_A::VALUE1,
             true => SELMD_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The automatic update of PCR.CTR\\[23:16\\]
+is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SELMD_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The automatic update of PCR.CTR\\[23:16\\]
+is disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SELMD_A::VALUE2
     }
 }
 #[doc = "Field `SELMD` writer - Select Mode"]
-pub type SELMD_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCSR_SPEC, SELMD_A, O>;
-impl<'a, const O: u8> SELMD_W<'a, O> {
+pub type SELMD_W<'a, REG> = crate::BitWriter<'a, REG, SELMD_A>;
+impl<'a, REG> SELMD_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The automatic update of PCR.CTR\\[23:16\\]
 is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SELMD_A::VALUE1)
     }
     #[doc = "The automatic update of PCR.CTR\\[23:16\\]
 is disabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SELMD_A::VALUE2)
     }
 }
@@ -157,34 +133,37 @@ impl From<FLEMD_A> for bool {
 impl FLEMD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FLEMD_A {
+    pub const fn variant(&self) -> FLEMD_A {
         match self.bits {
             false => FLEMD_A::VALUE1,
             true => FLEMD_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The automatic update of FLE is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FLEMD_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The automatic update of FLE is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FLEMD_A::VALUE2
     }
 }
 #[doc = "Field `FLEMD` writer - FLE Mode"]
-pub type FLEMD_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCSR_SPEC, FLEMD_A, O>;
-impl<'a, const O: u8> FLEMD_W<'a, O> {
+pub type FLEMD_W<'a, REG> = crate::BitWriter<'a, REG, FLEMD_A>;
+impl<'a, REG> FLEMD_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The automatic update of FLE is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(FLEMD_A::VALUE1)
     }
     #[doc = "The automatic update of FLE is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(FLEMD_A::VALUE2)
     }
 }
@@ -207,34 +186,37 @@ impl From<WAMD_A> for bool {
 impl WAMD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WAMD_A {
+    pub const fn variant(&self) -> WAMD_A {
         match self.bits {
             false => WAMD_A::VALUE1,
             true => WAMD_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The automatic update of bit WA is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WAMD_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The automatic update of bit WA is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WAMD_A::VALUE2
     }
 }
 #[doc = "Field `WAMD` writer - WA Mode"]
-pub type WAMD_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCSR_SPEC, WAMD_A, O>;
-impl<'a, const O: u8> WAMD_W<'a, O> {
+pub type WAMD_W<'a, REG> = crate::BitWriter<'a, REG, WAMD_A>;
+impl<'a, REG> WAMD_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The automatic update of bit WA is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(WAMD_A::VALUE1)
     }
     #[doc = "The automatic update of bit WA is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(WAMD_A::VALUE2)
     }
 }
@@ -257,34 +239,37 @@ impl From<HPCMD_A> for bool {
 impl HPCMD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HPCMD_A {
+    pub const fn variant(&self) -> HPCMD_A {
         match self.bits {
             false => HPCMD_A::VALUE1,
             true => HPCMD_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The automatic update of bits SCTR.DSM and SCTR.HPCDIR is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HPCMD_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The automatic update of bits SCTR.DSM and SCTR.HPCDIR is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HPCMD_A::VALUE2
     }
 }
 #[doc = "Field `HPCMD` writer - Hardware Port Control Mode"]
-pub type HPCMD_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCSR_SPEC, HPCMD_A, O>;
-impl<'a, const O: u8> HPCMD_W<'a, O> {
+pub type HPCMD_W<'a, REG> = crate::BitWriter<'a, REG, HPCMD_A>;
+impl<'a, REG> HPCMD_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The automatic update of bits SCTR.DSM and SCTR.HPCDIR is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(HPCMD_A::VALUE1)
     }
     #[doc = "The automatic update of bits SCTR.DSM and SCTR.HPCDIR is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(HPCMD_A::VALUE2)
     }
 }
@@ -307,34 +292,37 @@ impl From<SOF_A> for bool {
 impl SOF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SOF_A {
+    pub const fn variant(&self) -> SOF_A {
         match self.bits {
             false => SOF_A::VALUE1,
             true => SOF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The data word in TBUF is not considered as first word of a frame."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SOF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The data word in TBUF is considered as first word of a frame. A currently running frame is finished and MSLS becomes deactivated (respecting the programmed delays)."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SOF_A::VALUE2
     }
 }
 #[doc = "Field `SOF` writer - Start Of Frame"]
-pub type SOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCSR_SPEC, SOF_A, O>;
-impl<'a, const O: u8> SOF_W<'a, O> {
+pub type SOF_W<'a, REG> = crate::BitWriter<'a, REG, SOF_A>;
+impl<'a, REG> SOF_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The data word in TBUF is not considered as first word of a frame."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SOF_A::VALUE1)
     }
     #[doc = "The data word in TBUF is considered as first word of a frame. A currently running frame is finished and MSLS becomes deactivated (respecting the programmed delays)."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SOF_A::VALUE2)
     }
 }
@@ -357,34 +345,37 @@ impl From<EOF_A> for bool {
 impl EOF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EOF_A {
+    pub const fn variant(&self) -> EOF_A {
         match self.bits {
             false => EOF_A::VALUE1,
             true => EOF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The data word in TBUF is not considered as last word of an SSC frame."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EOF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The data word in TBUF is considered as last word of an SSC frame."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EOF_A::VALUE2
     }
 }
 #[doc = "Field `EOF` writer - End Of Frame"]
-pub type EOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCSR_SPEC, EOF_A, O>;
-impl<'a, const O: u8> EOF_W<'a, O> {
+pub type EOF_W<'a, REG> = crate::BitWriter<'a, REG, EOF_A>;
+impl<'a, REG> EOF_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The data word in TBUF is not considered as last word of an SSC frame."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EOF_A::VALUE1)
     }
     #[doc = "The data word in TBUF is considered as last word of an SSC frame."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EOF_A::VALUE2)
     }
 }
@@ -407,18 +398,18 @@ impl From<TDV_A> for bool {
 impl TDV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TDV_A {
+    pub const fn variant(&self) -> TDV_A {
         match self.bits {
             false => TDV_A::VALUE1,
             true => TDV_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The data word in TBUF is not valid for transmission."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TDV_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The data word in TBUF is valid for transmission and a transmission start is possible. New data should not be written to a TBUFx input location while TDV = 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TDV_A::VALUE2
@@ -443,39 +434,42 @@ impl From<TDSSM_A> for bool {
 impl TDSSM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TDSSM_A {
+    pub const fn variant(&self) -> TDSSM_A {
         match self.bits {
             false => TDSSM_A::VALUE1,
             true => TDSSM_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The data word in TBUF is not considered as invalid after it has been loaded into the transmit shift register. The loading of the TBUF data into the shift register does not clear TDV."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TDSSM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The data word in TBUF is considered as invalid after it has been loaded into the shift register. In ASC and IIC mode, TDV is cleared with the TBI event, whereas in SSC and IIS mode, it is cleared with the RSI event. TDSSM = 1 has to be programmed if an optional data buffer is used."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TDSSM_A::VALUE2
     }
 }
 #[doc = "Field `TDSSM` writer - TBUF Data Single Shot Mode"]
-pub type TDSSM_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCSR_SPEC, TDSSM_A, O>;
-impl<'a, const O: u8> TDSSM_W<'a, O> {
+pub type TDSSM_W<'a, REG> = crate::BitWriter<'a, REG, TDSSM_A>;
+impl<'a, REG> TDSSM_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The data word in TBUF is not considered as invalid after it has been loaded into the transmit shift register. The loading of the TBUF data into the shift register does not clear TDV."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TDSSM_A::VALUE1)
     }
     #[doc = "The data word in TBUF is considered as invalid after it has been loaded into the shift register. In ASC and IIC mode, TDV is cleared with the TBI event, whereas in SSC and IIS mode, it is cleared with the RSI event. TDSSM = 1 has to be programmed if an optional data buffer is used."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TDSSM_A::VALUE2)
     }
 }
 #[doc = "Field `TDEN` reader - TBUF Data Enable"]
-pub type TDEN_R = crate::FieldReader<u8, TDEN_A>;
+pub type TDEN_R = crate::FieldReader<TDEN_A>;
 #[doc = "TBUF Data Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -495,10 +489,13 @@ impl From<TDEN_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for TDEN_A {
+    type Ux = u8;
+}
 impl TDEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TDEN_A {
+    pub const fn variant(&self) -> TDEN_A {
         match self.bits {
             0 => TDEN_A::VALUE1,
             1 => TDEN_A::VALUE2,
@@ -507,48 +504,52 @@ impl TDEN_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A transmission start of the data word in TBUF is disabled. If a transmission is started, the passive data level is sent out."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TDEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A transmission of the data word in TBUF can be started if TDV = 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TDEN_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "A transmission of the data word in TBUF can be started if TDV = 1 while DX2S = 0."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == TDEN_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "A transmission of the data word in TBUF can be started if TDV = 1 while DX2S = 1."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == TDEN_A::VALUE4
     }
 }
 #[doc = "Field `TDEN` writer - TBUF Data Enable"]
-pub type TDEN_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, TCSR_SPEC, u8, TDEN_A, 2, O>;
-impl<'a, const O: u8> TDEN_W<'a, O> {
+pub type TDEN_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, TDEN_A>;
+impl<'a, REG> TDEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "A transmission start of the data word in TBUF is disabled. If a transmission is started, the passive data level is sent out."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TDEN_A::VALUE1)
     }
     #[doc = "A transmission of the data word in TBUF can be started if TDV = 1."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TDEN_A::VALUE2)
     }
     #[doc = "A transmission of the data word in TBUF can be started if TDV = 1 while DX2S = 0."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(TDEN_A::VALUE3)
     }
     #[doc = "A transmission of the data word in TBUF can be started if TDV = 1 while DX2S = 1."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(TDEN_A::VALUE4)
     }
 }
@@ -571,34 +572,37 @@ impl From<TDVTR_A> for bool {
 impl TDVTR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TDVTR_A {
+    pub const fn variant(&self) -> TDVTR_A {
         match self.bits {
             false => TDVTR_A::VALUE1,
             true => TDVTR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Bit TCSR.TE is permanently set."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TDVTR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Bit TCSR.TE is set if DX2T becomes active while TDV = 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TDVTR_A::VALUE2
     }
 }
 #[doc = "Field `TDVTR` writer - TBUF Data Valid Trigger"]
-pub type TDVTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCSR_SPEC, TDVTR_A, O>;
-impl<'a, const O: u8> TDVTR_W<'a, O> {
+pub type TDVTR_W<'a, REG> = crate::BitWriter<'a, REG, TDVTR_A>;
+impl<'a, REG> TDVTR_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Bit TCSR.TE is permanently set."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TDVTR_A::VALUE1)
     }
     #[doc = "Bit TCSR.TE is set if DX2T becomes active while TDV = 1."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TDVTR_A::VALUE2)
     }
 }
@@ -621,34 +625,37 @@ impl From<WA_A> for bool {
 impl WA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WA_A {
+    pub const fn variant(&self) -> WA_A {
         match self.bits {
             false => WA_A::VALUE1,
             true => WA_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The data word in TBUF will be transmitted after a falling edge of WA has been detected (referring to PSR.WA)."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WA_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The data word in TBUF will be transmitted after a rising edge of WA has been detected (referring to PSR.WA)."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WA_A::VALUE2
     }
 }
 #[doc = "Field `WA` writer - Word Address"]
-pub type WA_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCSR_SPEC, WA_A, O>;
-impl<'a, const O: u8> WA_W<'a, O> {
+pub type WA_W<'a, REG> = crate::BitWriter<'a, REG, WA_A>;
+impl<'a, REG> WA_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The data word in TBUF will be transmitted after a falling edge of WA has been detected (referring to PSR.WA)."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(WA_A::VALUE1)
     }
     #[doc = "The data word in TBUF will be transmitted after a rising edge of WA has been detected (referring to PSR.WA)."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(WA_A::VALUE2)
     }
 }
@@ -671,18 +678,18 @@ impl From<TSOF_A> for bool {
 impl TSOF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TSOF_A {
+    pub const fn variant(&self) -> TSOF_A {
         match self.bits {
             false => TSOF_A::VALUE1,
             true => TSOF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The latest data word transmission has not been started for the first word of a data frame."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TSOF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The latest data word transmission has been started for the first word of a data frame."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TSOF_A::VALUE2
@@ -707,18 +714,18 @@ impl From<TV_A> for bool {
 impl TV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TV_A {
+    pub const fn variant(&self) -> TV_A {
         match self.bits {
             false => TV_A::VALUE1,
             true => TV_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The latest start of a data word transmission has taken place while no valid data was available. As a result, the transmission of a data words with passive level (SCTR.PDL) has been started."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TV_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The latest start of a data word transmission has taken place with valid data from TBUF."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TV_A::VALUE2
@@ -743,18 +750,18 @@ impl From<TVC_A> for bool {
 impl TVC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TVC_A {
+    pub const fn variant(&self) -> TVC_A {
         match self.bits {
             false => TVC_A::VALUE1,
             true => TVC_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Since TVC has been set, at least one data buffer underflow condition has occurred."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TVC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Since TVC has been set, no data buffer underflow condition has occurred."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TVC_A::VALUE2
@@ -779,18 +786,18 @@ impl From<TE_A> for bool {
 impl TE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TE_A {
+    pub const fn variant(&self) -> TE_A {
         match self.bits {
             false => TE_A::VALUE1,
             true => TE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The trigger event has not yet been detected. A transmission of the data word in TBUF can not be started."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The trigger event has been detected (or the trigger mechanism is switched off) and a transmission of the data word in TBUF can not be started."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TE_A::VALUE2
@@ -882,88 +889,89 @@ impl W {
     #[doc = "Bit 0 - WLE Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn wlemd(&mut self) -> WLEMD_W<0> {
-        WLEMD_W::new(self)
+    pub fn wlemd(&mut self) -> WLEMD_W<TCSR_SPEC> {
+        WLEMD_W::new(self, 0)
     }
     #[doc = "Bit 1 - Select Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn selmd(&mut self) -> SELMD_W<1> {
-        SELMD_W::new(self)
+    pub fn selmd(&mut self) -> SELMD_W<TCSR_SPEC> {
+        SELMD_W::new(self, 1)
     }
     #[doc = "Bit 2 - FLE Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn flemd(&mut self) -> FLEMD_W<2> {
-        FLEMD_W::new(self)
+    pub fn flemd(&mut self) -> FLEMD_W<TCSR_SPEC> {
+        FLEMD_W::new(self, 2)
     }
     #[doc = "Bit 3 - WA Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn wamd(&mut self) -> WAMD_W<3> {
-        WAMD_W::new(self)
+    pub fn wamd(&mut self) -> WAMD_W<TCSR_SPEC> {
+        WAMD_W::new(self, 3)
     }
     #[doc = "Bit 4 - Hardware Port Control Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn hpcmd(&mut self) -> HPCMD_W<4> {
-        HPCMD_W::new(self)
+    pub fn hpcmd(&mut self) -> HPCMD_W<TCSR_SPEC> {
+        HPCMD_W::new(self, 4)
     }
     #[doc = "Bit 5 - Start Of Frame"]
     #[inline(always)]
     #[must_use]
-    pub fn sof(&mut self) -> SOF_W<5> {
-        SOF_W::new(self)
+    pub fn sof(&mut self) -> SOF_W<TCSR_SPEC> {
+        SOF_W::new(self, 5)
     }
     #[doc = "Bit 6 - End Of Frame"]
     #[inline(always)]
     #[must_use]
-    pub fn eof(&mut self) -> EOF_W<6> {
-        EOF_W::new(self)
+    pub fn eof(&mut self) -> EOF_W<TCSR_SPEC> {
+        EOF_W::new(self, 6)
     }
     #[doc = "Bit 8 - TBUF Data Single Shot Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn tdssm(&mut self) -> TDSSM_W<8> {
-        TDSSM_W::new(self)
+    pub fn tdssm(&mut self) -> TDSSM_W<TCSR_SPEC> {
+        TDSSM_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - TBUF Data Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tden(&mut self) -> TDEN_W<10> {
-        TDEN_W::new(self)
+    pub fn tden(&mut self) -> TDEN_W<TCSR_SPEC> {
+        TDEN_W::new(self, 10)
     }
     #[doc = "Bit 12 - TBUF Data Valid Trigger"]
     #[inline(always)]
     #[must_use]
-    pub fn tdvtr(&mut self) -> TDVTR_W<12> {
-        TDVTR_W::new(self)
+    pub fn tdvtr(&mut self) -> TDVTR_W<TCSR_SPEC> {
+        TDVTR_W::new(self, 12)
     }
     #[doc = "Bit 13 - Word Address"]
     #[inline(always)]
     #[must_use]
-    pub fn wa(&mut self) -> WA_W<13> {
-        WA_W::new(self)
+    pub fn wa(&mut self) -> WA_W<TCSR_SPEC> {
+        WA_W::new(self, 13)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Transmit Control/Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tcsr](index.html) module"]
+#[doc = "Transmit Control/Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tcsr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tcsr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TCSR_SPEC;
 impl crate::RegisterSpec for TCSR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [tcsr::R](R) reader structure"]
-impl crate::Readable for TCSR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [tcsr::W](W) writer structure"]
+#[doc = "`read()` method returns [`tcsr::R`](R) reader structure"]
+impl crate::Readable for TCSR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`tcsr::W`](W) writer structure"]
 impl crate::Writable for TCSR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

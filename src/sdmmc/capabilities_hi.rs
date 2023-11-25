@@ -1,18 +1,5 @@
 #[doc = "Register `CAPABILITIES_HI` reader"]
-pub struct R(crate::R<CAPABILITIES_HI_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CAPABILITIES_HI_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CAPABILITIES_HI_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CAPABILITIES_HI_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CAPABILITIES_HI_SPEC>;
 #[doc = "Field `SDR50_SUPPORT` reader - SDR50 Support"]
 pub type SDR50_SUPPORT_R = crate::BitReader<SDR50_SUPPORT_A>;
 #[doc = "SDR50 Support\n\nValue on reset: 0"]
@@ -30,13 +17,13 @@ impl From<SDR50_SUPPORT_A> for bool {
 impl SDR50_SUPPORT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SDR50_SUPPORT_A> {
+    pub const fn variant(&self) -> Option<SDR50_SUPPORT_A> {
         match self.bits {
             false => Some(SDR50_SUPPORT_A::VALUE1),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "SDR50 is not supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SDR50_SUPPORT_A::VALUE1
@@ -59,13 +46,13 @@ impl From<SDR104_SUPPORT_A> for bool {
 impl SDR104_SUPPORT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SDR104_SUPPORT_A> {
+    pub const fn variant(&self) -> Option<SDR104_SUPPORT_A> {
         match self.bits {
             false => Some(SDR104_SUPPORT_A::VALUE1),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "SDR104 is not supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SDR104_SUPPORT_A::VALUE1
@@ -88,13 +75,13 @@ impl From<DDR50_SUPPORT_A> for bool {
 impl DDR50_SUPPORT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DDR50_SUPPORT_A> {
+    pub const fn variant(&self) -> Option<DDR50_SUPPORT_A> {
         match self.bits {
             false => Some(DDR50_SUPPORT_A::VALUE1),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "DDR50 is not supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DDR50_SUPPORT_A::VALUE1
@@ -117,13 +104,13 @@ impl From<DRV_A_SUPPORT_A> for bool {
 impl DRV_A_SUPPORT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DRV_A_SUPPORT_A> {
+    pub const fn variant(&self) -> Option<DRV_A_SUPPORT_A> {
         match self.bits {
             false => Some(DRV_A_SUPPORT_A::VALUE1),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Driver Type A is not supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DRV_A_SUPPORT_A::VALUE1
@@ -146,13 +133,13 @@ impl From<DRV_C_SUPPORT_A> for bool {
 impl DRV_C_SUPPORT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DRV_C_SUPPORT_A> {
+    pub const fn variant(&self) -> Option<DRV_C_SUPPORT_A> {
         match self.bits {
             false => Some(DRV_C_SUPPORT_A::VALUE1),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Driver Type C is not supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DRV_C_SUPPORT_A::VALUE1
@@ -175,20 +162,20 @@ impl From<DRV_D_SUPPORT_A> for bool {
 impl DRV_D_SUPPORT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DRV_D_SUPPORT_A> {
+    pub const fn variant(&self) -> Option<DRV_D_SUPPORT_A> {
         match self.bits {
             false => Some(DRV_D_SUPPORT_A::VALUE1),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Driver Type D is not supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DRV_D_SUPPORT_A::VALUE1
     }
 }
 #[doc = "Field `TIM_CNT_RETUNE` reader - Timer count for Re-Tuning"]
-pub type TIM_CNT_RETUNE_R = crate::FieldReader<u8, TIM_CNT_RETUNE_A>;
+pub type TIM_CNT_RETUNE_R = crate::FieldReader<TIM_CNT_RETUNE_A>;
 #[doc = "Timer count for Re-Tuning\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -202,16 +189,19 @@ impl From<TIM_CNT_RETUNE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for TIM_CNT_RETUNE_A {
+    type Ux = u8;
+}
 impl TIM_CNT_RETUNE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TIM_CNT_RETUNE_A> {
+    pub const fn variant(&self) -> Option<TIM_CNT_RETUNE_A> {
         match self.bits {
             0 => Some(TIM_CNT_RETUNE_A::VALUE1),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Get information via other source"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TIM_CNT_RETUNE_A::VALUE1
@@ -234,20 +224,20 @@ impl From<USE_TUNING_SDR50_A> for bool {
 impl USE_TUNING_SDR50_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<USE_TUNING_SDR50_A> {
+    pub const fn variant(&self) -> Option<USE_TUNING_SDR50_A> {
         match self.bits {
             false => Some(USE_TUNING_SDR50_A::VALUE1),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "SDR50 does not require tuning"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == USE_TUNING_SDR50_A::VALUE1
     }
 }
 #[doc = "Field `RE_TUNING_MODES` reader - Re-tuning modes"]
-pub type RE_TUNING_MODES_R = crate::FieldReader<u8, RE_TUNING_MODES_A>;
+pub type RE_TUNING_MODES_R = crate::FieldReader<RE_TUNING_MODES_A>;
 #[doc = "Re-tuning modes\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -261,23 +251,26 @@ impl From<RE_TUNING_MODES_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for RE_TUNING_MODES_A {
+    type Ux = u8;
+}
 impl RE_TUNING_MODES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<RE_TUNING_MODES_A> {
+    pub const fn variant(&self) -> Option<RE_TUNING_MODES_A> {
         match self.bits {
             0 => Some(RE_TUNING_MODES_A::VALUE1),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Mode 1"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RE_TUNING_MODES_A::VALUE1
     }
 }
 #[doc = "Field `CLK_MULT` reader - Clock Multiplier"]
-pub type CLK_MULT_R = crate::FieldReader<u8, CLK_MULT_A>;
+pub type CLK_MULT_R = crate::FieldReader<CLK_MULT_A>;
 #[doc = "Clock Multiplier\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -291,16 +284,19 @@ impl From<CLK_MULT_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CLK_MULT_A {
+    type Ux = u8;
+}
 impl CLK_MULT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CLK_MULT_A> {
+    pub const fn variant(&self) -> Option<CLK_MULT_A> {
         match self.bits {
             0 => Some(CLK_MULT_A::VALUE1),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Clock Multiplier not supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CLK_MULT_A::VALUE1
@@ -358,15 +354,13 @@ impl R {
         CLK_MULT_R::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
-#[doc = "Capabilities Register High\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capabilities_hi](index.html) module"]
+#[doc = "Capabilities Register High\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`capabilities_hi::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CAPABILITIES_HI_SPEC;
 impl crate::RegisterSpec for CAPABILITIES_HI_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [capabilities_hi::R](R) reader structure"]
-impl crate::Readable for CAPABILITIES_HI_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`capabilities_hi::R`](R) reader structure"]
+impl crate::Readable for CAPABILITIES_HI_SPEC {}
 #[doc = "`reset()` method sets CAPABILITIES_HI to value 0x0300_0000"]
 impl crate::Resettable for CAPABILITIES_HI_SPEC {
     const RESET_VALUE: Self::Ux = 0x0300_0000;

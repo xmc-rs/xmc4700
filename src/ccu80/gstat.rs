@@ -1,18 +1,5 @@
 #[doc = "Register `GSTAT` reader"]
-pub struct R(crate::R<GSTAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<GSTAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<GSTAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<GSTAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<GSTAT_SPEC>;
 #[doc = "Field `S0I` reader - CC80 IDLE status"]
 pub type S0I_R = crate::BitReader<S0I_A>;
 #[doc = "CC80 IDLE status\n\nValue on reset: 1"]
@@ -32,18 +19,18 @@ impl From<S0I_A> for bool {
 impl S0I_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S0I_A {
+    pub const fn variant(&self) -> S0I_A {
         match self.bits {
             false => S0I_A::VALUE1,
             true => S0I_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Running"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S0I_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Idle"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S0I_A::VALUE2
@@ -68,18 +55,18 @@ impl From<S1I_A> for bool {
 impl S1I_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S1I_A {
+    pub const fn variant(&self) -> S1I_A {
         match self.bits {
             false => S1I_A::VALUE1,
             true => S1I_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Running"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S1I_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Idle"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S1I_A::VALUE2
@@ -104,18 +91,18 @@ impl From<S2I_A> for bool {
 impl S2I_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S2I_A {
+    pub const fn variant(&self) -> S2I_A {
         match self.bits {
             false => S2I_A::VALUE1,
             true => S2I_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Running"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S2I_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Idle"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S2I_A::VALUE2
@@ -140,18 +127,18 @@ impl From<S3I_A> for bool {
 impl S3I_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S3I_A {
+    pub const fn variant(&self) -> S3I_A {
         match self.bits {
             false => S3I_A::VALUE1,
             true => S3I_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Running"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S3I_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Idle"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S3I_A::VALUE2
@@ -176,18 +163,18 @@ impl From<PRB_A> for bool {
 impl PRB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PRB_A {
+    pub const fn variant(&self) -> PRB_A {
         match self.bits {
             false => PRB_A::VALUE1,
             true => PRB_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Prescaler is stopped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PRB_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Prescaler is running"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PRB_A::VALUE2
@@ -212,18 +199,18 @@ impl From<PCRB_A> for bool {
 impl PCRB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PCRB_A {
+    pub const fn variant(&self) -> PCRB_A {
         match self.bits {
             false => PCRB_A::VALUE1,
             true => PCRB_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Parity Checker is stopped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PCRB_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Parity Checker is running"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PCRB_A::VALUE2
@@ -261,15 +248,13 @@ impl R {
         PCRB_R::new(((self.bits >> 10) & 1) != 0)
     }
 }
-#[doc = "Global Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gstat](index.html) module"]
+#[doc = "Global Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GSTAT_SPEC;
 impl crate::RegisterSpec for GSTAT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [gstat::R](R) reader structure"]
-impl crate::Readable for GSTAT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`gstat::R`](R) reader structure"]
+impl crate::Readable for GSTAT_SPEC {}
 #[doc = "`reset()` method sets GSTAT to value 0x0f"]
 impl crate::Resettable for GSTAT_SPEC {
     const RESET_VALUE: Self::Ux = 0x0f;

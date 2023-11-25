@@ -1,43 +1,11 @@
 #[doc = "Register `PCR_IICMode` reader"]
-pub struct R(crate::R<PCR_IICMODE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PCR_IICMODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PCR_IICMODE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PCR_IICMODE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PCR_IICMODE_SPEC>;
 #[doc = "Register `PCR_IICMode` writer"]
-pub struct W(crate::W<PCR_IICMODE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PCR_IICMODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PCR_IICMODE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PCR_IICMODE_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PCR_IICMODE_SPEC>;
 #[doc = "Field `SLAD` reader - Slave Address"]
-pub type SLAD_R = crate::FieldReader<u16, u16>;
+pub type SLAD_R = crate::FieldReader<u16>;
 #[doc = "Field `SLAD` writer - Slave Address"]
-pub type SLAD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCR_IICMODE_SPEC, u16, u16, 16, O>;
+pub type SLAD_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `ACK00` reader - Acknowledge 00H"]
 pub type ACK00_R = crate::BitReader<ACK00_A>;
 #[doc = "Acknowledge 00H\n\nValue on reset: 0"]
@@ -57,34 +25,37 @@ impl From<ACK00_A> for bool {
 impl ACK00_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACK00_A {
+    pub const fn variant(&self) -> ACK00_A {
         match self.bits {
             false => ACK00_A::VALUE1,
             true => ACK00_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The slave device is not sensitive to this address."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ACK00_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The slave device is sensitive to this address."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ACK00_A::VALUE2
     }
 }
 #[doc = "Field `ACK00` writer - Acknowledge 00H"]
-pub type ACK00_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, ACK00_A, O>;
-impl<'a, const O: u8> ACK00_W<'a, O> {
+pub type ACK00_W<'a, REG> = crate::BitWriter<'a, REG, ACK00_A>;
+impl<'a, REG> ACK00_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The slave device is not sensitive to this address."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ACK00_A::VALUE1)
     }
     #[doc = "The slave device is sensitive to this address."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ACK00_A::VALUE2)
     }
 }
@@ -107,34 +78,37 @@ impl From<STIM_A> for bool {
 impl STIM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STIM_A {
+    pub const fn variant(&self) -> STIM_A {
         match self.bits {
             false => STIM_A::VALUE1,
             true => STIM_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A symbol contains 10 time quanta. The timing is adapted for standard mode (100 kBaud)."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == STIM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A symbol contains 25 time quanta. The timing is adapted for fast mode (400 kBaud)."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == STIM_A::VALUE2
     }
 }
 #[doc = "Field `STIM` writer - Symbol Timing"]
-pub type STIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, STIM_A, O>;
-impl<'a, const O: u8> STIM_W<'a, O> {
+pub type STIM_W<'a, REG> = crate::BitWriter<'a, REG, STIM_A>;
+impl<'a, REG> STIM_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "A symbol contains 10 time quanta. The timing is adapted for standard mode (100 kBaud)."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(STIM_A::VALUE1)
     }
     #[doc = "A symbol contains 25 time quanta. The timing is adapted for fast mode (400 kBaud)."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(STIM_A::VALUE2)
     }
 }
@@ -157,34 +131,37 @@ impl From<SCRIEN_A> for bool {
 impl SCRIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SCRIEN_A {
+    pub const fn variant(&self) -> SCRIEN_A {
         match self.bits {
             false => SCRIEN_A::VALUE1,
             true => SCRIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The start condition interrupt is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SCRIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The start condition interrupt is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SCRIEN_A::VALUE2
     }
 }
 #[doc = "Field `SCRIEN` writer - Start Condition Received Interrupt Enable"]
-pub type SCRIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, SCRIEN_A, O>;
-impl<'a, const O: u8> SCRIEN_W<'a, O> {
+pub type SCRIEN_W<'a, REG> = crate::BitWriter<'a, REG, SCRIEN_A>;
+impl<'a, REG> SCRIEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The start condition interrupt is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SCRIEN_A::VALUE1)
     }
     #[doc = "The start condition interrupt is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SCRIEN_A::VALUE2)
     }
 }
@@ -207,34 +184,37 @@ impl From<RSCRIEN_A> for bool {
 impl RSCRIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RSCRIEN_A {
+    pub const fn variant(&self) -> RSCRIEN_A {
         match self.bits {
             false => RSCRIEN_A::VALUE1,
             true => RSCRIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The repeated start condition interrupt is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RSCRIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The repeated start condition interrupt is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RSCRIEN_A::VALUE2
     }
 }
 #[doc = "Field `RSCRIEN` writer - Repeated Start Condition Received Interrupt Enable"]
-pub type RSCRIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, RSCRIEN_A, O>;
-impl<'a, const O: u8> RSCRIEN_W<'a, O> {
+pub type RSCRIEN_W<'a, REG> = crate::BitWriter<'a, REG, RSCRIEN_A>;
+impl<'a, REG> RSCRIEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The repeated start condition interrupt is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RSCRIEN_A::VALUE1)
     }
     #[doc = "The repeated start condition interrupt is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RSCRIEN_A::VALUE2)
     }
 }
@@ -257,34 +237,37 @@ impl From<PCRIEN_A> for bool {
 impl PCRIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PCRIEN_A {
+    pub const fn variant(&self) -> PCRIEN_A {
         match self.bits {
             false => PCRIEN_A::VALUE1,
             true => PCRIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The stop condition interrupt is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PCRIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The stop condition interrupt is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PCRIEN_A::VALUE2
     }
 }
 #[doc = "Field `PCRIEN` writer - Stop Condition Received Interrupt Enable"]
-pub type PCRIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, PCRIEN_A, O>;
-impl<'a, const O: u8> PCRIEN_W<'a, O> {
+pub type PCRIEN_W<'a, REG> = crate::BitWriter<'a, REG, PCRIEN_A>;
+impl<'a, REG> PCRIEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The stop condition interrupt is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PCRIEN_A::VALUE1)
     }
     #[doc = "The stop condition interrupt is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PCRIEN_A::VALUE2)
     }
 }
@@ -307,34 +290,37 @@ impl From<NACKIEN_A> for bool {
 impl NACKIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NACKIEN_A {
+    pub const fn variant(&self) -> NACKIEN_A {
         match self.bits {
             false => NACKIEN_A::VALUE1,
             true => NACKIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The non-acknowledge interrupt is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == NACKIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The non-acknowledge interrupt is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == NACKIEN_A::VALUE2
     }
 }
 #[doc = "Field `NACKIEN` writer - Non-Acknowledge Interrupt Enable"]
-pub type NACKIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, NACKIEN_A, O>;
-impl<'a, const O: u8> NACKIEN_W<'a, O> {
+pub type NACKIEN_W<'a, REG> = crate::BitWriter<'a, REG, NACKIEN_A>;
+impl<'a, REG> NACKIEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The non-acknowledge interrupt is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(NACKIEN_A::VALUE1)
     }
     #[doc = "The non-acknowledge interrupt is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(NACKIEN_A::VALUE2)
     }
 }
@@ -357,34 +343,37 @@ impl From<ARLIEN_A> for bool {
 impl ARLIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ARLIEN_A {
+    pub const fn variant(&self) -> ARLIEN_A {
         match self.bits {
             false => ARLIEN_A::VALUE1,
             true => ARLIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The arbitration lost interrupt is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ARLIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The arbitration lost interrupt is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ARLIEN_A::VALUE2
     }
 }
 #[doc = "Field `ARLIEN` writer - Arbitration Lost Interrupt Enable"]
-pub type ARLIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, ARLIEN_A, O>;
-impl<'a, const O: u8> ARLIEN_W<'a, O> {
+pub type ARLIEN_W<'a, REG> = crate::BitWriter<'a, REG, ARLIEN_A>;
+impl<'a, REG> ARLIEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The arbitration lost interrupt is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ARLIEN_A::VALUE1)
     }
     #[doc = "The arbitration lost interrupt is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ARLIEN_A::VALUE2)
     }
 }
@@ -407,34 +396,37 @@ impl From<SRRIEN_A> for bool {
 impl SRRIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SRRIEN_A {
+    pub const fn variant(&self) -> SRRIEN_A {
         match self.bits {
             false => SRRIEN_A::VALUE1,
             true => SRRIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The slave read request interrupt is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SRRIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The slave read request interrupt is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SRRIEN_A::VALUE2
     }
 }
 #[doc = "Field `SRRIEN` writer - Slave Read Request Interrupt Enable"]
-pub type SRRIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, SRRIEN_A, O>;
-impl<'a, const O: u8> SRRIEN_W<'a, O> {
+pub type SRRIEN_W<'a, REG> = crate::BitWriter<'a, REG, SRRIEN_A>;
+impl<'a, REG> SRRIEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The slave read request interrupt is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SRRIEN_A::VALUE1)
     }
     #[doc = "The slave read request interrupt is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SRRIEN_A::VALUE2)
     }
 }
@@ -457,34 +449,37 @@ impl From<ERRIEN_A> for bool {
 impl ERRIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ERRIEN_A {
+    pub const fn variant(&self) -> ERRIEN_A {
         match self.bits {
             false => ERRIEN_A::VALUE1,
             true => ERRIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The error interrupt is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ERRIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The error interrupt is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ERRIEN_A::VALUE2
     }
 }
 #[doc = "Field `ERRIEN` writer - Error Interrupt Enable"]
-pub type ERRIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, ERRIEN_A, O>;
-impl<'a, const O: u8> ERRIEN_W<'a, O> {
+pub type ERRIEN_W<'a, REG> = crate::BitWriter<'a, REG, ERRIEN_A>;
+impl<'a, REG> ERRIEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The error interrupt is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ERRIEN_A::VALUE1)
     }
     #[doc = "The error interrupt is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ERRIEN_A::VALUE2)
     }
 }
@@ -507,41 +502,44 @@ impl From<SACKDIS_A> for bool {
 impl SACKDIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SACKDIS_A {
+    pub const fn variant(&self) -> SACKDIS_A {
         match self.bits {
             false => SACKDIS_A::VALUE1,
             true => SACKDIS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The generation of an active slave acknowledge is enabled (slave acknowledge with 0 level = more bytes can be received)."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SACKDIS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The generation of an active slave acknowledge is disabled (slave acknowledge with 1 level = reception stopped)."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SACKDIS_A::VALUE2
     }
 }
 #[doc = "Field `SACKDIS` writer - Slave Acknowledge Disable"]
-pub type SACKDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, SACKDIS_A, O>;
-impl<'a, const O: u8> SACKDIS_W<'a, O> {
+pub type SACKDIS_W<'a, REG> = crate::BitWriter<'a, REG, SACKDIS_A>;
+impl<'a, REG> SACKDIS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The generation of an active slave acknowledge is enabled (slave acknowledge with 0 level = more bytes can be received)."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SACKDIS_A::VALUE1)
     }
     #[doc = "The generation of an active slave acknowledge is disabled (slave acknowledge with 1 level = reception stopped)."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SACKDIS_A::VALUE2)
     }
 }
 #[doc = "Field `HDEL` reader - Hardware Delay"]
-pub type HDEL_R = crate::FieldReader<u8, u8>;
+pub type HDEL_R = crate::FieldReader;
 #[doc = "Field `HDEL` writer - Hardware Delay"]
-pub type HDEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCR_IICMODE_SPEC, u8, u8, 4, O>;
+pub type HDEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `ACKIEN` reader - Acknowledge Interrupt Enable"]
 pub type ACKIEN_R = crate::BitReader<ACKIEN_A>;
 #[doc = "Acknowledge Interrupt Enable\n\nValue on reset: 0"]
@@ -561,34 +559,37 @@ impl From<ACKIEN_A> for bool {
 impl ACKIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACKIEN_A {
+    pub const fn variant(&self) -> ACKIEN_A {
         match self.bits {
             false => ACKIEN_A::VALUE1,
             true => ACKIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The acknowledge interrupt is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ACKIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The acknowledge interrupt is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ACKIEN_A::VALUE2
     }
 }
 #[doc = "Field `ACKIEN` writer - Acknowledge Interrupt Enable"]
-pub type ACKIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, ACKIEN_A, O>;
-impl<'a, const O: u8> ACKIEN_W<'a, O> {
+pub type ACKIEN_W<'a, REG> = crate::BitWriter<'a, REG, ACKIEN_A>;
+impl<'a, REG> ACKIEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The acknowledge interrupt is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ACKIEN_A::VALUE1)
     }
     #[doc = "The acknowledge interrupt is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ACKIEN_A::VALUE2)
     }
 }
@@ -611,34 +612,37 @@ impl From<MCLK_A> for bool {
 impl MCLK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MCLK_A {
+    pub const fn variant(&self) -> MCLK_A {
         match self.bits {
             false => MCLK_A::VALUE1,
             true => MCLK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The MCLK generation is disabled and MCLK is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MCLK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The MCLK generation is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MCLK_A::VALUE2
     }
 }
 #[doc = "Field `MCLK` writer - Master Clock Enable"]
-pub type MCLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, MCLK_A, O>;
-impl<'a, const O: u8> MCLK_W<'a, O> {
+pub type MCLK_W<'a, REG> = crate::BitWriter<'a, REG, MCLK_A>;
+impl<'a, REG> MCLK_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The MCLK generation is disabled and MCLK is 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MCLK_A::VALUE1)
     }
     #[doc = "The MCLK generation is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MCLK_A::VALUE2)
     }
 }
@@ -718,106 +722,107 @@ impl W {
     #[doc = "Bits 0:15 - Slave Address"]
     #[inline(always)]
     #[must_use]
-    pub fn slad(&mut self) -> SLAD_W<0> {
-        SLAD_W::new(self)
+    pub fn slad(&mut self) -> SLAD_W<PCR_IICMODE_SPEC> {
+        SLAD_W::new(self, 0)
     }
     #[doc = "Bit 16 - Acknowledge 00H"]
     #[inline(always)]
     #[must_use]
-    pub fn ack00(&mut self) -> ACK00_W<16> {
-        ACK00_W::new(self)
+    pub fn ack00(&mut self) -> ACK00_W<PCR_IICMODE_SPEC> {
+        ACK00_W::new(self, 16)
     }
     #[doc = "Bit 17 - Symbol Timing"]
     #[inline(always)]
     #[must_use]
-    pub fn stim(&mut self) -> STIM_W<17> {
-        STIM_W::new(self)
+    pub fn stim(&mut self) -> STIM_W<PCR_IICMODE_SPEC> {
+        STIM_W::new(self, 17)
     }
     #[doc = "Bit 18 - Start Condition Received Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn scrien(&mut self) -> SCRIEN_W<18> {
-        SCRIEN_W::new(self)
+    pub fn scrien(&mut self) -> SCRIEN_W<PCR_IICMODE_SPEC> {
+        SCRIEN_W::new(self, 18)
     }
     #[doc = "Bit 19 - Repeated Start Condition Received Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rscrien(&mut self) -> RSCRIEN_W<19> {
-        RSCRIEN_W::new(self)
+    pub fn rscrien(&mut self) -> RSCRIEN_W<PCR_IICMODE_SPEC> {
+        RSCRIEN_W::new(self, 19)
     }
     #[doc = "Bit 20 - Stop Condition Received Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn pcrien(&mut self) -> PCRIEN_W<20> {
-        PCRIEN_W::new(self)
+    pub fn pcrien(&mut self) -> PCRIEN_W<PCR_IICMODE_SPEC> {
+        PCRIEN_W::new(self, 20)
     }
     #[doc = "Bit 21 - Non-Acknowledge Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn nackien(&mut self) -> NACKIEN_W<21> {
-        NACKIEN_W::new(self)
+    pub fn nackien(&mut self) -> NACKIEN_W<PCR_IICMODE_SPEC> {
+        NACKIEN_W::new(self, 21)
     }
     #[doc = "Bit 22 - Arbitration Lost Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn arlien(&mut self) -> ARLIEN_W<22> {
-        ARLIEN_W::new(self)
+    pub fn arlien(&mut self) -> ARLIEN_W<PCR_IICMODE_SPEC> {
+        ARLIEN_W::new(self, 22)
     }
     #[doc = "Bit 23 - Slave Read Request Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn srrien(&mut self) -> SRRIEN_W<23> {
-        SRRIEN_W::new(self)
+    pub fn srrien(&mut self) -> SRRIEN_W<PCR_IICMODE_SPEC> {
+        SRRIEN_W::new(self, 23)
     }
     #[doc = "Bit 24 - Error Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn errien(&mut self) -> ERRIEN_W<24> {
-        ERRIEN_W::new(self)
+    pub fn errien(&mut self) -> ERRIEN_W<PCR_IICMODE_SPEC> {
+        ERRIEN_W::new(self, 24)
     }
     #[doc = "Bit 25 - Slave Acknowledge Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn sackdis(&mut self) -> SACKDIS_W<25> {
-        SACKDIS_W::new(self)
+    pub fn sackdis(&mut self) -> SACKDIS_W<PCR_IICMODE_SPEC> {
+        SACKDIS_W::new(self, 25)
     }
     #[doc = "Bits 26:29 - Hardware Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn hdel(&mut self) -> HDEL_W<26> {
-        HDEL_W::new(self)
+    pub fn hdel(&mut self) -> HDEL_W<PCR_IICMODE_SPEC> {
+        HDEL_W::new(self, 26)
     }
     #[doc = "Bit 30 - Acknowledge Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ackien(&mut self) -> ACKIEN_W<30> {
-        ACKIEN_W::new(self)
+    pub fn ackien(&mut self) -> ACKIEN_W<PCR_IICMODE_SPEC> {
+        ACKIEN_W::new(self, 30)
     }
     #[doc = "Bit 31 - Master Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mclk(&mut self) -> MCLK_W<31> {
-        MCLK_W::new(self)
+    pub fn mclk(&mut self) -> MCLK_W<PCR_IICMODE_SPEC> {
+        MCLK_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Protocol Control Register \\[IIC Mode\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcr_iicmode](index.html) module"]
+#[doc = "Protocol Control Register \\[IIC Mode\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcr_iicmode::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcr_iicmode::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PCR_IICMODE_SPEC;
 impl crate::RegisterSpec for PCR_IICMODE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pcr_iicmode::R](R) reader structure"]
-impl crate::Readable for PCR_IICMODE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pcr_iicmode::W](W) writer structure"]
+#[doc = "`read()` method returns [`pcr_iicmode::R`](R) reader structure"]
+impl crate::Readable for PCR_IICMODE_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pcr_iicmode::W`](W) writer structure"]
 impl crate::Writable for PCR_IICMODE_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

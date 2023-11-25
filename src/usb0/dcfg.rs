@@ -1,41 +1,9 @@
 #[doc = "Register `DCFG` reader"]
-pub struct R(crate::R<DCFG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DCFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DCFG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DCFG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DCFG_SPEC>;
 #[doc = "Register `DCFG` writer"]
-pub struct W(crate::W<DCFG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DCFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DCFG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DCFG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<DCFG_SPEC>;
 #[doc = "Field `DevSpd` reader - Device Speed"]
-pub type DEV_SPD_R = crate::FieldReader<u8, DEV_SPD_A>;
+pub type DEV_SPD_R = crate::FieldReader<DEV_SPD_A>;
 #[doc = "Device Speed\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -49,27 +17,34 @@ impl From<DEV_SPD_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for DEV_SPD_A {
+    type Ux = u8;
+}
 impl DEV_SPD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DEV_SPD_A> {
+    pub const fn variant(&self) -> Option<DEV_SPD_A> {
         match self.bits {
             3 => Some(DEV_SPD_A::VALUE4),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Full speed (USB 1.1 transceiver clock is 48 MHz)"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == DEV_SPD_A::VALUE4
     }
 }
 #[doc = "Field `DevSpd` writer - Device Speed"]
-pub type DEV_SPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCFG_SPEC, u8, DEV_SPD_A, 2, O>;
-impl<'a, const O: u8> DEV_SPD_W<'a, O> {
+pub type DEV_SPD_W<'a, REG> = crate::FieldWriter<'a, REG, 2, DEV_SPD_A>;
+impl<'a, REG> DEV_SPD_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Full speed (USB 1.1 transceiver clock is 48 MHz)"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(DEV_SPD_A::VALUE4)
     }
 }
@@ -92,43 +67,46 @@ impl From<NZSTS_OUTHSHK_A> for bool {
 impl NZSTS_OUTHSHK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NZSTS_OUTHSHK_A {
+    pub const fn variant(&self) -> NZSTS_OUTHSHK_A {
         match self.bits {
             true => NZSTS_OUTHSHK_A::VALUE1,
             false => NZSTS_OUTHSHK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Send a STALL handshake on a nonzero-length status OUT transaction and do not send the received OUT packet to the application."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == NZSTS_OUTHSHK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Send the received OUT packet to the application (zero-length or nonzero-length) and send a handshake based on the NAK and STALL bits for the endpoint in the Device Endpoint Control register."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == NZSTS_OUTHSHK_A::VALUE2
     }
 }
 #[doc = "Field `NZStsOUTHShk` writer - Non-Zero-Length Status OUT Handshake"]
-pub type NZSTS_OUTHSHK_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCFG_SPEC, NZSTS_OUTHSHK_A, O>;
-impl<'a, const O: u8> NZSTS_OUTHSHK_W<'a, O> {
+pub type NZSTS_OUTHSHK_W<'a, REG> = crate::BitWriter<'a, REG, NZSTS_OUTHSHK_A>;
+impl<'a, REG> NZSTS_OUTHSHK_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Send a STALL handshake on a nonzero-length status OUT transaction and do not send the received OUT packet to the application."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(NZSTS_OUTHSHK_A::VALUE1)
     }
     #[doc = "Send the received OUT packet to the application (zero-length or nonzero-length) and send a handshake based on the NAK and STALL bits for the endpoint in the Device Endpoint Control register."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(NZSTS_OUTHSHK_A::VALUE2)
     }
 }
 #[doc = "Field `DevAddr` reader - Device Address"]
-pub type DEV_ADDR_R = crate::FieldReader<u8, u8>;
+pub type DEV_ADDR_R = crate::FieldReader;
 #[doc = "Field `DevAddr` writer - Device Address"]
-pub type DEV_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCFG_SPEC, u8, u8, 7, O>;
+pub type DEV_ADDR_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `PerFrInt` reader - Periodic Frame Interval"]
-pub type PER_FR_INT_R = crate::FieldReader<u8, PER_FR_INT_A>;
+pub type PER_FR_INT_R = crate::FieldReader<PER_FR_INT_A>;
 #[doc = "Periodic Frame Interval\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -148,10 +126,13 @@ impl From<PER_FR_INT_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for PER_FR_INT_A {
+    type Ux = u8;
+}
 impl PER_FR_INT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PER_FR_INT_A {
+    pub const fn variant(&self) -> PER_FR_INT_A {
         match self.bits {
             0 => PER_FR_INT_A::VALUE1,
             1 => PER_FR_INT_A::VALUE2,
@@ -160,57 +141,61 @@ impl PER_FR_INT_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "80% of the frame interval"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PER_FR_INT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "85%"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PER_FR_INT_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "90%"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == PER_FR_INT_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "95%"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == PER_FR_INT_A::VALUE4
     }
 }
 #[doc = "Field `PerFrInt` writer - Periodic Frame Interval"]
-pub type PER_FR_INT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DCFG_SPEC, u8, PER_FR_INT_A, 2, O>;
-impl<'a, const O: u8> PER_FR_INT_W<'a, O> {
+pub type PER_FR_INT_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, PER_FR_INT_A>;
+impl<'a, REG> PER_FR_INT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "80% of the frame interval"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PER_FR_INT_A::VALUE1)
     }
     #[doc = "85%"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PER_FR_INT_A::VALUE2)
     }
     #[doc = "90%"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(PER_FR_INT_A::VALUE3)
     }
     #[doc = "95%"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(PER_FR_INT_A::VALUE4)
     }
 }
 #[doc = "Field `DescDMA` reader - Enable Scatter/Gather DMA in Device mode."]
-pub type DESC_DMA_R = crate::BitReader<bool>;
+pub type DESC_DMA_R = crate::BitReader;
 #[doc = "Field `DescDMA` writer - Enable Scatter/Gather DMA in Device mode."]
-pub type DESC_DMA_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCFG_SPEC, bool, O>;
+pub type DESC_DMA_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PerSchIntvl` reader - Periodic Scheduling Interval"]
-pub type PER_SCH_INTVL_R = crate::FieldReader<u8, PER_SCH_INTVL_A>;
+pub type PER_SCH_INTVL_R = crate::FieldReader<PER_SCH_INTVL_A>;
 #[doc = "Periodic Scheduling Interval\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -228,10 +213,13 @@ impl From<PER_SCH_INTVL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for PER_SCH_INTVL_A {
+    type Ux = u8;
+}
 impl PER_SCH_INTVL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PER_SCH_INTVL_A> {
+    pub const fn variant(&self) -> Option<PER_SCH_INTVL_A> {
         match self.bits {
             0 => Some(PER_SCH_INTVL_A::VALUE1),
             1 => Some(PER_SCH_INTVL_A::VALUE2),
@@ -239,38 +227,42 @@ impl PER_SCH_INTVL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "25% of frame."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PER_SCH_INTVL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "50% of frame."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PER_SCH_INTVL_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "75% of frame."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == PER_SCH_INTVL_A::VALUE3
     }
 }
 #[doc = "Field `PerSchIntvl` writer - Periodic Scheduling Interval"]
-pub type PER_SCH_INTVL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCFG_SPEC, u8, PER_SCH_INTVL_A, 2, O>;
-impl<'a, const O: u8> PER_SCH_INTVL_W<'a, O> {
+pub type PER_SCH_INTVL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, PER_SCH_INTVL_A>;
+impl<'a, REG> PER_SCH_INTVL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "25% of frame."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PER_SCH_INTVL_A::VALUE1)
     }
     #[doc = "50% of frame."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PER_SCH_INTVL_A::VALUE2)
     }
     #[doc = "75% of frame."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(PER_SCH_INTVL_A::VALUE3)
     }
 }
@@ -310,58 +302,59 @@ impl W {
     #[doc = "Bits 0:1 - Device Speed"]
     #[inline(always)]
     #[must_use]
-    pub fn dev_spd(&mut self) -> DEV_SPD_W<0> {
-        DEV_SPD_W::new(self)
+    pub fn dev_spd(&mut self) -> DEV_SPD_W<DCFG_SPEC> {
+        DEV_SPD_W::new(self, 0)
     }
     #[doc = "Bit 2 - Non-Zero-Length Status OUT Handshake"]
     #[inline(always)]
     #[must_use]
-    pub fn nzsts_outhshk(&mut self) -> NZSTS_OUTHSHK_W<2> {
-        NZSTS_OUTHSHK_W::new(self)
+    pub fn nzsts_outhshk(&mut self) -> NZSTS_OUTHSHK_W<DCFG_SPEC> {
+        NZSTS_OUTHSHK_W::new(self, 2)
     }
     #[doc = "Bits 4:10 - Device Address"]
     #[inline(always)]
     #[must_use]
-    pub fn dev_addr(&mut self) -> DEV_ADDR_W<4> {
-        DEV_ADDR_W::new(self)
+    pub fn dev_addr(&mut self) -> DEV_ADDR_W<DCFG_SPEC> {
+        DEV_ADDR_W::new(self, 4)
     }
     #[doc = "Bits 11:12 - Periodic Frame Interval"]
     #[inline(always)]
     #[must_use]
-    pub fn per_fr_int(&mut self) -> PER_FR_INT_W<11> {
-        PER_FR_INT_W::new(self)
+    pub fn per_fr_int(&mut self) -> PER_FR_INT_W<DCFG_SPEC> {
+        PER_FR_INT_W::new(self, 11)
     }
     #[doc = "Bit 23 - Enable Scatter/Gather DMA in Device mode."]
     #[inline(always)]
     #[must_use]
-    pub fn desc_dma(&mut self) -> DESC_DMA_W<23> {
-        DESC_DMA_W::new(self)
+    pub fn desc_dma(&mut self) -> DESC_DMA_W<DCFG_SPEC> {
+        DESC_DMA_W::new(self, 23)
     }
     #[doc = "Bits 24:25 - Periodic Scheduling Interval"]
     #[inline(always)]
     #[must_use]
-    pub fn per_sch_intvl(&mut self) -> PER_SCH_INTVL_W<24> {
-        PER_SCH_INTVL_W::new(self)
+    pub fn per_sch_intvl(&mut self) -> PER_SCH_INTVL_W<DCFG_SPEC> {
+        PER_SCH_INTVL_W::new(self, 24)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Device Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dcfg](index.html) module"]
+#[doc = "Device Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dcfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dcfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DCFG_SPEC;
 impl crate::RegisterSpec for DCFG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dcfg::R](R) reader structure"]
-impl crate::Readable for DCFG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dcfg::W](W) writer structure"]
+#[doc = "`read()` method returns [`dcfg::R`](R) reader structure"]
+impl crate::Readable for DCFG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`dcfg::W`](W) writer structure"]
 impl crate::Writable for DCFG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
