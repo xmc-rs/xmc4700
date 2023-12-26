@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.3](https://github.com/xmc-rs/xmc4700/compare/v0.8.2...v0.8.3) (2023-12-25)
+
+
+### Bug Fixes
+
+* moving to 2021 edition ([8ba92a0](https://github.com/xmc-rs/xmc4700/commit/8ba92a0c4caf759e7c75fc59933d5d91825ab29f))
+
 ## [0.8.2](https://github.com/xmc-rs/xmc4700/compare/v0.8.1...v0.8.2) (2023-12-25)
 
 
