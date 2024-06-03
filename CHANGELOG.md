@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.12.0](https://github.com/xmc-rs/xmc4700/compare/v0.11.0...v0.12.0) (2024-06-03)
+
+
+### Features
+
+* updating from newer svd2rust ([#76](https://github.com/xmc-rs/xmc4700/issues/76)) ([6e0044f](https://github.com/xmc-rs/xmc4700/commit/6e0044fd2c2d96fa21c0afc3d5bf75a6a8822f10))
+
+
+### Bug Fixes
+
+* **deps:** reverting cortex-m-rt to 0.7.3 due to yanking ([8f73d4d](https://github.com/xmc-rs/xmc4700/commit/8f73d4ded393793e7a9b145f0063d9110d37d088))
+
 ## [0.11.0](https://github.com/xmc-rs/xmc4700/compare/v0.10.1...v0.11.0) (2024-05-03)
 
 
