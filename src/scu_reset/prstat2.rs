@@ -248,7 +248,7 @@ impl R {
         USBRS_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
-#[doc = "RCU Peripheral 2 Reset Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`prstat2::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "RCU Peripheral 2 Reset Status\n\nYou can [`read`](crate::Reg::read) this register and get [`prstat2::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PRSTAT2_SPEC;
 impl crate::RegisterSpec for PRSTAT2_SPEC {
     type Ux = u32;
