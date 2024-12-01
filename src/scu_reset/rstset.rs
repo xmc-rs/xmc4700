@@ -96,19 +96,16 @@ where
 impl W {
     #[doc = "Bit 8 - Set Hibernate Wake-up Reset Status"]
     #[inline(always)]
-    #[must_use]
     pub fn hibwk(&mut self) -> HIBWK_W<RSTSET_SPEC> {
         HIBWK_W::new(self, 8)
     }
     #[doc = "Bit 9 - Set Hibernate Reset"]
     #[inline(always)]
-    #[must_use]
     pub fn hibrs(&mut self) -> HIBRS_W<RSTSET_SPEC> {
         HIBRS_W::new(self, 9)
     }
     #[doc = "Bit 10 - Enable Lockup Reset"]
     #[inline(always)]
-    #[must_use]
     pub fn lcken(&mut self) -> LCKEN_W<RSTSET_SPEC> {
         LCKEN_W::new(self, 10)
     }
