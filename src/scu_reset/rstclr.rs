@@ -127,25 +127,21 @@ where
 impl W {
     #[doc = "Bit 0 - Clear Reset Status"]
     #[inline(always)]
-    #[must_use]
     pub fn rsclr(&mut self) -> RSCLR_W<RSTCLR_SPEC> {
         RSCLR_W::new(self, 0)
     }
     #[doc = "Bit 8 - Clear Hibernate Wake-up Reset Status"]
     #[inline(always)]
-    #[must_use]
     pub fn hibwk(&mut self) -> HIBWK_W<RSTCLR_SPEC> {
         HIBWK_W::new(self, 8)
     }
     #[doc = "Bit 9 - Clear Hibernate Reset"]
     #[inline(always)]
-    #[must_use]
     pub fn hibrs(&mut self) -> HIBRS_W<RSTCLR_SPEC> {
         HIBRS_W::new(self, 9)
     }
     #[doc = "Bit 10 - Enable Lockup Reset"]
     #[inline(always)]
-    #[must_use]
     pub fn lcken(&mut self) -> LCKEN_W<RSTCLR_SPEC> {
         LCKEN_W::new(self, 10)
     }
