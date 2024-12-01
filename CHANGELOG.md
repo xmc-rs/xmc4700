@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.13.0](https://github.com/xmc-rs/xmc4700/compare/v0.12.0...v0.13.0) (2024-12-01)
+
+
+### Features
+
+* updating from newer svd2rust ([#79](https://github.com/xmc-rs/xmc4700/issues/79)) ([93ca265](https://github.com/xmc-rs/xmc4700/commit/93ca265dd80957f0b17027a6b4034c4efdec0b7b))
+* updating from newer svd2rust ([#85](https://github.com/xmc-rs/xmc4700/issues/85)) ([be75b54](https://github.com/xmc-rs/xmc4700/commit/be75b54afb0d30959a402defb4a8ef6bd298bcf4))
+* updating from newer svd2rust ([#86](https://github.com/xmc-rs/xmc4700/issues/86)) ([5c7a9f5](https://github.com/xmc-rs/xmc4700/commit/5c7a9f5b944030c59a8c47db0fb5d2b72757bdfe))
+
 ## [0.12.0](https://github.com/xmc-rs/xmc4700/compare/v0.11.0...v0.12.0) (2024-06-03)
 
 
